@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="java_scripts/jquery-1.7.min.js"></script>
+    <script src="java_scripts/bootstrap-dropdown.js"></script>
+    <script src="java_scripts/bootstrap-carousel.js"></script>
+    <script src="java_scripts/bootstrap-datepicker.js"></script>
+    <script src="java_scripts/bootstrap_datepicker_format.js"></script>
+
+    <link href="styles/global.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="styles/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link href="styles/bootstrap-responsive.css" type="text/css" rel="stylesheet" />
+    <link href="styles/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="styles/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
+    <link href="styles/datepicker.css" type="text/css" rel="stylesheet" />
+    <link href="styles/datepicker.less" type="text/css" rel="stylesheet" />
+
+    <title>
+        Service application
+    </title>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+    <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="welcome">Smart SMS</a>
+
+            <div class="nav-collapse">
+              
+
+                <ul class="nav">
+                    <li class="divider-vertical"></li>
+                </ul>
+
+
+                <ul class="nav">
+                    <li class="dropdown" style="text-align: left">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create Application <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="company-registration">Voting Application</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Alert Application</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Service Application</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Request Application</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+                <ul class="nav">
+                    <li class="divider-vertical"></li>
+                </ul>
+
+                
+
+                <ul class="nav">
+                    <li class="dropdown" style="text-align: left">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Applications<b class="caret"></b></a>
+                    </li>
+                </ul>
+
+
+
+                <ul class="nav">
+                    <li class="divider-vertical"></li> <!-- vertical line | -->
+                </ul>
+
+                <ul class="nav">
+                    <li class="dropdown" style="text-align: left">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="tenure">My Profile</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+                    <ul class="nav">
+                        <li class="divider-vertical"></li> <!-- vertical line | -->
+                    </ul>
+
+                    <ul class="nav">
+                        <li class="dropdown" style="text-align: left">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Reports<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+
+                                <li><a href="yearly-usage-based-report">Yearly Usage Based Report</a></li>
+                                <li class="divider"></li>
+                                <li><a href="monthly-usage-based-report">Monthly Usage based Report</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                <ul class="nav">
+                    <li class="divider-vertical"></li> <!-- vertical line | -->
+                </ul>
+
+
+                <ul class="nav pull-right">
+                    <li class="dropdown" style="text-align: left">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="#">Edit Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href=<c:url value="/j_spring_security_logout"/>Sign Out</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="container">
+
+        <div id="subContainer">
+			<br/>
+            <br/>
+            <br/>
+            <div id="header-bar">
+
+                <img src="images/header_bar.png" />
+            </div>
+
+            <br />
+            
+
+            
+
+            <div class="offset1">
+                <div class="row">
+                    <div class="row">
+
+                        <div class="span8">
+
+                            <h3>Create a Service Application </h3>
+
+                            <hr />
+
+                        </div>
+
+                        <div class="span8" style="background-color:#F4F4F4">
+                        <div class="offset1">
+                            <br />
+
+                            <form:form class="form-horizontal">
+                                <fieldset>
+
+
+
+                                    <h3>Application Details </h3>
+
+                                    <br />
+
+                                    <div class="control-group">
+                                        <label for="companyname" class="control-label">Application Name *</label>
+                                        <div class="controls docs-input-sizes">
+                                            <input class="span3" id="companyname" name="companyname" type="text" placeholder="Application Name">
+                                        </div>
+                                    </div>
+
+                                    <br />
+
+                                    <div class="control-group">
+                                        <label for="regno" class="control-label">Keyword *</label>
+                                        <div class="controls docs-input-sizes">
+                                            <input class="span3" id="regno" name="regno" type="text" placeholder="Keyword">
+                                        </div>
+                                    </div>
+
+                                    <br />
+
+                                    <div class="control-group">
+                                        <label for="tele1" class="control-label">Application Validity *</label>
+                                        <div class="controls docs-input-sizes">
+                                        	<label class="checkbox">
+			    								<input type="checkbox"> Application Not Expired
+										  	</label>
+                                            <label>Start Date <input class="span3" id="tele1" name="tele1" type="text" placeholder="Start Date"></label>
+                                            <label>End Date  &nbsp; <input class="span3" id="tele1" name="tele1" type="text" placeholder="End Date"></label>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <br />
+
+                                    <div class="control-group">
+                                        <label for="tele2" class="control-label">Description *</label>
+                                        <div class="controls docs-input-sizes">
+                                            <textarea rows="3"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <br />
+
+                                    <div class="control-group">
+                                        <label for="email" class="control-label">Message Scheduled Duration *</label>
+                                        <div class="controls docs-input-sizes">
+                                            <select>
+  <option>HOUR</option>
+  <option>DAY</option>
+  <option>WEEK</option>
+  <option>MONTH</option>
+
+</select>
+                                        </div>
+                                    </div>
+
+                                    <br />
+
+                                    
+
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Submit </button>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="btn">Cancel</button>
+                                    </div>
+
+                                </fieldset>
+                            </form:form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+    <br />
+    <br />
+    <jsp:include page="common/footer.jsp"/>
+</body>
+</html>
+
