@@ -18,6 +18,7 @@
 
     <packaging>pom</packaging>
     <modules>
+        <module>core-logic</module>
         <module>app-types</module>
         <module>common-registration</module>
         <module>reporting</module>
