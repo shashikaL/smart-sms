@@ -1,0 +1,331 @@
+/* CSS Document */
+
+/*To change the top banner of the site upload the banner image (soltura-top.jpg) to the images folder */
+
+#header {
+    background: #fff url("../images/soltura-top.jpg") no-repeat 0 0;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/*To change the welcome image of the site upload the welcome image (welcome.jpg) to the images folder */
+#welcome {
+    background:url(../images/welcome.jpg) no-repeat;
+    padding-top:30px;
+}
+
+
+/*To change the background image for the entire site add the background image <bg.jpg> to the images folder and change the color property in the following <background: #FFFFFF  url("../images/bg.jpg") repeat-x;>*/
+body {
+	background: #FFFFFF  url("../images/bg.jpg") repeat-x;
+	margin: 0;
+	padding: 0;
+	font: 13px / 16px "lucida grande", arial, sans-serif;
+	color: #789;
+	background-color: #FFFFFF;
+}
+
+/*To change the footer color change the <background-color: #d2060e;> */
+#trends {
+	text-align: left;
+	position: relative;
+	padding:10px 0 10px 0;
+	overflow: hidden;
+	-webkit-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: #d2060e;
+	background-repeat: repeat-x;
+	background-position: right;		
+}
+
+/*To change the footer link colors change the <color: #FFFFFF;> */
+#trends a, #trends li span {
+	display: inline-block;
+	padding: 0 15px 0 0;
+	color: #FFFFFF;
+	outline: none;
+	font-size: 15px;
+}
+
+/*To change the copyrigth link colors change the <color: #BB030B;> */
+#footer a {
+color: grren;
+}
+
+/*To change the top navigation text color change the <color: #BB030B;> */
+#topnav {
+	font-size: 11px;
+	line-height: 23px;
+	padding-top: 24px;
+	text-align: right;
+	padding-bottom:5px;
+	color: #BB030B;
+}
+
+/*To change the top navigation  link color change the <color: #88929F>*/
+#topnav a, #topnav li span {
+	display: inline-block;	padding: 0 15px 0 0;
+	color: #88929F;
+	outline: none;
+}
+
+/*To change the title box color change back ground image by adding title_bg.png to the images folder*/
+/*To change the border color of the tile boxes change the color in this <border: 1px solid #BB030B;>*/
+.widget .widget-top, .postbox h3, .stuffbox h3 {
+    background: url(../images/title_bg.png) repeat-x scroll 50% 50%;
+    border: 1px solid #BB030B;
+    margin-left:-1px;
+    margin-right:-1px;
+    margin-top:-1px;
+/*widget heading color*/
+    color: #ffffff;
+    font-weight: bold;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 6px;
+    border-top-right-radius:6px;
+    border-top-left-radius:6px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-top-left-radius:6px;
+    outline-color: -moz-use-text-color;
+    outline-style: none;
+    outline-width: medium;
+    width:auto;
+    font-size:15px;
+
+}
+/*To change the title box color in advance configuration section change back ground image by adding title_bg.png to the images folder*/
+/*To change the border color of the tile boxes change the color in this <border: 1px solid #BB030B;>*/
+.expand a:link,  .expand a:visited {
+    background: #0078ae url(../images/title_bg.png) repeat-x scroll 50% 50%;
+    border: 1px solid #BB030B;
+    margin-left:-1px;
+    margin-right:-1px;
+    margin-top:-1px;
+/*widget heading color*/
+    color: #ffffff;
+    font-weight: bold;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    outline-color: -moz-use-text-color;
+    outline-style: none;
+    outline-width: medium;
+    width:600px;
+    font-size:14px;
+}
+
+/*To change the border color of the tile boxes in the advance configuration change the color in this <border: 1px solid #BB030B;>*/
+.expand a:hover,  .expand a:active, .expand a:focus {
+   text-decoration:underline;
+    border: 1px solid #BB030B;
+    margin-left:-1px;
+    margin-right:-1px;
+    margin-top:-1px;
+    color: #ffffff;
+    font-weight: bold;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    border-top-left-radius:6px;
+    border-bottom-left-radius:6px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    -webkit-border-top-left-radius:6px;
+    -webkit-border-bottom-left-radius:6px;
+    /*outline-color: -moz-use-text-color;*/
+    outline-style: none;
+    outline-width: medium;
+    width:600px;
+    font-size:14px;
+    background: #BC040C url(../images/advanceSetting/arrow-down.png) no-repeat 98% 50%;
+}
+
+/*To change the border color of the tile boxes in the advance configuration change the color in this <border: 1px solid #BB030B;>*/
+ .expand a.open:link, .expand a.open:visited {
+    border: 1px solid #BB030B;
+    margin-left:-1px;
+    margin-right:-1px;
+    margin-top:-1px;
+    color: #ffffff;
+    font-weight: bold;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    -webkit-border-top-right-radius:4px;
+    -webkit-border-bottom-right-radius:4px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    /*outline-color: -moz-use-text-color;*/
+    outline-style: none;
+    outline-width: medium;
+    width:600px;
+    font-size:14px;
+    background: #BB040C url(../images/advanceSetting/arrow-up.png) no-repeat 98% 50%;
+}
+
+/*To change the links color in the UI chnage this property <color: #BB030B;> */
+a:link, a:visited {
+	color: #BB030B;
+	text-decoration: none;
+}
+/*To change the table header clors chnage this property <background-color: #A9AFBA;>   */
+.report_table_header tr th{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    color:#FFFFFF;
+    height:30px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #A9AFBA;   
+}
+
+/*To change the table body content  colors chnage this property <background-color: #E3E4E8>   */
+.report_table_header tr td{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    color:#1B1B1B;
+    text-align:left;
+    vertical-align:top;
+    height:30px;
+    background-color: #E3E4E8;
+    padding-top:5px;
+}
+
+/*To change the table header content  colors chnage this property background-color: #E3E4E8>  */
+.report_table tr td{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    color:#1B1B1B;
+    text-align:right;
+    padding: 5px 10px 0 10px;
+    vertical-align:top;
+    height:30px;
+    background-color: #E3E4E8;
+}
+h1 {
+    padding: 8px;
+    display: block;
+    text-align: center;
+    margin: 35px auto 20px auto !important;
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 23px;
+    color: #333333;	
+}
+
+
+.bold_text {
+    color: #333333;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.my_app_link a {
+    text-decoration:none;
+    color:#21759b
+}
+
+
+#dashboard_quick_press h4 label {
+    margin-right: 10px;
+    color:#304991;
+    font-size:14px;
+}
+
+.menu_title {
+    padding-left:40px;
+    color:#333333;
+    width : 200px;
+
+}
+
+#login form .submit input {
+    border-color: #bbb !important;
+    color: #464646 !important;
+    background: #f2f2f2 url(../images/white-grad.png) repeat-x scroll left top;
+}
+
+#login form .submit input:hover,
+    input[type=button]:hover,
+    input[type=submit]:hover {
+    color: #000 !important;
+    border-color: #666 !important;
+}
+
+
+.button, .submit input, .button-secondary {
+    background: #f2f2f2 url(../images/white-grad.png) repeat-x scroll left top;
+}
+
+.button, .button-secondary, .submit input, input[type="button"], input[type="submit"] {
+    border-color: #bbbbbb;
+    color: #464646;
+}
+
+.confirm {
+font-size:2;
+color:#ff6633;
+}
+
+
+#success_link a {
+    color: #789;
+}
+
+.success_msg {
+color:#91B61F;
+}
+/* Addition to that following images to be created according the theme and to be placed accordingly 
+
+ui-bg_gloss-wave_50_6eac2c_500x100.png
+ui-bg_gloss-wave_75_2191c0_500x100.png
+
+Those images to be copied images\jquery-ui folder
+
+header.png
+header.png
+header-bg.png
+header-desc.png
+
+Those images to be copied images\tablesorter folder
+
+step-first_complete.jpg
+step-first_incomplete.jpg
+step-last_complete.jpg
+step-last_incomplete.jpg
+step-n_complete.jpg
+step-n_incomplete.jpg
+
+
+ */ 
+

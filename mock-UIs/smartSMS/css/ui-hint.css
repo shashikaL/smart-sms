@@ -1,0 +1,35 @@
+/* CSS for popup hint tooltip box */
+#hinttooltip {
+    position: absolute;
+    left: -300px;
+    width: 150px;
+    border:1px solid #AACFEA;
+    /*border-right: 3px solid #AACFEA;*/
+    /*border-bottom: 3px solid #AACFEA;*/
+    padding: 3px;
+    text-align: left;
+    background-color: #EAF7FB;
+    visibility: hidden;
+    z-index: 100;
+    -moz-border-radius: 11px;
+    -khtml-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    -moz-box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+    -webkit-box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+    -khtml-box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+    box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+}
+#hintpointer {
+    position:absolute;
+    left: -300px;
+    z-index: 101;
+    visibility: hidden;
+}
+/* This is the hacking and geeking part */
+/* required fields - does not work in IE */
+fieldset div.reqfield {
+    font-weight: bold;
+}
+fieldset div.reqfield label:before {
+    content: "* "; /* does not work in IE */
+}

@@ -1,0 +1,122 @@
+#select_type {
+    padding: 16px 16px 16px 16px;
+    font-weight: normal;
+    font-size:15px;
+    -moz-border-radius: 11px;
+    -khtml-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    -moz-box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+    -webkit-box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+    -khtml-box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+    box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+}
+
+.select_type {
+    width: 750px;
+    padding-bottom: 30px;
+}
+
+.select_type div.sub_heading {
+    margin: 30px 0 20px 0;
+}
+
+#select_type ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    width:40%;
+    float:left;
+}
+
+#select_type ul li {
+    height: 79px;
+    line-height: 79px;
+    padding-bottom: 35px;
+    padding-top: 7px;
+    display: block;
+    border-bottom: 1px dotted;
+}
+
+#select_type ul li.last {
+    border: none;
+    padding-bottom: 0;
+}
+
+#select_type ul li.first {
+    padding-top: 0;
+    border: none;
+}
+
+#select_type ul li a {
+    width: 60%;
+    float: left;
+    padding-left: 58px;
+    border:none;
+    font-size:16px;
+    font-weight:lighter;
+    color: #333333;
+}
+
+#select_type ul li a {
+    text-decoration: none;
+}
+
+#select_type ul li a:hover {
+    text-decoration: underline;
+}
+
+#select_type ul li a {
+    text-decoration: none;
+}
+
+#select_type ul li a:hover {
+    text-decoration: none;
+}
+
+.my_app {
+    float:left;
+}
+
+.my_app_link {
+    color: #21759b;
+    font-size:12px;
+    width:auto;
+}
+
+
+.my_app_link a:hover {
+    text-decoration:underline;
+}
+
+.sub_image {
+    float:left;
+    width:100px;
+}
+
+
+.useapplication{
+    padding-top:45px;
+    position:absolute;
+    margin-right: 10px;
+/*color:#597ba6;*/
+/*color:#3e4fb9;*/
+    color:#304991;
+    font-size:14px;
+}
+
+.chart_holder {
+    width: 493px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+}
+
+.inner_chart_holder {
+    padding-right: 40px;
+}
+
+.outter_chart_div {
+    padding-left:40px;
+}
