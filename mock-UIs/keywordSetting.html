@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<title>SmartSMS - SMS Based Application Management Platform</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name='robots' content='noindex,nofollow'/>
+<link rel="shortcut icon" href="smartSMS/images/fav.ico"/>
+<link rel='stylesheet' href='smartSMS/css/body.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/custom.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/login.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/tables.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/grid.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/manage.css' type='text/css' media='all'/>
+<link rel="stylesheet" href="smartSMS/css/facebox/facebox.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/image-stripping.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/ui/custom.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/dialog/jquery.alerts.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/ui-hint.css" media="screen" type="text/css"/>
+<script type="text/javascript" src="smartSMS/javascripts/facebox/jquery.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/facebox/facebox.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/application.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/addHTMLControls.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/orca_js.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/validate.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/datetime.js"></script>
+<script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/jquery.bgiframe.js"></script>
+<script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/dialog/jquery.alerts.js"></script>
+
+</head>
+<body>
+<div id="container" class="container_18">
+  <script type="text/javascript"> 
+    function logoutConfirm(url) {
+        var logOutTxt = 'Do you really want to logout??';
+        jConfirm(logOutTxt, 'Confirmation Dialog', function(r) {
+            if(r == true) {
+                window.location = url;
+            }
+        });
+    }
+</script>
+ <script type="text/javascript" src="smartSMS/javascripts/header.js" language="javascript"></script> 
+    <script type="text/javascript"> 
+        function createKeywordFormSubmit(i) {
+            if(i==1)
+            changeAction("../createNewKeyword.html");
+            if(i==2)
+            changeAction("../settings/mySettings.html");
+            document.keyword.submit();
+        }
+        function changeAction(url) {
+            document.keyword.action = url;
+        }
+        function confirmDelete(shortcode, keyword) {
+            var confirmationTxt = 'Are you sure, you want to remove this keyword?';
+            jConfirm(confirmationTxt, 'Confirmation Dialog', function(r) {
+                if(r == true) {
+                    var url = "../settings/deleteKeywordSettings/" + shortcode + "_" + keyword + ".html";
+                    changeAction(url);
+                    document.keyword.submit();
+                }
+            });
+        }
+    </script>
+    <div id="header2">
+      <p id="tagline"><br/>
+        <br/>
+      </p>
+      <div style="clear:both;">&nbsp;</div>
+      <div id="body">
+        <div class="sub_heading">
+          <h1>Keywords</h1>
+        </div>
+        <div class="grid_1 alpha">&nbsp;</div>
+        <div class="grid_16">
+          <div id="dashboard-widgets-wrap">
+            <div class="metabox-holder" id="dashboard-widgets">
+              <form id="quick-press" name="keyword" action="keywordSettings.html" method="post">
+                <div class="postbox" id="dashboard_quick_press">
+                  <h3 class="hndle"><span>Keywords</span></h3>
+                  <div class="clear">&nbsp;</div>
+                  <div id="keywordErrorDiv" class="error-req"></div>
+                  <div align="center">
+                    <table class="report_table_header">
+                      <tr>
+                        <th><div align="center">Operator</div></th>
+                        <th><div align="center">Short Code</div></th>
+                        <th><div align="center">Keyword</div></th>
+                        <th><div align="center">Application ID</div></th>
+                        <th><div align="center">Status</div></th>
+                     
+                      </tr>
+                      <tr>
+                        <td><div align="center">Dialog</div></td>
+                        <td><div align="center">7788</div></td>
+                        <td><div align="center">mykey1</div></td>
+                        <td><div align="center">AID_01</div></td>
+                        <td><div align="center">ASSIGNED</div></td>
+                        <td><div align="center"></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="center">Dialog</div></td>
+                        <td><div align="center">5588</div></td>
+                        <td><div align="center">mykey2</div></td>
+                        <td><div align="center">AID_02</div></td>
+                        <td><div align="center">ASSIGNED</div></td>
+                        <td><div align="center"></div></td>
+                      </tr>
+                      <tr>
+                       <td><div align="center">Dialog</div></td>
+                        <td><div align="center">1122</div></td>
+                        <td><div align="center">mykey3</div></td>
+                        <td><div align="center">AID_03</div></td>
+                        <td><div align="center">ASSIGNED</div></td>
+                        <td><div align="center"></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="center">Safaricom</div></td>
+                        <td><div align="center">2545</div></td>
+                        <td><div align="center">mykey5</div></td>
+                        <td><div align="center">PD_SO_R0184</div></td>
+                        <td><div align="center">ASSIGNED</div></td>
+                        <td><div align="center"></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="center">Yu</div></td>
+                        <td><div align="center">7777</div></td>
+                        <td><div align="center">mykey7</div></td>
+                        <td><div align="center">PD_SO_V0609</div></td>
+                        <td><div align="center">ASSIGNED</div></td>
+                        <td><div align="center"></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="center">Airtel</div></td>
+                        <td><div align="center">8888</div></td>
+                        <td><div align="center">mykey8</div></td>
+                        <td><div align="center">PD_SO_R0296</div></td>
+                        <td><div align="center">ASSIGNED</div></td>
+                        <td><div align="center"></div></td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="clear">&nbsp;</div>
+                
+                  <div class="clear">&nbsp;</div>
+                  <div class="clear">&nbsp;</div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <span style="padding-left:10px">
+          <input onclick="location.href='mySettings.html'" name="back" type="button" class="button" value="Back" id="back"/>
+          </span></div>
+        <div class="grid_1 omega">&nbsp;</div>
+        <div class="clear">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+ <script type="text/javascript" src="smartSMS/javascripts/footer.js" language="javascript"></script> 
+</div>
+</body>
+</html>

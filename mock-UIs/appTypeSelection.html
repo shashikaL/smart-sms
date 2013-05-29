@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<title>SmartSMS - SMS Based Application Management Platform</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name='robots' content='noindex,nofollow'/>
+<link rel="shortcut icon" href="smartSMS/images/fav.ico"/>
+<link rel='stylesheet' href='smartSMS/css/body.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/custom.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/custom.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/login.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/tables.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/grid.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/manage.css' type='text/css' media='all'/>
+<link rel="stylesheet" href="smartSMS/css/facebox/facebox.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/image-stripping.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/ui/custom.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/dialog/jquery.alerts.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/ui-hint.css" media="screen" type="text/css"/>
+<script type="text/javascript" src="smartSMS/javascripts/facebox/jquery.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/facebox/facebox.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/application.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/addHTMLControls.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/orca_js.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/validate.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="/smartSMS/javascripts/datetime.js"></script>
+<script language="JavaScript" type="text/javascript" src="/smartSMS/javascripts/jquery.bgiframe.js"></script>
+<script language="JavaScript" type="text/javascript" src="/smartSMS/javascripts/dialog/jquery.alerts.js"></script>
+<!--[if lte IE 7]>
+        <link rel='stylesheet' id='ie-css' href='/soltura/css/ie.css' type='text/css'
+              media='all'/>
+        <![endif]-->
+</head>
+<body>
+<div id="container" class="container_18">
+  <script type="text/javascript"> 
+    function logoutConfirm(url) {
+        var logOutTxt = 'Do you really want to logout??';
+        jConfirm(logOutTxt, 'Confirmation Dialog', function(r) {
+            if(r == true) {
+                window.location = url;
+            }
+        });
+    }
+</script>
+  <script type="text/javascript" src="smartSMS/javascripts/header.js" language="javascript"></script>
+  <div id="header2">
+    <p id="tagline"><br/>
+      <br/>
+    </p>
+    <div style="clear:both;">&nbsp;</div>
+    <div id="body">
+      <div class="sub_heading">
+        <h1>Create New Application</h1>
+      </div>
+      <div class="navi_link4"></div>
+      <div class="clear"></div>
+      <div class="grid_1 alpha">&nbsp;</div>
+      <div class="grid_16">
+        <div id="dashboard-widgets-wrap">
+          <div class="metabox-holder" id="dashboard-widgets">
+            <div class="postbox" id="dashboard_quick_press">
+              <h3 class="hndle"><span>Select an Application Category </span></h3>
+              <div class="inside">
+                <form action="" id="quick-press" name="post">
+                  <div class="clear">&nbsp;</div>
+                  
+                  <div style="width:50%;float:left;">
+                    <div class="clear">&nbsp;</div>
+                    <div id="home_image">
+                      <div class="app_image">
+                      
+                      
+                        <div id="menu_voting">
+                          <ul>
+                            <li><a href="votingAppStep1.html" title="Voting">&nbsp;</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div style="padding-right:5px" class="app_text">
+                        <div style="padding-bottom:10px; padding-top:15px" class="bold_text">Voting</div>
+                        <div class="normal_text">Create a Voting Application</div>
+                      </div>
+                    </div>
+                    
+                    
+                    <div id="home_image">
+                      <div class="clear">&nbsp;</div>
+                      <div class="app_image">
+                      
+                      
+                       <div id="menu_channel">
+                          <ul>
+                            <li class="first"><a href="serviceAppStep1.html" title="Channels">&nbsp;</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="app_text">
+                        <div style="padding-bottom:10px; padding-top:15px" class="bold_text">Services</div>
+                        <div class="normal_text">Create a Service Application</div>
+                      </div>
+                    </div>
+                    
+                    
+                  </div>
+                  
+                  
+                  <div style="width:50%;float:left;">
+                    <div class="clear">&nbsp;</div>
+                    <div id="home_image">
+                      <div class="app_image">
+                      
+                      
+                       <div id="menu_alert">
+                          <ul>
+                            <li class="first"><a href="alertAppStep1.html" title="Alert">&nbsp;</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="app_text">
+                        <div style="padding-bottom:10px; padding-top:15px" class="bold_text">Alert</div>
+                        <div class="normal_text">Create an Alert Application</div>
+                      </div>
+                    </div>
+                      
+                        
+                    
+                    
+                    <div id="home_image">
+                      <div class="clear">&nbsp;</div>
+                      <div class="app_image">
+                      
+                      
+                        <div id="menu_req">
+                          <ul>
+                            <li class="first"><a href="requestShowAppStep1.html" title="Request">&nbsp;</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="app_text">
+                        <div style="padding-bottom:10px; padding-top:15px" class="bold_text">Contact</div>
+                        <div class="normal_text">Create a Contact Application</div>
+                      </div>
+                    </div>
+                    
+                    
+                  </div>
+                  <div class="clear"></div>
+                  <div class="advanced_config_section" id="advanced_config_section"></div>
+                </form>
+                <div class="clear">&nbsp;</div>
+                <div class="clear">&nbsp;</div>
+                <div class="clear"></div>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <span>
+            <input onclick="location.href='home.html';" name="back" type="button" class="button" value="Back" id="back"/>
+            </span>
+            <div class="clear">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid_1 omega">&nbsp;</div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+ <script type="text/javascript" src="smartSMS/javascripts/footer.js" language="javascript"></script> 
+</div>
+</body>
+</html>
