@@ -10,4 +10,6 @@ public interface ApplicationTypeRepository {
 
     public VotingApplication findVotingApplicationById(ObjectId id);
 
+    //shashi
+
 }
