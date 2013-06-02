@@ -1,0 +1,114 @@
+/* root element for scrollable */
+.vertical {
+
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+
+	/* vertical scrollers have typically larger height than width */
+	height: 290px;
+	width: 700px;
+	/*border-top:1px solid #ddd;  */
+}
+
+/* root element for scrollable items */
+.items {
+	position:absolute;
+
+	/* this time we have very large space for height */
+	/*height:20000em;*/
+	margin: 0px;
+}
+
+/* single scrollable item */
+.item {
+	
+	margin:10px 0 0 10px;
+	padding:15px;
+	font-size:12px;
+	height:100px;
+    width:276px;
+}
+
+/* elements inside single item */
+.item img {
+	float:left;
+	margin-right:0px;
+	/*height:180px;
+	width:240px;*/
+}
+
+.item h3 {
+	margin:0 0 5px 0;
+	font-size:16px;
+	color:#456;
+	font-weight:normal;
+}
+
+/* the action buttons above the scrollable */
+#actions {
+	width:658px;
+	margin:10px 0 10px 0;
+}
+
+#actions #div-left {
+	float:left;
+    margin-top:-18px;
+    margin-left:20px
+}
+
+#actions #div-right {
+	float:right;
+    margin-right:8px;
+    margin-top:-18px
+}
+
+#actions a {
+	font-size:12px;
+	cursor:pointer;
+	/*color:#666;*/
+
+    font-family: 'lucida grande', sans-serif;
+    color: #2276bb;
+    text-decoration: none;
+}
+
+#actions a:hover {
+	/*text-decoration:underline;
+	color:#000; */
+    text-decoration: none;
+    font-family: 'lucida grande', sans-serif;
+
+}
+
+.disabled {
+	visibility:hidden;
+}
+
+.next {
+	float:right;
+}
+
+/* root element for scrollable */
+.scrollable {
+
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+
+	/* vertical scrollables have typically larger height than width but not now */
+	height: 420px;
+	width: 630px;
+}
+
+/* root element for scrollable items */
+.scrollable .items {
+	position:absolute;
+	/* this time we have very large space for the height */
+	height:20000em;
+}
+
+.item2 {
+    height:420px;
+    width:900px;
+}
