@@ -1,1 +1,9 @@
 This file was created by IntelliJ IDEA 12.0 for binding GitHub repository
+
+
+mvn clean install
+
+mvn clean install -DskipTests
+
+
+mongod.exe -dbpath="D:\SLIIT\4th Year\Research\data\db"
