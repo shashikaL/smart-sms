@@ -40,11 +40,11 @@ public class TestController {
         return "Test";
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/test11")
-    public String submit2(VotingApplication application){
-        applicationTypeRepository.saveApplication(application);
-        return "Test";
-    }
+//    @RequestMapping(method = RequestMethod.POST, value = "/test11")
+//    public String submit2(VotingApplication application){
+//        applicationTypeRepository.saveApplication(application);
+//        return "Test";
+//    }
 
 
 
