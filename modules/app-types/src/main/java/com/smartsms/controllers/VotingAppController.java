@@ -1,10 +1,12 @@
 package com.smartsms.controllers;
 
+import com.smartsms.beans.VotingApplication;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,6 +24,13 @@ public class VotingAppController {
     @RequestMapping(value = "/VotingAppCreate", method = RequestMethod.GET)
     public String redirect(){
         return "VotingAppCreate";
+
+    }
+
+    @RequestMapping(value = "/VotingAppCreate", method = RequestMethod.POST)
+    public String submit(VotingApplication application, @RequestParam("keywordStr") String keywordStr){
+        applicationTypeRepository.saveApplication(application);
+        return "VotingAppSuccess";
 
     }
 
@@ -43,9 +52,4 @@ public class VotingAppController {
 
     }
 
-    @RequestMapping(value = "/MyApplications", method = RequestMethod.GET)
-    public String redirectMyApplications(){
-        return "MyApplications";
-
-    }
 }

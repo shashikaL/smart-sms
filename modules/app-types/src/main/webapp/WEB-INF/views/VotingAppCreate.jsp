@@ -14,27 +14,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name='robots' content='noindex,nofollow'/>
     <link rel="shortcut icon" href="smartSMS/images/fav.ico"/>
-    <link rel='stylesheet' href='smartSMS/css/body.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/custom.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/login.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/tables.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/grid.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/manage.css' type='text/css' media='all'/>
-    <link rel="stylesheet" href="smartSMS/css/facebox/facebox.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/image-stripping.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/ui/custom.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/dialog/jquery.alerts.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/ui-hint.css" media="screen" type="text/css"/>
-    <script type="text/javascript" src="smartSMS/javascripts/facebox/jquery.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/facebox/facebox.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/application.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/addHTMLControls.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/orca_js.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/validate.js"></script>
+    <link rel='stylesheet' href='resources/css/body.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/custom.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/login.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/tables.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/grid.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/manage.css' type='text/css' media='all'/>
+    <link rel="stylesheet" href="resources/css/facebox/facebox.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/image-stripping.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/ui/custom.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/dialog/jquery.alerts.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/ui-hint.css" media="screen" type="text/css"/>
+    <script type="text/javascript" src="resources/javascripts/facebox/jquery.js"></script>
+    <script type="text/javascript" src="resources/javascripts/facebox/facebox.js"></script>
+    <script type="text/javascript" src="resources/javascripts/application.js"></script>
+    <script type="text/javascript" src="resources/javascripts/addHTMLControls.js"></script>
+    <script type="text/javascript" src="resources/javascripts/orca_js.js"></script>
+    <script type="text/javascript" src="resources/javascripts/validate.js"></script>
 
-    <script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/datetime.js"></script>
-    <script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/jquery.bgiframe.js"></script>
-    <script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/dialog/jquery.alerts.js"></script>
+    <script language="JavaScript" type="text/javascript" src="resources/javascripts/datetime.js"></script>
+    <script language="JavaScript" type="text/javascript" src="resources/javascripts/jquery.bgiframe.js"></script>
+    <script language="JavaScript" type="text/javascript" src="resources/javascripts/dialog/jquery.alerts.js"></script>
     <!--[if lte IE 7]>
     <link rel='stylesheet' id='ie-css' href='/css/ie.css' type='text/css'
           media='all'/>
@@ -78,9 +78,9 @@
         setTimeout("showPopup()", 1000);
     }
 </script>
-<script type="text/javascript" src="smartSMS/javascripts/header.js" language="javascript"></script>
-<script type="text/javascript" src="smartSMS/javascripts/calendar/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="smartSMS/css/calendar/ui.all.css" type="text/css">
+<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
+<script type="text/javascript" src="resources/javascripts/calendar/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="resources/css/calendar/ui.all.css" type="text/css">
 </link>
 
 <script type="text/javascript">
@@ -468,7 +468,7 @@ var selectedKeyword = '';
 <div id="dashboard-widgets-wrap">
 <div class="metabox-holder" id="dashboard-widgets">
 <div class="postbox" id="dashboard_quick_press">
-<form id="quick-press" name="appdetails" action="appDetails.html" method="post">
+<form  method="post">
 <h3 class="hndle"><span>Application Details</span></h3>
 <div class="inside">
 <div class="clear">&nbsp;</div>
@@ -481,7 +481,7 @@ var selectedKeyword = '';
     </div>
     <div class="input_row">
         <div class="input-text-wrap">
-            <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Voting"/>
+            <input id="appName" name="appName" type="text" />
         </div>
     </div>
 </div>
@@ -490,7 +490,7 @@ var selectedKeyword = '';
 </h4>
 <div class="info_group">
     <div style="display:inline"></div>
-    <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
+    <select id="short3" name="keywordStr" style="min-width:120px;width:auto; margin-left:-7px;" >
         <option value="2545">1234</option>
         <option value="2545">N/A</option>
     </select>
@@ -534,7 +534,7 @@ var selectedKeyword = '';
 <div class="input_row">
     <div class="textarea-wrap">
         <div style="margin-left:0px;" id="decsErrorDiv" class="error-req"></div>
-        <textarea id="decs" name="app.description">First Service Application</textarea>
+        <textarea id="decs" name="appDescription"></textarea>
     </div>
 </div>
 <h4>
@@ -542,7 +542,7 @@ var selectedKeyword = '';
 </h4>
 <div class="input_row">
     <div class="input-text-wrap">
-        <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Candidate Code"/>
+        <input  name="code"  type="text" />
     </div>
 </div>
 <div class="clear">&nbsp;</div>
@@ -679,7 +679,7 @@ var selectedKeyword = '';
 <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span style="padding-right:10px">
                     <input onclick="location.href='appTypeSelection.html';" name="cancel" type="button" class="button" value="Back"/>
                       </span><span>
-                      <input onclick="location.href='votingAppConfirm';" name="next" type="button" class="button" value="Next" id="next"/>
+                      <input name="next" type="submit" class="button" value="Next" id="next"/>
                       </span></div>
 </div>
 </form>
@@ -696,7 +696,7 @@ var selectedKeyword = '';
     loadKeyword();
 </script>
 </div>
-<script type="text/javascript" src="smartSMS/javascripts/footer.js" language="javascript"></script>
+<script type="text/javascript" src="resources/javascripts/footer.js" language="javascript"></script>
 </div>
 </body>
 </html>
