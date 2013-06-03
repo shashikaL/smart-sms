@@ -1,0 +1,159 @@
+#quick-press {
+    margin-left: 20px;
+}
+
+#quick-press form {
+    border: none;
+    background-color: #fff;
+}
+
+form .input-text-wrap {
+    border-style: solid;
+    border-width: 1px;
+    padding: 2px 3px;
+    border-color: #ccc;
+}
+
+.sub_heading {
+    margin: 20px 0 20px 0;
+}
+
+#dashboard-widgets form .input-text-wrap input {
+    border: 0 none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    width: 99%;
+    color: #333;
+}
+
+form .textarea-wrap {
+    border-style: solid;
+    border-width: 1px;
+    padding: 2px;
+    border-color: #ccc;
+}
+
+.input_row {
+    float: left;
+    width: 350px;
+}
+
+#dashboard-widgets form .textarea-wrap textarea {
+    border: 0 none;
+    padding: 0;
+    outline: none;
+    width: 99%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#dashboard-widgets .postbox form .submit {
+    float: none;
+    margin: .5em 0 0;
+    padding: 0;
+    border: none;
+}
+
+#dashboard-widgets-wrap #dashboard-widgets .postbox form .submit input {
+    margin: 0;
+}
+
+#dashboard-widgets-wrap #dashboard-widgets .postbox form .submit #publish {
+    min-width: 0;
+}
+
+div.postbox div.inside {
+    margin: 10px;
+    position: relative;
+}
+
+#dashboard-widgets a {
+    text-decoration: none;
+}
+
+#dashboard_quick_press .input-text-wrap,
+#dashboard_quick_press .textarea-wrap {
+    margin: 0 0 1em 5em;
+}
+
+/* remember to define focus styles! */
+/*
+:focus {
+	outline: 0;
+}
+*/
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+/*
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*/
+/* end reset css */
+
+/* 2 column liquid layout */
+
+#content .navi_link {
+    margin: 10px 0 10px 10px;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+}
+
+#content .navi_link a {
+    text-decoration: none;
+    color: #333333;
+}
+
+#content .navi_link a:hover {
+    text-decoration: underline;
+    color: #d98500;
+}
+
+.submit input,
+.button,
+.button-primary,
+.button-secondary,
+.button-highlighted,
+.submit input {
+    text-decoration: none;
+    font-size: 11px !important;
+    line-height: 16px;
+    padding: 2px 8px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    -/*moz-border-radius: 11px;
+    -khtml-border-radius: 11px;
+    -webkit-border-radius: 11px;*/ border-radius: 11px;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -khtml-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+/* Post Screen */
+
+.widget,
+.postbox,
+.stuffbox {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-width: 1px;
+    border-style: solid;
+    line-height: 1;
+    -moz-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}

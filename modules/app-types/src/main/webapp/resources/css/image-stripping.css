@@ -1,0 +1,637 @@
+/*Home -Menu1*/
+#menu1 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu1 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu1 li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu1 li a:link, #menu1 li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/create_new.jpg);
+}
+
+#menu1 li a:hover {
+    color: #FFF;
+    background:  url(../images/create_new.jpg);
+}
+
+/*Home - Menu2*/
+#menu2 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu2 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu2 li a {
+    voice-family: inherit;
+    height: 75px;
+	width:75px;
+    text-decoration: none;
+}
+
+#menu2 li a:link, #menu2 li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/app_settings.jpg);
+}
+
+#menu2 li a:hover {
+    color: #FFF;
+    background:  url(../images/app_settings.jpg);
+}
+
+/*Home Menu3*/
+#menu3 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu3 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu3 li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu3 li a:link, #menu3 li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/my_apps.jpg);
+}
+
+#menu3 li a:hover {
+    color: #FFF;
+    background:  url(../images/my_apps.jpg);
+}
+
+/*home Menu4*/
+#menu4 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu4 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu4 li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu4 li a:link, #menu4 li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/get_reports.jpg);
+}
+
+#menu4 li a:hover {
+    color: #FFF;
+    background:  url(../images/get_reports.jpg);
+}
+
+#menu5 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu5 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu5 li a {
+    voice-family: inherit;
+    height: 75px;
+}
+
+#menu5 li a:link, #menu5 li a:visited  {
+    background:  url(../images/home_gray.jpg)  0 -220px;
+    display: block;
+}
+
+
+#menu5 li a:hover {
+    background:  url(../images/home_gray.jpg)  0 -220px;
+}
+
+
+#menu6 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu6 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu6 li a {
+    voice-family: inherit;
+    height: 75px;
+}
+
+#menu6 li a:link, #menu6 li a:visited  {
+    background:  url(../images/home_gray.jpg)  0 -293px;
+    color: #333;
+    display: block;
+
+}
+
+
+#menu6 li a:hover {
+    background:  url(../images/home_gray.jpg)  0 -293px;
+    color: #FFF;
+}
+
+
+
+/*App Cateory Voting - Menu*/
+#menu_voting ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu_voting {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu_voting li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu_voting li a:link, #menu_voting li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/voting_app.jpg) 0 0px;
+}
+
+#menu_voting li a:hover {
+    color: #FFF;
+    background:  url(../images/voting_app.jpg) 0 -75px;
+}
+
+/*App Cateory Alert - Menu*/
+#menu_alert ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu_alert {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu_alert li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu_alert li a:link, #menu_alert li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/alert_app.jpg);
+}
+
+#menu_alert li a:hover {
+    color: #FFF;
+    background:  url(../images/alert_app.jpg);
+}
+
+
+/*App Cateory Channels - Menu*/
+#menu_channel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu_channel {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu_channel li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu_channel li a:link, #menu_channel li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/service_app.jpg) 0 -150px;
+}
+
+#menu_channel li a:hover {
+    color: #FFF;
+    background:  url(../images/service_app.jpg) 0 -225px;
+}
+
+
+/*App Cateory Request - Menu*/
+#menu_req ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu_req {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu_req li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu_req li a:link, #menu_req li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/contact_app.png) 0 -900px;
+}
+
+#menu_req li a:hover {
+    color: #FFF;
+    background:  url(../images/contact_app.png) 0 -975px;
+}
+
+/*App NCS SMS - Menu*/
+#menu_sms ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu_sms {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu_sms li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu_sms li a:link, #menu_sms li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/ncs.jpg) 0 0px;
+}
+
+#menu_sms li a:hover {
+    color: #FFF;
+    background:  url(../images/ncs.jpg) 0 -75px;
+}
+
+/*App NCS MMS - Menu*/
+#menu_mms ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu_mms {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu_mms li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu_mms li a:link, #menu_mms li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/ncs.jpg) 0 -150px;
+}
+
+#menu_mms li a:hover {
+    color: #FFF;
+    background:  url(../images/ncs.jpg) 0 -225px;
+}
+
+
+/*Message History Report - Menu*/
+#menu_mhr ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu_mhr {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu_mhr li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu_mhr li a:link, #menu_mhr li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/report.png) 0 -150px;
+}
+
+#menu_mhr li a:hover {
+    color: #FFF;
+    background:  url(../images/report.png) 0 -225px;
+}
+
+/*Revenue Report - Menu*/
+#menu_rr ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu_rr {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#menu_rr li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#menu_rr li a:link, #menu_rr li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/report.png) 0 0;
+}
+
+#menu_rr li a:hover {
+    color: #FFF;
+    background:  url(../images/report.png) 0 -75px;
+}
+
+
+/*Settings */
+#setting1 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#setting1 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#setting1 li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#setting1 li a:link, #setting1 li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/my-setting.jpg) 0 0;
+}
+
+#setting1 li a:hover {
+    color: #FFF;
+    background:  url(../images/my-setting.jpg) 0 -75px;
+}
+
+/*Home - Menu2*/
+#setting2 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#setting2 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#setting2 li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#setting2 li a:link, #setting2 li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/my-setting.jpg) 0 -150px;
+}
+
+#setting2 li a:hover {
+    color: #FFF;
+    background:  url(../images/my-setting.jpg) 0 -225px;
+}
+
+/*Home Menu3*/
+#setting3 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#setting3 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#setting3 li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#setting3 li a:link, #setting3 li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/my-setting.jpg) 0 -300px;
+}
+
+#setting3 li a:hover {
+    color: #FFF;
+    background:  url(../images/my-setting.jpg) 0 -375px;
+}
+
+/*home Menu4*/
+#setting4 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#setting4 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#setting4 li a {
+    voice-family: inherit;
+    height: 75px;
+    text-decoration: none;
+}
+
+#setting4 li a:link, #setting4 li a:visited  {
+    color: #333;
+    display: block;
+    background:  url(../images/my-setting.jpg) 0 -450px;
+}
+
+#setting4 li a:hover {
+    color: #FFF;
+    background:  url(../images/my-setting.jpg) 0 -525px;
+}
+
+#setting5 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#setting5 {
+    width: 75px;
+    margin: 10px;
+    padding-left:30px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+}
+
+#setting5 li a {
+    voice-family: inherit;
+    height: 75px;
+}
+
+#setting5 li a:link, #setting5 li a:visited  {
+    display: block;
+    background:  url(../images/home_gray.jpg)  0 -367px;
+}
+
+#setting5 li a:hover {
+    background:  url(../images/home_gray.jpg)  0 -367px;
+}
+
+a:hover span.middle{
+	display: block;
+    	position: absolute;
+    	margin-top: -20px;
+    	margin-left: -10px;
+	width: 175px; padding: 5px;
+    	z-index: 100;
+    	color: #000000;
+    	font: 12px "Arial", sans-serif;
+    	text-decoration: none;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border:1px;
+        border-width: 2px !important;
+        border:1px solid #AACFEA;
+        border-right: 3px solid #AACFEA;
+        border-bottom: 3px solid #AACFEA;
+        padding: 3px;
+        text-align: left;
+        background-color: #EAF7FB;
+}
+
+a span.middle{
+   display: none
+}
+
+
+

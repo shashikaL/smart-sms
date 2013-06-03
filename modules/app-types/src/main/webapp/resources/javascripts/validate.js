@@ -196,7 +196,7 @@ var offsetdivfrompointerX = 10;
 var offsetdivfrompointerY = 14;
 
 document.write('<div id="hinttooltip"></div>')
-document.write('<img id="hintpointer" src="resources/arrow_tooltip.gif">')
+document.write('<img id="hintpointer" src="resources/images/arrow_tooltip.gif">')
 
 var ie = document.all;
 var ns6 = document.getElementById && !document.all;

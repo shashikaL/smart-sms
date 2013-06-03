@@ -1,0 +1,108 @@
+/* --------
+  The CSS rules offered here are just an example, you may use them as a base.
+  Shape your 'expand/collapse' content so that it meets the style of your site.
+ --------- */
+* {margin:0; padding:0}
+/* --- Page Structure  --- */
+/*html {height:100%}*/
+/*body {*/
+  /*min-width:400px;*/
+  /*width:100%;*/
+  /*height:101%;*/
+  /*background:#fff;*/
+  /*color:#333;*/
+  /*font:76%/1.6 verdana,geneva,lucida,'lucida grande',arial,helvetica,sans-serif;*/
+  /*text-align:center*/
+/*}*/
+#wrapper{
+  margin:0 auto;
+  padding:2px;
+  text-align:left
+}
+#content {
+  max-width:70em;
+  /*height:auto;*/
+  width:100%;
+  margin:0 auto;
+  padding-bottom:2.5px;
+  overflow:hidden;
+}
+.demo {
+  margin:0;
+  padding:0.25em 0.5em;
+  /*border:1px solid #ccc;*/
+  position:relative;
+  background-position:center
+}
+
+.collapse {
+    width:610px;
+}
+
+.collapse p {padding:0 10px 1em}
+
+#switch, .switch {margin-bottom:5px;
+      text-align:right;
+      font-size: 10px ;
+      /*color: #333333;*/
+      /*text-decoration: underline;*/
+      /*background-color:#f0f0f0*/
+}
+
+/* --- Headings  --- */
+/*h1 {*/
+  /*margin-bottom:.75em;*/
+  /*font-family:georgia,'times new roman',times,serif;*/
+  /*font-size:2.5em;*/
+  /*font-weight:normal;*/
+  /*color:#c30*/
+/*}*/
+h2{font-size:1em}
+
+.expand{padding-bottom:.75em}
+
+/* --- Links  --- */
+/*a:link,   a:visited {
+  /*border:1px dotted #ccc;*/
+  /*border-width:0 0 1px;*/
+  /*text-decoration:none;*/
+  /*color:blue*/
+
+   color: #2277bb;
+   text-decoration: none;
+
+}
+*/
+a:hover, a:active,  a:focus {
+  border-style:solid;
+  /*background-color:#f0f0f0;*/
+   outline:0 none;
+   color: #333333;
+  text-decoration: underline
+}
+
+
+ a:active, a:focus {
+  color:#FF8C00;
+}
+
+.expand a {
+  display:block;
+  padding:3px 10px
+}
+
+
+.subscriperType_alignment {
+  margin-left:240px;
+}
+
+.radiobuttons_allignment {
+  margin-left:40px;
+}
+
+
+.checkbox_allignment {
+  margin-left:15px;
+  width:800px;
+}
+
