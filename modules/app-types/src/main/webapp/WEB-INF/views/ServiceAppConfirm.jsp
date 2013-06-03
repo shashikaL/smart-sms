@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
@@ -54,49 +55,49 @@
 <script type="text/javascript">
 
 
-    $(document).ready(function() {
-        var editState = 'false';
-
-        showDispatchTime();
-    });
-
-    var req = '-';
-    var resformat = 'html';
-    var callbackfunc = '-';
-
-    function showDispatchTime() {
-        var selectedOptionIndex = document.getElementById("duration").selectedIndex;
-        var selectedOption = document.getElementById("duration").options[selectedOptionIndex].value;
-        var subscriptionDispatchDateDiv = document.getElementById("subscriptionDispatchDateDiv");
-        var subscriptionDispatchDayDiv = document.getElementById("subscriptionDispatchDayDiv");
-        var subscriptionDispatchHourDiv = document.getElementById("subscriptionDispatchHourDiv");
-        var subscriptionDispatchMinuteDiv = document.getElementById("subscriptionDispatchMinuteDiv");
-
-        subscriptionDispatchDateDiv.style.display = 'none';
-        subscriptionDispatchDayDiv.style.display = 'none';
-        subscriptionDispatchHourDiv.style.display = 'none';
-        subscriptionDispatchMinuteDiv.style.display = 'none';
-
-        switch (selectedOption) {
-            case 'HOUR':
-                subscriptionDispatchMinuteDiv.style.display = '';
-                break;
-            case 'DAY':
-                subscriptionDispatchMinuteDiv.style.display = '';
-                subscriptionDispatchHourDiv.style.display = '';
-                break;
-            case 'WEEK':
-                subscriptionDispatchMinuteDiv.style.display = '';
-                subscriptionDispatchHourDiv.style.display = '';
-                subscriptionDispatchDayDiv.style.display = '';
-                break;
-            case 'MONTH':
-                subscriptionDispatchDateDiv.style.display = '';
-                subscriptionDispatchHourDiv.style.display = '';
-                subscriptionDispatchMinuteDiv.style.display = '';
-                break;
-        }
-    }
+//    $(document).ready(function() {
+//        var editState = 'false';
+//
+//        showDispatchTime();
+//    });
+//
+//    var req = '-';
+//    var resformat = 'html';
+//    var callbackfunc = '-';
+//
+//    function showDispatchTime() {
+//        var selectedOptionIndex = document.getElementById("duration").selectedIndex;
+//        var selectedOption = document.getElementById("duration").options[selectedOptionIndex].value;
+//        var subscriptionDispatchDateDiv = document.getElementById("subscriptionDispatchDateDiv");
+//        var subscriptionDispatchDayDiv = document.getElementById("subscriptionDispatchDayDiv");
+//        var subscriptionDispatchHourDiv = document.getElementById("subscriptionDispatchHourDiv");
+//        var subscriptionDispatchMinuteDiv = document.getElementById("subscriptionDispatchMinuteDiv");
+//
+//        subscriptionDispatchDateDiv.style.display = 'none';
+//        subscriptionDispatchDayDiv.style.display = 'none';
+//        subscriptionDispatchHourDiv.style.display = 'none';
+//        subscriptionDispatchMinuteDiv.style.display = 'none';
+//
+//        switch (selectedOption) {
+//            case 'HOUR':
+//                subscriptionDispatchMinuteDiv.style.display = '';
+//                break;
+//            case 'DAY':
+//                subscriptionDispatchMinuteDiv.style.display = '';
+//                subscriptionDispatchHourDiv.style.display = '';
+//                break;
+//            case 'WEEK':
+//                subscriptionDispatchMinuteDiv.style.display = '';
+//                subscriptionDispatchHourDiv.style.display = '';
+//                subscriptionDispatchDayDiv.style.display = '';
+//                break;
+//            case 'MONTH':
+//                subscriptionDispatchDateDiv.style.display = '';
+//                subscriptionDispatchHourDiv.style.display = '';
+//                subscriptionDispatchMinuteDiv.style.display = '';
+//                break;
+//        }
+//    }
 
 </script>
 <div id="header2">
@@ -114,7 +115,7 @@
 <div class="grid_16">
 <div id="dashboard-widgets-wrap">
 <div class="metabox-holder" id="dashboard-widgets">
-<form id="quick-press" name="appdetails" action="appDetails.html" method="post">
+<form method="post">
     <div class="postbox" id="dashboard_quick_press">
         <h3 class="hndle"><span>Application Details</span></h3>
         <script type="text/javascript" src="resources/javascripts/tablesorter/viewRequest.js"></script>
@@ -126,7 +127,7 @@
             <div>
                 <div style="margin-top:19px;margin-left:8px" class="input_row">
                     <div class="input-text-wrap">
-                        <input id="appName" name="app.appName" tabindex="10" disabled="disabled" readonly="readonly" type="text" value="Service"/>
+                        <input name="appName" tabindex="10" type="text" value="aaaaa" readonly="readonly"/>
                     </div>
                 </div>
             </div>
@@ -136,7 +137,7 @@
             </h4>
             <div class="info_group">
                 <div style="display:inline;padding-right:10px;"></div>
-                <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()" disabled="disabled">
+                <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
                     <option value="2545">1234</option>
                 </select>
             </div>
@@ -172,7 +173,7 @@
             </h4>
             <div style="margin-left:8px" class="input_row">
                 <div class="textarea-wrap">
-                    <textarea id="decs" name="app.description" disabled="disabled" readonly="readonly">First Service Application</textarea>
+                    <textarea id="appDescription" name="appDescription" disabled="disabled" readonly="readonly">First Service Application</textarea>
                 </div>
             </div>
             <div class="clear"></div>
@@ -192,7 +193,7 @@
             </h4>
             <div class="info_group">
                 <div style="margin-left:-69px;" class="error-req"></div>
-                <select id="duration" name="selectedPeriodUnit" style="min-width:143px;width:auto;" disabled="disabled">
+                <select id="scheduledType" name="scheduledType" style="min-width:143px;width:auto;" disabled="disabled">
                     <option value="HOUR" selected="selected">HOUR</option>
                     <option value="DAY">DAY</option>
                     <option value="WEEK">WEEK</option>
@@ -205,7 +206,7 @@
             <div style="float:left;margin: 0px 0px 0px 59px;" class="info_group"><span id="subscriptionDispatchDateDiv">
                       <label for="subscriptionDispatchDate">Date</label>
                       <span>&nbsp;</span>
-                      <select id="subscriptionDispatchDate" name="subscriptionDispatchDate" style="min-width:20px;width:auto;" disabled="disabled">
+                      <select id="dispatchTime" name="dispatchTime" style="min-width:20px;width:auto;" disabled="disabled">
                           <option value="1" selected="selected">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -303,17 +304,16 @@
             </h4>
         </div>
     </div>
-</form>
-<form id="app" name="confirmAlert" action="save.html" method="post">
     <div style="text-align:center; width:100%"><span style="padding-right:10px">
                   <input onclick="location.href='serviceAppStep1.html';" name="back" style="width:50px;" tabindex="5" type="button" class="button" value="Back" id="back"/>
                   </span><span style="padding-right:10px">
-                  <input onclick="location.href='ServiceAppSuccess';" name="next" style="width:50px;" tabindex="6" type="button" class="button" value="Confirm" id="next"/>
+                  <input style="width:50px;" tabindex="6" type="submit" class="button" value="Confirm"/>
                   </span><span>
                   <input onclick="location.href='appTypeSelection.html';" name="cancel" style="width:50px;" tabindex="6" type="button" class="button" value="Cancel" id="cancel"/>
                   </span></div>
     <div class="clear">&nbsp;</div>
 </form>
+
 </div>
 </div>
 </div>

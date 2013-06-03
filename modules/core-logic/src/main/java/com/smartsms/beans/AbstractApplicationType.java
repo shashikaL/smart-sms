@@ -13,7 +13,8 @@ public abstract class AbstractApplicationType {
     private ObjectId appId;
     private String appName;
     private String appDescription;
-    private String appValidity;
+    private String startDate;
+    private String endDate;
     private Keyword keyword;
 
     public ObjectId getAppId() {
@@ -40,19 +41,27 @@ public abstract class AbstractApplicationType {
         this.appDescription = appDescription;
     }
 
-    public String getAppValidity() {
-        return appValidity;
-    }
-
-    public void setAppValidity(String appValidity) {
-        this.appValidity = appValidity;
-    }
-
     public Keyword getKeyword() {
         return keyword;
     }
 
     public void setKeyword(Keyword keyword) {
         this.keyword = keyword;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 }
