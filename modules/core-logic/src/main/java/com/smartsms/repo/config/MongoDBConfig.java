@@ -15,6 +15,9 @@ public class MongoDBConfig {
     @Value("${smart.sms.apps.database.name}")
     private String appDatabaseName;
 
+    @Value("${smart.sms.user.database.name}")
+    private String userMgtDatabaseName;
+
     @Value("${smart.sms.apps.database.voting.collection}")
     private String votingCollectionName;
 
@@ -26,6 +29,9 @@ public class MongoDBConfig {
 
     @Value("${smart.sms.apps.database.contact.collection}")
     private String contactCollectionName;
+
+    @Value("${smart.sms.user.database.user.collection}")
+    private String userCollectionName;
 
     public String getMongoHost() {
         return mongoHost;
@@ -81,5 +87,21 @@ public class MongoDBConfig {
 
     public void setContactCollectionName(String contactCollectionName) {
         this.contactCollectionName = contactCollectionName;
+    }
+
+    public String getUserMgtDatabaseName() {
+        return userMgtDatabaseName;
+    }
+
+    public void setUserMgtDatabaseName(String userMgtDatabaseName) {
+        this.userMgtDatabaseName = userMgtDatabaseName;
+    }
+
+    public String getUserCollectionName() {
+        return userCollectionName;
+    }
+
+    public void setUserCollectionName(String userCollectionName) {
+        this.userCollectionName = userCollectionName;
     }
 }
