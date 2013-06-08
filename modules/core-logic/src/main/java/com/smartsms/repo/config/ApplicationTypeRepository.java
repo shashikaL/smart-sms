@@ -4,6 +4,8 @@ package com.smartsms.repo.config;
 import com.smartsms.beans.*;
 import org.bson.types.ObjectId;
 
+import java.util.List;
+
 public interface ApplicationTypeRepository {
 
     /**
@@ -18,6 +20,8 @@ public interface ApplicationTypeRepository {
      * @return
      */
     public VotingApplication findVotingApplicationById(ObjectId id);
+
+    public List<AlertApplication> findAllAlertApplication();
 
 
 }

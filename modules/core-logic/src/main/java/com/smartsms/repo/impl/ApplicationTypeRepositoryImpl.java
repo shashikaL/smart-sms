@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository {
 
@@ -39,5 +41,10 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     @Override
     public VotingApplication findVotingApplicationById(ObjectId id) {
         return mongoTemplate.findById(id, VotingApplication.class, mongoDBConfig.getVotingCollectionName());
+    }
+
+    @Override
+    public List<AlertApplication> findAllAlertApplication() {
+        return mongoTemplate.findAll(AlertApplication.class,mongoDBConfig.getAlertCollectionName());
     }
 }

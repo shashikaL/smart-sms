@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.WriteResultChecking;
 import org.springframework.stereotype.Component;
 
 /**
- * @author rajith
+ * @author shashi
  */
 @Component
 public class UserManagementMongoDbTemplate extends AbstractMongoTemplate {

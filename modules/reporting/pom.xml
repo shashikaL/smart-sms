@@ -12,10 +12,126 @@
     <artifactId>reporting</artifactId>
     <name>reporting</name>
     <packaging>war</packaging>
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jetty.version>6.1.4</jetty.version>
+        <birt.viewer.home>/home/rajith/my_projects/birt-runtime-4_2_2/WebViewerExample</birt.viewer.home>
+    </properties>
 
     <build>
         <finalName>reporting</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <wtpversion>2.0</wtpversion>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.1</version>
+                <executions>
+                    <execution>
+                        <id>config</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <tasks>
+                                <copy todir="${project.build.directory}/${project.build.finalName}/report">
+                                    <fileset dir="reports/report-design">
+                                    </fileset>
+                                </copy>
+                                <copy todir="${project.build.directory}/${project.build.finalName}/webcontent">
+                                    <fileset dir="${birt.viewer.home}/webcontent">
+                                    </fileset>
+                                </copy>
+                                <copy todir="${project.build.directory}/${project.build.finalName}/WEB-INF/lib">
+                                    <fileset dir="${birt.viewer.home}/WEB-INF/lib">
+                                    </fileset>
+                                </copy>
+                                <!--<copy todir="${project.build.directory}/${project.build.finalName}/WEB-INF/platform">-->
+                                <!--<fileset dir="${birt.viewer.home}/WEB-INF/platform">-->
+                                <!--</fileset>-->
+                                <!--</copy>-->
+                                <copy todir="${project.build.directory}/${project.build.finalName}/WEB-INF/tlds">
+                                    <fileset dir="${birt.viewer.home}/WEB-INF/tlds">
+                                    </fileset>
+                                </copy>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources1</id>
+                        <!-- here the phase you need -->
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/${project.build.finalName}/webcontent/birt/pages/control
+                            </outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources/control</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-resources2</id>
+                        <!-- here the phase you need -->
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/${project.build.finalName}/webcontent/birt/pages/dialog
+                            </outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources/dialog</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-resources3</id>
+                        <!-- here the phase you need -->
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/${project.build.finalName}/webcontent/birt/pages/layout
+                            </outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources/layout</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
 </project>

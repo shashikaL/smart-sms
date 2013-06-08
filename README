@@ -1,4 +1,3 @@
-This file was created by IntelliJ IDEA 12.0 for binding GitHub repository
 
 
 mvn clean install
@@ -8,3 +7,7 @@ mvn clean install -DskipTests
 To run the Mongodb
 mongod.exe -dbpath="D:\SLIIT\4th Year\Research\data\db"
 mongod.exe -dbpath="C:\SLIIT\4th YR\Semester1\Research\data\DB"
+
+
+https://www.facebook.com/dialog/oauth?client_id=524263680962135&redirect_uri=http://localhost:8080/app-ui/social-connections/login
+

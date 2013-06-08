@@ -1,5 +1,6 @@
 package com.smartsms.repo.impl;
 
+import com.smartsms.beans.AlertApplication;
 import com.smartsms.beans.Candidate;
 import com.smartsms.beans.Keyword;
 import com.smartsms.beans.VotingApplication;
@@ -31,6 +32,12 @@ public class ApplicationTypeRepositoryImplTest {
         Assert.assertEquals("votingapp",applicationById.getAppName());
         Assert.assertEquals("votingappdes",applicationById.getAppDescription());
         Assert.assertEquals("test1",applicationById.getKeyword().getName());
+
+        AlertApplication alertApplication = createAlertApplication();
+        applicationTypeRepository.saveApplication(alertApplication);
+
+        List<AlertApplication> allAlertApplication = applicationTypeRepository.findAllAlertApplication();
+        System.out.println(allAlertApplication.size());
     }
 
     private VotingApplication createVotingApplication(){
@@ -58,5 +65,22 @@ public class ApplicationTypeRepositoryImplTest {
         candidate.setDescription("test 1");
         candidates.add(candidate);
         return candidates;
+    }
+
+    private AlertApplication createAlertApplication(){
+        AlertApplication application = new AlertApplication();
+        application.setAppId(ObjectIDGenerator.getObjectID());
+        application.setAppName("alertapp");
+        application.setAppDescription("alertappdes");
+        application.setKeyword(createKeyword1());
+        return application;
+    }
+
+    private Keyword createKeyword1(){
+        Keyword keyword = new Keyword();
+        keyword.setId(ObjectIDGenerator.getObjectID());
+        keyword.setName("test11");
+        keyword.setShortCode("1234");
+        return keyword;
     }
 }
