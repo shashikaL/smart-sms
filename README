@@ -7,3 +7,4 @@ mvn clean install -DskipTests
 
 To run the Mongodb
 mongod.exe -dbpath="D:\SLIIT\4th Year\Research\data\db"
+mongod.exe -dbpath="C:\SLIIT\4th YR\Semester1\Research\data\DB"
