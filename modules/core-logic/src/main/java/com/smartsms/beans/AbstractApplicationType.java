@@ -1,27 +1,25 @@
 package com.smartsms.beans;
 
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public abstract class AbstractApplicationType {
 
     @Id
-    private ObjectId appId;
+    private String appId;
     private String appName;
     private String appDescription;
     private String startDate;
     private String endDate;
     private Keyword keyword;
 
-    public ObjectId getAppId() {
+    public String getAppId() {
         return appId;
     }
 
-    public void setAppId(ObjectId appId) {
+    public void setAppId(String appId) {
         this.appId = appId;
     }
 

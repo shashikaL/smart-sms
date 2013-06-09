@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @ContextConfiguration(locations = "classpath*:test-core-logic-context.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,11 +39,17 @@ public class ApplicationTypeRepositoryImplTest {
 
         List<AlertApplication> allAlertApplication = applicationTypeRepository.findAllAlertApplication();
         System.out.println(allAlertApplication.size());
+
+        Keyword keyword = new Keyword();
+        keyword.setName("test11");
+        keyword.setShortCode("1234");
+        AlertApplication alertApplicationByKeyword = applicationTypeRepository.findAlertApplicationByKeyword(keyword);
+        Assert.assertNotNull(alertApplicationByKeyword);
     }
 
     private VotingApplication createVotingApplication(){
         VotingApplication application = new VotingApplication();
-        application.setAppId(ObjectIDGenerator.getObjectID());
+        application.setAppId(UUID.randomUUID().toString());
         application.setAppName("votingapp");
         application.setAppDescription("votingappdes");
         application.setKeyword(createKeyword());
@@ -69,7 +76,7 @@ public class ApplicationTypeRepositoryImplTest {
 
     private AlertApplication createAlertApplication(){
         AlertApplication application = new AlertApplication();
-        application.setAppId(ObjectIDGenerator.getObjectID());
+        application.setAppId(UUID.randomUUID().toString());
         application.setAppName("alertapp");
         application.setAppDescription("alertappdes");
         application.setKeyword(createKeyword1());

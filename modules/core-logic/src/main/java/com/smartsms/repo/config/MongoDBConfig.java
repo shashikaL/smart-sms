@@ -33,6 +33,12 @@ public class MongoDBConfig {
     @Value("${smart.sms.user.database.user.collection}")
     private String userCollectionName;
 
+    @Value("${smart.sms.subscribers.database.name}")
+    private String subscribersDatabaseName;
+
+    @Value("${smart.sms.subscribers.database.subscriber.collection}")
+    private String subscriberCollectionName;
+
     public String getMongoHost() {
         return mongoHost;
     }
@@ -103,5 +109,21 @@ public class MongoDBConfig {
 
     public void setUserCollectionName(String userCollectionName) {
         this.userCollectionName = userCollectionName;
+    }
+
+    public String getSubscribersDatabaseName() {
+        return subscribersDatabaseName;
+    }
+
+    public void setSubscribersDatabaseName(String subscribersDatabaseName) {
+        this.subscribersDatabaseName = subscribersDatabaseName;
+    }
+
+    public String getSubscriberCollectionName() {
+        return subscriberCollectionName;
+    }
+
+    public void setSubscriberCollectionName(String subscriberCollectionName) {
+        this.subscriberCollectionName = subscriberCollectionName;
     }
 }
