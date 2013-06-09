@@ -232,11 +232,11 @@
                         </div>
                     </form>
                     <div style="text-align:center; width:100%"><span style="padding-right:10px">
-                <input onclick="location.href='mySettings.html';" name="back" style="width:50px;" tabindex="5" type="button" class="button" value="Back" id="back"/>
+                <input onclick="location.href='MySettings';" name="back" style="width:50px;" tabindex="5" type="button" class="button" value="Back" id="back"/>
                 </span><span style="padding-right:10px">
-                <input onclick="location.href='myProfile.html';" name="back" style="width:50px;" tabindex="5" type="button" class="button" value="Reset" id="reset"/>
+                <input onclick="location.href='MyProfile';" name="back" style="width:50px;" tabindex="5" type="button" class="button" value="Reset" id="reset"/>
                 </span><span>
-                <input onclick="location.href='home.html';" name="next" style="width:50px;" tabindex="6" type="button" class="button" value="Cancel" id="next"/>
+                <input onclick="location.href='Home';" name="next" style="width:50px;" tabindex="6" type="button" class="button" value="Cancel" id="next"/>
                 </span></div>
                     <div class="clear">&nbsp;</div>
                 </div>
