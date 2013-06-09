@@ -310,8 +310,8 @@
 
                                 <div id="TabbedPanels1" class="TabbedPanels">
                                     <ul class="TabbedPanelsTabGroup">
+                                        <li class="TabbedPanelsTab" tabindex="0">Filtered</li>
                                         <li class="TabbedPanelsTab" tabindex="0">Messages</li>
-                                        <li class="TabbedPanelsTab" tabindex="0">Filter</li>
                                         <li class="TabbedPanelsTab" tabindex="0">Tab3</li>
                                     </ul>
 
