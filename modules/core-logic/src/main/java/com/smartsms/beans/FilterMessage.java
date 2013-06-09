@@ -1,11 +1,24 @@
 package com.smartsms.beans;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Niro
- * Date: 6/9/13
- * Time: 4:25 PM
- * To change this template use File | Settings | File Templates.
- */
+
 public class FilterMessage {
+
+    private String appId;
+    private String message;
+
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
