@@ -63,200 +63,207 @@
 <script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
 <script type="text/javascript">
 
-    //    document.getElementById("input-text-wrap").style.backgroundColor="#D6D5D9";
 
-    function toggle(div_id) {
-        var el = document.getElementById(div_id);
-        if ( el.style.display == 'none' ) {	el.style.display = 'block';}
-        else {el.style.display = 'none';}
+//----------------------------Pop up window----------------------------------------------------
+function toggle(div_id) {
+    var el = document.getElementById(div_id);
+    if ( el.style.display == 'none' ) {	el.style.display = 'block';}
+    else {el.style.display = 'none';}
+}
+function blanket_size(popUpDivVar) {
+    if (typeof window.innerWidth != 'undefined') {
+        viewportheight = window.innerHeight;
+    } else {
+        viewportheight = document.documentElement.clientHeight;
     }
-    function blanket_size(popUpDivVar) {
-        if (typeof window.innerWidth != 'undefined') {
-            viewportheight = window.innerHeight;
+    if ((viewportheight > document.body.parentNode.scrollHeight) && (viewportheight > document.body.parentNode.clientHeight)) {
+        blanket_height = viewportheight;
+    } else {
+        if (document.body.parentNode.clientHeight > document.body.parentNode.scrollHeight) {
+            blanket_height = document.body.parentNode.clientHeight;
         } else {
-            viewportheight = document.documentElement.clientHeight;
+            blanket_height = document.body.parentNode.scrollHeight;
         }
-        if ((viewportheight > document.body.parentNode.scrollHeight) && (viewportheight > document.body.parentNode.clientHeight)) {
-            blanket_height = viewportheight;
-        } else {
-            if (document.body.parentNode.clientHeight > document.body.parentNode.scrollHeight) {
-                blanket_height = document.body.parentNode.clientHeight;
-            } else {
-                blanket_height = document.body.parentNode.scrollHeight;
-            }
-        }
-        var blanket = document.getElementById('blanket');
-        blanket.style.height = blanket_height + 'px';
-        var popUpDiv = document.getElementById(popUpDivVar);
-        popUpDiv_height=blanket_height/2-200;//200 is half popup's height
-        popUpDiv.style.top = popUpDiv_height + 'px';
     }
-    function window_pos(popUpDivVar) {
-        if (typeof window.innerWidth != 'undefined') {
-            viewportwidth = window.innerHeight;
-        } else {
-            viewportwidth = document.documentElement.clientHeight;
-        }
-        if ((viewportwidth > document.body.parentNode.scrollWidth) && (viewportwidth > document.body.parentNode.clientWidth)) {
-            window_width = viewportwidth;
-        } else {
-            if (document.body.parentNode.clientWidth > document.body.parentNode.scrollWidth) {
-                window_width = document.body.parentNode.clientWidth;
-            } else {
-                window_width = document.body.parentNode.scrollWidth;
-            }
-        }
-        var popUpDiv = document.getElementById(popUpDivVar);
-        window_width=window_width/2-200;//200 is half popup's width
-        popUpDiv.style.left = window_width + 'px';
+    var blanket = document.getElementById('blanket');
+    blanket.style.height = blanket_height + 'px';
+    var popUpDiv = document.getElementById(popUpDivVar);
+    popUpDiv_height=blanket_height/2-200;//200 is half popup's height
+    popUpDiv.style.top = popUpDiv_height + 'px';
+}
+function window_pos(popUpDivVar) {
+    if (typeof window.innerWidth != 'undefined') {
+        viewportwidth = window.innerHeight;
+    } else {
+        viewportwidth = document.documentElement.clientHeight;
     }
-
-
-    function popup(windowname) {
-        blanket_size(windowname);
-        window_pos(windowname);
-        toggle('blanket');
-        toggle(windowname);
-    }
-
-
-
-
-    function toggleEditButton(buttonId) {
-        var button = document.getElementById(buttonId);
-        if(button.innerHTML == "Edit") {
-            if(buttonId == "edit"){
-                enableEdit();
-            } else if(buttonId == "editBill") {
-                enableEditBill();
-            } else if(buttonId == "editPassword") {
-                enableEditPassword();
-            }
-            button.innerHTML="Update";
+    if ((viewportwidth > document.body.parentNode.scrollWidth) && (viewportwidth > document.body.parentNode.clientWidth)) {
+        window_width = viewportwidth;
+    } else {
+        if (document.body.parentNode.clientWidth > document.body.parentNode.scrollWidth) {
+            window_width = document.body.parentNode.clientWidth;
         } else {
-            if(buttonId == "editPassword") {
-                if(isEmptyField()) {
-                    disableEditPassword();
-                }
-                else {
-                    changePassword();
-                }
+            window_width = document.body.parentNode.scrollWidth;
+        }
+    }
+    var popUpDiv = document.getElementById(popUpDivVar);
+    window_width=window_width/2-200;//200 is half popup's width
+    popUpDiv.style.left = 200 + 'px';
+    //window_width
+}
 
+
+function popup(windowname) {
+    blanket_size(windowname);
+    window_pos(windowname);
+    toggle('blanket');
+    toggle(windowname);
+    document.getElementById('email').focus();
+}
+
+
+
+
+function toggleEditButton(buttonId) {
+    var button = document.getElementById(buttonId);
+    if(button.innerHTML == "Edit") {
+        if(buttonId == "edit"){
+            enableEdit();
+        } else if(buttonId == "editBill") {
+            enableEditBill();
+        } else if(buttonId == "editPassword") {
+            enableEditPassword();
+        }
+        button.innerHTML="Update";
+    } else {
+        if(buttonId == "editPassword") {
+            if(isEmptyField()) {
+                disableEditPassword();
             }
             else {
-                update();
+                changePassword();
             }
 
-            button.innerHTML="Edit";
+        }
+        else {
+            update();
         }
 
+        button.innerHTML="Edit";
     }
 
-
-    //---------------- Aprove Block suspend-----------------------
-
-    function appove(){
-        alert("dasas");
-    }
-
-    function block(){
-        alert("block");
-    }
+}
 
 
-    function suspend(){
-        alert("suspend");
-    }
+function set_email(){
+    document.getElementById('email').value = document.getElementById('owner_email').value;
+}
+
+
+//---------------- Aprove Block suspend-----------------------
+
+function appove(){
+    alert("Aproved");
+}
+
+function block(){
+    alert("block");
+}
+
+
+function suspend(){
+    alert("suspend");
+}
 
 
 
-    function isEmptyField() {
-        var txtPassword = document.getElementById("password");
-        var txtNewPassword = document.getElementById("newPassword");
-        var txtConfirmPassword = document.getElementById("confirmPassword");
+function isEmptyField() {
+    var txtPassword = document.getElementById("password");
+    var txtNewPassword = document.getElementById("newPassword");
+    var txtConfirmPassword = document.getElementById("confirmPassword");
 
-        if(txtPassword.value.length.toString() == "0") {
-            if(txtNewPassword.value.length.toString() == "0") {
-                if(txtConfirmPassword.value.length.toString() == "0") {
-                    return true;
-                }
+    if(txtPassword.value.length.toString() == "0") {
+        if(txtNewPassword.value.length.toString() == "0") {
+            if(txtConfirmPassword.value.length.toString() == "0") {
+                return true;
             }
         }
-
-        return false;
     }
 
-    function enableEdit(){
+    return false;
+}
+
+function enableEdit(){
 //        setReadonlyState(document.getElementById("regType"),false);
 //        setReadonlyState(document.getElementById("RadioGroup3_2"),false);
 //        setReadonlyState(document.getElementById("RadioGroup3_1"),false);
 //        setReadonlyState(document.getElementById("email2"),false);
 //        setReadonlyState(document.getElementById('contactPersonName'),false);
 //        setReadonlyState(document.getElementById('name'),false);
-        setReadonlyState(document.getElementById('email'),false);
-        setReadonlyState(document.getElementById('telephone'),false);
+    setReadonlyState(document.getElementById('email'),false);
+    setReadonlyState(document.getElementById('telephone'),false);
 //        setReadonlyState(document.getElementById("regCode"),false);
 //        document.getElementById("regType").style.backgroundColor = "#C0C0C0";
 
 
 
+}
+function enableEditBill() {
+    setReadonlyState(document.getElementById("billName"),false);
+    setReadonlyState(document.getElementById("address"),false);
+    setDisabledState(document.getElementById("RadioGroup2_1"),false);
+    setDisabledState(document.getElementById("RadioGroup2_2"),false);
+}
+
+function enableEditPassword() {
+    setReadonlyState(document.getElementById("password"),false);
+    setReadonlyState(document.getElementById("newPassword"),false);
+    setReadonlyState(document.getElementById("confirmPassword"),false);
+
+}
+
+function disableEditPassword() {
+    setReadonlyState(document.getElementById("password"),true);
+    setReadonlyState(document.getElementById("newPassword"),true);
+    setReadonlyState(document.getElementById("confirmPassword"),true);
+
+}
+
+function setDisabledState(obj, state) {
+    if (state) {
+        obj.setAttribute('disabled', state);
+    } else {
+        obj.removeAttribute('disabled');
     }
-    function enableEditBill() {
-        setReadonlyState(document.getElementById("billName"),false);
-        setReadonlyState(document.getElementById("address"),false);
-        setDisabledState(document.getElementById("RadioGroup2_1"),false);
-        setDisabledState(document.getElementById("RadioGroup2_2"),false);
+}
+
+
+function setReadonlyState(obj, state) {
+    if (state) {
+        obj.setAttribute('readOnly', state);
+    } else {
+        obj.removeAttribute('readOnly');
     }
+}
 
-    function enableEditPassword() {
-        setReadonlyState(document.getElementById("password"),false);
-        setReadonlyState(document.getElementById("newPassword"),false);
-        setReadonlyState(document.getElementById("confirmPassword"),false);
+function changePassword() {
+    document.personalDetail.action="../personalData/changePassword.html";
+    document.personalDetail.submit();
+}
 
-    }
+function update() {
 
-    function disableEditPassword() {
-        setReadonlyState(document.getElementById("password"),true);
-        setReadonlyState(document.getElementById("newPassword"),true);
-        setReadonlyState(document.getElementById("confirmPassword"),true);
+    document.personalDetail.action="../personalData/update.html";
+    document.personalDetail.submit();
+}
 
-    }
-
-    function setDisabledState(obj, state) {
-        if (state) {
-            obj.setAttribute('disabled', state);
-        } else {
-            obj.removeAttribute('disabled');
+function confirmDelete() {
+    var confirmationTxt = 'Are you sure, you want to remove this number?';
+    jConfirm(confirmationTxt, 'Confirmation Dialog', function(r) {
+        if(r == true) {
         }
-    }
-
-
-    function setReadonlyState(obj, state) {
-        if (state) {
-            obj.setAttribute('readOnly', state);
-        } else {
-            obj.removeAttribute('readOnly');
-        }
-    }
-
-    function changePassword() {
-        document.personalDetail.action="../personalData/changePassword.html";
-        document.personalDetail.submit();
-    }
-
-    function update() {
-
-        document.personalDetail.action="../personalData/update.html";
-        document.personalDetail.submit();
-    }
-
-    function confirmDelete() {
-        var confirmationTxt = 'Are you sure, you want to remove this number?';
-        jConfirm(confirmationTxt, 'Confirmation Dialog', function(r) {
-            if(r == true) {
-            }
-        });
-    }
+    });
+}
 
 </script>
 
@@ -275,15 +282,15 @@
             <table width="400" border="0">
                 <tr>
                     <td>email</td>
-                    <td><input type="text" value="" id="email" name="email" width="100px" /></td>
+                    <td><input type="text" id="email" name="email" value="" onfocus="set_email()" width="120px" onblur="set_email()" /></td>
                 </tr>
                 <tr>
                     <td>Messege</td>
-                    <td><textarea name="messege" cols="20" rows="6"></textarea></td>
+                    <td><textarea name="messege" cols="30" rows="6"></textarea></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td><input type="button" value="send" onclick=""  /></td>
+                    <td><input type="button" value="Send" onclick=""  /></td>
+                    <td><input type="button" value="Close" onclick="popup('popUpDiv')"  /></td>
                 </tr>
             </table>
 
@@ -305,13 +312,13 @@
                                 <div class="clear"></div>
 
 
-                                </span></div>
+                                </div>
                             <div class="clear">
 
                                 <div id="TabbedPanels1" class="TabbedPanels">
                                     <ul class="TabbedPanelsTabGroup">
-                                        <li class="TabbedPanelsTab" tabindex="0">Filtered</li>
                                         <li class="TabbedPanelsTab" tabindex="0">Messages</li>
+                                        <li class="TabbedPanelsTab" tabindex="0">Filter</li>
                                         <li class="TabbedPanelsTab" tabindex="0">Tab3</li>
                                     </ul>
 
@@ -325,15 +332,15 @@
                                                 <th scope="col">Action </th>
                                             </tr>
                                             <tr>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
+                                                <td><p>1005A</p></td>
+                                                <td><p>Test Messege</p></td>
+                                                <td><input type="text" name="owner_email" id="owner_email" value="niraga89@gmail.com" readonly></td>
                                                 <td>
                                                     <table width="250" border="1">
                                                         <tr>
-                                                            <td><a href="javascript:appove();"> Approve </a></td>
-                                                            <td><a href="javascript:popup('popUpDiv');">Block </a></td>
-                                                            <td><a href="javascript:popup('popUpDiv');">Suspend User </a></td>
+                                                            <td><a href="javascript:appove();" style="color:#0C3; font-size:12px; font-weight:600;"> Approve </a></td>
+                                                            <td><a href="javascript:popup('popUpDiv');" style="color:#F00; font-size:12px; font-weight:600;"> Block </a></td>
+                                                            <td><a href="javascript:popup('popUpDiv');" style="color:#F63; font-size:12px; font-weight:600;"> Suspend User </a></td>
                                                         </tr>
                                                     </table>
 
@@ -348,6 +355,7 @@
 
                             </div>
                         </div>
+                        </form>
                 </div>
             </div>
             <div class="grid_1 omega">&nbsp;</div>
@@ -359,5 +367,6 @@
 <script type="text/javascript">
     var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
 </script>
+
         </body>
 </html>
