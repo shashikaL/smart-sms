@@ -665,7 +665,7 @@ var selectedKeyword = '';
                   <input onclick="location.href='AppTypeSelection';" name="cancel" type="button" class="button"
                          value="Back"/>
                   </span><span>
-                   <input onclick="location.href='AlertAppConfirm';" name="next" type="button" class="button" value="Next" id="next"/>
+                   <input  name="next" type="submit" class="button" value="Next" id="next"/>
                  </span></div>
                     <div class="clear">&nbsp;</div>
             </div>

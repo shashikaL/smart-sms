@@ -2,7 +2,6 @@ package com.smartsms.beans;
 
 
 public class FilterMessage {
-
     private String appId;
     private String message;
 

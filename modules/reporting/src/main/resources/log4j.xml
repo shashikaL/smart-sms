@@ -32,7 +32,7 @@
     </appender>
 
     <appender name="error" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="/home/rajith/my_projects/logs/reporting-vigraha.log"/>
+        <param name="File" value="/home/rajith/my_projects/logs/reporting-error.log"/>
         <param name="Threshold" value="error"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">

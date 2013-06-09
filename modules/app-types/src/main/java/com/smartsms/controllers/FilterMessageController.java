@@ -12,18 +12,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FilterMessageController {
 
     @RequestMapping(value = "/filter", method = RequestMethod.POST)
-    public String redirect(@RequestBody FilterMessage filterMessage){
+    public String redirect(@RequestBody FilterMessage filterMessage) {
 
         FilterMessage fm = filterMessage;
         String Message = fm.getMessage();
 
-        String [] splittedArray = Message.split("\\W+");
+        String[] splittedArray = Message.split("\\W+");
 
         Malformed ml = new Malformed();
-        for(int i=0 ; i<((splittedArray.length)+1) ; i++)
-        {
-            for(int r=0 ; r<((ml.getMalformedKeyword().size())+1) ; r++)
-            {
+        for (int i = 0; i < ((splittedArray.length) + 1); i++) {
+            for (int r = 0; r < ((ml.getMalformedKeyword().size()) + 1); r++) {
                 splittedArray[i] = ml.getMalformedKeyword().get(r);
             }
         }
