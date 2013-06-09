@@ -15,7 +15,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jetty.version>6.1.4</jetty.version>
-        <birt.viewer.home>/home/rajith/my_projects/birt-runtime-4_2_2/WebViewerExample</birt.viewer.home>
+        <birt.viewer.home>C:\Users\Sony\Desktop\birt-runtime-4_2_2\WebViewerExample</birt.viewer.home>
     </properties>
 
     <build>
