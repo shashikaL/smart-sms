@@ -13,34 +13,34 @@
     <title>SmartSMS - SMS Based Application Management Platform</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name='robots' content='noindex,nofollow'/>
-    <link rel="shortcut icon" href="smartSMS/images/fav.ico"/>
-    <link rel='stylesheet' href='smartSMS/css/body.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/custom.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/login.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/tables.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/grid.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/manage.css' type='text/css' media='all'/>
-    <link rel="stylesheet" href="smartSMS/css/facebox/facebox.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/image-stripping.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/ui/custom.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/dialog/jquery.alerts.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/ui-hint.css" media="screen" type="text/css"/>
-    <script type="text/javascript" src="smartSMS/javascripts/facebox/jquery.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/facebox/facebox.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/application.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/addHTMLControls.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/orca_js.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/validate.js"></script>
+    <link rel="shortcut icon" href="resources/images/fav.ico"/>
+    <link rel='stylesheet' href='resources/css/body.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/custom.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/login.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/tables.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/grid.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/manage.css' type='text/css' media='all'/>
+    <link rel="stylesheet" href="resources/css/facebox/facebox.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/image-stripping.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/ui/custom.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/dialog/jquery.alerts.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/ui-hint.css" media="screen" type="text/css"/>
+    <script type="text/javascript" src="resources/javascripts/facebox/jquery.js"></script>
+    <script type="text/javascript" src="resources/javascripts/facebox/facebox.js"></script>
+    <script type="text/javascript" src="resources/javascripts/application.js"></script>
+    <script type="text/javascript" src="resources/javascripts/addHTMLControls.js"></script>
+    <script type="text/javascript" src="resources/javascripts/orca_js.js"></script>
+    <script type="text/javascript" src="resources/javascripts/validate.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $('a[rel*=facebox]').facebox();
         });
     </script>
-    <script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/datetime.js"></script>
-    <script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/jquery.bgiframe.js"></script>
-    <script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/dialog/jquery.alerts.js"></script>
+    <script language="JavaScript" type="text/javascript" src="resources/javascripts/datetime.js"></script>
+    <script language="JavaScript" type="text/javascript" src="resources/javascripts/jquery.bgiframe.js"></script>
+    <script language="JavaScript" type="text/javascript" src="resources/javascripts/dialog/jquery.alerts.js"></script>
     <!--[if lte IE 7]>
-    <link rel='stylesheet' id='ie-css' href='smartSMS/css/ie.css' type='text/css'
+    <link rel='stylesheet' id='ie-css' href='resources/css/ie.css' type='text/css'
           media='all'/>
     <![endif]-->
 </head>
@@ -56,7 +56,7 @@
             });
         }
     </script>
-    <script type="text/javascript" src="smartSMS/javascripts/header.js" language="javascript"></script>
+    <script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
     <div id="header2">
         <p id="tagline"><br/>
             <br/>
@@ -87,7 +87,7 @@
                                             <div style="width:400px;">
                                                 <div style="width:160px;float:left;text-align:left;"><label><strong>Keyword</strong></label></div>
                                                 <div style="width:140px;float:left;text-align:left; padding-left:10px"><label><strong>Message Content</strong></label></div>
-                                                <div style="padding-left:10px;float:left;"><img src="smartSMS/images/16x16.gif"/></div>
+                                                <div style="padding-left:10px;float:left;"><img src="resourcess/images/16x16.gif"/></div>
                                             </div>
                                             <div style="width:650px;">
                                                 <div style="padding-right:50px" class="error-req-right-al"></div>
@@ -145,7 +145,7 @@
         <div class="clear"></div>
     </div>
 </div>
-<script type="text/javascript" src="smartSMS/javascripts/footer.js" language="javascript"></script>
+<script type="text/javascript" src="resources/javascripts/footer.js" language="javascript"></script>
 </div>
 </body>
 </html>
