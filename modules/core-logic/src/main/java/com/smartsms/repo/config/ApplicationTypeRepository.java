@@ -19,9 +19,11 @@ public interface ApplicationTypeRepository {
      * @param id
      * @return
      */
-    public VotingApplication findVotingApplicationById(ObjectId id);
+    public VotingApplication findVotingApplicationById(String id);
 
     public List<AlertApplication> findAllAlertApplication();
+
+    public AlertApplication findAlertApplicationByKeyword(Keyword keyword);
 
 
 }

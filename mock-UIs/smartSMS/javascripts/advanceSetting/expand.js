@@ -1,8 +1,8 @@
 (function($) {
     $.fn.expandAll = function(options) {
         var defaults = {
-            expTxt : '[Expand All]',
-            cllpsTxt : '[Collapse All]',
+            expTxt : '[Expand]',
+            cllpsTxt : '[Collapse]',
             cllpsEl : '.collapse', // the collapsible element
             trigger : '.expand', // the elements that contain the trigger of the toggle effect on the individual collapsible sections
             ref : '.expand', // the switch 'Expand All/Collapse All' is inserted before the 'ref'

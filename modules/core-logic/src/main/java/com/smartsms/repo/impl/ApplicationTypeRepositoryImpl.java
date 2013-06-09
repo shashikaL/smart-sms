@@ -39,12 +39,27 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     }
 
     @Override
-    public VotingApplication findVotingApplicationById(ObjectId id) {
+    public VotingApplication findVotingApplicationById(String id) {
         return mongoTemplate.findById(id, VotingApplication.class, mongoDBConfig.getVotingCollectionName());
     }
 
     @Override
     public List<AlertApplication> findAllAlertApplication() {
-        return mongoTemplate.findAll(AlertApplication.class,mongoDBConfig.getAlertCollectionName());
+        return mongoTemplate.findAll(AlertApplication.class, mongoDBConfig.getAlertCollectionName());
+    }
+
+    @Override
+    public AlertApplication findAlertApplicationByKeyword(Keyword keyword) {
+        List<AlertApplication> alertApplications = mongoTemplate.findAll(AlertApplication.class, mongoDBConfig.getAlertCollectionName());
+        for (AlertApplication alertApplication : alertApplications) {
+            if (alertApplication.getKeyword() == null) {
+                continue;
+            }
+            Keyword keyword1 = alertApplication.getKeyword();
+            if(keyword1.getName().equals(keyword.getName()) && keyword1.getShortCode().equals(keyword.getShortCode())){
+                return alertApplication;
+            }
+        }
+        return null;
     }
 }

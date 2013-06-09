@@ -52,54 +52,7 @@
     }
 </script>
 <script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
-<script type="text/javascript">
 
-
-//    $(document).ready(function() {
-//        var editState = 'false';
-//
-//        showDispatchTime();
-//    });
-//
-//    var req = '-';
-//    var resformat = 'html';
-//    var callbackfunc = '-';
-//
-//    function showDispatchTime() {
-//        var selectedOptionIndex = document.getElementById("duration").selectedIndex;
-//        var selectedOption = document.getElementById("duration").options[selectedOptionIndex].value;
-//        var subscriptionDispatchDateDiv = document.getElementById("subscriptionDispatchDateDiv");
-//        var subscriptionDispatchDayDiv = document.getElementById("subscriptionDispatchDayDiv");
-//        var subscriptionDispatchHourDiv = document.getElementById("subscriptionDispatchHourDiv");
-//        var subscriptionDispatchMinuteDiv = document.getElementById("subscriptionDispatchMinuteDiv");
-//
-//        subscriptionDispatchDateDiv.style.display = 'none';
-//        subscriptionDispatchDayDiv.style.display = 'none';
-//        subscriptionDispatchHourDiv.style.display = 'none';
-//        subscriptionDispatchMinuteDiv.style.display = 'none';
-//
-//        switch (selectedOption) {
-//            case 'HOUR':
-//                subscriptionDispatchMinuteDiv.style.display = '';
-//                break;
-//            case 'DAY':
-//                subscriptionDispatchMinuteDiv.style.display = '';
-//                subscriptionDispatchHourDiv.style.display = '';
-//                break;
-//            case 'WEEK':
-//                subscriptionDispatchMinuteDiv.style.display = '';
-//                subscriptionDispatchHourDiv.style.display = '';
-//                subscriptionDispatchDayDiv.style.display = '';
-//                break;
-//            case 'MONTH':
-//                subscriptionDispatchDateDiv.style.display = '';
-//                subscriptionDispatchHourDiv.style.display = '';
-//                subscriptionDispatchMinuteDiv.style.display = '';
-//                break;
-//        }
-//    }
-
-</script>
 <div id="header2">
 <p id="tagline"><br/>
     <br/>
@@ -109,105 +62,96 @@
 <div class="sub_heading">
     <h1>Create a Service Application</h1>
 </div>
-<div class="navi_link2"></div>
-<div style="text-align: center; font-weight:bold; width:100%"><label class="confirm">Please verify & press 'Confirm' to continue.</label></div>
+<div class="navi_link4"></div>
+<div class="clear">&nbsp;</div>
+<div style="text-align: center; font-weight:bold; width:100%">
+    <label class="confirm">Please verify & press 'Confirm' to continue.</label></div>
 <div class="grid_1 alpha">&nbsp;</div>
 <div class="grid_16">
 <div id="dashboard-widgets-wrap">
 <div class="metabox-holder" id="dashboard-widgets">
-<form method="post">
-    <div class="postbox" id="dashboard_quick_press">
-        <h3 class="hndle"><span>Application Details</span></h3>
-        <script type="text/javascript" src="resources/javascripts/tablesorter/viewRequest.js"></script>
-        <div class="inside">
-            <div class="clear"></div>
-            <h4 style="margin-top:14px;">
-                <label for="appName">Application Name</label>
-            </h4>
-            <div>
-                <div style="margin-top:19px;margin-left:8px" class="input_row">
-                    <div class="input-text-wrap">
-                        <input name="appName" tabindex="10" type="text" value="aaaaa" readonly="readonly"/>
-                    </div>
-                </div>
-            </div>
-            <div></div>
-            <h4>
-                <label for="short3">Keyword Details</label>
-            </h4>
-            <div class="info_group">
-                <div style="display:inline;padding-right:10px;"></div>
-                <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
-                    <option value="2545">1234</option>
-                </select>
-            </div>
-            <h4>
-                <label>Application Validity Duration</label>
-            </h4>
-            <label style="float:left;margin: 0.3em 0 1em 5.6em;width:100px;" for="startDate">Start date</label>
-            <div style="width:200px;margin-left:-50px" class="input_row">
-                <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-22px;"></div>
-                <div style="width:130px;" class="input-text-wrap">
-                    <div>
-                        <input id="startDate" name="startDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="10/03/2011"/>
-                    </div>
-                </div>
-            </div>
-            <h4>
-                <label>&nbsp;</label>
-            </h4>
-            <div>
-                <label style="float:left;margin: 0.3em 0 1em 5.6em;width:100px;" for="endDate">End date</label>
-                <div style="width:200px;margin-left:-50px" class="input_row">
-                    <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-22px;"></div>
-                    <div style="width:130px;" class="input-text-wrap">
-                        <div>
-                            <input id="endDate" name="endDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="10/04/2011"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clear"></div>
-            <h4>
-                <label for="decs">Description</label>
-            </h4>
-            <div style="margin-left:8px" class="input_row">
-                <div class="textarea-wrap">
-                    <textarea id="appDescription" name="appDescription" disabled="disabled" readonly="readonly">First Service Application</textarea>
-                </div>
-            </div>
-            <div class="clear"></div>
-            <div class="clear"></div>
-            <div class="clear"></div>
+<div class="postbox" id="dashboard_quick_press">
+<form id="quick-press" name="appdetails" action="appDetails.html" method="post">
+<h3 class="hndle"><span>Application Details</span></h3>
+<script type="text/javascript" src="resources/javascripts/tablesorter/viewRequest.js"></script>
+<div class="inside">
+<div class="clear"></div>
+<h4 style="margin-top:14px;">
+    <label for="appName">Application Name</label>
+</h4>
+<div>
+    <div style="margin-top:19px;margin-left:8px" class="input_row">
+        <div class="input-text-wrap">
+            <input id="appName" name="app.appName" tabindex="10" disabled="disabled" readonly="readonly" type="text" value="Service"/>
         </div>
     </div>
-    <div class="postbox" id="dashboard_quick_press">
-        <h3 class="hndle"><span>Service</span></h3>
-        <div class="inside">
-            <script type="text/javascript">
-                var lastShownElementId = 1;
-                hideAllKeywordOnlyElements();
-            </script>
-            <h4>
-                <label for="short3">Message Scheduled Duration</label>
-            </h4>
-            <div class="info_group">
-                <div style="margin-left:-69px;" class="error-req"></div>
-                <select id="scheduledType" name="scheduledType" style="min-width:143px;width:auto;" disabled="disabled">
-                    <option value="HOUR" selected="selected">HOUR</option>
-                    <option value="DAY">DAY</option>
-                    <option value="WEEK">WEEK</option>
-                    <option value="MONTH">MONTH</option>
-                </select>
+</div>
+<div></div>
+<h4>
+    <label for="short3">Keyword Details</label>
+</h4>
+<div class="info_group">
+    <div style="display:inline"></div>
+    <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
+        <option value="2545">1234</option>
+    </select>
+</div>
+<h4>
+    <label>Application Validity Duration</label>
+</h4>
+<label style="float:left;margin: 0.3em 0 1em 5.6em;width:100px;" for="startDate">Start date</label>
+<div style="width:200px;margin-left:-50px" class="input_row">
+    <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-22px;"></div>
+    <div style="width:130px;" class="input-text-wrap">
+        <div>
+            <input id="startDate" name="startDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="09/03/2013"/>
+        </div>
+    </div>
+</div>
+<h4>
+    <label>&nbsp;</label>
+</h4>
+<div>
+    <label style="float:left;margin: 0.3em 0 1em 5.6em;width:100px;" for="endDate">End date</label>
+    <div style="width:200px;margin-left:-50px" class="input_row">
+        <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-22px;"></div>
+        <div style="width:130px;" class="input-text-wrap">
+            <div>
+                <input id="endDate" name="endDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="09/04/2013"/>
             </div>
-            <h4>
-                <label for="dispatchTime">Time Interval</label>
-            </h4>
-            <div style="float:left;margin: 0px 0px 0px 59px;" class="info_group"><span id="subscriptionDispatchDateDiv">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<h4>
+    <label for="decs">Description</label>
+</h4>
+<div style="margin-left:8px" class="input_row">
+    <div class="textarea-wrap">
+        <textarea id="decs" name="app.description" disabled="disabled" readonly="readonly">First Service Application</textarea>
+    </div>
+</div>
+
+
+<h4>
+    <label for="short3">Message Scheduled Duration</label>
+</h4>
+<div class="info_group">
+    <div style="margin-left:-69px;" class="error-req"></div>
+    <select id="duration" name="selectedPeriodUnit" style="min-width:160px;width:auto;margin-left:-10px;" onchange="showDispatchTime();">
+        <option value="HOUR">HOUR</option>
+        <option value="DAY">DAY</option>
+        <option value="WEEK">WEEK</option>
+        <option value="MONTH">MONTH</option>
+    </select>
+</div>
+<h4>
+    <label for="dispatchTime">Time Interval</label>
+</h4>
+<div style="float:left;margin: 0px 0px 0px 55px;" class="info_group"><span id="subscriptionDispatchDateDiv">
                       <label for="subscriptionDispatchDate">Date</label>
-                      <span>&nbsp;</span>
-                      <select id="dispatchTime" name="dispatchTime" style="min-width:20px;width:auto;" disabled="disabled">
-                          <option value="1" selected="selected">1</option>
+                      <select id="subscriptionDispatchDate" name="subscriptionDispatchDate" style="min-width:20px;width:auto;">
+                          <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
                           <option value="4">4</option>
@@ -242,9 +186,8 @@
                       </select>
                       </span><span id="subscriptionDispatchDayDiv">
                       <label for="subscriptionDispatchDay">Day</label>
-                      <span>&nbsp;</span>
-                      <select id="subscriptionDispatchDay" name="subscriptionDispatchDay" style="min-width:20px;width:auto;" disabled="disabled">
-                          <option value="7" selected="selected">Sun</option>
+                      <select id="subscriptionDispatchDay" name="subscriptionDispatchDay" style="min-width:20px;width:auto;">
+                          <option value="7">Sun</option>
                           <option value="1">Mon</option>
                           <option value="2">Tue </option>
                           <option value="3">Wed</option>
@@ -254,8 +197,8 @@
                       </select>
                       </span><span id="subscriptionDispatchHourDiv">
                       <label for="subscriptionDispatchHour">Hour</label>
-                      <span>&nbsp;</span>
-                      <select id="subscriptionDispatchHour" name="subscriptionDispatchHour" style="min-width:20px;width:auto;" disabled="disabled">
+                      <select id="subscriptionDispatchHour" name="subscriptionDispatchHour" style="min-width:20px;width:auto;">
+                          <option value="00" selected="selected">00</option>
                           <option value="01">01</option>
                           <option value="02">02</option>
                           <option value="03">03</option>
@@ -280,9 +223,9 @@
                           <option value="22">22</option>
                           <option value="23">23</option>
                       </select>
-                      </span><span id="subscriptionDispatchMinuteDiv"><span>&nbsp;</span>
+                      </span><span id="subscriptionDispatchMinuteDiv">
                       <label for="subscriptionDispatchMinute">Min</label>
-                      <select id="subscriptionDispatchMinute" name="subscriptionDispatchMinute" style="min-width:20px;width:auto;" disabled="disabled">
+                      <select id="subscriptionDispatchMinute" name="subscriptionDispatchMinute" style="min-width:20px;width:auto;">
                           <option value="0" selected="selected">00</option>
                           <option value="5">05</option>
                           <option value="10">10</option>
@@ -297,23 +240,105 @@
                           <option value="55">55</option>
                       </select>
                       </span></div>
-            <div class="clear">&nbsp;</div>
-            <div class="clear">&nbsp;</div>
-            <h4>
-                <label>&nbsp;</label>
-            </h4>
+
+
+<div class="clear"></div>
+<h4>
+    <label for="smsupdate">&nbsp;</label>
+</h4>
+<div class="input_row">
+    <div style="margin-left:75px;"></div>
+</div>
+<div class="clear"></div>
+<h4></h4>
+<div class="clear"></div>
+<div id="advanceConfig">
+    <script type="text/javascript" src="resources/javascripts/advanceSetting/expand.js"></script>
+    <link rel="stylesheet" href="resources/css/advanceSetting/advanceSetting.css" type="text/css">
+    </link>
+    <script type="text/javascript">
+        $(function() {
+            // --- Using the default options:
+            //        $("h2.expand").toggler({initShow: "div.collapse:first"});
+            // --- Other options:
+            //$("h2.expand").toggler({method: "toggle", speed: 0});
+            //$("h2.expand").toggler({method: "toggle"});
+            //        $("h2.expand").toggler({speed: "fast", initShow: "div.collapse:first"});
+            $("h2.expand").toggler({speed: "fast"});
+            //        $("h2.expand").toggler({method: "fadeToggle"});
+            //        $("h2.expand").toggler({method: "slideFadeToggle",initShow: "div.collapse:first"});
+            $("#advance_content").expandAll({trigger: "h2.expand", ref: "div.demo", showMethod: "slideDown", hideMethod: "slideUp", speed: 400, oneSwitch: false});
+
+            textCounter('ss','remLen_ss',75);
+            textCounter('us','remLen_us',75);
+            textCounter('ir','remLen_ir',75);
+
+            //        setSubscription();
+        });
+        function enableChargingParties(){
+            var cpm = document.getElementById("cpm");
+            cpm.disabled = false;
+            var cps = document.getElementById("cps");
+            cps.disabled = false;
+        }
+
+    </script>
+    <div id="wrapper">
+        <div id="advance_content">
+            <div class="demo">
+                <h2 id="advance_config" class="expand">Response Configurations</h2>
+                <div class="collapse">
+                    <h4>
+                        <label for="ss">Subscription Successful Response Message</label>
+                    </h4>
+                    <div class="input_row">
+                        <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-10px;"></div>
+                        <div style="z-index:499" class="textarea-wrap">
+                            <textarea id="ss" name="subscriptionSuccessMsgEn" wrap="physical" onKeyUp="textCounter('ss','remLen_ss',75)" onKeyDown="textCounter('ss','remLen_ss',75)" disabled="disabled">Subscription Successful</textarea>
+                        </div>
+                    </div>
+
+                    <h4>
+                        <label for="us">Unsubscribe Successful Response Message</label>
+                    </h4>
+                    <div class="input_row">
+                        <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:right;margin-left:66px;margin-bottom:0px;"></div>
+                        <div style="z-index:500" class="textarea-wrap">
+                            <textarea id="us" name="unsubscribeSuccessMsgEn" wrap="physical" onKeyUp="textCounter('us','remLen_us',75)" onKeyDown="textCounter('us','remLen_us',75)" disabled="disabled">Unsubscribed Successfully</textarea>
+                        </div>
+                    </div>
+
+                    <h4>
+                        <label for="re">Invalid Request</label>
+                    </h4>
+                    <div class="input_row">
+                        <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-20px;overflow:visible;"></div>
+                        <div class="textarea-wrap">
+                            <textarea id="ir" name="requestErrorMsgEn" wrap="physical" onKeyUp="textCounter('ir','remLen_ir',75)" onKeyDown="textCounter('ir','remLen_ir',75)" disabled="disabled">Invalid Request</textarea>
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+</div>
+</form>
+</div>
+
+
+<form id="app" name="confirmAlert" action="appCreationSuccess.html" method="post">
     <div style="text-align:center; width:100%"><span style="padding-right:10px">
-                  <input onclick="location.href='serviceAppStep1.html';" name="back" style="width:50px;" tabindex="5" type="button" class="button" value="Back" id="back"/>
+                  <input onclick="location.href='ServiceAppStep1';" name="back" style="width:50px;" tabindex="5" type="button" class="button" value="Back" id="back"/>
                   </span><span style="padding-right:10px">
-                  <input style="width:50px;" tabindex="6" type="submit" class="button" value="Confirm"/>
+                  <input onclick="location.href='ServiceAppSuccess';" name="next" style="width:50px;" tabindex="6" type="button" class="button" value="Confirm" id="next"/>
                   </span><span>
                   <input onclick="location.href='appTypeSelection.html';" name="cancel" style="width:50px;" tabindex="6" type="button" class="button" value="Cancel" id="cancel"/>
                   </span></div>
     <div class="clear">&nbsp;</div>
 </form>
-
 </div>
 </div>
 </div>
@@ -323,6 +348,5 @@
 </div>
 <script type="text/javascript" src="resources/javascripts/footer.js" language="javascript"></script>
 </div>
-
 </body>
 </html>
