@@ -25,6 +25,7 @@
         <module>common-registration</module>
         <module>reporting</module>
         <module>report-scheduler</module>
+        <module>simulator</module>
     </modules>
 
     <dependencies>
