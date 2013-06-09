@@ -66,5 +66,11 @@ public class AlertAppController {
 
     }
 
+    @RequestMapping(value = "/AlertUse", method = RequestMethod.GET)
+    public String redirectAlertUse() {
+        return "AlertUse";
+
+    }
+
 
 }

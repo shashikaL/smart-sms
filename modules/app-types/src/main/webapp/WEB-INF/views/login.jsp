@@ -167,7 +167,7 @@
                     <div class="grid_8">
                         <div id="right_pane">
                             <div id="login">
-                                <form action="home.html" method="post" id="loginform" name="login">
+                                <form action="Home" id="loginform" name="login">
                                     <p>
                                         <label>Username<br/>
                                             <input onclick="hideErrorMsg()" name="j_username" tabindex="1" type="text"

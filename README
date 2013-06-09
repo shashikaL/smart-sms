@@ -11,3 +11,11 @@ mongod.exe -dbpath="C:\SLIIT\4th YR\Semester1\Research\data\DB"
 
 https://www.facebook.com/dialog/oauth?client_id=524263680962135&redirect_uri=http://localhost:8080/app-ui/social-connections/login
 
+
+Deployment details
+--------------------------------------
+1. up mongoDB
+2. build the project -> mvn clean install
+3. \smartSMS\smart-sms\modules\app-types\target --> copy app-ui.war
+4. paste it to C:\Program Files\apache-tomcat-7.0.40\webapps
+
