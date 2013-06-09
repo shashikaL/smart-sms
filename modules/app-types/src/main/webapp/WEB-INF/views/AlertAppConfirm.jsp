@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: snej
-  Date: 6/8/13
-  Time: 3:44 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
@@ -76,7 +70,7 @@
                 <div id="dashboard-widgets-wrap">
                     <div class="metabox-holder" id="dashboard-widgets">
                         <div class="postbox" id="dashboard_quick_press">
-                            <form id="quick-press" name="appdetails" action="appDetails.html" method="post">
+                            <form action="" method="post">
                                 <h3 class="hndle"><span>Application Details</span></h3>
                                 <script type="text/javascript" src="resources/javascripts/tablesorter/viewRequest.js"></script>
                                 <div class="inside">
@@ -87,7 +81,7 @@
                                     <div>
                                         <div style="margin-top:19px;margin-left:8px" class="input_row">
                                             <div class="input-text-wrap">
-                                                <input id="appName" name="app.appName" tabindex="10" disabled="disabled" readonly="readonly" type="text" value="Alert"/>
+                                                <input id="appName" name="appName" tabindex="10" readonly="readonly"  type="text" value="<c:out value="${alertObj.appName}"/>"/>
                                             </div>
                                         </div>
                                     </div>
@@ -97,8 +91,8 @@
                                     </h4>
                                     <div class="info_group">
                                         <div style="display:inline"></div>
-                                        <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
-                                            <option value="2545">1234</option>
+                                        <select id="keyword.shortCode" name="keyword.shortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
+                                            <option value="1234"><c:out value="${alertObj.keyword.shortCode}"/></option>
                                         </select>
                                     </div>
                                     <h4>
@@ -109,7 +103,7 @@
                                         <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-22px;"></div>
                                         <div style="width:130px;" class="input-text-wrap">
                                             <div>
-                                                <input id="startDate" name="startDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="09/03/2011"/>
+                                                <input id="startDate" name="startDate" tabindex="15" readonly="readonly"  type="text" value="<c:out value="${alertObj.startDate}"/>"/>
                                             </div>
                                         </div>
                                     </div>
@@ -122,7 +116,7 @@
                                             <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-22px;"></div>
                                             <div style="width:130px;" class="input-text-wrap">
                                                 <div>
-                                                    <input id="endDate" name="endDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="09/04/2011"/>
+                                                    <input id="endDate" name="endDate" tabindex="15" readonly="readonly"  type="text" value="<c:out value="${alertObj.endDate}"/>"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -133,7 +127,7 @@
                                     </h4>
                                     <div style="margin-left:8px" class="input_row">
                                         <div class="textarea-wrap">
-                                            <textarea id="decs" name="app.description" disabled="disabled" readonly="readonly">First Alert Application</textarea>
+                                            <textarea id="decs" name="appDescription" readonly="readonly" ><c:out value="${alertObj.appDescription}"/></textarea>
                                         </div>
                                     </div>
                                     <div class="clear"></div>
@@ -188,7 +182,7 @@
                                                         <div class="input_row">
                                                             <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-10px;"></div>
                                                             <div style="z-index:499" class="textarea-wrap">
-                                                                <textarea id="ss" name="subscriptionSuccessMsgEn" wrap="physical" onKeyUp="textCounter('ss','remLen_ss',75)" onKeyDown="textCounter('ss','remLen_ss',75)" disabled="disabled">Subscription Successful</textarea>
+                                                                <textarea id="ss" name="subscriptionSuccessfulMessage" wrap="physical" onKeyUp="textCounter('ss','remLen_ss',75)" onKeyDown="textCounter('ss','remLen_ss',75)" readonly="readonly"><c:out value="${alertObj.subscriptionSuccessfulMessage}"/></textarea>
                                                             </div>
                                                         </div>
 
@@ -198,7 +192,7 @@
                                                         <div class="input_row">
                                                             <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:right;margin-left:66px;margin-bottom:0px;"></div>
                                                             <div style="z-index:500" class="textarea-wrap">
-                                                                <textarea id="us" name="unsubscribeSuccessMsgEn" wrap="physical" onKeyUp="textCounter('us','remLen_us',75)" onKeyDown="textCounter('us','remLen_us',75)" disabled="disabled">Unsubscribed Successfully</textarea>
+                                                                <textarea id="us" name="unSubscriptionSuccessfulMessage" wrap="physical" onKeyUp="textCounter('us','remLen_us',75)" onKeyDown="textCounter('us','remLen_us',75)" readonly="readonly"><c:out value="${alertObj.unSubscriptionSuccessfulMessage}"/></textarea>
                                                             </div>
                                                         </div>
 
@@ -208,7 +202,7 @@
                                                         <div class="input_row">
                                                             <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-20px;overflow:visible;"></div>
                                                             <div class="textarea-wrap">
-                                                                <textarea id="ir" name="requestErrorMsgEn" wrap="physical" onKeyUp="textCounter('ir','remLen_ir',75)" onKeyDown="textCounter('ir','remLen_ir',75)" disabled="disabled">Invalid Request</textarea>
+                                                                <textarea id="ir" name="invalidRequestMessage" wrap="physical" onKeyUp="textCounter('ir','remLen_ir',75)" onKeyDown="textCounter('ir','remLen_ir',75)" readonly="readonly"><c:out value="${alertObj.invalidRequestMessage}"/></textarea>
                                                             </div>
                                                         </div>
 
@@ -219,14 +213,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
                         </div>
 
-                        <form id="app" name="confirmAlert" action="appCreationSuccess.html" method="post">
                             <div style="text-align:center; width:100%"><span style="padding-right:10px">
                   <input onclick="location.href='AlertAppCreate';" name="back" style="width:50px;" tabindex="5" type="button" class="button" value="Back" id="back"/>
                   </span><span style="padding-right:10px">
-                  <input onclick="location.href='AlertAppSuccess';" name="next" style="width:50px;" tabindex="6" type="button" class="button" value="Confirm" id="next"/>
+                  <input name="next" style="width:50px;" tabindex="6" type="submit" class="button" value="Confirm" id="next"/>
                   </span><span>
                   <input onclick="location.href='appTypeSelection.html';" name="cancel" style="width:50px;" tabindex="6" type="button" class="button" value="Cancel" id="cancel"/>
                   </span></div>

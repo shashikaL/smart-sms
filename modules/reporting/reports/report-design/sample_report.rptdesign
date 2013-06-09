@@ -26,7 +26,7 @@
             <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
             <property name="odaURL">jdbc:mysql://127.0.0.1:3306/SMART-SMS?autoReconnect=true</property>
             <property name="odaUser">root</property>
-            <encrypted-property name="odaPassword" encryptionID="base64">Z3Z0MTIz</encrypted-property>
+            <encrypted-property name="odaPassword" encryptionID="base64">Y2hhbmRpa2EyNQ==</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>

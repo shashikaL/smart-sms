@@ -18,6 +18,9 @@ public class MongoDBConfig {
     @Value("${smart.sms.user.database.name}")
     private String userMgtDatabaseName;
 
+    @Value("${smart.sms.mal.database.name}")
+    private String MalformedDatabaseName;
+
     @Value("${smart.sms.apps.database.voting.collection}")
     private String votingCollectionName;
 
@@ -38,6 +41,9 @@ public class MongoDBConfig {
 
     @Value("${smart.sms.subscribers.database.subscriber.collection}")
     private String subscriberCollectionName;
+
+    @Value("${smart.sms.mal.database.mal.collection}")
+    private String malCollectionName;
 
     public String getMongoHost() {
         return mongoHost;
@@ -125,5 +131,21 @@ public class MongoDBConfig {
 
     public void setSubscriberCollectionName(String subscriberCollectionName) {
         this.subscriberCollectionName = subscriberCollectionName;
+    }
+
+    public String getMalformedDatabaseName(){
+        return MalformedDatabaseName;
+    }
+
+    public void setMalformedDatabaseName(String MalformedDatabaseName){
+        this.MalformedDatabaseName = MalformedDatabaseName;
+    }
+
+    public String getMalCollectionName() {
+        return malCollectionName;
+    }
+
+    public void setMalCollectionName(String malCollectionName){
+        this.malCollectionName = malCollectionName;
     }
 }

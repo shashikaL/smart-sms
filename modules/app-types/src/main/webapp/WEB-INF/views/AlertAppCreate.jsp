@@ -49,12 +49,10 @@
 
             var endDateDiv = document.getElementById('expire');
 
-            if(document.getElementById('appExpire').checked)
-            {
+            if (document.getElementById('appExpire').checked) {
                 endDateDiv.style.display = 'block';
             }
-            else
-            {
+            else {
                 endDateDiv.style.display = 'none';
             }
         }
@@ -67,8 +65,8 @@
 <script type="text/javascript">
     function logoutConfirm(url) {
         var logOutTxt = 'Do you really want to logout??';
-        jConfirm(logOutTxt, 'Confirmation Dialog', function(r) {
-            if(r == true) {
+        jConfirm(logOutTxt, 'Confirmation Dialog', function (r) {
+            if (r == true) {
                 window.location = url;
             }
         });
@@ -107,39 +105,47 @@
                 <div id='dashboard-widgets' class='metabox-holder' style="width:550px">
                     <div id="dashboard_quick_press" class="postbox ">
                         <h3 class='hndle'><span>Terms & Conditions</span></h3>
+
                         <div class="inside" style="margin:20px; max-height:400px;overflow:auto;">
-                            <div> <br>
+                            <div><br>
+
                                 <p><font size="2" face="Verdana"><b>Terms of Service</b></font> <br>
                                     <br>
                                 </p>
+
                                 <p><font size="2" face="Verdana"><b>Basic Terms</b></font> <br>
                                 </p>
 
 
-
                                 <br>
+
                                 <p id="privacy"><font size="2" face="Verdana"><b>Privacy</b></font> <br>
                                 </p>
 
                                 <br>
+
                                 <p><font size="2" face="Verdana"><b>Passwords</b></font> <br>
                                 </p>
 
                                 <br>
+
                                 <p><font size="2" face="Verdana"><b>Content on the Services</b></font> <br>
                                 </p>
 
 
                                 <br>
+
                                 <p><font size="2" face="Verdana"><b>Your Rights</b></font> <br>
                                 </p>
 
 
                                 <br>
+
                                 <p><font size="2" face="Verdana"><b>smartSMS Rights</b></font> <br>
                                 </p>
 
                                 <br>
+
                                 <p><font size="2" face="Verdana"><b>Restrictions on Content and Use
                                     of the Services</b></font> <br>
                                 </p>
@@ -149,6 +155,7 @@
                                 <br>
 
                                 <br>
+
                                 <p><font size="2" face="Verdana"><b>Copyright Policy</b></font> <br>
                                 </p>
 
@@ -158,6 +165,7 @@
                                 <br>
 
                                 <br>
+
                                 <p><font size="2" face="Verdana"><b>Entire Agreement</b></font></p>
 
                                 <br>
@@ -169,7 +177,8 @@
             <div style="text-align:center;">
                 <form action="alertAppConfirm.html" name="agreementForm" method="post">
               <span>
-              <input onclick="submitForm()" name="ok" style="width:50px;" type="button" class="button" value="I Agree" id="ok"/>
+              <input onclick="submitForm()" name="ok" style="width:50px;" type="button" class="button" value="I Agree"
+                     id="ok"/>
               </span>
                 </form>
             </div>
@@ -180,17 +189,17 @@
 </div>
 <script type="text/javascript">
 var buffer_minute_array = {
-    10 : '10', 20 : '20', 30 : '30', 40 : '40'
+    10: '10', 20: '20', 30: '30', 40: '40'
 };
 var buffer_hour_array = {
-    60 : '1', 120 : '2', 180 : '3', 240 : '4',
-    300 : '5', 360 : '6'
+    60: '1', 120: '2', 180: '3', 240: '4',
+    300: '5', 360: '6'
 };
 var buffer_day_array = {
-    1440 : '1', 2880 : '2', 4320 : '3'
+    1440: '1', 2880: '2', 4320: '3'
 };
 
-$(document).ready(function(){
+$(document).ready(function () {
     loadChargingSettings();
     var editState = 'false';
     if (editState == 'false') {
@@ -201,10 +210,10 @@ $(document).ready(function(){
 
 });
 
-function addOptions (array , elementId) {
+function addOptions(array, elementId) {
     var element = document.getElementById(elementId);
     element.options.length = 0;
-    for(index in array) {
+    for (index in array) {
         element.options[element.options.length] = new Option(array[index], index);
     }
 
@@ -460,190 +469,216 @@ var selectedKeyword = '';
 
 </script>
 <div id="header2">
-    <p id="tagline"><br/>
-        <br/>
-    </p>
-    <div style="clear:both;">&nbsp;</div>
-    <div id="body">
-        <div id="nullRemover"/>
-        <div class="sub_heading">
-            <h1>Create an Alert Application</h1>
-        </div>
-        <div class="navi_link4"></div>
-        <div style="height:0;" class="clear">&nbsp;</div>
-        <div class="grid_1 alpha">&nbsp;</div>
-        <div class="grid_16">
-            <div id="dashboard-widgets-wrap">
-                <div class="metabox-holder" id="dashboard-widgets">
-                    <div class="postbox" id="dashboard_quick_press">
-                        <form id="quick-press" name="appdetails" action="appDetails.html" method="post">
-                            <h3 class="hndle"><span>Application Details</span></h3>
-                            <div class="inside">
-                                <div class="clear">&nbsp;</div>
-                                <h4>
-                                    <label for="appname">Application Name<span class="mandatory">*</span></label>
-                                </h4>
-                                <div>
-                                    <div class="input_row">
-                                        <div id="appNameErrorDiv" class="error-req"></div>
-                                    </div>
-                                    <div class="input_row">
-                                        <div class="input-text-wrap">
-                                            <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Alert"/>
-                                        </div>
-                                        <div style=" margin-left:65px;margin-bottom:18px;margin-top:-10px;">
+<p id="tagline"><br/>
+    <br/>
+</p>
 
-                                        </div>
-                                    </div>
+<div style="clear:both;">&nbsp;</div>
+<div id="body">
+<div id="nullRemover"/>
+<div class="sub_heading">
+    <h1>Create an Alert Application</h1>
+</div>
+<div class="navi_link4"></div>
+<div style="height:0;" class="clear">&nbsp;</div>
+<div class="grid_1 alpha">&nbsp;</div>
+<div class="grid_16">
+    <div id="dashboard-widgets-wrap">
+        <div class="metabox-holder" id="dashboard-widgets">
+            <div class="postbox" id="dashboard_quick_press">
+                <form action="" method="post">
+                    <h3 class="hndle"><span>Application Details</span></h3>
+
+                    <div class="inside">
+                        <div class="clear">&nbsp;</div>
+                        <h4>
+                            <label for="appname">Application Name<span class="mandatory">*</span></label>
+                        </h4>
+
+                        <div>
+                            <div class="input_row">
+                                <div id="appNameErrorDiv" class="error-req"></div>
+                            </div>
+                            <div class="input_row">
+                                <div class="input-text-wrap">
+                                    <input id="appName" name="appName"
+                                           type="text"/>
                                 </div>
-                                <h4>
-                                    <label for="short3">Keyword Details</label>
-                                </h4>
-                                <div class="info_group">
-                                    <div style="display:inline"></div>
-                                    <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
-                                        <option value="2545">1234</option>
-                                        <option value="2545">N/A</option>
-                                    </select>
-                                    <a style="padding-left:2px" href="alertCreateKeyword1.html">Create Keyword</a> </div>
-                                <h4>
-                                    <label for="smsupdate">&nbsp;</label>
-                                </h4>
+                                <div style=" margin-left:65px;margin-bottom:18px;margin-top:-10px;">
 
-                                <h4>
-                                    <label>Application Validity Duration</label>
-                                </h4>
-                                <label style="float:left;margin: 0.3em 0 1em 5em;width:100px;" class="pointer" for="startDate">Start date</label>
-                                <div style="width:200px;margin-left:-165px" class="input_row"></div>
-                                <div style="width:200px;margin-left:-50px" class="input_row">
-                                    <div class="input-text-wrap">
-                                        <input id="startDate" name="startDate" class="readonly" type="text" value="09/03/2011"/>
-                                    </div>
                                 </div>
+                            </div>
+                        </div>
+                        <h4>
+                            <label for="short3">Keyword Details</label>
+                        </h4>
 
-                                <div id="expire">
-                                    <h4>
-                                        <label>&nbsp;</label>
-                                    </h4>
-                                    <label style="float:left;margin: 0.3em 0 1em 5em;width:100px;" class="pointer" for="endDate">End date</label>
-                                    <div style="width:200px;margin-left:-165px" class="input_row"></div>
-                                    <div style="width:200px;margin-left:-50px" class="input_row">
-                                        <div class="input-text-wrap">
-                                            <input id="endDate" name="endDate" style="cursor:pointer" type="text" value="09/04/2011"/>
-                                        </div>
-                                    </div>
+                        <div class="info_group">
+                            <div style="display:inline"></div>
+                            <select id="keyword.shortCode" name="keyword.shortCode"
+                                    style="min-width:120px;width:auto; margin-left:-7px;"
+                                    onchange="loadKeyword()">
+                                <option value="1234">1234</option>
+                            </select>
+                            <a style="padding-left:2px" href="alertCreateKeyword1.html">Create Keyword</a></div>
+                        <h4>
+                            <label for="smsupdate">&nbsp;</label>
+                        </h4>
+
+                        <h4>
+                            <label>Application Validity Duration</label>
+                        </h4>
+                        <label style="float:left;margin: 0.3em 0 1em 5em;width:100px;" class="pointer"
+                               for="startDate">Start date</label>
+
+                        <div style="width:200px;margin-left:-165px" class="input_row"></div>
+                        <div style="width:200px;margin-left:-50px" class="input_row">
+                            <div class="input-text-wrap">
+                                <input id="startDate" name="startDate" class="readonly" type="text"
+                                       value="09/03/2011"/>
+                            </div>
+                        </div>
+
+                        <div id="expire">
+                            <h4>
+                                <label>&nbsp;</label>
+                            </h4>
+                            <label style="float:left;margin: 0.3em 0 1em 5em;width:100px;" class="pointer"
+                                   for="endDate">End date</label>
+
+                            <div style="width:200px;margin-left:-165px" class="input_row"></div>
+                            <div style="width:200px;margin-left:-50px" class="input_row">
+                                <div class="input-text-wrap">
+                                    <input id="endDate" name="endDate" style="cursor:pointer" type="text"
+                                           value="09/04/2011"/>
                                 </div>
-                                <h4>
-                                    <label>&nbsp;</label>
-                                </h4>
-                                <h4>
-                                    <label for="decs">Description</label>
-                                </h4>
-                                <div class="input_row">
-                                    <div class="textarea-wrap">
-                                        <div style="margin-left:0px;" id="decsErrorDiv" class="error-req"></div>
-                                        <textarea id="decs" name="app.description">First Alert Application</textarea>
-                                    </div>
-                                </div>
-                                <h4>
-                                    <label for="smsupdate">&nbsp;</label>
-                                </h4>
-                                <div class="input_row">
-                                    <div style="margin-left:68px;"></div>
-                                </div>
-                                <div id="advance" style="display:none;float:left;">
-                                    <script type="text/javascript" src="resources/javascripts/advanceSetting/expand.js"></script>
-                                    <link rel="stylesheet" href="resources/css/advanceSetting/advanceSetting.css" type="text/css">
-                                    </link>
-                                    <script type="text/javascript">
-                                        $(function() {
-                                            // --- Using the default options:
-                                            //        $("h2.expand").toggler({initShow: "div.collapse:first"});
-                                            // --- Other options:
-                                            //$("h2.expand").toggler({method: "toggle", speed: 0});
-                                            //$("h2.expand").toggler({method: "toggle"});
-                                            //        $("h2.expand").toggler({speed: "fast", initShow: "div.collapse:first"});
-                                            $("h2.expand").toggler({speed: "fast"});
-                                            //        $("h2.expand").toggler({method: "fadeToggle"});
-                                            //        $("h2.expand").toggler({method: "slideFadeToggle",initShow: "div.collapse:first"});
-                                            $("#advance_content").expandAll({trigger: "h2.expand", ref: "div.demo", showMethod: "slideDown", hideMethod: "slideUp", speed: 400, oneSwitch: false});
+                            </div>
+                        </div>
+                        <h4>
+                            <label>&nbsp;</label>
+                        </h4>
+                        <h4>
+                            <label for="decs">Description</label>
+                        </h4>
 
-                                            textCounter('ss','remLen_ss',75);
-                                            textCounter('us','remLen_us',75);
-                                            textCounter('ir','remLen_ir',75);
+                        <div class="input_row">
+                            <div class="textarea-wrap">
+                                <div style="margin-left:0px;" id="decsErrorDiv" class="error-req"></div>
+                                <textarea id="appDescription" name="appDescription"></textarea>
+                            </div>
+                        </div>
+                        <h4>
+                            <label for="smsupdate">&nbsp;</label>
+                        </h4>
 
-                                            //        setSubscription();
-                                        });
-                                        function enableChargingParties(){
-                                            var cpm = document.getElementById("cpm");
-                                            cpm.disabled = false;
-                                            var cps = document.getElementById("cps");
-                                            cps.disabled = false;
-                                        }
-                                    </script>
-                                    <div id="wrapper">
-                                        <div id="advance_content">
-                                            <div class="demo">
-                                                <h2 id="advance_config" class="expand">Response Configurations</h2>
-                                                <div class="collapse">
-                                                    <h4>
-                                                        <label for="ss">Subscription Successful Response Message</label>
-                                                    </h4>
-                                                    <div class="input_row">
-                                                        <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-10px;"></div>
-                                                        <div style="z-index:499" class="textarea-wrap">
-                                                            <textarea id="ss" name="subscriptionSuccessMsgEn" wrap="physical">Subscription Successful</textarea>
-                                                        </div>
-                                                    </div>
+                        <div class="input_row">
+                            <div style="margin-left:68px;"></div>
+                        </div>
+                        <div id="advance" style="display:none;float:left;">
+                            <script type="text/javascript"
+                                    src="resources/javascripts/advanceSetting/expand.js"></script>
+                            <link rel="stylesheet" href="resources/css/advanceSetting/advanceSetting.css"
+                                  type="text/css">
+                            </link>
+                            <script type="text/javascript">
+                                $(function () {
+                                    // --- Using the default options:
+                                    //        $("h2.expand").toggler({initShow: "div.collapse:first"});
+                                    // --- Other options:
+                                    //$("h2.expand").toggler({method: "toggle", speed: 0});
+                                    //$("h2.expand").toggler({method: "toggle"});
+                                    //        $("h2.expand").toggler({speed: "fast", initShow: "div.collapse:first"});
+                                    $("h2.expand").toggler({speed: "fast"});
+                                    //        $("h2.expand").toggler({method: "fadeToggle"});
+                                    //        $("h2.expand").toggler({method: "slideFadeToggle",initShow: "div.collapse:first"});
+                                    $("#advance_content").expandAll({trigger: "h2.expand", ref: "div.demo", showMethod: "slideDown", hideMethod: "slideUp", speed: 400, oneSwitch: false});
 
-                                                    <h4>
-                                                        <label for="us">Unsubscribe Successful Response Message</label>
-                                                    </h4>
-                                                    <div class="input_row">
-                                                        <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:right;margin-left:66px;margin-bottom:0px;"></div>
-                                                        <div style="z-index:500" class="textarea-wrap">
-                                                            <textarea id="us" name="unsubscribeSuccessMsgEn" wrap="physical">Unsubscribed Successfully</textarea>
-                                                        </div>
-                                                    </div>
+                                    textCounter('ss', 'remLen_ss', 75);
+                                    textCounter('us', 'remLen_us', 75);
+                                    textCounter('ir', 'remLen_ir', 75);
 
-                                                    <h4>
-                                                        <label for="re">Invalid Request</label>
-                                                    </h4>
-                                                    <div class="input_row">
-                                                        <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-20px;overflow:visible;"></div>
-                                                        <div class="textarea-wrap">
-                                                            <textarea id="ir" name="requestErrorMsgEn" wrap="physical">Invalid Request</textarea>
-                                                        </div>
-                                                    </div>
+                                    //        setSubscription();
+                                });
+                                function enableChargingParties() {
+                                    var cpm = document.getElementById("cpm");
+                                    cpm.disabled = false;
+                                    var cps = document.getElementById("cps");
+                                    cps.disabled = false;
+                                }
+                            </script>
+                            <div id="wrapper">
+                                <div id="advance_content">
+                                    <div class="demo">
+                                        <h2 id="advance_config" class="expand">Response Configurations</h2>
 
-                                                    <div class="clear"></div>
+                                        <div class="collapse">
+                                            <h4>
+                                                <label for="ss">Subscription Successful Response Message</label>
+                                            </h4>
+
+                                            <div class="input_row">
+                                                <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-10px;"></div>
+                                                <div style="z-index:499" class="textarea-wrap">
+                                                    <textarea id="subscriptionSuccessfulMessage" name="subscriptionSuccessfulMessage"
+                                                              wrap="physical"></textarea>
                                                 </div>
-
-
-
                                             </div>
+
+                                            <h4>
+                                                <label for="us">Unsubscribe Successful Response Message</label>
+                                            </h4>
+
+                                            <div class="input_row">
+                                                <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:right;margin-left:66px;margin-bottom:0px;"></div>
+                                                <div style="z-index:500" class="textarea-wrap">
+                                                    <textarea id="unSubscriptionSuccessfulMessage" name="unSubscriptionSuccessfulMessage"
+                                                              wrap="physical"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <h4>
+                                                <label for="re">Invalid Request</label>
+                                            </h4>
+
+                                            <div class="input_row">
+                                                <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-20px;overflow:visible;"></div>
+                                                <div class="textarea-wrap">
+                                                    <textarea id="invalidRequestMessage" name="invalidRequestMessage" wrap="physical"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="clear"></div>
                                         </div>
+
+
                                     </div>
                                 </div>
                             </div>
-                            <h4>
-                                <label></label>
-                            </h4>
-                            <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span style="padding-right:10px">
-                  <input onclick="location.href='appTypeSelection.html';" name="cancel" type="button" class="button" value="Back"/>
-                  </span><span>
-                  <input onclick="location.href='AlertAppConfirm';" name="next" type="button" class="button" value="Next" id="next"/>
-                  </span></div>
-                            <div class="clear">&nbsp;</div>
+                        </div>
                     </div>
-                    </form>
-                </div>
-                <div class="advanced"><a onclick="advanceFlow()" href="#advance" id="open">Advanced Configurations</a><a onclick="advanceFlow()" href="#" id="clo">Basic Configurations</a></div>
+                    <h4>
+                        <label></label>
+                    </h4>
+
+                    <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span
+                            style="padding-right:10px">
+                  <input onclick="location.href='appTypeSelection.html';" name="cancel" type="button" class="button"
+                         value="Back"/>
+                  </span><span>
+                  <input name="next" type="submit" class="button"
+                         value="Next" id="next"/>
+                  </span></div>
+                    <div class="clear">&nbsp;</div>
             </div>
+            </form>
         </div>
+        <div class="advanced"><a onclick="advanceFlow()" href="#advance" id="open">Advanced Configurations</a><a
+                onclick="advanceFlow()" href="#" id="clo">Basic Configurations</a></div>
     </div>
-    <div class="grid_1 omega">&nbsp;</div>
-    <div class="clear"></div>
+</div>
+</div>
+<div class="grid_1 omega">&nbsp;</div>
+<div class="clear"></div>
 </div>
 <div class="clear"></div>
 </div>

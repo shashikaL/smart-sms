@@ -37,6 +37,7 @@
         <property name="locations">
             <list>
                 <value>classpath:smart-sms.properties</value>
+                <value>classpath:application-mongo.properties</value>
             </list>
         </property>
     </bean>

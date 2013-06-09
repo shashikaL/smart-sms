@@ -1,13 +1,14 @@
 package com.smartsms.controllers;
 
-import com.smartsms.beans.Keyword;
 import com.smartsms.beans.AlertApplication;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.UUID;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,47 +27,41 @@ public class AlertAppController {
     private AlertApplication alertApplication;
 
     @RequestMapping(value = "/AlertAppCreate", method = RequestMethod.GET)
-    public String redirect(){
+    public String redirect() {
         return "AlertAppCreate";
 
     }
 
     @RequestMapping(value = "/AlertAppCreate", method = RequestMethod.POST)
-    public String submitAlertAppCreate(AlertApplication application, @RequestParam("keywordString") String keywordStr){
-        this.alertApplication = convertToAlertApplication(application,keywordStr);
-        applicationTypeRepository.saveApplication(alertApplication);
-        return "AlertAppSuccess";
+    public String submitAlertAppCreate(AlertApplication application) {
+        this.alertApplication = application;
+        return "redirect:/AlertAppConfirm";
 
-    }
-
-    private AlertApplication convertToAlertApplication(AlertApplication application,String keywordStr) {
-        AlertApplication alertApplication = application;
-        Keyword keyword = new Keyword();
-        keyword.setShortCode(keywordStr);
-        alertApplication.setKeyword(keyword);
-        return alertApplication;
     }
 
     @RequestMapping(value = "/AlertAppConfirm", method = RequestMethod.GET)
-    public String redirectConfirm(){
+    public String redirectConfirm(Model model) {
+        model.addAttribute("alertObj", alertApplication);
         return "AlertAppConfirm";
 
     }
 
     @RequestMapping(value = "/AlertAppConfirm", method = RequestMethod.POST)
-    public String submit(AlertApplication application){
-        return "AlertAppSuccess";
+    public String submit(AlertApplication application) {
+        application.setAppId(UUID.randomUUID().toString());
+        applicationTypeRepository.saveApplication(application);
+        return "redirect:/AlertAppSuccess";
 
     }
 
     @RequestMapping(value = "/AlertAppSuccess", method = RequestMethod.GET)
-    public String redirectSuccess(){
+    public String redirectSuccess() {
         return "AlertAppSuccess";
 
     }
 
     @RequestMapping(value = "/AlertHelp", method = RequestMethod.GET)
-    public String redirectHelp(){
+    public String redirectHelp() {
         return "AlertHelp";
 
     }
