@@ -12,7 +12,7 @@
               validationQuery="select 1"
               testWhileIdle="true"
               username="root"
-              password="gvt123"
+              password="chandika25"
               driverClassName="com.mysql.jdbc.Driver"
               url="jdbc:mysql://127.0.0.1:3306/SMART-SMS?autoReconnect=true"
               description="MySQL Sfdata DB"/>
