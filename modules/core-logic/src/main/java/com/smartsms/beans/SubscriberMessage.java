@@ -1,7 +1,7 @@
 package com.smartsms.beans;
 
 import com.smartsms.beans.util.AppType;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+//import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 //import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 /**
@@ -12,7 +12,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
  * To change this template use File | Settings | File Templates.
  */
 //@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 public class SubscriberMessage {
     private String message;
 
