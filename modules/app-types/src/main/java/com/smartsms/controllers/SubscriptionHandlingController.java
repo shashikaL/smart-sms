@@ -1,17 +1,16 @@
 package com.smartsms.controllers;
 
 import com.smartsms.beans.AlertApplication;
-import com.smartsms.repo.config.ApplicationTypeRepository;
-import com.smartsms.repo.impl.ApplicationTypeRepositoryImpl;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import com.smartsms.beans.SubscriberMessage;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import com.smartsms.repo.config.ApplicationTypeRepository;
+import com.smartsms.beans.Response;
 import com.smartsms.beans.Subscribe;
+import com.smartsms.beans.SubscriberMessage;
+import com.smartsms.beans.util.AppType;
+import com.smartsms.repo.SubscriberRepository;
+import com.smartsms.repo.config.ApplicationTypeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -28,19 +27,48 @@ public class SubscriptionHandlingController {
     @Autowired
     private ApplicationTypeRepository applicationTypeRepository;
 
-    Subscribe subscriber = new Subscribe();
+    @Autowired
+    private SubscriberRepository subscriberRepository;
 
-    @RequestMapping(value = "/subscribe/{subscriberNumber}", method = RequestMethod.POST)
-    public String subscription(@RequestBody SubscriberMessage message, @PathVariable String subscriberNumber){
+    @RequestMapping(value = "/subscribe/{subscriberNumber}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Response subscription(@RequestBody SubscriberMessage subscriberMessage, @PathVariable("subscriberNumber") String subscriberNumber) {
+        if (subscriberMessage.getApplicationType() != AppType.ALERT) {
+            return createResponse("404", "Only support for ALERT types");
+        }
+        AlertApplication alertApplication = applicationTypeRepository.findAlertApplicationByShortCode(subscriberMessage.getShortCode());
+        if (alertApplication == null) {
+            return createResponse("404", "Invalid Message. Cannot find app for subscribe");
+        }
 
-        subscriber.setAppId(applicationTypeRepository.findAlertApplicationByShortCode(message.getShortCode()).getAppId());
+        String message = subscriberMessage.getMessage();
+        String[] strings = message.split(" ");
+        if (strings.length != 2) {
+            return createResponse("404", alertApplication.getInvalidRequestMessage());
+        }
+        if (!strings[0].equals("REG")) {
+            return createResponse("404", alertApplication.getInvalidRequestMessage());
+        }
 
-        return subscriberNumber;
+        Subscribe subscribe = new Subscribe();
+        subscribe.setSubscriberNumber(subscriberNumber);
+        subscribe.setAppId(alertApplication.getAppId());
+        subscriberRepository.saveSubscriber(subscribe);
+
+        return createResponse("200", alertApplication.getSubscriptionSuccessfulMessage());
 
     }
 
     @RequestMapping(value = "/unsubscribe/{subscriptionNumber}", method = RequestMethod.POST)
-    public String unSubscription(@RequestBody SubscriberMessage message, @PathVariable String subscriberNumber){
-                   return null;
+    public String unSubscription(@RequestBody SubscriberMessage message, @PathVariable String subscriberNumber) {
+        return null;
+    }
+
+    private Response createResponse(String code, String message) {
+        Response response = new Response();
+        response.setStatusCode(code);
+        response.setStatusMessage(message);
+        return response;
+
     }
 }

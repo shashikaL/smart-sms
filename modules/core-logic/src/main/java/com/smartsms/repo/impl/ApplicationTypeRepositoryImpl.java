@@ -70,8 +70,7 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
             if (alertApplication.getKeyword() == null) {
                 continue;
             }
-            Keyword shortCode1 = alertApplication.getKeyword();
-            if(shortCode1.equals(shortCode)){
+            if(alertApplication.getKeyword().getShortCode().equals(shortCode)){
                 return alertApplication;
             }
         }

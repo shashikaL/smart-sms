@@ -15,7 +15,7 @@
 
 
     <build>
-        <finalName>app-types</finalName>
+        <finalName>app-ui</finalName>
     </build>
 
     <dependencies>
