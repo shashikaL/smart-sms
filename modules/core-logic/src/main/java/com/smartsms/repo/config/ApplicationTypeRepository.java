@@ -25,5 +25,8 @@ public interface ApplicationTypeRepository {
 
     public AlertApplication findAlertApplicationByKeyword(Keyword keyword);
 
+    public AlertApplication findAlertApplicationByShortCode(String shortCode);
+
+
 
 }

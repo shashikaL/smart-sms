@@ -18,7 +18,7 @@
     <meta name='robots' content='noindex,nofollow'/>
     <link rel="shortcut icon" href="resources/images/fav.ico"/>
     <link rel='stylesheet' href='resources/css/body.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='resourcess/css/custom.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/custom.css' type='text/css' media='all'/>
     <link rel='stylesheet' href='resources/css/login.css' type='text/css' media='all'/>
     <link rel='stylesheet' href='resources/css/tables.css' type='text/css' media='all'/>
     <link rel='stylesheet' href='resources/css/grid.css' type='text/css' media='all'/>

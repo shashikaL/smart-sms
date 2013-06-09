@@ -62,4 +62,19 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
         }
         return null;
     }
+
+    @Override
+    public AlertApplication findAlertApplicationByShortCode(String shortCode){
+        List<AlertApplication> alertApplications = mongoTemplate.findAll(AlertApplication.class, mongoDBConfig.getAlertCollectionName());
+        for (AlertApplication alertApplication : alertApplications) {
+            if (alertApplication.getKeyword() == null) {
+                continue;
+            }
+            Keyword shortCode1 = alertApplication.getKeyword();
+            if(shortCode1.equals(shortCode)){
+                return alertApplication;
+            }
+        }
+        return null;
+    }
 }
