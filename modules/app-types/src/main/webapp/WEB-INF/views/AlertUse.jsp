@@ -80,7 +80,7 @@
                                         <div class="clear">&nbsp;</div>
                                     </label>
                                 </h4>
-                                <form id="quick-press" name="useApp" action="alertContentUpdateSuccess.html" method="post">
+                                <form action="" method="post">
                                     <div class="clear">&nbsp;</div>
                                     <div id="container" style="float:left;margin: 0 0 1em 0;width:650px;padding-left:10px">
                                         <div id="code">
@@ -97,7 +97,7 @@
                                                 </div>
                                                 <div style="width:10px;float:left;padding-left:10px">&nbsp;</div>
                                                 <div id="divText_0" style="width:420px;margin-left:0;float:left;" class="textarea-wrap">
-                                                    <textarea id="text_0" name="alertKeywordDetails[0].descriptionEn" style="overflow:auto;" onmouseover="textCounter('text_0','remLen_0', '140')" onkeyup="textCounter('text_0','remLen_0', '140')" wrap="physical" name="txt_0">
+                                                    <textarea id="text_0" name="appMessage" style="overflow:auto;" onmouseover="textCounter('text_0','remLen_0', '140')" onkeyup="textCounter('text_0','remLen_0', '140')" wrap="physical" name="txt_0">
                                                     </textarea>
                                                 </div>
                                                 <input id="remLen_0" style="float:left;background-color:white;text-align:right" value="140" type="text" readonly="readonly" type="text" value="" size="3" maxlength="3"/>

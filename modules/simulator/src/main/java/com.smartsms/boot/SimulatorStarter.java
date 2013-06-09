@@ -4,13 +4,19 @@ package com.smartsms.boot;
 import com.smartsms.beans.Response;
 import com.smartsms.beans.SubscriberMessage;
 import com.smartsms.beans.util.AppType;
+import com.smartsms.controller.AppConfig;
 import com.smartsms.rest.SimulatorRestConfig;
+import org.apache.cxf.transport.servlet.CXFServlet;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class SimulatorStarter {
@@ -20,7 +26,7 @@ public class SimulatorStarter {
     private static RestTemplate restTemplate;
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         restTemplate = SimulatorRestConfig.restTemplate();
         logger.info("================== Starting Simulator ==================");
         logger.info("================== Simulator Stared ===================");
@@ -55,6 +61,24 @@ public class SimulatorStarter {
         logger.info("======================== Response ============================");
         logger.info("Status Code = [{}]", response.getStatusCode());
         logger.info("Status Message = [{}]", response.getStatusMessage());
+
+
+
+        logger.info("======================== Starting Jetty ============================");
+
+
+        Server server = new Server(9090);
+        final ServletHolder servletHolder = new ServletHolder(new CXFServlet());
+        final ServletContextHandler context = new ServletContextHandler();
+        context.setContextPath("/");
+        context.addServlet(servletHolder, "/rest/*");
+        context.addEventListener(new ContextLoaderListener());
+        context.setInitParameter("contextClass", AnnotationConfigWebApplicationContext.class.getName());
+        context.setInitParameter("contextConfigLocation", AppConfig.class.getName());
+
+        server.setHandler(context);
+        server.start();
+        server.join();
 
 
     }

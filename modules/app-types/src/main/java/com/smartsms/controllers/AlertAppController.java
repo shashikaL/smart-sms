@@ -1,12 +1,16 @@
 package com.smartsms.controllers;
 
 import com.smartsms.beans.AlertApplication;
+import com.smartsms.beans.FilterMessage;
+import com.smartsms.beans.Response;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.UUID;
 
@@ -20,6 +24,9 @@ import java.util.UUID;
 
 @Controller
 public class AlertAppController {
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Autowired
     private ApplicationTypeRepository applicationTypeRepository;
@@ -68,6 +75,20 @@ public class AlertAppController {
 
     @RequestMapping(value = "/AlertUse", method = RequestMethod.GET)
     public String redirectAlertUse() {
+        return "AlertUse";
+
+    }
+
+    @RequestMapping(value = "/AlertUse", method = RequestMethod.POST)
+    public String submitAlertUse(@RequestParam("appMessage") String appMessage) {
+        FilterMessage filterMessage = new FilterMessage();
+        filterMessage.setMessage(appMessage);
+        try {
+            String response = restTemplate.postForObject("http://localhost:8080/app-ui/filter", filterMessage, String.class);
+
+        }  catch (Throwable e){
+
+        }
         return "AlertUse";
 
     }

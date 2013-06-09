@@ -190,7 +190,38 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.12</version>
         </dependency>
+        <dependency>
+            <artifactId>jetty-server</artifactId>
+            <groupId>org.eclipse.jetty</groupId>
+            <version>8.1.8.v20121106</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+            <version>2.7.2</version>
+        </dependency>
 
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-jaxrs</artifactId>
+            <version>1.9.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.11</version>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-webapp</artifactId>
+            <version>8.1.8.v20121106</version>
+        </dependency>
 
         <!--Test-->
         <dependency>
@@ -199,6 +230,8 @@
             <version>${org.springframework-version}</version>
             <scope>test</scope>
         </dependency>
+
+
     </dependencies>
 
     <build>
@@ -232,7 +265,7 @@
             <url>http://repository.springsource.com/maven/bundles/release</url>
         </repository>
         <repository>
-            <id>com.springsource.repository.bundles.external </id>
+            <id>com.springsource.repository.bundles.external</id>
             <url>http://repository.springsource.com/maven/bundles/external</url>
         </repository>
         <repository>

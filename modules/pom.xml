@@ -23,7 +23,7 @@
         <module>core-logic</module>
         <module>app-types</module>
         <module>common-registration</module>
-        <!--<module>reporting</module>-->
+        <module>reporting</module>
         <module>report-scheduler</module>
         <module>simulator</module>
     </modules>
