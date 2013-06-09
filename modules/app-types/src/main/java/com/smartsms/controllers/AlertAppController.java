@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AlertAppController {
+
     @Autowired
     private ApplicationTypeRepository applicationTypeRepository;
 
