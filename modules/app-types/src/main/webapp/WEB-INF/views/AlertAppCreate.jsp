@@ -662,12 +662,11 @@ var selectedKeyword = '';
 
                     <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span
                             style="padding-right:10px">
-                  <input onclick="location.href='appTypeSelection.html';" name="cancel" type="button" class="button"
+                  <input onclick="location.href='AppTypeSelection';" name="cancel" type="button" class="button"
                          value="Back"/>
                   </span><span>
-                  <input name="next" type="submit" class="button"
-                         value="Next" id="next"/>
-                  </span></div>
+                   <input onclick="location.href='AlertAppConfirm';" name="next" type="button" class="button" value="Next" id="next"/>
+                 </span></div>
                     <div class="clear">&nbsp;</div>
             </div>
             </form>

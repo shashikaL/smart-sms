@@ -729,7 +729,7 @@ var selectedKeyword = '';
     <label></label>
 </h4>
 <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span style="padding-right:10px">
-                  <input onclick="location.href='appTypeSelection.html';" name="cancel" type="button" class="button" value="Back"/>
+                  <input onclick="location.href='AppTypeSelection';" name="cancel" type="button" class="button" value="Back"/>
                   </span><span>
                   <input onclick="location.href='ServiceAppConfirm';" name="next" type="button" class="button" value="Next" id="next"/>
                   </span></div>

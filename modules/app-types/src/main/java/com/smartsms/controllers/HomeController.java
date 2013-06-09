@@ -7,9 +7,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/home")
+    @RequestMapping(method = RequestMethod.GET, value = "/Home")
     public String redirect(){
         return "Home";
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/AppTypeSelection")
+    public String redirectAppSelect(){
+        return "AppTypeSelection";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/MyProfile")
+    public String redirectMyProfile(){
+        return "MyProfile";
+    }
+
 
 }
