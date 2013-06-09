@@ -13,7 +13,7 @@
 	</appender>
 
     <appender name="trace" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="/home/rajith/sliit/research/vigraha-logs/reporting-trace.log"/>
+        <param name="File" value="/home/rajith/my_projects/logs/reporting-trace.log"/>
         <param name="Threshold" value="debug"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">
@@ -23,7 +23,7 @@
 
 
     <appender name="info" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="/home/rajith/sliit/research/vigraha-logs/reporting-info.log"/>
+        <param name="File" value="/home/rajith/my_projects/logs/reporting-info.log"/>
         <param name="Threshold" value="info"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">
@@ -32,7 +32,7 @@
     </appender>
 
     <appender name="error" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="/home/rajith/sliit/research/vigraha-logs/reporting-vigraha.log"/>
+        <param name="File" value="/home/rajith/my_projects/logs/reporting-vigraha.log"/>
         <param name="Threshold" value="error"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">

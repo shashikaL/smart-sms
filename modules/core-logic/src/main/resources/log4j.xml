@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.keylium.relevancy.test">
+	<logger name="com.smartsms">
 		<level value="info" />
 	</logger>
 	
