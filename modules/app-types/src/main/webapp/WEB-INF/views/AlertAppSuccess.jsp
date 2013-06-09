@@ -1,13 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Shashi
-  Date: 6/3/13
-  Time: 1:08 PM
+  User: snej
+  Date: 6/8/13
+  Time: 7:46 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 
 <head>
@@ -84,6 +86,5 @@
 </div>
 <script type="text/javascript" src="resources/javascripts/footer.js" language="javascript"></script>
 </div>
-
 </body>
 </html>

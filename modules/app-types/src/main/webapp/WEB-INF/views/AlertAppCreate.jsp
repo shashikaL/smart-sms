@@ -5,11 +5,13 @@
   Time: 1:35 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+
 <head>
     <title>resources - SMS Based Application Management Platform</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -154,7 +156,7 @@
                 </div>
             </div>
             <div style="text-align:center;">
-                <form action="serviceAppConfirm.html" name="agreementForm" method="post">
+                <form action="AlertAppConfirm.html" name="agreementForm" method="post">
               <span>
               <input onclick="submitForm()" name="ok" style="width:50px;" type="button" class="button" value="I Agree" id="ok"/>
               </span>
@@ -479,7 +481,7 @@ var selectedKeyword = '';
     </div>
     <div class="input_row">
         <div class="input-text-wrap">
-            <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Service"/>
+            <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Alert"/>
         </div>
     </div>
 </div>
@@ -492,7 +494,7 @@ var selectedKeyword = '';
         <option value="2545">1234</option>
         <option value="2545">N/A</option>
     </select>
-    <a style="padding-left:2px" href="serviceCreateKeyword1.html">Create Keyword</a>
+    <a style="padding-left:2px" href="alertCreateKeyword1.html">Create Keyword</a>
 </div>
 <h4>
     <label for="short3"></label>
@@ -532,7 +534,7 @@ var selectedKeyword = '';
 <div class="input_row">
     <div class="textarea-wrap">
         <div style="margin-left:0px;" id="decsErrorDiv" class="error-req"></div>
-        <textarea id="decs" name="app.description">First Service Application</textarea>
+        <textarea id="decs" name="app.description">First Alert Application</textarea>
     </div>
 </div>
 <div class="clear">&nbsp;
