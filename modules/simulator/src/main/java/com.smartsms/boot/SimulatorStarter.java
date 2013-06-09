@@ -21,7 +21,6 @@ public class SimulatorStarter {
         logger.info("Enter Your Phone Number   : ");
         String phoneNo = dataIn.readLine();
 
-
         logger.info("============ Select Application Type ================");
         logger.info("------------ 1- Alert Application -------------------");
         logger.info("------------ 2- Service Application -----------------");
