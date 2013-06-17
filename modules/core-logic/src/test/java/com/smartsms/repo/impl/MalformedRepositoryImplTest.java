@@ -11,9 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author rajith
- */
+
 @ContextConfiguration(locations = "classpath*:test-core-logic-context.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class MalformedRepositoryImplTest {
