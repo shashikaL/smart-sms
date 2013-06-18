@@ -71,7 +71,7 @@
 <div id="dashboard-widgets-wrap">
 <div class="metabox-holder" id="dashboard-widgets">
 <div class="postbox" id="dashboard_quick_press">
-<form id="quick-press" name="appdetails" action="appDetails.html" method="post">
+<form action="" method="post">
 <h3 class="hndle"><span>Application Details</span></h3>
 <script type="text/javascript" src="resources/javascripts/tablesorter/viewRequest.js"></script>
 <div class="inside">
@@ -82,7 +82,7 @@
 <div>
     <div style="margin-top:19px;margin-left:8px" class="input_row">
         <div class="input-text-wrap">
-            <input id="appName" name="app.appName" tabindex="10" disabled="disabled" readonly="readonly" type="text" value="Service"/>
+            <input id="appName" name="appName" tabindex="10"  readonly="readonly" type="text" value="<c:out value="${ServiceObj.appName}"/> "/>
         </div>
     </div>
 </div>
@@ -92,7 +92,7 @@
 </h4>
 <div class="info_group">
     <div style="display:inline"></div>
-    <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
+    <select id="keyword.shortCode" name="keyword.shortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
         <option value="2545">1234</option>
     </select>
 </div>
@@ -104,7 +104,7 @@
     <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-22px;"></div>
     <div style="width:130px;" class="input-text-wrap">
         <div>
-            <input id="startDate" name="startDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="09/03/2013"/>
+            <input id="startDate" name="startDate" tabindex="15" readonly="readonly" type="text" value="<c:out value="${ServiceObj.startDate}"/>"/>
         </div>
     </div>
 </div>
@@ -117,7 +117,7 @@
         <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-22px;"></div>
         <div style="width:130px;" class="input-text-wrap">
             <div>
-                <input id="endDate" name="endDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="09/04/2013"/>
+                <input id="endDate" name="endDate" tabindex="15"  readonly="readonly" type="text" value="<c:out value="${ServiceObj.endDate}"/>"/>
             </div>
         </div>
     </div>
@@ -128,7 +128,7 @@
 </h4>
 <div style="margin-left:8px" class="input_row">
     <div class="textarea-wrap">
-        <textarea id="decs" name="app.description" disabled="disabled" readonly="readonly">First Service Application</textarea>
+        <textarea id="appDescription" name="appDescription" readonly="readonly"><c:out value="${ServiceObj.appDescription}"/></textarea>
     </div>
 </div>
 
@@ -325,20 +325,20 @@
     </div>
 </div>
 </div>
-</form>
-</div>
 
 
-<form id="app" name="confirmAlert" action="appCreationSuccess.html" method="post">
+
     <div style="text-align:center; width:100%"><span style="padding-right:10px">
                   <input onclick="location.href='ServiceAppStep1';" name="back" style="width:50px;" tabindex="5" type="button" class="button" value="Back" id="back"/>
                   </span><span style="padding-right:10px">
-                  <input onclick="location.href='ServiceAppSuccess';" name="next" style="width:50px;" tabindex="6" type="button" class="button" value="Confirm" id="next"/>
+                  <input name="next" style="width:50px;" tabindex="6" type="submit" class="button" value="Confirm" id="next"/>
                   </span><span>
                   <input onclick="location.href='appTypeSelection.html';" name="cancel" style="width:50px;" tabindex="6" type="button" class="button" value="Cancel" id="cancel"/>
                   </span></div>
     <div class="clear">&nbsp;</div>
 </form>
+</div>
+
 </div>
 </div>
 </div>

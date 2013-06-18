@@ -481,7 +481,7 @@ var selectedKeyword = '';
     </div>
     <div class="input_row">
         <div class="input-text-wrap">
-            <input id="appName" name="appName" onblur="validateAppName();" type="text" value="Service"/>
+            <input id="appName" name="appName" onblur="validateAppName();" type="text" />
         </div>
         <div style=" margin-left:65px;margin-bottom:18px;margin-top:-10px;">
 
@@ -493,7 +493,7 @@ var selectedKeyword = '';
 </h4>
 <div class="info_group">
     <div style="display:inline"></div>
-    <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
+    <select id="keyword.shortCode" name="keyword.shortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
         <option value="1234">1234</option>
 
     </select>
