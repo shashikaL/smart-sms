@@ -159,7 +159,7 @@
                 </div>
             </div>
             <div style="text-align:center;">
-                <form action="alertAppConfirm.html" name="agreementForm" method="post">
+                <form action="" name="agreementForm" method="post">
               <span>
               <input onclick="submitForm()" name="ok" style="width:50px;" type="button" class="button" value="I Agree" id="ok"/>
               </span>
@@ -468,7 +468,7 @@ var selectedKeyword = '';
 <div id="dashboard-widgets-wrap">
 <div class="metabox-holder" id="dashboard-widgets">
 <div class="postbox" id="dashboard_quick_press">
-<form id="quick-press" name="appdetails" action="appDetails.html" method="post">
+<form action="" method="post">
 <h3 class="hndle"><span>Application Details</span></h3>
 <div class="inside">
 <div class="clear">&nbsp;</div>
@@ -481,7 +481,7 @@ var selectedKeyword = '';
     </div>
     <div class="input_row">
         <div class="input-text-wrap">
-            <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Service"/>
+            <input id="appName" name="appName" onblur="validateAppName();" type="text" value="Service"/>
         </div>
         <div style=" margin-left:65px;margin-bottom:18px;margin-top:-10px;">
 
@@ -494,8 +494,8 @@ var selectedKeyword = '';
 <div class="info_group">
     <div style="display:inline"></div>
     <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
-        <option value="2545">1234</option>
-        <option value="2545">N/A</option>
+        <option value="1234">1234</option>
+
     </select>
     <a style="padding-left:2px" href="alertCreateKeyword1.html">Create Keyword</a> </div>
 <h4>
@@ -509,7 +509,7 @@ var selectedKeyword = '';
 <div style="width:200px;margin-left:-165px" class="input_row"></div>
 <div style="width:200px;margin-left:-50px" class="input_row">
     <div class="input-text-wrap">
-        <input id="startDate" name="startDate" class="readonly" type="text" value="09/03/2011"/>
+        <input id="startDate" name="startDate" class="readonly" type="text" value="09/03/2013"/>
     </div>
 </div>
 
@@ -521,7 +521,7 @@ var selectedKeyword = '';
     <div style="width:200px;margin-left:-165px" class="input_row"></div>
     <div style="width:200px;margin-left:-50px" class="input_row">
         <div class="input-text-wrap">
-            <input id="endDate" name="endDate" style="cursor:pointer" type="text" value="09/04/2011"/>
+            <input id="endDate" name="endDate" style="cursor:pointer" type="text" value="09/04/2013"/>
         </div>
     </div>
 </div>
@@ -534,7 +534,7 @@ var selectedKeyword = '';
 <div class="input_row">
     <div class="textarea-wrap">
         <div style="margin-left:0px;" id="decsErrorDiv" class="error-req"></div>
-        <textarea id="decs" name="app.description">First Service Application</textarea>
+        <textarea id="appDescription" name="appDescription"></textarea>
     </div>
 </div>
 
@@ -545,7 +545,7 @@ var selectedKeyword = '';
 </h4>
 <div class="info_group">
     <div style="margin-left:-69px;" class="error-req"></div>
-    <select id="duration" name="selectedPeriodUnit" style="min-width:160px;width:auto;margin-left:-10px;" onchange="showDispatchTime();">
+    <select id="scheduledType" name="scheduledType" style="min-width:160px;width:auto;margin-left:-10px;" onchange="showDispatchTime();">
         <option value="HOUR">HOUR</option>
         <option value="DAY">DAY</option>
         <option value="WEEK">WEEK</option>
@@ -691,7 +691,7 @@ var selectedKeyword = '';
                     <div class="input_row">
                         <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-10px;"></div>
                         <div style="z-index:499" class="textarea-wrap">
-                            <textarea id="ss" name="subscriptionSuccessMsgEn" wrap="physical">Subscription Successful</textarea>
+                            <textarea id="subscriptionSuccessfulMessage" name="subscriptionSuccessfulMessage" wrap="physical">Subscription Successful</textarea>
                         </div>
                     </div>
 
@@ -701,7 +701,7 @@ var selectedKeyword = '';
                     <div class="input_row">
                         <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:right;margin-left:66px;margin-bottom:0px;"></div>
                         <div style="z-index:500" class="textarea-wrap">
-                            <textarea id="us" name="unsubscribeSuccessMsgEn" wrap="physical">Unsubscribed Successfully</textarea>
+                            <textarea id="unSubscriptionSuccessfulMessage" name="unSubscriptionSuccessfulMessage" wrap="physical"></textarea>
                         </div>
                     </div>
 
@@ -711,7 +711,7 @@ var selectedKeyword = '';
                     <div class="input_row">
                         <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-20px;overflow:visible;"></div>
                         <div class="textarea-wrap">
-                            <textarea id="ir" name="requestErrorMsgEn" wrap="physical">Invalid Request</textarea>
+                            <textarea id="invalidRequestMessage" name="invalidRequestMessage" wrap="physical"></textarea>
                         </div>
                     </div>
 
@@ -731,7 +731,7 @@ var selectedKeyword = '';
 <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span style="padding-right:10px">
                   <input onclick="location.href='AppTypeSelection';" name="cancel" type="button" class="button" value="Back"/>
                   </span><span>
-                  <input onclick="location.href='ServiceAppConfirm';" name="next" type="button" class="button" value="Next" id="next"/>
+                  <input name="next" type="submit" class="button" value="Next" id="next"/>
                   </span></div>
 <div class="clear">&nbsp;</div>
 </div>
