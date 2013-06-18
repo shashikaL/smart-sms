@@ -691,7 +691,7 @@ var selectedKeyword = '';
                     <div class="input_row">
                         <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-10px;"></div>
                         <div style="z-index:499" class="textarea-wrap">
-                            <textarea id="subscriptionSuccessfulMessage" name="subscriptionSuccessfulMessage" wrap="physical">Subscription Successful</textarea>
+                            <textarea id="subscriptionSuccessfulMessage" name="subscriptionSuccessfulMessage" wrap="physical"></textarea>
                         </div>
                     </div>
 
