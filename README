@@ -19,3 +19,11 @@ Deployment details
 3. \smartSMS\smart-sms\modules\app-types\target --> copy app-ui.war
 4. paste it to C:\Program Files\apache-tomcat-7.0.40\webapps
 
+
+
+OAuth Implementation
+----------------------------------------
+* Twitter
+
+Consumer key	GLMQhgDNnOwSogd35LJfJg
+Consumer secret	u1ztc6grmJUcvj04lfQPp3JohVutHSy3J4vZpdJiVQ
