@@ -188,6 +188,18 @@
                                         <input type='checkbox'/>
                                         <label for="rememberMe">Remember me</label>
                                     </p>
+                                    </br>
+                                    <p>
+                                        <label>Login with&nbsp;</label>
+                                        <a href="home.html">
+                                            <img src="resources/images/facebook.png"/>&nbsp;</a>
+
+                                        <a href="home.html">
+                                            <img src="resources/images/twitter.png"/>&nbsp;</a>
+
+                                        <a href="home.html">
+                                            <img src="resources/images/linkedin.png"/>&nbsp;</a>
+                                    </p>
 
                                     <p class="submit">
                                         <input class="submit_button" type="submit" name="login" id="submit" tabindex="4"

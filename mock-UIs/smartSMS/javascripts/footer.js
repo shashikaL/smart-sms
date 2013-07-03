@@ -6,16 +6,6 @@ cText += '      <div class="current">'
 cText += '        <ul>'
 cText += '          <li><a target="_blank" href="#">About Us</a></li>' 
 cText += '          <li><a target="_blank" href="#">Contact Us</a></li>'
-
-cText += '                 <li class="footerRightCorner"><a target="_blank" href="#"> '
-cText += '                     <img src="smartSMS/images/twitter-icon.gif"'
-cText += '                          title="twitter" alt="twitter"></a></li> '
-
-cText += '  <li class="footerRightCorner"><a target="_blank" href="#"> '
-cText += '                    <img src="smartSMS/images/facebook-icon.gif"'
-cText += '                          title="facebook" alt="facebook"></a></li> '
-
-
 cText += '        </ul>'
 cText += '      </div>'
 cText += '    </div>'
