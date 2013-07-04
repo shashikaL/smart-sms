@@ -34,7 +34,7 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String redirectLogin(Model model){
         String twitterAuthUrl = findTwitterAuthUrl();
-        System.out.println("Twitter login =============" + twitterAuthUrl);
+        model.addAttribute("twitterUrl",twitterAuthUrl);
         return "login";
     }
 
