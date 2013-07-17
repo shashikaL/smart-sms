@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.social.connect.ConnectionFactoryLocator;
 import org.springframework.social.connect.support.ConnectionFactoryRegistry;
+import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 import org.springframework.social.oauth1.OAuth1Parameters;
+import org.springframework.social.oauth2.OAuth2Parameters;
 import org.springframework.social.twitter.connect.TwitterConnectionFactory;
 
 /**
@@ -23,6 +25,12 @@ public class SpringSocialConfig {
 
     @Value("${facebook.app.secret}")
     private String facebookAppSecret;
+
+    @Value("${facebook.redirect.url}")
+    private String facebookRedirectURL;
+
+    @Value("${facebook.scopes}")
+    private String facebookScopes;
 
     @Value("${twitter.app.secret}")
     private String twitterAppSecret;
@@ -41,8 +49,8 @@ public class SpringSocialConfig {
         ConnectionFactoryRegistry registry = new ConnectionFactoryRegistry();
 
         // Register Facebook Connection Factory
-//        registry.addConnectionFactory(new FacebookConnectionFactory(
-//                facebookAppKey, facebookAppSecret));
+        registry.addConnectionFactory(new FacebookConnectionFactory(
+                facebookAppId, facebookAppSecret));
 
         // Register LinkedIn Connection Factory
 //        registry.addConnectionFactory(new LinkedInConnectionFactory(
@@ -59,6 +67,16 @@ public class SpringSocialConfig {
     public OAuth1Parameters twitterOAuth1Parameters() {
         OAuth1Parameters params = new OAuth1Parameters();
         params.setCallbackUrl(twitterRedirectURL);
+        return params;
+    }
+
+    @Bean
+    public OAuth2Parameters facebookOAuth2Parameters() {
+        OAuth2Parameters params = new OAuth2Parameters();
+        String facebookOAuthRedirectURL = facebookLoginUrl + facebookRedirectURL;
+        facebookOAuthRedirectURL = facebookOAuthRedirectURL.replace("{client_id}", facebookAppId);
+        params.setRedirectUri(facebookOAuthRedirectURL);
+        params.setScope(facebookScopes);
         return params;
     }
 

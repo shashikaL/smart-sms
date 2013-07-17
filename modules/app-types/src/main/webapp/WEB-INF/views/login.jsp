@@ -192,7 +192,7 @@
                                     </br>
                                     <p>
                                         <label>Login with&nbsp;</label>
-                                        <a href="home.html">
+                                        <a href="<c:out value="${facebookUrl}"/>">
                                             <img src="resources/images/facebook.png"/>&nbsp;</a>
 
                                         <a href="<c:out value="${twitterUrl}"/>">

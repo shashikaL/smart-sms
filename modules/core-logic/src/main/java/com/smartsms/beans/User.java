@@ -1,5 +1,6 @@
 package com.smartsms.beans;
 
+import com.smartsms.beans.util.SocialNetwork;
 import com.smartsms.util.ObjectIDGenerator;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -10,22 +11,26 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document
 public class User {
+
     @Id
-    private ObjectId userId;
+    private ObjectId id;
+    private String userId;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
+    private SocialNetwork socialNetwork;
+
 
     public User() {
-        this.userId = ObjectIDGenerator.getObjectID();
+        this.id = ObjectIDGenerator.getObjectID();
     }
 
-    public ObjectId getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(ObjectId userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -59,5 +64,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public SocialNetwork getSocialNetwork() {
+        return socialNetwork;
+    }
+
+    public void setSocialNetwork(SocialNetwork socialNetwork) {
+        this.socialNetwork = socialNetwork;
     }
 }

@@ -35,6 +35,18 @@
     <script language="JavaScript" type="text/javascript" src="resources/javascripts/datetime.js"></script>
     <script language="JavaScript" type="text/javascript" src="resources/javascripts/jquery.bgiframe.js"></script>
     <script language="JavaScript" type="text/javascript" src="resources/javascripts/dialog/jquery.alerts.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            if(window.location.hash){
+                var newUrl = window.location.toString();
+                newUrl = newUrl.replace('#','?');
+                newUrl = newUrl.replace('Home','social-connections/facebook');
+                window.location.assign(newUrl)
+            }
+
+        });
+        </script>
+
 
 </head>
 <body>
@@ -49,7 +61,8 @@
             });
         }
     </script>
-    <script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
+    <%--<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>--%>
+    <jsp:include page="common/header.jsp"/>
     <script type="text/javascript">
         function submitForm() {
             document.forms[1].submit();
