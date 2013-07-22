@@ -1,9 +1,6 @@
 package com.smartsms.controllers;
 
-import com.smartsms.beans.AlertApplication;
-import com.smartsms.beans.Response;
-import com.smartsms.beans.Subscribe;
-import com.smartsms.beans.SubscriberMessage;
+import com.smartsms.beans.*;
 import com.smartsms.beans.util.AppType;
 import com.smartsms.repo.SubscriberRepository;
 import com.smartsms.repo.config.ApplicationTypeRepository;
@@ -11,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 /**
@@ -62,6 +61,49 @@ public class SubscriptionHandlingController {
     @RequestMapping(value = "/unsubscribe/{subscriptionNumber}", method = RequestMethod.POST)
     public String unSubscription(@RequestBody SubscriberMessage message, @PathVariable String subscriberNumber) {
         return null;
+    }
+
+    @RequestMapping(value = "/bulk/subscribe", method = RequestMethod.POST)
+    @ResponseBody
+    public Response handleBulkSubscription(@RequestBody BulkSubscriberMessage bulkSubscriberMessage){
+        AppType applicationType = bulkSubscriberMessage.getSubscriberMessage().getApplicationType();
+        switch (applicationType) {
+            case ALERT:
+                return handleAlertTypes(bulkSubscriberMessage);
+            default:
+                return handleDefaultType();
+        }
+
+    }
+
+    private Response handleAlertTypes(BulkSubscriberMessage bulkSubscriberMessage){
+        SubscriberMessage subscriberMessage = bulkSubscriberMessage.getSubscriberMessage();
+        AlertApplication alertApplication = applicationTypeRepository.findAlertApplicationByShortCode(subscriberMessage.getShortCode());
+        if (alertApplication == null) {
+            return createResponse("404", "Invalid Message. Cannot find app for subscribe");
+        }
+
+        String message = subscriberMessage.getMessage();
+        String[] strings = message.split(" ");
+        if (strings.length != 2) {
+            return createResponse("404", alertApplication.getInvalidRequestMessage());
+        }
+        if (!strings[0].equals("REG")) {
+            return createResponse("404", alertApplication.getInvalidRequestMessage());
+        }
+
+        List<String> subscriberNumbers = bulkSubscriberMessage.getSubscriberNumbers();
+        for (String number : subscriberNumbers){
+            Subscribe subscribe = new Subscribe();
+            subscribe.setSubscriberNumber(number);
+            subscribe.setAppId(alertApplication.getAppId());
+            subscriberRepository.saveSubscriber(subscribe);
+        }
+        return createResponse("200", alertApplication.getSubscriptionSuccessfulMessage());
+    }
+
+    private Response handleDefaultType(){
+        return createResponse("404", "Unsupported Type");
     }
 
     private Response createResponse(String code, String message) {
