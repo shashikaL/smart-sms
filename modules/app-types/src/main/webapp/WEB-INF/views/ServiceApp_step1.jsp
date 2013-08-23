@@ -547,16 +547,16 @@ var selectedKeyword = '';
     <div style="margin-left:-69px;" class="error-req"></div>
     <select id="scheduledType" name="scheduledType" style="min-width:160px;width:auto;margin-left:-10px;" onchange="showDispatchTime();">
         <option value="HOUR">HOUR</option>
-        <option value="DAY">DAY</option>
+       <!-- <option value="DAY">DAY</option>
         <option value="WEEK">WEEK</option>
-        <option value="MONTH">MONTH</option>
+        <option value="MONTH">MONTH</option> -->
     </select>
 </div>
 <h4>
     <label for="dispatchTime">Time Interval</label>
 </h4>
 <div style="float:left;margin: 0px 0px 0px 55px;" class="info_group"><span id="subscriptionDispatchDateDiv">
-                      <label for="subscriptionDispatchDate">Date</label>
+                      <!-- <label for="subscriptionDispatchDate">Date</label>
                       <select id="subscriptionDispatchDate" name="subscriptionDispatchDate" style="min-width:20px;width:auto;">
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -602,7 +602,7 @@ var selectedKeyword = '';
                           <option value="5">Fri</option>
                           <option value="6">Sat</option>
                       </select>
-                      </span><span id="subscriptionDispatchHourDiv">
+                      </span><span id="subscriptionDispatchHourDiv"> -->
                       <label for="subscriptionDispatchHour">Hour</label>
                       <select id="subscriptionDispatchHour" name="subscriptionDispatchHour" style="min-width:20px;width:auto;">
                           <option value="00" selected="selected">00</option>
