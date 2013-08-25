@@ -14,6 +14,7 @@ public abstract class AbstractApplicationType {
     private String startDate;
     private String endDate;
     private Keyword keyword;
+    private String userID;
 
     public String getAppId() {
         return appId;
@@ -61,5 +62,13 @@ public abstract class AbstractApplicationType {
 
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 }

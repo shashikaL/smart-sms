@@ -50,8 +50,8 @@
             });
         }
     </script>
-    <script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
-
+    <%--<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>--%>
+    <jsp:include page="common/header.jsp"/>
     <div id="header2">
         <p id="tagline"><br/>
             <br/>

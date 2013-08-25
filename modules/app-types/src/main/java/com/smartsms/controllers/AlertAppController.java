@@ -4,6 +4,7 @@ import com.smartsms.beans.AlertApplication;
 import com.smartsms.beans.FilterMessage;
 import com.smartsms.beans.Response;
 import com.smartsms.repo.config.ApplicationTypeRepository;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,27 +35,47 @@ public class AlertAppController {
     private AlertApplication alertApplication;
 
     @RequestMapping(value = "/AlertAppCreate", method = RequestMethod.GET)
-    public String redirect() {
+    public String redirect(@RequestParam(value = "username", required = false) String username, Model model) {
+        if(StringUtils.isEmpty(username)){
+            model.addAttribute("username","user");
+        } else {
+            model.addAttribute("username",username);
+        }
         return "AlertAppCreate";
 
     }
 
     @RequestMapping(value = "/AlertAppCreate", method = RequestMethod.POST)
-    public String submitAlertAppCreate(AlertApplication application) {
+    public String submitAlertAppCreate(AlertApplication application, @RequestParam(value = "username", required = false) String username, Model model) {
         this.alertApplication = application;
+        if(StringUtils.isEmpty(username)){
+            model.addAttribute("username","user");
+        } else {
+            model.addAttribute("username",username);
+        }
         return "redirect:/AlertAppConfirm";
 
     }
 
     @RequestMapping(value = "/AlertAppConfirm", method = RequestMethod.GET)
-    public String redirectConfirm(Model model) {
+    public String redirectConfirm(@RequestParam(value = "username", required = false) String username, Model model) {
+        if(StringUtils.isEmpty(username)){
+            model.addAttribute("username","user");
+        } else {
+            model.addAttribute("username",username);
+        }
         model.addAttribute("alertObj", alertApplication);
         return "AlertAppConfirm";
 
     }
 
     @RequestMapping(value = "/AlertAppConfirm", method = RequestMethod.POST)
-    public String submit(AlertApplication application) {
+    public String submit(AlertApplication application, @RequestParam(value = "username", required = false) String username,  Model model) {
+        if(StringUtils.isEmpty(username)){
+            model.addAttribute("username","user");
+        } else {
+            model.addAttribute("username",username);
+        }
         application.setAppId(UUID.randomUUID().toString());
         applicationTypeRepository.saveApplication(application);
         return "redirect:/AlertAppSuccess";
@@ -62,7 +83,12 @@ public class AlertAppController {
     }
 
     @RequestMapping(value = "/AlertAppSuccess", method = RequestMethod.GET)
-    public String redirectSuccess() {
+    public String redirectSuccess(@RequestParam(value = "username", required = false) String username, Model model) {
+        if(StringUtils.isEmpty(username)){
+            model.addAttribute("username","user");
+        } else {
+            model.addAttribute("username",username);
+        }
         return "AlertAppSuccess";
 
     }

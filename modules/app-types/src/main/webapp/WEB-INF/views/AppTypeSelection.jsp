@@ -125,7 +125,7 @@
 
                                                 <div id="menu_alert">
                                                     <ul>
-                                                        <li class="first"><a href="AlertAppCreate" title="Alert">&nbsp;</a></li>
+                                                        <li class="first"><a href="AlertAppCreate?username=<c:out value="${username}"/>" title="Alert">&nbsp;</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
