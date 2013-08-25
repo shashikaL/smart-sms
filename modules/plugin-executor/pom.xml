@@ -9,8 +9,8 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>report-scheduler</artifactId>
-    <name>report-scheduler</name>
+    <artifactId>plugin-executor</artifactId>
+    <name>plugin-executor</name>
 
     <properties>
         <appassembler.basedir>target/generated-resources/appassembler/jsw/report-scheduler</appassembler.basedir>
