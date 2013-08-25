@@ -4,14 +4,14 @@ package com.smartsms.beans;
 public class FilterMessage {
     private String appId;
     private String message;
-    private String user;
+    private String appName;
 
-    public String getUser() {
-        return user;
+    public String getAppName() {
+        return appName;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setAppName(String appName) {
+        this.appName = appName;
     }
 
     public String getAppId() {

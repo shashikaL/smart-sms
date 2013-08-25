@@ -36,8 +36,9 @@ public class AdminRepositoryImplTest {
     private FilterRejectedMessage createFilterRejectedMessage() {
         FilterRejectedMessage filterRejectedMessage = new FilterRejectedMessage();
         filterRejectedMessage.setApplicationId(UUID.randomUUID().toString());
-        filterRejectedMessage.setApplicationUser("user 2");
-        filterRejectedMessage.setMessage("Sample Text message 2 ");
+        filterRejectedMessage.setApplicationName("App2");
+        filterRejectedMessage.setApplicationUser("user4");
+        filterRejectedMessage.setMessage("Sample Text message 4 ");
         return filterRejectedMessage;
     }
 }
