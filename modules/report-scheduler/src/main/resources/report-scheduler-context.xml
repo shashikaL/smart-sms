@@ -95,7 +95,7 @@
         </property>
     </bean>
 
-    <bean id="applicationServiceObjectTarget" class="com.smartsms.service.impl.AlertApplicationServiceImpl">
+    <bean id="applicationServiceObjectTarget" class="com.smartsms.service.impl.PluginServiceImpl">
     </bean>
 
     <bean id="alertAppRepository" class="com.smartsms.reporsitory.impl.AlertAppRepositoryImpl">

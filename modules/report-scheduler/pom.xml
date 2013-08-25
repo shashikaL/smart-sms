@@ -45,7 +45,7 @@
                     <daemons>
                         <daemon>
                             <id>report-scheduler</id>
-                            <mainClass>com.smartsms.boot.ReportScheduleServer</mainClass>
+                            <mainClass>com.smartsms.boot.PluginServer</mainClass>
                             <platforms>
                                 <platform>jsw</platform>
                                 <!--<platform>windows</platform>-->
