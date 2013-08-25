@@ -12,7 +12,7 @@ public class PluginServer {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("report-scheduler-context.xml");
         logger.info("#######################################################");
-        logger.info("##  SMART-SMS Report scheduler Started Successfully  ##");
+        logger.info("##  SMART-SMS Plugin Started Successfully  ##");
         logger.info("#######################################################");
     }
 }
