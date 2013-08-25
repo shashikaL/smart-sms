@@ -2,6 +2,7 @@ package com.smartsms.beans;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import com.smartsms.beans.util.STATUS;
 
 import java.util.UUID;
 
@@ -11,6 +12,9 @@ public class Subscribe {
     private String id;
     private String appId;
     private String subscriberNumber;
+
+    private STATUS subscriberStatus;
+
 
     public Subscribe() {
         this.id = UUID.randomUUID().toString();

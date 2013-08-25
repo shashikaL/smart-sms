@@ -32,6 +32,7 @@ public class FilterMessageController {
 
         if (isMalFormedContentExists(splittedArray)) {
             //save in admin
+
             return "Message Temporally Blocked.Please try again later";
         }
 
@@ -47,13 +48,13 @@ public class FilterMessageController {
 
     private boolean isMalFormedContentExists(String[] splittedArray) {
         List<Malformed> allMalformed = malformedRepository.findAllMalformed();
-        for (Malformed malformed : allMalformed) {
-            List<String> strings = malformed.getMalformedKeyword();
-            for (String str : splittedArray) {
-                if (strings.contains(str)) {
-                    return true;
+            for (Malformed malformed : allMalformed) {
+                List<String> strings = malformed.getMalformedKeyword();
+                for (String str : splittedArray) {
+                    if (strings.contains(str)) {
+                        return true;
+                    }
                 }
-            }
         }
         return false;
     }

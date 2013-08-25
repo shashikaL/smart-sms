@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -177,6 +178,7 @@ function suspend(){
 
 
 
+
 function isEmptyField() {
     var txtPassword = document.getElementById("password");
     var txtNewPassword = document.getElementById("newPassword");
@@ -265,6 +267,17 @@ function confirmDelete() {
     });
 }
 
+function addHyperlinks(){
+    $("#action_column td").append("<table width='250' border='1'>" +
+            "<tr>"+
+            "<td><a href='javascript:appove();' style='color:#0C3; font-size:12px; font-weight:600;'> Approve </a></td>"+
+            "<td><a href='javascript:block();' style='color:#F00; font-size:12px; font-weight:600;'> Block </a></td>"+
+            "<td><a href='javascript:suspend();' style='color:#F63; font-size:12px; font-weight:600;'> Suspend User </a></td>"+
+            "</tr>"+
+            "</table>");
+}
+
+
 </script>
 
 
@@ -317,9 +330,9 @@ function confirmDelete() {
 
                                 <div id="TabbedPanels1" class="TabbedPanels">
                                     <ul class="TabbedPanelsTabGroup">
-                                        <li class="TabbedPanelsTab" tabindex="0">Messages</li>
-                                        <li class="TabbedPanelsTab" tabindex="0">Filter</li>
-                                        <li class="TabbedPanelsTab" tabindex="0">Tab3</li>
+                                        <li class="TabbedPanelsTab" tabindex="0">Filter Rejected</li>
+                                        <li class="TabbedPanelsTab" tabindex="0">User Messages</li>
+                                        <li class="TabbedPanelsTab" tabindex="0">Reports</li>
                                     </ul>
 
 
@@ -331,22 +344,25 @@ function confirmDelete() {
                                                 <th scope="col">Owner</th>
                                                 <th scope="col">Action </th>
                                             </tr>
-                                            <tr>
-                                                <td><p>1005A</p></td>
-                                                <td><p>Test Messege</p></td>
-                                                <td><input type="text" name="owner_email" id="owner_email" value="niraga89@gmail.com" readonly></td>
-                                                <td>
-                                                    <table width="250" border="1">
-                                                        <tr>
-                                                            <td><a href="javascript:appove();" style="color:#0C3; font-size:12px; font-weight:600;"> Approve </a></td>
-                                                            <td><a href="javascript:popup('popUpDiv');" style="color:#F00; font-size:12px; font-weight:600;"> Block </a></td>
-                                                            <td><a href="javascript:popup('popUpDiv');" style="color:#F63; font-size:12px; font-weight:600;"> Suspend User </a></td>
-                                                        </tr>
-                                                    </table>
+                                            <c:forEach var="filterRow" items="${filterd}">
+                                                <tr>
+                                                    <td><p><c:out value="${filterRow.applicationId}"/></p></td>
+                                                    <td><p><c:out value="${filterRow.message}"/></p></td>
+                                                    <td><input type="text" name="owner_email" id="owner_email" value="<c:out value="${filterRow.applicationUser}"/>" readonly></td>
+                                                    <td>
+                                                        <table width="250" border="1">
+                                                            <tr>
+                                                                <td><a href="javascript:appove();" style="color:#0C3; font-size:12px; font-weight:600;"> Approve </a></td>
+                                                                <td><a href="javascript:popup('popUpDiv');" style="color:#F00; font-size:12px; font-weight:600;"> Block </a></td>
+                                                                <td><a href="javascript:popup('popUpDiv');" style="color:#F63; font-size:12px; font-weight:600;"> Suspend User </a></td>
+                                                            </tr>
+                                                        </table>
 
 
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
+                                            </c:forEach>
+
                                         </table></div>
                                         <div class="TabbedPanelsContent">Content 3</div>
                                         <div class="TabbedPanelsContent">Content 2</div>

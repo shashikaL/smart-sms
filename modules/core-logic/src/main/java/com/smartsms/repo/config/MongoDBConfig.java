@@ -45,6 +45,12 @@ public class MongoDBConfig {
     @Value("${smart.sms.mal.database.mal.collection}")
     private String malCollectionName;
 
+    @Value("${smart.sms.admin.database.name}")
+    private String adminDatabaseName;
+
+    @Value("${smart.sms.admin.database.filter.rejected.messages}")
+    private String adminFilterRejectedMessageCollectionName;
+
     public String getMongoHost() {
         return mongoHost;
     }
@@ -147,5 +153,13 @@ public class MongoDBConfig {
 
     public void setMalCollectionName(String malCollectionName){
         this.malCollectionName = malCollectionName;
+    }
+
+    public String getAdminDatabaseName() {
+        return adminDatabaseName;
+    }
+
+    public String getAdminFilterRejectedMessageCollectionName() {
+        return adminFilterRejectedMessageCollectionName;
     }
 }
