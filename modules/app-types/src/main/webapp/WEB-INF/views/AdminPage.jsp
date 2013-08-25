@@ -340,6 +340,7 @@ function addHyperlinks(){
                                         <div class="TabbedPanelsContent"><table class="report_table" width="600" border="10" cellpadding="10" bordercolor="#6633FF">
                                             <tr bordercolor="#000000">
                                                 <th scope="col">Application ID</th>
+                                                <th scope="col">Application Name</th>
                                                 <th scope="col">Message</th>
                                                 <th scope="col">Owner</th>
                                                 <th scope="col">Action </th>
@@ -347,6 +348,7 @@ function addHyperlinks(){
                                             <c:forEach var="filterRow" items="${filterd}">
                                                 <tr>
                                                     <td><p><c:out value="${filterRow.applicationId}"/></p></td>
+                                                    <td><p><c:out value="${filterRow.applicationName}"/></p></td>
                                                     <td><p><c:out value="${filterRow.message}"/></p></td>
                                                     <td><input type="text" name="owner_email" id="owner_email" value="<c:out value="${filterRow.applicationUser}"/>" readonly></td>
                                                     <td>

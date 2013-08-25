@@ -11,6 +11,7 @@ public class FilterRejectedMessage {
     private String applicationId;
     private String message;
     private String applicationUser;
+    private String applicationName;
 
 
     public String getApplicationId() {
@@ -35,5 +36,13 @@ public class FilterRejectedMessage {
 
     public void setApplicationUser(String applicationUser) {
         this.applicationUser = applicationUser;
+    }
+
+    public String getApplicationName() {
+        return applicationName;
+    }
+
+    public void setApplicationName(String applicationName) {
+        this.applicationName = applicationName;
     }
 }

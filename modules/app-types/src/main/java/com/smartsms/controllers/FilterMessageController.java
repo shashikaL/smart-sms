@@ -2,6 +2,7 @@ package com.smartsms.controllers;
 
 
 import com.smartsms.beans.FilterMessage;
+import com.smartsms.beans.FilterRejectedMessage;
 import com.smartsms.beans.Malformed;
 import com.smartsms.beans.Response;
 import com.smartsms.repo.config.MalformedRepository;
@@ -31,7 +32,10 @@ public class FilterMessageController {
         String[] splittedArray = message.split("\\W+");
 
         if (isMalFormedContentExists(splittedArray)) {
-            //save in admin
+            FilterRejectedMessage filterRejectedMessage = new FilterRejectedMessage();
+            filterRejectedMessage.setMessage(filterMessage.getMessage());
+            filterRejectedMessage.setApplicationId(filterMessage.getAppId());
+            filterRejectedMessage.setApplicationUser("");
 
             return "Message Temporally Blocked.Please try again later";
         }
