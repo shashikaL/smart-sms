@@ -64,6 +64,11 @@ public class ContactAppController {
         return "ContactHelp";
 
     }
+    @RequestMapping(value = "/ContactAppView", method = RequestMethod.GET)
+    public String redirectView(){
+        return "ContactAppView";
+
+    }
 
 
 }

@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
@@ -53,7 +54,8 @@
             });
         }
     </script>
-    <script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
+    <%--<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>--%>
+    <jsp:include page="common/header.jsp"/>
     <div id="header2">
         <p id="tagline"><br/>
             <br/>
@@ -83,7 +85,7 @@
 
                                                 <div id="menu_voting">
                                                     <ul>
-                                                        <li><a href="VotingAppCreate" title="Voting">&nbsp;</a></li>
+                                                        <li><a href="VotingAppCreate?username=<c:out value="${username}"/>" title="Voting">&nbsp;</a></li>
                                                     </ul>
                                                 </div>
                                             </div>

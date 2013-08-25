@@ -22,7 +22,12 @@ public class HomeController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/AppTypeSelection")
-    public String redirectAppSelect(){
+    public String redirectAppSelect(@RequestParam(value = "username", required = false) String username, Model model){
+        if(StringUtils.isEmpty(username)){
+            model.addAttribute("username","user");
+        } else {
+            model.addAttribute("username",username);
+        }
         return "AppTypeSelection";
     }
 

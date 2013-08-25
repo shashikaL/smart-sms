@@ -2,6 +2,8 @@ package com.smartsms.controllers;
 
 import com.smartsms.beans.VotingApplication;
 import com.smartsms.repo.config.ApplicationTypeRepository;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +24,12 @@ public class VotingAppController {
     private ApplicationTypeRepository applicationTypeRepository;
 
     @RequestMapping(value = "/VotingAppCreate", method = RequestMethod.GET)
-    public String redirect(){
+    public String redirect(@RequestParam(value = "username", required = false) String username, Model model){
+        if(StringUtils.isEmpty(username)){
+            model.addAttribute("username","user");
+        } else {
+            model.addAttribute("username",username);
+        }
         return "VotingAppCreate";
 
     }

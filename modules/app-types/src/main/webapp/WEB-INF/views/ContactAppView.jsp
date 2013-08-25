@@ -1,12 +1,10 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Sony
-  Date: 03/06/13
-  Time: 9:24 PM
+  User: Home
+  Date: 8/18/13
+  Time: 4:29 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
@@ -14,7 +12,7 @@
     <title>SmartSMS - SMS Based Application Management Platform</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name='robots' content='noindex,nofollow'/>
-    <link rel="shortcut icon" href="smartSMS/images/fav.ico"/>
+    <link rel="shortcut icon" href="resources/images/fav.ico"/>
     <link rel='stylesheet' href='resources/css/body.css' type='text/css' media='all'/>
     <link rel='stylesheet' href='resources/css/custom.css' type='text/css' media='all'/>
     <link rel='stylesheet' href='resources/css/login.css' type='text/css' media='all'/>
@@ -64,6 +62,7 @@
 
 </head>
 <body>
+<p>&nbsp;</p>
 <div id="container" class="container_18">
 <script type="text/javascript">
     function logoutConfirm(url) {
@@ -79,8 +78,7 @@
         setTimeout("showPopup()", 1000);
     }
 </script>
-<%--<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>--%>
-<jsp:include page="common/header.jsp"/>
+<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
 <script type="text/javascript" src="resources/javascripts/calendar/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="resources/css/calendar/ui.all.css" type="text/css">
 </link>
@@ -158,7 +156,7 @@
                 </div>
             </div>
             <div style="text-align:center;">
-                <form action="votingAppConfirm.html" name="agreementForm" method="post">
+                <form action="serviceAppConfirm.html" name="agreementForm" method="post">
               <span>
               <input onclick="submitForm()" name="ok" style="width:50px;" type="button" class="button" value="I Agree" id="ok"/>
               </span>
@@ -462,194 +460,168 @@ var selectedKeyword = '';
 <div id="body">
 <div id="nullRemover"/>
 <div class="sub_heading">
-    <h1>Create a Voting Application</h1>
+    <h1> Contact Application Responses</h1>
 </div>
 <div class="navi_link4"></div>
 <div class="grid_1 alpha">&nbsp;</div>
 <div class="grid_16">
-<div id="dashboard-widgets-wrap">
-<div class="metabox-holder" id="dashboard-widgets">
-<div class="postbox" id="dashboard_quick_press">
-<form  method="post">
-<h3 class="hndle"><span>Application Details</span></h3>
-<div class="inside">
-<div class="clear">&nbsp;</div>
-<h4>
-    <label for="appname">Application Name<span class="mandatory">*</span></label>
-</h4>
-<div>
-    <div class="input_row">
-        <div id="appNameErrorDiv" class="error-req"></div>
-    </div>
-    <div class="input_row">
-        <div class="input-text-wrap">
-            <input id="appName" name="appName" type="text" />
-        </div>
-    </div>
-</div>
-<h4>
-    <label for="short3">Keyword Details</label>
-</h4>
-<div class="info_group">
-    <div style="display:inline"></div>
-    <select id="short3" name="keywordStr" style="min-width:120px;width:auto; margin-left:-7px;" >
-        <option value="2545">1234</option>
-        <option value="2545">N/A</option>
-    </select>
-    <a style="padding-left:2px" href="serviceCreateKeyword1.html">Create Keyword</a>
-</div>
-<h4>
-    <label for="short3"></label>
-</h4>
-<h4>
-    <label>Application Validity Duration</label>
-</h4>
-
-<div class="input_row"></div>
-
-<label style="float:left;margin: 0.3em 0 1em 5em;width:100px;" class="pointer" for="startDate">Start date</label>
-<div style="width:200px;margin-left:-165px" class="input_row"></div>
-<div style="width:200px;margin-left:-50px" class="input_row">
-    <div class="input-text-wrap">
-        <input id="startDate" name="startDate" class="readonly" type="text" value="09/03/2011"/>
-    </div>
-</div>
-
-<div id="expire">
-    <h4>
-        <label>&nbsp;</label>
-    </h4>
-    <label style="float:left;margin: 0.3em 0 1em 5em;width:100px;" class="pointer" for="endDate">End date</label>
-    <div style="width:200px;margin-left:-165px" class="input_row"></div>
-    <div style="width:200px;margin-left:-50px" class="input_row">
-        <div class="input-text-wrap">
-            <input id="endDate" name="endDate" style="cursor:pointer" type="text" value="09/04/2011"/>
-        </div>
-    </div>
-</div>
-<h4>
-    <label>&nbsp;</label>
-</h4>
-<h4>
-    <label for="decs">Description</label>
-</h4>
-<div class="input_row">
-    <div class="textarea-wrap">
-        <div style="margin-left:0px;" id="decsErrorDiv" class="error-req"></div>
-        <textarea id="decs" name="appDescription"></textarea>
-    </div>
-</div>
-<h4>
-    <label for="short3">Candidate Code</label>
-</h4>
-<div class="input_row">
-    <div class="input-text-wrap">
-        <input  name="code"  type="text" />
-    </div>
-</div>
-<div class="clear">&nbsp;</div>
-<div id="advance" style="display:none;float:left;">
-    <script type="text/javascript" src="/javascripts/advanceSetting/expand.js"></script>
-    <link rel="stylesheet" href="/css/advanceSetting/advanceSetting.css" type="text/css">
-    </link>
-    <script type="text/javascript">
-        $(function() {
-            // --- Using the default options:
-            //        $("h2.expand").toggler({initShow: "div.collapse:first"});
-            // --- Other options:
-            //$("h2.expand").toggler({method: "toggle", speed: 0});
-            //$("h2.expand").toggler({method: "toggle"});
-            //        $("h2.expand").toggler({speed: "fast", initShow: "div.collapse:first"});
-            $("h2.expand").toggler({speed: "fast"});
-            //        $("h2.expand").toggler({method: "fadeToggle"});
-            //        $("h2.expand").toggler({method: "slideFadeToggle",initShow: "div.collapse:first"});
-            $("#advance_content").expandAll({trigger: "h2.expand", ref: "div.demo", showMethod: "slideDown", hideMethod: "slideUp", speed: 400, oneSwitch: false});
-
-            textCounter('ss','remLen_ss',75);
-            textCounter('us','remLen_us',75);
-            textCounter('ir','remLen_ir',75);
-
-            //        setSubscription();
-        });
-        function enableChargingParties(){
-            var cpm = document.getElementById("cpm");
-            cpm.disabled = false;
-            var cps = document.getElementById("cps");
-            cps.disabled = false;
-        }
-    </script>
-    <div id="wrapper">
-        <div id="advance_content">
-            <div class="demo">
-                <h2 id="advance_config" class="expand">Response Configurations</h2>
-                <div class="collapse">
-                    <h4>
-                        <label for="ss">Subscription Successful Response Message</label>
-                    </h4>
-                    <div class="input_row">
-                        <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-10px;"></div>
-                        <div style="z-index:499" class="textarea-wrap">
-                            <textarea id="ss" name="subscriptionSuccessMsgEn" wrap="physical" onKeyUp="textCounter('ss','remLen_ss',75)" onKeyDown="textCounter('ss','remLen_ss',75)">Subscription Successful</textarea>
-                        </div>
-                    </div>
-                    <input style="float:right;margin-top:-38px;margin-right:-10px;z-index:998;background-color:white;width:30px" value="75" maxlength="3" size="3" id="remLen_ss" type="text" readonly="true"/>
-                    <h4>
-                        <label for="us">Unsubscribe Successful Response Message</label>
-                    </h4>
-                    <div class="input_row">
-                        <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:right;margin-left:66px;margin-bottom:0px;"></div>
-                        <div style="z-index:500" class="textarea-wrap">
-                            <textarea id="us" name="unsubscribeSuccessMsgEn" wrap="physical" onKeyUp="textCounter('us','remLen_us',75)" onKeyDown="textCounter('us','remLen_us',75)">Unsubscribed Successfully</textarea>
-                        </div>
-                    </div>
-                    <input style="float:right;margin-top:-38px;margin-right:-10px;z-index:999;background-color:white;width:30px" value="75" maxlength="3" size="3" id="remLen_us" type="text" readonly="true"/>
-                    <h4>
-                        <label for="re">Invalid Request</label>
-                    </h4>
-                    <div class="input_row">
-                        <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-20px;overflow:visible;"></div>
-                        <div class="textarea-wrap">
-                            <textarea id="ir" name="requestErrorMsgEn" wrap="physical" onKeyUp="textCounter('ir','remLen_ir',75)" onKeyDown="textCounter('ir','remLen_ir',75)">Invalid Request</textarea>
-                        </div>
-                    </div>
-                    <input style="float:right; ;margin-top:-38px;margin-right:-10px;background-color:white;width:30px" value="75" maxlength="3" size="3" id="remLen_ir" type="text" readonly="true"/>
-                    <div class="clear"></div>
-                </div>
-                <h2 onClick="handleCharging();" class="expand">Charging Configurations</h2>
-                <div class="collapse">
-                    <h4>
-                        <label for="ss">Charging</label>
-                    </h4>
-                    <div class="input_row">
-                        <div style="margin-left:55px;width:500px">
-                            <input id="cfs" name="chargingFromSubscriber" onClick="handleCharging()" name="chargingRadioGroup" type="radio" value="true" checked="checked"/>
-                            <label class="checkbox_allignment" for="cfs">From Subscriber</label>
-                            <div class="clear">&nbsp;</div>
-                            <div id="cfsDiv">
-                                <div style="margin-left:30px;">
-                                    <input id="cpm" name="chargingPerMessage" type="checkbox" value="true" checked="checked"/>
-                                    <input type="hidden" name="_chargingPerMessage" value="on"/>
-                                    <label class="checkbox_allignment" id="cpmlable" for="cpm">Charging For Message</label>
+    <div id="dashboard-widgets-wrap">
+        <div class="metabox-holder" id="dashboard-widgets">
+            <div class="postbox" id="dashboard_quick_press">
+                <form id="quick-press" name="appdetails" action="appDetails.html" method="post">
+                    <h3 class="hndle"><span>Contact Application Responses</span></h3>
+                    <div class="inside">
+                        <div class="clear">&nbsp;</div>
+                        <h4>
+                            <label for="appname">Application Name<span class="mandatory">*</span></label>
+                        </h4>
+                        <div>
+                            <div class="input_row">
+                                <div id="appNameErrorDiv" class="error-req"></div>
+                            </div>
+                            <div class="input_row">
+                                <div class="input-text-wrap">
+                                    <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Contact"/>
                                 </div>
-                                <div class="clear">&nbsp;</div>
-                                <div style="margin-left:50px;">
-                                    <div>
-                                        <input id="cfc1" name="chargingFromSubscriber1" onClick="handleCharging()" name="chargingRadioGroup1" type="radio" value="false" checked="checked"/>
-                                        <label>From Subscriber Finanacial Instrument</label></div>
-                                    <div>
-                                        <div class="clear">&nbsp;</div>
-                                        <input id="cfc2" name="chargingFromSubscriber1" onClick="handleCharging()" name="chargingRadioGroup1" type="radio" value="false"/>
-                                        <label>From Operator</label></div>
-                                </div>
-                                <div class="clear">&nbsp;</div>
+                            </div>
+                        </div>
+                        <table width="675" border="1">
+                            <tr>
+                                <th width="104" scope="col">Date</th>
+                                <th width="287" scope="col">Response</th>
+                                <th width="262" scope="col">Contact Number</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">&nbsp;</th>
+                                <td width="287"><label>
+                                    <textarea name="txtarea1" id="txtarea1" cols="45" rows="5"></textarea>
+                                </label></td>
+                                <td><label>
+                                    0771234567
+                                    <input type="submit" name="reply" id="reply" value="Reply" />
+                                </label></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">&nbsp;</th>
+                                <td width="287"><textarea name="txtarea2" id="txtarea2" cols="45" rows="5"></textarea></td>
+                                <td>0777489670
+                                    <input type="submit" name="reply2" id="reply2" value="Reply" /></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">&nbsp;</th>
+                                <td width="287"><textarea name="txtarea3" id="txtarea3" cols="45" rows="5"></textarea></td>
+                                <td>0771726354
+                                    <input type="submit" name="reply3" id="reply3" value="Reply" /></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">&nbsp;</th>
+                                <td width="287"><textarea name="txtarea4" id="txtarea4" cols="45" rows="5"></textarea></td>
+                                <td>0771827364
+                                    <input type="submit" name="reply4" id="reply4" value="Reply" /></td>
+                            </tr>
+                        </table>
+                        <div id="advance" style="display:none;float:left;">
+                            <script type="text/javascript" src="/javascripts/advanceSetting/expand.js"></script>
+                            <link rel="stylesheet" href="/css/advanceSetting/advanceSetting.css" type="text/css">
+                            </link>
+                            <script type="text/javascript">
+                                $(function() {
+                                    // --- Using the default options:
+                                    //        $("h2.expand").toggler({initShow: "div.collapse:first"});
+                                    // --- Other options:
+                                    //$("h2.expand").toggler({method: "toggle", speed: 0});
+                                    //$("h2.expand").toggler({method: "toggle"});
+                                    //        $("h2.expand").toggler({speed: "fast", initShow: "div.collapse:first"});
+                                    $("h2.expand").toggler({speed: "fast"});
+                                    //        $("h2.expand").toggler({method: "fadeToggle"});
+                                    //        $("h2.expand").toggler({method: "slideFadeToggle",initShow: "div.collapse:first"});
+                                    $("#advance_content").expandAll({trigger: "h2.expand", ref: "div.demo", showMethod: "slideDown", hideMethod: "slideUp", speed: 400, oneSwitch: false});
 
-                                <div class="clear">&nbsp;</div>
-                                <div style="margin-left:30px;">
-                                    <input id="cps" name="chargingPerSubscription" onClick="handleCharging()" type="checkbox" value="true"/>
-                                    <input type="hidden" name="_chargingPerSubscription" value="on"/>
-                                    <label class="checkbox_allignment" id="cpslable" for="cps">Charging For Subscription</label>
-                                    <div class="clear">&nbsp;</div>
-                                    <div id="cpsDiv"><span class="radiobuttons_allignment" id="subRegTypes"><span>
+                                    textCounter('ss','remLen_ss',75);
+                                    textCounter('us','remLen_us',75);
+                                    textCounter('ir','remLen_ir',75);
+
+                                    //        setSubscription();
+                                });
+                                function enableChargingParties(){
+                                    var cpm = document.getElementById("cpm");
+                                    cpm.disabled = false;
+                                    var cps = document.getElementById("cps");
+                                    cps.disabled = false;
+                                }
+                            </script>
+                            <div id="wrapper">
+                                <div id="advance_content">
+                                    <div class="demo">
+                                        <h2 id="advance_config" class="expand">Response Configurations</h2>
+                                        <div class="collapse">
+                                            <h4>
+                                                <label for="ss">Subscription Successful Response Message</label>
+                                            </h4>
+                                            <div class="input_row">
+                                                <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-10px;"></div>
+                                                <div style="z-index:499" class="textarea-wrap">
+                                                    <textarea id="ss" name="subscriptionSuccessMsgEn" wrap="physical" onKeyUp="textCounter('ss','remLen_ss',75)" onKeyDown="textCounter('ss','remLen_ss',75)">Subscription Successful</textarea>
+                                                </div>
+                                            </div>
+                                            <input style="float:right;margin-top:-38px;margin-right:-10px;z-index:998;background-color:white;width:30px" value="75" maxlength="3" size="3" id="remLen_ss" type="text" readonly="true"/>
+                                            <h4>
+                                                <label for="us">Unsubscribe Successful Response Message</label>
+                                            </h4>
+                                            <div class="input_row">
+                                                <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:right;margin-left:66px;margin-bottom:0px;"></div>
+                                                <div style="z-index:500" class="textarea-wrap">
+                                                    <textarea id="us" name="unsubscribeSuccessMsgEn" wrap="physical" onKeyUp="textCounter('us','remLen_us',75)" onKeyDown="textCounter('us','remLen_us',75)">Unsubscribed Successfully</textarea>
+                                                </div>
+                                            </div>
+                                            <input style="float:right;margin-top:-38px;margin-right:-10px;z-index:999;background-color:white;width:30px" value="75" maxlength="3" size="3" id="remLen_us" type="text" readonly="true"/>
+                                            <h4>
+                                                <label for="re">Invalid Request</label>
+                                            </h4>
+                                            <div class="input_row">
+                                                <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-20px;overflow:visible;"></div>
+                                                <div class="textarea-wrap">
+                                                    <textarea id="ir" name="requestErrorMsgEn" wrap="physical" onKeyUp="textCounter('ir','remLen_ir',75)" onKeyDown="textCounter('ir','remLen_ir',75)">Invalid Request</textarea>
+                                                </div>
+                                            </div>
+                                            <input style="float:right; ;margin-top:-38px;margin-right:-10px;background-color:white;width:30px" value="75" maxlength="3" size="3" id="remLen_ir" type="text" readonly="true"/>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2 onClick="handleCharging();" class="expand">Charging Configurations</h2>
+                                        <div class="collapse">
+                                            <h4>
+                                                <label for="ss">Charging</label>
+                                            </h4>
+                                            <div class="input_row">
+                                                <div style="margin-left:55px;width:500px">
+                                                    <input id="cfs" name="chargingFromSubscriber" onClick="handleCharging()" name="chargingRadioGroup" type="radio" value="true" checked="checked"/>
+                                                    <label class="checkbox_allignment" for="cfs">From Subscriber</label>
+                                                    <div class="clear">&nbsp;</div>
+                                                    <div id="cfsDiv">
+                                                        <div style="margin-left:30px;">
+                                                            <input id="cpm" name="chargingPerMessage" type="checkbox" value="true" checked="checked"/>
+                                                            <input type="hidden" name="_chargingPerMessage" value="on"/>
+                                                            <label class="checkbox_allignment" id="cpmlable" for="cpm">Charging For Message</label>
+                                                        </div>
+                                                        <div class="clear">&nbsp;</div>
+                                                        <div style="margin-left:50px;">
+                                                            <div>
+                                                                <input id="cfc1" name="chargingFromSubscriber1" onClick="handleCharging()" name="chargingRadioGroup1" type="radio" value="false" checked="checked"/>
+                                                                <label>From Subscriber Finanacial Instrument</label></div>
+                                                            <div>
+                                                                <div class="clear">&nbsp;</div>
+                                                                <input id="cfc2" name="chargingFromSubscriber1" onClick="handleCharging()" name="chargingRadioGroup1" type="radio" value="false"/>
+                                                                <label>From Operator</label></div>
+                                                        </div>
+                                                        <div class="clear">&nbsp;</div>
+
+                                                        <div class="clear">&nbsp;</div>
+                                                        <div style="margin-left:30px;">
+                                                            <input id="cps" name="chargingPerSubscription" onClick="handleCharging()" type="checkbox" value="true"/>
+                                                            <input type="hidden" name="_chargingPerSubscription" value="on"/>
+                                                            <label class="checkbox_allignment" id="cpslable" for="cps">Charging For Subscription</label>
+                                                            <div class="clear">&nbsp;</div>
+                                                            <div id="cpsDiv"><span class="radiobuttons_allignment" id="subRegTypes"><span>
                                         <input id="subRegRadioGroup_0" name="subscriptionChargingType" name="radio_0" type="radio" value="ONE_TIME_SUBS_CHARGING"/>
                                         </span><span>
                                         <label id="subRegLabel_0" for="subRegRadioGroup_0">One Time</label>
@@ -658,36 +630,34 @@ var selectedKeyword = '';
                                         </span><span>
                                         <label id="subRegLabel_1" for="subRegRadioGroup_1">Monthly</label>
                                         </span></span></div>
+                                                        </div>
+                                                        <div class="clear">&nbsp;</div>
+                                                    </div>
+                                                </div>
+                                                <h4>
+                                                    <label for="ss"/>
+                                                </h4>
+                                                <div class="input_row">
+                                                    <div style="margin-left:55px;width:500px">
+                                                        <input id="cfc" name="chargingFromSubscriber" onClick="handleCharging()" name="chargingRadioGroup" type="radio" value="false"/>
+                                                        <label width="1000px" class="checkbox_allignment" for="cfc">From Content Provider (per message charging)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="clear">&nbsp;</div>
                             </div>
                         </div>
-                        <h4>
-                            <label for="ss"/>
-                        </h4>
-                        <div class="input_row">
-                            <div style="margin-left:55px;width:500px">
-                                <input id="cfc" name="chargingFromSubscriber" onClick="handleCharging()" name="chargingRadioGroup" type="radio" value="false"/>
-                                <label width="1000px" class="checkbox_allignment" for="cfc">From Content Provider (per message charging)</label>
-                            </div>
-                        </div>
+                        <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span>
+                  <input onclick="location.href='contactAppConfirm.html';" name="next" type="button" class="button" value="Next" id="next"/>
+                      </span></div>
                     </div>
-                    <div class="clear"></div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
-<div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span style="padding-right:10px">
-                    <input onclick="location.href='AppTypeSelection';" name="cancel" type="button" class="button" value="Back"/>
-                      </span><span>
-                       <input onclick="location.href='VotingAppConfirm';" name="next" type="button" class="button" value="Next" id="next"/>
-                  </span></div>
-</div>
-</form>
-</div>
-</div>
-</div>
 </div>
 <div class="grid_1 omega">&nbsp;</div>
 <div class="clear"></div>
