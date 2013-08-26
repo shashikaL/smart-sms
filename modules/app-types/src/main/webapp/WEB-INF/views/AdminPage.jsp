@@ -332,12 +332,14 @@ function addHyperlinks(){
                                     <ul class="TabbedPanelsTabGroup">
                                         <li class="TabbedPanelsTab" tabindex="0">Filter Rejected</li>
                                         <li class="TabbedPanelsTab" tabindex="0">User Messages</li>
+                                        <li class="TabbedPanelsTab" tabindex="0">Contact Messages</li>
                                         <li class="TabbedPanelsTab" tabindex="0">Reports</li>
                                     </ul>
 
 
                                     <div class="TabbedPanelsContentGroup">
-                                        <div class="TabbedPanelsContent"><table class="report_table" width="600" border="10" cellpadding="10" bordercolor="#6633FF">
+                                        <div class="TabbedPanelsContent">
+                                            <table class="report_table" width="600" border="10" cellpadding="10" bordercolor="#6633FF">
                                             <tr bordercolor="#000000">
                                                 <th scope="col">Application ID</th>
                                                 <th scope="col">Application Name</th>
@@ -367,6 +369,35 @@ function addHyperlinks(){
 
                                         </table></div>
                                         <div class="TabbedPanelsContent">Content 3</div>
+                                        <div class="TabbedPanelsContent">
+                                            <table class="report_table" width="600" border="10" cellpadding="10" bordercolor="#6633FF">
+                                                <tr bordercolor="#000000">
+                                                    <th scope="col">Contact Number</th>
+                                                    <th scope="col">Keyword</th>
+                                                    <th scope="col">Short Code</th>
+                                                    <th scope="col">Request Message</th>
+                                                </tr>
+                                                <c:forEach var="contact" items="${contactApps}">
+                                                    <tr>
+                                                        <td><p><c:out value="${contact.contactNumber}"/></p></td>
+                                                        <td><p><c:out value="${contact.keyword}"/></p></td>
+                                                        <td><p><c:out value="${contact.shortCode}"/></p></td>
+                                                        <td><p><c:out value="${contact.requestMessage}"/></p></td>
+                                                        <td>
+                                                            <table width="250" border="1">
+                                                                <tr>
+                                                                    <td><a href="#" style="color:#0C3; font-size:12px; font-weight:600;"> Send Reply </a></td>
+                                                                </tr>
+                                                            </table>
+
+
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
+
+                                            </table>
+
+                                        </div>
                                         <div class="TabbedPanelsContent">Content 2</div>
                                     </div>
                                 </div>

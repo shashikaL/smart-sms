@@ -51,6 +51,12 @@ public class MongoDBConfig {
     @Value("${smart.sms.admin.database.filter.rejected.messages}")
     private String adminFilterRejectedMessageCollectionName;
 
+    @Value("${smart.sms.apps.database.keyword.collection}")
+    private String keywordCollection;
+
+    @Value("${smart.sms.admin.database.contact.messages}")
+    private String contactMessageCollection;
+
     public String getMongoHost() {
         return mongoHost;
     }
@@ -161,5 +167,21 @@ public class MongoDBConfig {
 
     public String getAdminFilterRejectedMessageCollectionName() {
         return adminFilterRejectedMessageCollectionName;
+    }
+
+    public String getKeywordCollection() {
+        return keywordCollection;
+    }
+
+    public void setKeywordCollection(String keywordCollection) {
+        this.keywordCollection = keywordCollection;
+    }
+
+    public String getContactMessageCollection() {
+        return contactMessageCollection;
+    }
+
+    public void setContactMessageCollection(String contactMessageCollection) {
+        this.contactMessageCollection = contactMessageCollection;
     }
 }

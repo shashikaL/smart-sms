@@ -1,6 +1,7 @@
 package com.smartsms.controllers;
 
 import com.smartsms.beans.FilterRejectedMessage;
+import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.repo.impl.AdminRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,11 +25,13 @@ public class AdminPageController {
     @Autowired
     private AdminRepositoryImpl adminRepository;
 
+
     @RequestMapping(value = "/AdminPage", method = RequestMethod.GET)
     public String redirect(Model model){
 
         List<FilterRejectedMessage> allFilterRejected = adminRepository.findAllFilterRejectedMessage();
         model.addAttribute("filterd" , allFilterRejected);
+        model.addAttribute("contactApps", adminRepository.findContactAppMessages());
 
 
         return "AdminPage";

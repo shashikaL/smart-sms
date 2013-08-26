@@ -37,7 +37,7 @@
 
 </ul>
 <ul class="individual">
-    <li><a href="headers.html">Contact Application</a></li>
+    <li><a href="bulk-contact">Contact Application</a></li>
 
 </ul>
 

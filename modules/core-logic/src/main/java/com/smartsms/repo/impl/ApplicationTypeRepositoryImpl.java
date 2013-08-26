@@ -56,7 +56,7 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
                 continue;
             }
             Keyword keyword1 = alertApplication.getKeyword();
-            if(keyword1.getName().equals(keyword.getName()) && keyword1.getShortCode().equals(keyword.getShortCode())){
+            if (keyword1.getName().equals(keyword.getName()) && keyword1.getShortCode().equals(keyword.getShortCode())) {
                 return alertApplication;
             }
         }
@@ -64,16 +64,26 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     }
 
     @Override
-    public AlertApplication findAlertApplicationByShortCode(String shortCode){
+    public AlertApplication findAlertApplicationByShortCode(String shortCode) {
         List<AlertApplication> alertApplications = mongoTemplate.findAll(AlertApplication.class, mongoDBConfig.getAlertCollectionName());
         for (AlertApplication alertApplication : alertApplications) {
             if (alertApplication.getKeyword() == null) {
                 continue;
             }
-            if(alertApplication.getKeyword().getShortCode().equals(shortCode)){
+            if (alertApplication.getKeyword().getShortCode().equals(shortCode)) {
                 return alertApplication;
             }
         }
         return null;
+    }
+
+    @Override
+    public void saveKeyword(Keyword keyword) {
+        mongoTemplate.save(keyword, mongoDBConfig.getKeywordCollection());
+    }
+
+    @Override
+    public List<ContactApplication> findAllContactApplications() {
+        return mongoTemplate.findAll(ContactApplication.class, mongoDBConfig.getContactCollectionName());
     }
 }

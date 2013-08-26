@@ -1,5 +1,6 @@
 package com.smartsms.repo.impl;
 
+import com.smartsms.beans.ContactAppMessage;
 import com.smartsms.beans.FilterRejectedMessage;
 import com.smartsms.beans.Malformed;
 import com.smartsms.repo.config.MongoDBConfig;
@@ -19,7 +20,7 @@ import java.util.List;
  */
 
 @Service
-public class AdminRepositoryImpl{
+public class AdminRepositoryImpl {
     @Autowired
     private MongoDBConfig mongoDBConfig;
 
@@ -31,7 +32,15 @@ public class AdminRepositoryImpl{
         mongoTemplate.insert(FilterRejectedMessage, mongoDBConfig.getAdminFilterRejectedMessageCollectionName());
     }
 
-     public List<FilterRejectedMessage> findAllFilterRejectedMessage() {
-        return mongoTemplate.findAll(FilterRejectedMessage.class,mongoDBConfig.getAdminFilterRejectedMessageCollectionName());
+    public List<FilterRejectedMessage> findAllFilterRejectedMessage() {
+        return mongoTemplate.findAll(FilterRejectedMessage.class, mongoDBConfig.getAdminFilterRejectedMessageCollectionName());
+    }
+
+    public void saveContactMessage(ContactAppMessage contactAppMessage) {
+        mongoTemplate.save(contactAppMessage, mongoDBConfig.getContactMessageCollection());
+    }
+
+    public List<ContactAppMessage> findContactAppMessages() {
+        return mongoTemplate.findAll(ContactAppMessage.class, mongoDBConfig.getContactMessageCollection());
     }
 }

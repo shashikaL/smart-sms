@@ -466,7 +466,7 @@ var selectedKeyword = '';
 <div id="dashboard-widgets-wrap">
 <div class="metabox-holder" id="dashboard-widgets">
 <div class="postbox" id="dashboard_quick_press">
-<form id="quick-press" name="appdetails" action="appDetails.html" method="post">
+<form id="contactForm" method="post">
 <h3 class="hndle"><span>Application Details</span></h3>
 <div class="inside">
 <div class="clear">&nbsp;</div>
@@ -479,7 +479,7 @@ var selectedKeyword = '';
     </div>
     <div class="input_row">
         <div class="input-text-wrap">
-            <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Service"/>
+            <input id="appName" name="appName" onblur="validateAppName();" type="text" />
         </div>
     </div>
 </div>
@@ -507,7 +507,7 @@ var selectedKeyword = '';
 <div style="width:200px;margin-left:-165px" class="input_row"></div>
 <div style="width:200px;margin-left:-50px" class="input_row">
     <div class="input-text-wrap">
-        <input id="startDate" name="startDate" class="readonly" type="text" value="09/03/2011"/>
+        <input id="startDate" name="startDate" class="readonly" type="text" />
     </div>
 </div>
 
@@ -519,7 +519,7 @@ var selectedKeyword = '';
     <div style="width:200px;margin-left:-165px" class="input_row"></div>
     <div style="width:200px;margin-left:-50px" class="input_row">
         <div class="input-text-wrap">
-            <input id="endDate" name="endDate" style="cursor:pointer" type="text" value="09/04/2011"/>
+            <input id="endDate" name="endDate" style="cursor:pointer" type="text" />
         </div>
     </div>
 </div>
@@ -532,7 +532,7 @@ var selectedKeyword = '';
 <div class="input_row">
     <div class="textarea-wrap">
         <div style="margin-left:0px;" id="decsErrorDiv" class="error-req"></div>
-        <textarea id="decs" name="app.description">First Contact Application</textarea>
+        <textarea id="appDescription" name="appDescription"></textarea>
     </div>
 </div>
 <h4>
@@ -541,7 +541,7 @@ var selectedKeyword = '';
 <div class="input_row">
     <div class="textarea-wrap">
         <div style="margin-left:0px;" id="decsErrorDiv2" class="error-req"></div>
-        <textarea id="app.description" name="app.description2"></textarea>
+        <textarea id="app.description" name="responseMessage"></textarea>
     </div>
 </div>
 <div class="clear">&nbsp;
@@ -681,7 +681,7 @@ var selectedKeyword = '';
 <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span style="padding-right:10px">
                     <input onclick="location.href='AppTypeSelection';" name="cancel" type="button" class="button" value="Back"/>
                       </span><span>
-                      <input onclick="location.href='ContactAppConfirm';" name="next" type="button" class="button" value="Next" id="next"/>
+                      <input name="next" type="submit" class="button" value="Next" id="next"/>
                       </span></div>
 </div>
 </form>

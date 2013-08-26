@@ -1,8 +1,6 @@
 package com.simulator.controller;
 
-import com.smartsms.beans.BulkSubscriberMessage;
-import com.smartsms.beans.Response;
-import com.smartsms.beans.SubscriberMessage;
+import com.smartsms.beans.*;
 import com.smartsms.beans.util.AppType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +20,7 @@ public class HomeController {
     private RestTemplate restTemplate;
 
     private String responseMessage;
+    private String responseCode;
 
     @RequestMapping(method = RequestMethod.GET, value = "/home")
     public String redirect() {
@@ -40,16 +39,33 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/bulk-alert")
     public String submitBulkAlert(@RequestParam Integer count, @RequestParam String message, @RequestParam String shortCode) {
-        BulkSubscriberMessage bulkSubscriberMessage = createBulkSubscriberMessage(count,message,shortCode);
+        BulkSubscriberMessage bulkSubscriberMessage = createBulkSubscriberMessage(count, message, shortCode);
         Response response = restTemplate.postForObject("http://localhost:8080/app-ui/bulk/subscribe", bulkSubscriberMessage, Response.class);
         responseMessage = response.getStatusMessage();
+        responseCode = response.getStatusCode();
+        return "redirect:/response";
+
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/bulk-contact")
+    public String redirectToBulkContact() {
+        return "bulk-contact-app-subscription";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/bulk-contact")
+    public String submitBulkContact(@RequestParam Integer count, @RequestParam String message, @RequestParam String shortCode) {
+        ContactMessageList contactMessageList = createContactMessageList(count, message, shortCode);
+        Response response = restTemplate.postForObject("http://localhost:8080/app-ui/bulk/contactAppUse", contactMessageList, Response.class);
+        responseMessage = response.getStatusMessage();
+        responseCode = response.getStatusCode();
         return "redirect:/response";
 
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/response")
-    public String redirectToResponse(Model model){
+    public String redirectToResponse(Model model) {
         model.addAttribute("message", responseMessage);
+        model.addAttribute("code", responseCode);
         return "response";
     }
 
@@ -65,11 +81,26 @@ public class HomeController {
         bulkSubscriberMessage.setSubscriberMessage(subscriberMessage);
         List<String> strings = new ArrayList<String>();
         for (int i = 0; i < count; i++) {
-            int j = i+1;
-            strings.add("077700000"+j);
+            int j = i + 1;
+            strings.add("077700000" + j);
         }
         bulkSubscriberMessage.setSubscriberNumbers(strings);
         return bulkSubscriberMessage;
+    }
+
+    private ContactMessageList createContactMessageList(int count, String message, String shortCode) {
+        List<ContactAppMessage> contactAppMessages = new ArrayList<ContactAppMessage>();
+        for (int i = 0; i < count; i++) {
+            ContactAppMessage contactAppMessage = new ContactAppMessage();
+            int j = i + 1;
+            contactAppMessage.setContactNumber("077700000" + j);
+            contactAppMessage.setRequestMessage(message);
+            contactAppMessage.setShortCode(shortCode);
+            contactAppMessages.add(contactAppMessage);
+        }
+        ContactMessageList contactMessageList = new ContactMessageList();
+        contactMessageList.setContactAppMessage(contactAppMessages);
+        return contactMessageList;
     }
 
 }

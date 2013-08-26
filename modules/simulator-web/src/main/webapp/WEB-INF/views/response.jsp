@@ -26,7 +26,8 @@
 <h1>Application Response</h1>
 
 <ul class="data">
-    <li><p><c:out value="${message}"/> </p>
+    <li><p><c:out value="${message}"/> </p> </li>
+    <li><p><c:out value="${code}"/> </p> </li>
 
 </ul>
 

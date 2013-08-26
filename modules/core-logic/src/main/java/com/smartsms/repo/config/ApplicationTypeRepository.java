@@ -27,6 +27,10 @@ public interface ApplicationTypeRepository {
 
     public AlertApplication findAlertApplicationByShortCode(String shortCode);
 
+    public void saveKeyword(Keyword keyword);
+
+    public List<ContactApplication> findAllContactApplications();
+
 
 
 }
