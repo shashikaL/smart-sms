@@ -4,7 +4,6 @@ package com.smartsms.repo.impl;
 import com.smartsms.beans.*;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.repo.config.MongoDBConfig;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -78,12 +77,7 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     }
 
     @Override
-    public void saveKeyword(Keyword keyword) {
-        mongoTemplate.save(keyword, mongoDBConfig.getKeywordCollection());
-    }
-
-    @Override
-    public List<ContactApplication> findAllContactApplications() {
-        return mongoTemplate.findAll(ContactApplication.class, mongoDBConfig.getContactCollectionName());
+    public List<ServiceApplication> findAllServiceApplications() {
+        return mongoTemplate.findAll(ServiceApplication.class, mongoDBConfig.getServiceCollectionName());
     }
 }
