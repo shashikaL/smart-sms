@@ -17,32 +17,29 @@
     <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
         <property name="triggers">
             <list>
-                <ref bean="alertApplicationManagerServiceTrigger"/>
+                <ref bean="serviceAppTrigger"/>
             </list>
         </property>
     </bean>
 
     <!-- Quartz -->
-    <bean id="alertApplicationManagerServiceTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
-        <property name="jobDetail" ref="alertAppTransactionManager"/>
+    <bean id="serviceAppTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="serviceAppManager"/>
         <property name="cronExpression" value="${report.scheduler.alert.app.cron.expression}"/>
     </bean>
 
-    <bean id="alertAppTransactionManager"
+    <bean id="serviceAppManager"
           class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
         <property name="targetObject">
-            <ref bean="applicationServiceObjectTarget"/>
+            <ref bean="serviceTarget"/>
         </property>
         <property name="targetMethod">
             <value>execute</value>
         </property>
     </bean>
 
-    <bean id="applicationServiceObjectTarget" class="com.smartsms.service.impl.PluginServiceImpl">
+    <bean id="serviceTarget" class="com.smartsms.service.impl.ExecuteImpl">
     </bean>
 
-    <bean id="alertAppRepository" class="com.smartsms.reporsitory.impl.AlertAppRepositoryImpl">
-        <property name="dataSource" ref="reportDataSource"/>
-    </bean>
 
 </beans>

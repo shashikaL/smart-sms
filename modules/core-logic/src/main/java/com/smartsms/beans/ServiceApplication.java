@@ -10,6 +10,8 @@ public class ServiceApplication extends AbstractApplicationType {
     private String subscriptionSuccessfulMessage;
     private String unSubscriptionSuccessfulMessage;
     private String invalidRequestMessage;
+    private String dispatchHour;
+    private String dispatchMinute;
 
     public ScheduledType getScheduledType() {
         return scheduledType;
@@ -24,7 +26,7 @@ public class ServiceApplication extends AbstractApplicationType {
     }
 
     public void setDispatchTime(String dispatchTime) {
-        this.dispatchTime = dispatchTime;
+        this.dispatchTime = dispatchHour + ":" + dispatchMinute;
     }
 
     public String getSubscriptionSuccessfulMessage() {
@@ -49,5 +51,21 @@ public class ServiceApplication extends AbstractApplicationType {
 
     public void setInvalidRequestMessage(String invalidRequestMessage) {
         this.invalidRequestMessage = invalidRequestMessage;
+    }
+
+    public String getDispatchHour() {
+        return dispatchHour;
+    }
+
+    public void setDispatchHour(String dispatchHour) {
+        this.dispatchHour = dispatchHour;
+    }
+
+    public String getDispatchMinute() {
+        return dispatchMinute;
+    }
+
+    public void setDispatchMinute(String dispatchMinute) {
+        this.dispatchMinute = dispatchMinute;
     }
 }

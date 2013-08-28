@@ -7,6 +7,8 @@ import com.smartsms.repo.config.MongoDBConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -79,5 +81,25 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     @Override
     public List<ServiceApplication> findAllServiceApplications() {
         return mongoTemplate.findAll(ServiceApplication.class, mongoDBConfig.getServiceCollectionName());
+    }
+
+    @Override
+    public List<ServiceApplication> findAllServiceApplicationByUsername(String username) {
+        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)),ServiceApplication.class,mongoDBConfig.getServiceCollectionName());
+    }
+
+    @Override
+    public List<AlertApplication> findAllAlertApplicationByUsername(String username) {
+        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)),AlertApplication.class,mongoDBConfig.getAlertCollectionName());
+    }
+
+    @Override
+    public List<VotingApplication> findAllVotingApplicationByUsername(String username) {
+        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)),VotingApplication.class,mongoDBConfig.getVotingCollectionName());
+    }
+
+    @Override
+    public List<ContactApplication> findAllContactApplicationByUsername(String username) {
+        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)),ContactApplication.class,mongoDBConfig.getContactCollectionName());
     }
 }

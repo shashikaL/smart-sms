@@ -4,5 +4,5 @@ import com.smartsms.beans.User;
 
 public interface UserManagementRepository {
 
-    public void saveUser(User user);
+    public void saveOrUpdateUser(User user);
 }
