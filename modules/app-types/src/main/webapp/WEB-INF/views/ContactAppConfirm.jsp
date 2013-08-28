@@ -49,7 +49,8 @@
             });
         }
     </script>
-    <script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
+    <%--<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>--%>
+    <jsp:include page="common/header.jsp"/>
     <script type="text/javascript">
 
 

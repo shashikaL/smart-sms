@@ -76,7 +76,8 @@
         setTimeout("showPopup()", 1000);
     }
 </script>
-<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
+<%--<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>--%>
+<jsp:include page="common/header.jsp"/>
 <script type="text/javascript" src="resources/javascripts/calendar/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="resources/css/calendar/ui.all.css" type="text/css">
 </link>
