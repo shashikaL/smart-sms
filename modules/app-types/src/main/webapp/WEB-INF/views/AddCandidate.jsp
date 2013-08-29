@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: shashi
+  Date: 8/30/13
+  Time: 1:08 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
@@ -5,29 +13,29 @@
     <title>SmartSMS - SMS Based Application Management Platform</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name='robots' content='noindex,nofollow'/>
-    <link rel="shortcut icon" href="smartSMS/images/fav.ico"/>
-    <link rel='stylesheet' href='smartSMS/css/body.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/custom.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/custom.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/login.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/tables.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/grid.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='smartSMS/css/manage.css' type='text/css' media='all'/>
-    <link rel="stylesheet" href="smartSMS/css/facebox/facebox.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/image-stripping.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/ui/custom.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/dialog/jquery.alerts.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="smartSMS/css/ui-hint.css" media="screen" type="text/css"/>
-    <script type="text/javascript" src="smartSMS/javascripts/facebox/jquery.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/facebox/facebox.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/application.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/addHTMLControls.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/orca_js.js"></script>
-    <script type="text/javascript" src="smartSMS/javascripts/validate.js"></script>
+    <link rel="shortcut icon" href="resources/images/fav.ico"/>
+    <link rel='stylesheet' href='resources/css/body.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/custom.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/custom.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/login.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/tables.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/grid.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='resources/css/manage.css' type='text/css' media='all'/>
+    <link rel="stylesheet" href="resources/css/facebox/facebox.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/image-stripping.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/ui/custom.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/dialog/jquery.alerts.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/ui-hint.css" media="screen" type="text/css"/>
+    <script type="text/javascript" src="resources/javascripts/facebox/jquery.js"></script>
+    <script type="text/javascript" src="resources/javascripts/facebox/facebox.js"></script>
+    <script type="text/javascript" src="resources/javascripts/application.js"></script>
+    <script type="text/javascript" src="resources/javascripts/addHTMLControls.js"></script>
+    <script type="text/javascript" src="resources/javascripts/orca_js.js"></script>
+    <script type="text/javascript" src="resources/javascripts/validate.js"></script>
 
-    <script language="JavaScript" type="text/javascript" src="/smartSMS/javascripts/datetime.js"></script>
-    <script language="JavaScript" type="text/javascript" src="/smartSMS/javascripts/jquery.bgiframe.js"></script>
-    <script language="JavaScript" type="text/javascript" src="/smartSMS/javascripts/dialog/jquery.alerts.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/resources/javascripts/datetime.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/resources/javascripts/jquery.bgiframe.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/resources/javascripts/dialog/jquery.alerts.js"></script>
     <!--[if lte IE 7]>
     <link rel='stylesheet' id='ie-css' href='/soltura/css/ie.css' type='text/css'
           media='all'/>
@@ -35,97 +43,214 @@
 </head>
 <body>
 <div id="container" class="container_18">
-    <script type="text/javascript">
-        function logoutConfirm(url) {
-            var logOutTxt = 'Do you really want to logout??';
-            jConfirm(logOutTxt, 'Confirmation Dialog', function(r) {
-                if(r == true) {
-                    window.location = url;
-                }
-            });
-        }
-    </script>
-    <script type="text/javascript" src="smartSMS/javascripts/header.js" language="javascript"></script>
-    <div id="header2">
-        <p id="tagline"><br/>
-            <br/>
-        </p>
-        <div style="clear:both;">&nbsp;</div>
-        <div id="body">
-            <div class="sub_heading">
-                <h1>Add Candidates</h1>
-            </div>
-            <div class="navi_link4"></div>
-            <div class="clear"></div>
-            <div class="grid_1 alpha">&nbsp;</div>
-            <div class="grid_16">
-                <div id="dashboard-widgets-wrap">
-                    <div class="metabox-holder" id="dashboard-widgets">
-                        <div class="postbox" id="dashboard_quick_press">
-                            <h3 class="hndle">&nbsp;</h3>
-                            <div class="inside">Candidate Code
-                                <form id="form1" name="form1" method="post" action="">
-                                    <label>
-                                        <input type="text" name="CanCode" id="CanCode" />
-                                    </label>
-                                </form>
-                                <div class="clear">&nbsp;Description </div>
-                                <div class="clear">
-                                    <form id="form2" name="form2" method="post" action="">
-                                        <p>
-                                            <label>
-                                                <input type="text" name="Description" id="Description" />
-                                            </label>
-                                        </p>
-                                    </form>
-                                    <form id="form3" name="form3" method="post" action="">
-                                        <label>
-                                            <input type="submit" name="AddCandidate" id="AddCandidate" value="Add New Candidate" />
-                                        </label>
-                                    </form>
-                                    <p>&nbsp;</p>
-                                    <table width="200" border="10" align="center">
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                    </table>
-                                    <p>&nbsp;</p>
+<script type="text/javascript">
+    function logoutConfirm(url) {
+        var logOutTxt = 'Do you really want to logout??';
+        jConfirm(logOutTxt, 'Confirmation Dialog', function(r) {
+            if(r == true) {
+                window.location = url;
+            }
+        });
+    }
+</script>
+<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
+<div id="header2">
+    <p id="tagline"><br/>
+        <br/>
+    </p>
+    <div style="clear:both;">&nbsp;</div>
+    <div id="body">
+        <div class="sub_heading">
+            <h1>Add Candidates</h1>
+        </div>
+        <div class="navi_link4"></div>
+        <div class="clear"></div>
+        <div class="grid_1 alpha">&nbsp;</div>
+        <div class="grid_16">
+            <div id="dashboard-widgets-wrap">
+                <div class="metabox-holder" id="dashboard-widgets">
+                    <div class="postbox" id="dashboard_quick_press">
+                        <h3 class="hndle">&nbsp;</h3>
+                        <form id="quick-press" name="votingForm" onsubmit="return validate_form(this)" action="VotingAppConfirm" method="post">
+                            <h4 style="margin-top:23px; ">
+                                <label>Voting Options</label>
+                            </h4>
+                            <div style="padding-left:60px;width:375px" id="code" class="dyanmic-data">
+                                <div style="width:140px;float:left;text-align:left;">
+                                    <label><strong>Candidate Code</strong></label>
                                 </div>
-                                <div class="clear"></div>
+                                <div style="width:120px;float:left;text-align:left; margin-left:1px">
+                                    <label>
+                                        <strong>Description</strong>
+                                        <label>
+                                </div>
+                                <div style="padding-left:10px;"><input name="addNewC" type="button" class="button" value="Add New" id="next" onclick="show();"/></div>
+                                <script type="text/javascript">
+                                    var lastShownExistingElement =1;
+                                </script>
+                                <div style="padding-right:50px" class="error-req-right-al"></div>
+                                <div style="padding-right:50px" class="error-req-right-al" id="errorsubcategory"></div>
+                                <div id="divInput_0" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="input_0" name="selectedValues[0].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                </div>
+                                <div style="float:left;padding-left:10px">&nbsp;</div>
+                                <div id="divText_0" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="text_0" name="selectedValues[0].descriptionEn" type="text" value="" maxlength="10"/>
+                                </div>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                <div id="divInput_1" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="input_1" name="selectedValues[1].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                </div>
+                                <div style="float:left;padding-left:10px">&nbsp;</div>
+                                <div id="divText_1" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="text_1" name="selectedValues[1].descriptionEn" type="text" value="" maxlength="10"/>
+                                </div>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                <div id="divInput_2" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="input_2" name="selectedValues[2].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                </div>
+                                <div style="float:left;padding-left:10px">&nbsp;</div>
+                                <div id="divText_2" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="text_2" name="selectedValues[2].descriptionEn" type="text" value="" maxlength="10"/>
+                                </div>
+                                </img>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                <div id="divInput_3" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="input_3" name="selectedValues[3].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                </div>
+                                <div style="float:left;padding-left:10px">&nbsp;</div>
+                                <div id="divText_3" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="text_3" name="selectedValues[3].descriptionEn" type="text" value="" maxlength="10"/>
+                                </div>
+                                </img>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                <div id="divInput_4" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="input_4" name="selectedValues[4].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                </div>
+                                <div style="float:left;padding-left:10px">&nbsp;</div>
+                                <div id="divText_4" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="text_4" name="selectedValues[4].descriptionEn" type="text" value="" maxlength="10"/>
+                                </div>
+                                </img>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                <div id="divInput_5" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="input_5" name="selectedValues[5].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                </div>
+                                <div style="float:left;padding-left:10px">&nbsp;</div>
+                                <div id="divText_5" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="text_5" name="selectedValues[5].descriptionEn" type="text" value="" maxlength="10"/>
+                                </div>
+                                </img>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                <div id="divInput_6" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="input_6" name="selectedValues[6].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                </div>
+                                <div style="float:left;padding-left:10px">&nbsp;</div>
+                                <div id="divText_6" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="text_6" name="selectedValues[6].descriptionEn" type="text" value="" maxlength="10"/>
+                                </div>
+                                </img>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                <div id="divInput_7" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="input_7" name="selectedValues[7].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                </div>
+                                <div style="float:left;padding-left:10px">&nbsp;</div>
+                                <div id="divText_7" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                                    <input id="text_7" name="selectedValues[7].descriptionEn" type="text" value="" maxlength="10"/>
+                                </div>
+                                </img>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                </img>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                </img>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                </img>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                </img>
+                                <script type="text/javascript">
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                                <div style="float:right;margin-top:-10px;margin-right:2px">
+                                    <script type="text/javascript">
+                                        var lastShownElementId = 1;
+                                        hideAllKeywordElements(true, "false");
+                                    </script>
+                                </div>
                             </div>
-                            <div class="clear"></div>
-                        </div>
-            <span>
-            <input onclick="location.href='home.html';" name="back" type="button" class="button" value="Back" id="back"/>
-            </span>
-                        <div class="clear">&nbsp;</div>
+                            <div class="clear">&nbsp;</div>
+                            <div class="clear">&nbsp;</div>
+                            <h4>
+                                <label></label>
+                            </h4>
+                            <div style="margin-top:14px;margin-bottom:12px;margin-left:5.7em" class="info_group"><span style="padding-right:10px">
+                  <input onclick="location.href='votingAppStep1.html';" name="back2" type="button" class="button" value="Back" id="back2"/>
+                  </span><span>
+                    <input name="next" type="button" class="button" value="Next" id="next" onclick="location.href='VotingAppSuccess';"/>
+                  </span></div>
+                            <div class="clear">&nbsp;</div>
+                        </form>
+                        <div class="clear"></div>
                     </div>
+            <span>
+            <input onclick="location.href='home';" name="back" type="button" class="button" value="OK" id="back"/>
+            </span>
+                    <div class="clear">&nbsp;</div>
                 </div>
             </div>
-            <div class="grid_1 omega">&nbsp;</div>
-            <div class="clear"></div>
         </div>
+        <div class="grid_1 omega">&nbsp;</div>
         <div class="clear"></div>
     </div>
+    <div class="clear"></div>
 </div>
-<script type="text/javascript" src="smartSMS/javascripts/footer.js" language="javascript"></script>
+</div>
+<script type="text/javascript" src="resources/javascripts/footer.js" language="javascript"></script>
 </div>
 </body>
 </html>

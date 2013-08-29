@@ -539,13 +539,7 @@ var selectedKeyword = '';
         <textarea id="decs" name="appDescription"></textarea>
     </div>
 </div>
-<h4>
-    <label for="short3">Candidate Code</label>
-</h4>
-<div class="input_row">
-    <div class="input-text-wrap">
-        <input  name="code"  type="text" />
-    </div>
+
 </div>
 <div class="clear">&nbsp;</div>
 <div id="advance" style="display:none;float:left;">
@@ -681,7 +675,7 @@ var selectedKeyword = '';
 <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span style="padding-right:10px">
                     <input onclick="location.href='AppTypeSelection';" name="cancel" type="button" class="button" value="Back"/>
                       </span><span>
-                       <input onclick="location.href='VotingAppConfirm';" name="next" type="button" class="button" value="Next" id="next"/>
+                       <input onclick="location.href='addCandidate';" name="next" type="button" class="button" value="Next" id="next"/>
                   </span></div>
 </div>
 </form>

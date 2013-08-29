@@ -1,13 +1,11 @@
 package com.smartsms.controllers;
 
-import com.smartsms.beans.Vote;
 import com.smartsms.beans.VotingApplication;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,51 +24,50 @@ public class VotingAppController {
     private ApplicationTypeRepository applicationTypeRepository;
 
     @RequestMapping(value = "/VotingAppCreate", method = RequestMethod.GET)
-    public String redirect(@RequestParam(value = "username", required = false) String username, Model model) {
-        if (StringUtils.isEmpty(username)) {
-            model.addAttribute("username", "user");
+    public String redirect(@RequestParam(value = "username", required = false) String username, Model model){
+        if(StringUtils.isEmpty(username)){
+            model.addAttribute("username","user");
         } else {
-            model.addAttribute("username", username);
+            model.addAttribute("username",username);
         }
         return "VotingAppCreate";
 
     }
 
     @RequestMapping(value = "/VotingAppCreate", method = RequestMethod.POST)
-    public String submit(VotingApplication application, @RequestParam("keywordStr") String keywordStr) {
+    public String submit(VotingApplication application, @RequestParam("keywordStr") String keywordStr){
         applicationTypeRepository.saveApplication(application);
         return "VotingAppSuccess";
 
     }
 
     @RequestMapping(value = "/VotingAppConfirm", method = RequestMethod.GET)
-    public String redirectConfirm() {
+    public String redirectConfirm(){
         return "VotingAppConfirm";
 
     }
 
     @RequestMapping(value = "/VotingAppSuccess", method = RequestMethod.GET)
-    public String redirectSuccess() {
+    public String redirectSuccess(){
         return "VotingAppSuccess";
 
     }
 
     @RequestMapping(value = "/VotingHelp", method = RequestMethod.GET)
-    public String redirectHelp() {
+    public String redirectHelp(){
         return "VotingHelp";
 
     }
 
-    @RequestMapping(value = "/vote", method = RequestMethod.POST)
-    public String submit(@RequestBody Vote vote) {
-        String message = vote.getMessage();
-        String[] strings = message.split(" ");  // SSS 1
-        VotingApplication application = applicationTypeRepository.findVotingApplicationByShortCode(strings[0]);
-        if (strings.length == 2) {
-            applicationTypeRepository.incrementCandidateCount(strings[1], application.getAppId());
+    @RequestMapping(value = "/votingView", method = RequestMethod.GET)
+    public String votingView(){
+        return "votingView";
 
-        }
-        return "success";
+    }
+
+    @RequestMapping(value = "/addCandidate", method = RequestMethod.GET)
+    public String addCandidateView(){
+        return "addCandidate";
 
     }
 

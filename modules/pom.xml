@@ -23,8 +23,9 @@
         <module>core-logic</module>
         <module>app-types</module>
         <!--<module>reporting</module>-->
-        <module>report-scheduler</module>
+        <!--<module>report-scheduler</module>-->
         <module>simulator</module>
+        <module>simulator-web</module>
     </modules>
 
     <dependencies>
