@@ -145,7 +145,7 @@
 
                                                 <div id="menu_req">
                                                     <ul>
-                                                        <li class="first"><a href="ContactAppCreate" title="Request">&nbsp;</a></li>
+                                                        <li class="first"><a href="ContactAppCreate?username=<c:out value="${username}"/>" title="Request">&nbsp;</a></li>
                                                     </ul>
                                                 </div>
                                             </div>

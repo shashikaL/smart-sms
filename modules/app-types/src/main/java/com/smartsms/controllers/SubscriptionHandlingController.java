@@ -62,8 +62,15 @@ public class SubscriptionHandlingController {
 
     @RequestMapping(value = "/unsubscribe/{subscriptionNumber}", method = RequestMethod.POST)
     public String unSubscription(@RequestBody SubscriberMessage message, @PathVariable String subscriberNumber) {
+      /*  Subscribe unsubscribe = new Subscribe();
+        unsubscribe.getSubscriberNumber();
+        unsubscribe.setSubscriberStatus(STATUS.UNSUBSCRIBED);*/
+
+
         return null;
     }
+
+
 
     @RequestMapping(value = "/bulk/subscribe", method = RequestMethod.POST)
     @ResponseBody

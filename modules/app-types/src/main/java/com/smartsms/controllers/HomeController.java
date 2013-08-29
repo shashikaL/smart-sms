@@ -34,7 +34,12 @@ public class HomeController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/MyProfile")
-    public String redirectMyProfile(){
+    public String redirectMyProfile(@RequestParam(value = "username", required = false) String username, Model model){
+        if(StringUtils.isEmpty(username)){
+            model.addAttribute("username","user");
+        } else {
+            model.addAttribute("username",username);
+        }
         return "MyProfile";
     }
 
