@@ -69,7 +69,7 @@ public class LoginController {
 
         Twitter twitter = new TwitterTemplate(springSocialConfig.getTwitterAppKey(), springSocialConfig.getTwitterAppSecret(), accessToken.getValue(), accessToken.getSecret());
         TwitterProfile userProfile = twitter.userOperations().getUserProfile();
-        userManagementRepository.saveUser(createUser(SocialNetwork.TWITTER, userProfile.getScreenName(), userProfile.getName(), userProfile.getName()));
+        userManagementRepository.saveOrUpdateUser(createUser(SocialNetwork.TWITTER, userProfile.getScreenName(), userProfile.getName(), userProfile.getName()));
         return "redirect:/Home?username="+ userProfile.getScreenName();
     }
 
@@ -80,7 +80,7 @@ public class LoginController {
         }
         Facebook facebook = new FacebookTemplate(accessToken);
         FacebookProfile userProfile = facebook.userOperations().getUserProfile();
-        userManagementRepository.saveUser(createUser(SocialNetwork.FACEBOOK, userProfile.getUsername(), userProfile.getFirstName(), userProfile.getLastName()));
+        userManagementRepository.saveOrUpdateUser(createUser(SocialNetwork.FACEBOOK, userProfile.getUsername(), userProfile.getFirstName(), userProfile.getLastName()));
         return "redirect:/Home?username="+userProfile.getUsername();
     }
 

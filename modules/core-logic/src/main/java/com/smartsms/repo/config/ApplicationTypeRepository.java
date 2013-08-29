@@ -29,6 +29,14 @@ public interface ApplicationTypeRepository {
 
     public List<ServiceApplication> findAllServiceApplications();
 
+    public List<ServiceApplication> findAllServiceApplicationByUsername(String username);
+
+    public List<AlertApplication> findAllAlertApplicationByUsername(String username);
+
+    public List<VotingApplication> findAllVotingApplicationByUsername(String username);
+
+    public List<ContactApplication> findAllContactApplicationByUsername(String username);
+
 
 
 }

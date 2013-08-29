@@ -16,7 +16,7 @@
                               <c:if test="${not empty username}">
                                 <li><a href="MyProfile"><c:out value="${username}"/></a></li>
                               </c:if>
-                                <li><a href="Home">Home</a></li>
+                                <li><a href="Home?username=<c:out value="${username}"/>">Home</a></li>
                                 <li><a href="">&nbsp;</a></li>
                                 <li><a href="">&nbsp;</a></li>
                               </ul>

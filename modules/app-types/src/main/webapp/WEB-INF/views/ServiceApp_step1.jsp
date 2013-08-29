@@ -71,7 +71,8 @@
         setTimeout("showPopup()", 1000);
     }
 </script>
-<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>
+<%--<script type="text/javascript" src="resources/javascripts/header.js" language="javascript"></script>--%>
+<jsp:include page="common/header.jsp"/>
 <script type="text/javascript" src="resources/javascripts/calendar/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="resources/css/calendar/ui.all.css" type="text/css">
 </link>
@@ -603,8 +604,8 @@ var selectedKeyword = '';
                           <option value="6">Sat</option>
                       </select>
                       </span><span id="subscriptionDispatchHourDiv"> -->
-                      <label for="subscriptionDispatchHour">Hour</label>
-                      <select id="subscriptionDispatchHour" name="subscriptionDispatchHour" style="min-width:20px;width:auto;">
+                      <label for="dispatchHour">Hour</label>
+                      <select id="dispatchHour" name="dispatchHour" style="min-width:20px;width:auto;">
                           <option value="00" selected="selected">00</option>
                           <option value="01">01</option>
                           <option value="02">02</option>
@@ -631,8 +632,8 @@ var selectedKeyword = '';
                           <option value="23">23</option>
                       </select>
                       </span><span id="subscriptionDispatchMinuteDiv">
-                      <label for="subscriptionDispatchMinute">Min</label>
-                      <select id="subscriptionDispatchMinute" name="subscriptionDispatchMinute" style="min-width:20px;width:auto;">
+                      <label for="dispatchMinute">Min</label>
+                      <select id="dispatchMinute" name="dispatchMinute" style="min-width:20px;width:auto;">
                           <option value="0" selected="selected">00</option>
                           <option value="5">05</option>
                           <option value="10">10</option>

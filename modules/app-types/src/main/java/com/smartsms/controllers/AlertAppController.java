@@ -77,6 +77,7 @@ public class AlertAppController {
             model.addAttribute("username",username);
         }
         application.setAppId(UUID.randomUUID().toString());
+        application.setUserID(username);
         applicationTypeRepository.saveApplication(application);
         return "redirect:/AlertAppSuccess";
 

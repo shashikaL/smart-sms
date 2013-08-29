@@ -176,86 +176,81 @@
                     <div class="scrollable vertical">
                         <div class="items">
                             <div style="float:left;margin-right:5px;" class="item2">
-                                <div style="float:left;margin-right:5px;" class="item">
-                                    <div class="my_app">
-                                        <div class="sub_image"><img height="75" onclick="window.location='alertUse.html'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Alert Application</u></b><br/> ')" src="resources/images/alert_app.jpg"/></div>
-                                        <div style="float:left;line-height:25px;">
-                                            <div style="width:80px;">
-                                                <label class="bold_text" for="msisdn">Alert</label>
+                                <c:forEach var="app" items="${serviceApps}">
+                                    <div style="float:left;margin-right:5px;" class="item">
+                                        <div class="my_app">
+                                            <div class="sub_image"><img height="75" onclick="window.location='ServiceUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Service Application</u></b><br/> ')" src="resources/images/service_app.jpg"/></div>
+                                            <div style="float:left;line-height:25px;">
+                                                <div style="width:80px;">
+                                                    <label class="bold_text" for="msisdn">Service - <c:out value="${app.appName}"/></label>
+                                                </div>
+                                                <div class="my_app_link"><a href="ServiceUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a> | <a href="alertHelp.html">Help</a>
+                                                    | <a href="#" onclick="show();">Publish</a></div>
+                                                <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"><span style="float:left;"></span></span></div>
                                             </div>
-                                            <div class="my_app_link"><a href="alertUse.html">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a> | <a href="alertHelp.html">Help</a>
-                                                | <a href="#" onclick="show();">Publish</a></div>
-                                            <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"><span style="float:left;"></span></span></div>
                                         </div>
+                                        <div align="center" style="padding-top:-3px;padding-bottom:20px" class="clear"> ............................................................................ </div>
                                     </div>
-                                    <div align="center" style="padding-top:-3px;padding-bottom:20px" class="clear"> ............................................................................ </div>
-                                </div>
-                                <div style="float:left;margin-right:5px;" class="item">
-                                    <div class="my_app">
-                                        <div class="sub_image"><img height="75" onclick="window.location='channeluseApp.html'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Channel Application</u></b><br/> fsfsfg')" src="resources/images/service_app.jpg"/></div>
-                                        <div style="float:left;line-height:25px;">
-                                            <div style="width:80px;">
-                                                <label class="bold_text" for="msisdn">Service</label>
+
+                                </c:forEach>
+
+                                <c:forEach var="app" items="${alertApps}">
+                                    <div style="float:left;margin-right:5px;" class="item">
+                                        <div class="my_app">
+                                            <div class="sub_image"><img height="75" onclick="window.location='AlertUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Service Application</u></b><br/> ')" src="resources/images/alert_app.jpg"/></div>
+                                            <div style="float:left;line-height:25px;">
+                                                <div style="width:80px;">
+                                                    <label class="bold_text" for="msisdn">Alert - <c:out value="${app.appName}"/></label>
+                                                </div>
+                                                <div class="my_app_link"><a href="AlertUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a> | <a href="alertHelp.html">Help</a>
+                                                    | <a href="#" onclick="show();">Publish</a></div>
+                                                <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"><span style="float:left;"></span></span></div>
                                             </div>
-                                            <div class="my_app_link"><a href="channeluseApp.html">Use</a> | <a href="channelView.html">View</a> | <a href="channelEdit.html">Edit</a> | <a href="channelHelp.html">Help</a>| <a href="#" onclick="show();">Publish</a></div>
-                                            <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"><span style="float:left;"></span></span></div>
                                         </div>
+                                        <div align="center" style="padding-top:-3px;padding-bottom:20px" class="clear"> ............................................................................ </div>
                                     </div>
-                                    <div align="center" style="padding-top:-3px;padding-bottom:20px" class="clear"> ............................................................................ </div>
-                                </div>
-                                <div style="float:left;margin-right:5px;" class="item">
-                                    <div class="my_app">
-                                        <div class="sub_image"><img height="75" onclick="window.location='requestView.html'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Request Show Application</u></b><br/> Request Show Application')" src="resources/images/contact_app.png"/></div>
-                                        <div style="float:left;line-height:25px;">
-                                            <div style="width:80px;">
-                                                <label class="bold_text" for="msisdn">Request</label>
+
+                                </c:forEach>
+
+                                <c:forEach var="app" items="${votingApps}">
+                                    <div style="float:left;margin-right:5px;" class="item">
+                                        <div class="my_app">
+                                            <div class="sub_image"><img height="75" onclick="window.location='VotingUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Voting Application</u></b><br/> ')" src="resources/images/voting_app.jpg"/></div>
+                                            <div style="float:left;line-height:25px;">
+                                                <div style="width:80px;">
+                                                    <label class="bold_text" for="msisdn">Voting - <c:out value="${app.appName}"/></label>
+                                                </div>
+                                                <div class="my_app_link"><a href="VotingUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a> | <a href="alertHelp.html">Help</a>
+                                                    | <a href="#" onclick="show();">Publish</a></div>
+                                                <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"><span style="float:left;"></span></span></div>
                                             </div>
-                                            <div class="my_app_link"><a href="requestView.html">View</a> | <a href="requestEdit.html">Edit</a> | <a href="requestHelp.html">Help</a>| <a href="#" onclick="show();">Publish</a></div>
-                                            <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"></span></div>
                                         </div>
+                                        <div align="center" style="padding-top:-3px;padding-bottom:20px" class="clear"> ............................................................................ </div>
                                     </div>
-                                    <div align="center" style="padding-top:-3px;padding-bottom:20px" class="clear"> ............................................................................ </div>
-                                </div>
-                                <div style="float:left;margin-right:5px;" class="item">
-                                    <div class="my_app">
-                                        <div class="sub_image"><img height="75" onclick="window.location='../reports/viewReport/requ_8841.html'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Request Show Application</u></b><br/> Request Show Application')" src="resources/images/contact_app.png"/></div>
-                                        <div style="float:left;line-height:25px;">
-                                            <div style="width:80px;">
-                                                <label class="bold_text" for="msisdn">Request2</label>
+
+                                </c:forEach>
+
+                                <c:forEach var="app" items="${contactApps}">
+                                    <div style="float:left;margin-right:5px;" class="item">
+                                        <div class="my_app">
+                                            <div class="sub_image"><img height="75" onclick="window.location='ContactUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Voting Application</u></b><br/> ')" src="resources/images/contact_app.jpg"/></div>
+                                            <div style="float:left;line-height:25px;">
+                                                <div style="width:80px;">
+                                                    <label class="bold_text" for="msisdn">Contact - <c:out value="${app.appName}"/></label>
+                                                </div>
+                                                <div class="my_app_link"><a href="ContactUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a> | <a href="alertHelp.html">Help</a>
+                                                    | <a href="#" onclick="show();">Publish</a></div>
+                                                <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"><span style="float:left;"></span></span></div>
                                             </div>
-                                            <div class="my_app_link"><a href="requestView.html">View</a> | <a href="requestEdit.html">Edit</a> | <a href="requestHelp.html">Help</a>| <a href="#" onclick="show();">Publish</a></div>
-                                            <div style="float:left; display:inline-block;">TO BE APPROVED<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"></span></div>
                                         </div>
+                                        <div align="center" style="padding-top:-3px;padding-bottom:20px" class="clear"> ............................................................................ </div>
                                     </div>
-                                    <div align="center" style="padding-top:-3px;padding-bottom:20px" class="clear"> ............................................................................ </div>
-                                </div>
-                                <div style="float:left;margin-right:5px;" class="item">
-                                    <div class="my_app">
-                                        <div class="sub_image"><img height="75" onclick="window.location='votingView.html'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Voting Application</u></b><br/> Voting App Description')" src="resources/images/voting_app.jpg"/></div>
-                                        <div style="float:left;line-height:25px;">
-                                            <div style="width:80px;">
-                                                <label class="bold_text" for="msisdn">Voting</label>
-                                            </div>
-                                            <div class="my_app_link"><a href="votingView.html">View</a> | <a href="editVoting.html">Edit</a> | <a href="votingHelp.html">Help</a>| <a href="#" onclick="show();">Publish</a></div>
-                                            <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"></span></div>
-                                        </div>
-                                    </div>
-                                    <div align="center" style="padding-top:-8px;padding-bottom:20px" class="clear"> ........................................................................... </div>
-                                </div>
-                                <div style="float:left;margin-right:5px;" class="item">
-                                    <div class="my_app">
-                                        <div class="sub_image"><img height="75" onclick="window.location='votingView.html'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Voting Application</u></b><br/> Voting Application')" src="resources/images/voting_app.jpg"/></div>
-                                        <div style="float:left;line-height:25px;">
-                                            <div style="width:80px;">
-                                                <label class="bold_text" for="msisdn">Voting2</label>
-                                            </div>
-                                            <div class="my_app_link"><a href="votingView.html">View</a> | <a href="editVoting.html">Edit</a> | <a href="votingHelp.html">Help</a>| <a href="#" onclick="show();">Publish</a></div>
-                                            <div style="float:left; display:inline-block;">BLOCKED<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"></span></div>
-                                        </div>
-                                    </div>
-                                    <div align="center" style="padding-top:-8px;padding-bottom:20px" class="clear"> ........................................................................... </div>
-                                    <div class="clear">&nbsp;</div>
-                                </div>
+
+                                </c:forEach>
+
+
+
+
                             </div>
                         </div>
                         <div class="clear">&nbsp;</div>
@@ -265,7 +260,7 @@
             </div>
             <div class="clear">&nbsp;</div>
         <span style="padding-left:10px">
-        <input onclick="location.href='home.html'" name="back" type="button" class="button" value="Back" id="back"/>
+        <input onclick="location.href='Home?username=<c:out value="${username}"/>'" name="back" type="button" class="button" value="Back" id="back"/>
         </span></div>
         <div class="grid_1 omega">&nbsp;</div>
         <div class="clear"></div>

@@ -103,7 +103,7 @@
 
                                                 <div id="menu_channel">
                                                     <ul>
-                                                        <li class="first"><a href="ServiceApp_step1" title="Channels">&nbsp;</a></li>
+                                                        <li class="first"><a href="ServiceApp_step1?username=<c:out value="${username}"/>" title="Channels">&nbsp;</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
