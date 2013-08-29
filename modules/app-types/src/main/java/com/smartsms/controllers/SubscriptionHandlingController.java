@@ -2,6 +2,7 @@ package com.smartsms.controllers;
 
 import com.smartsms.beans.*;
 import com.smartsms.beans.util.AppType;
+import com.smartsms.beans.util.STATUS;
 import com.smartsms.repo.SubscriberRepository;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,7 @@ public class SubscriptionHandlingController {
         Subscribe subscribe = new Subscribe();
         subscribe.setSubscriberNumber(subscriberNumber);
         subscribe.setAppId(alertApplication.getAppId());
+        subscribe.setSubscriberStatus(STATUS.SUBSCRIBED);
         subscriberRepository.saveSubscriber(subscribe);
 
         return createResponse("200", alertApplication.getSubscriptionSuccessfulMessage());
