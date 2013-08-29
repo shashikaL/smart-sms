@@ -33,8 +33,9 @@ public class ContactAppController {
     }
 
     @RequestMapping(value = "/ContactAppCreate", method = RequestMethod.POST)
-    public String submitContactAppCreate(ContactApplication application) {
+    public String submitContactAppCreate(ContactApplication application,@RequestParam(value = "username", required = false) String username, Model model) {
         this.ContactApplication = application;
+        ContactApplication.setUserID(username);
         applicationTypeRepository.saveApplication(ContactApplication);
         return "ContactAppSuccess";
     }

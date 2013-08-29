@@ -44,6 +44,11 @@ public class Subscribe {
         this.subscriberNumber = subscriberNumber;
     }
 
-     public void setSubscriberStatus(STATUS subscriberStatus) {
-         this.subscriberStatus = subscriberStatus;
-}    }
+    public STATUS getSubscriberStatus() {
+        return subscriberStatus;
+    }
+
+    public void setSubscriberStatus(STATUS subscriberStatus) {
+        this.subscriberStatus = subscriberStatus;
+    }
+}

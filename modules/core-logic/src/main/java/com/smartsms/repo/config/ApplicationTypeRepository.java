@@ -37,6 +37,10 @@ public interface ApplicationTypeRepository {
 
     public List<ContactApplication> findAllContactApplicationByUsername(String username);
 
+    public void incrementCandidateCount(String candidateId, String appId);
+
+    public VotingApplication findVotingApplicationByShortCode(String shortCode);
+
 
 
 }

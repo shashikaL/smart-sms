@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MalformedRepositoryImpl implements MalformedRepository{
+public class MalformedRepositoryImpl implements MalformedRepository {
 
     @Autowired
     private MongoDBConfig mongoDBConfig;
@@ -26,6 +26,16 @@ public class MalformedRepositoryImpl implements MalformedRepository{
     }
 
     public List<Malformed> findAllMalformed() {
-        return mongoTemplate.findAll(Malformed.class,mongoDBConfig.getMalCollectionName());
+        return mongoTemplate.findAll(Malformed.class, mongoDBConfig.getMalCollectionName());
+    }
+
+    @Override
+    public void save(List<String> words) {
+        mongoTemplate.save(words, mongoDBConfig.getWordCollections());
+    }
+
+    @Override
+    public void removeWords() {
+        mongoTemplate.remove(String.class, mongoDBConfig.getWordCollections());
     }
 }

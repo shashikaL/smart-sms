@@ -5,6 +5,7 @@ public class Candidate {
 
     private String code;
     private String description;
+    private String count;
 
     public String getCode() {
         return code;
@@ -20,5 +21,13 @@ public class Candidate {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
     }
 }

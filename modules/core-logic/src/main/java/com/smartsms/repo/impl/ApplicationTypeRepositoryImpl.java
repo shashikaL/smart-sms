@@ -4,6 +4,7 @@ package com.smartsms.repo.impl;
 import com.smartsms.beans.*;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.repo.config.MongoDBConfig;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -11,6 +12,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -85,21 +87,56 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
 
     @Override
     public List<ServiceApplication> findAllServiceApplicationByUsername(String username) {
-        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)),ServiceApplication.class,mongoDBConfig.getServiceCollectionName());
+        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)), ServiceApplication.class, mongoDBConfig.getServiceCollectionName());
     }
 
     @Override
     public List<AlertApplication> findAllAlertApplicationByUsername(String username) {
-        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)),AlertApplication.class,mongoDBConfig.getAlertCollectionName());
+        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)), AlertApplication.class, mongoDBConfig.getAlertCollectionName());
     }
 
     @Override
     public List<VotingApplication> findAllVotingApplicationByUsername(String username) {
-        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)),VotingApplication.class,mongoDBConfig.getVotingCollectionName());
+        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)), VotingApplication.class, mongoDBConfig.getVotingCollectionName());
     }
 
     @Override
     public List<ContactApplication> findAllContactApplicationByUsername(String username) {
-        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)),ContactApplication.class,mongoDBConfig.getContactCollectionName());
+        return mongoTemplate.find(new Query(Criteria.where("userID").is(username)), ContactApplication.class, mongoDBConfig.getContactCollectionName());
+    }
+
+    @Override
+    public void incrementCandidateCount(String candidateId, String appId) {
+        List<Candidate> modifiedList = new ArrayList<Candidate>();
+        VotingApplication application = mongoTemplate.findById(appId, VotingApplication.class, mongoDBConfig.getVotingCollectionName());
+        List<Candidate> candidateList = application.getCandidateList();
+        if (candidateList == null || candidateList.size() == 0) {
+            return;
+        }
+        for (Candidate candidate : candidateList) {
+            if(candidate.getCode().equals(candidateId)){
+                int newVal = Integer.parseInt(candidate.getCount()) + 1;
+                candidate.setCount(String.valueOf(newVal));
+                modifiedList.add(candidate);
+            }
+            modifiedList.add(candidate);
+        }
+        application.setCandidateList(modifiedList);
+        saveApplication(application);
+
+    }
+
+    @Override
+    public VotingApplication findVotingApplicationByShortCode(String shortCode) {
+        List<VotingApplication> all = mongoTemplate.findAll(VotingApplication.class, mongoDBConfig.getVotingCollectionName());
+        for (VotingApplication votingApplication : all){
+            if(votingApplication.getKeyword() == null){
+                continue;
+            }
+            if(votingApplication.getKeyword().getShortCode().equals(shortCode)){
+                return votingApplication;
+            }
+        }
+        return null;
     }
 }

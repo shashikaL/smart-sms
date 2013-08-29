@@ -22,10 +22,23 @@
         </property>
     </bean>
 
+    <bean id="wordScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="wordAppTrigger"/>
+            </list>
+        </property>
+    </bean>
+
     <!-- Quartz -->
     <bean id="serviceAppTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
         <property name="jobDetail" ref="serviceAppManager"/>
-        <property name="cronExpression" value="${report.scheduler.alert.app.cron.expression}"/>
+        <property name="cronExpression" value="${service.scheduler.trigger.cron.expression}"/>
+    </bean>
+
+    <bean id="wordAppTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="wordAppManager"/>
+        <property name="cronExpression" value="${word.filter.scheduler.trigger.cron.expression}"/>
     </bean>
 
     <bean id="serviceAppManager"
@@ -38,7 +51,20 @@
         </property>
     </bean>
 
+    <bean id="wordAppManager"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="wordFilterExecutor"/>
+        </property>
+        <property name="targetMethod">
+            <value>execute</value>
+        </property>
+    </bean>
+
     <bean id="serviceTarget" class="com.smartsms.service.impl.ExecuteImpl">
+    </bean>
+
+    <bean id="wordFilterExecutor" class="com.smartsms.service.impl.WordFilterExecutorImpl">
     </bean>
 
 

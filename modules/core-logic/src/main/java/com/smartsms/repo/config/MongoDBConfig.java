@@ -57,6 +57,9 @@ public class MongoDBConfig {
     @Value("${smart.sms.admin.database.contact.messages}")
     private String contactMessageCollection;
 
+    @Value("${smart.sms.mal.word.content}")
+    private String wordCollections;
+
     public String getMongoHost() {
         return mongoHost;
     }
@@ -183,5 +186,13 @@ public class MongoDBConfig {
 
     public void setContactMessageCollection(String contactMessageCollection) {
         this.contactMessageCollection = contactMessageCollection;
+    }
+
+    public String getWordCollections() {
+        return wordCollections;
+    }
+
+    public void setWordCollections(String wordCollections) {
+        this.wordCollections = wordCollections;
     }
 }

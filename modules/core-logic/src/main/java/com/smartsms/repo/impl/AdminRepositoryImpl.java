@@ -3,6 +3,7 @@ package com.smartsms.repo.impl;
 import com.smartsms.beans.ContactAppMessage;
 import com.smartsms.beans.FilterRejectedMessage;
 import com.smartsms.beans.Malformed;
+import com.smartsms.beans.Word;
 import com.smartsms.repo.config.MongoDBConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -42,5 +43,13 @@ public class AdminRepositoryImpl {
 
     public List<ContactAppMessage> findContactAppMessages() {
         return mongoTemplate.findAll(ContactAppMessage.class, mongoDBConfig.getContactMessageCollection());
+    }
+
+    public void save(Word word) {
+        mongoTemplate.insert(word, mongoDBConfig.getWordCollections());
+    }
+
+    public void remove(){
+        mongoTemplate.dropCollection(Word.class);
     }
 }

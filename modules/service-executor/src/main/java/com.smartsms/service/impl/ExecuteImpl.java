@@ -5,6 +5,7 @@ import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.service.Execute;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -23,6 +24,11 @@ public class ExecuteImpl implements Execute {
     public void execute() {
         System.out.println("Service App Executor Starting");
         List<ServiceApplication> applicationList = applicationTypeRepository.findAllServiceApplications();
+
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.set(Calendar.HOUR);
+
+
 
 
 
