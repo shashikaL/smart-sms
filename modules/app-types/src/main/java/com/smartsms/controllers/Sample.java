@@ -5,9 +5,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import javax.lang.model.util.Elements;
-import javax.swing.text.Document;
-import javax.swing.text.html.parser.Element;
 import java.io.IOException;
 
 /**
