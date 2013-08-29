@@ -43,4 +43,7 @@ public class Subscribe {
     public void setSubscriberNumber(String subscriberNumber) {
         this.subscriberNumber = subscriberNumber;
     }
-}
+
+     public void setSubscriberStatus(STATUS subscriberStatus) {
+         this.subscriberStatus = subscriberStatus;
+}    }
