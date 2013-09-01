@@ -29,7 +29,7 @@ public class Sample {
             Elements links = doc.select("a[href]");
             // get the value from href attribute
             for (Element link : links) {
-                System.out.println("text : " + link.text());
+                System.out.println(link.text());
             }
 
         } catch (IOException e) {
