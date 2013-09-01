@@ -71,7 +71,8 @@
                                 <form id="quick-press" action="home.html" method="post">
                                     <div style="margin-top:12px;">&nbsp;</div>
                                     <ul>
-                                        <li></li>
+                                        <li>User who has subscribe to this application has to send SMS, with &lt;KEYWORD&gt; and SEND to &lt;SHORT_CODE&gt;</li>
+                                        <li>Update Services via SMS: Type UPDATE &lt;KEYWORD &gt;&lt;YOUR MESSAGE&gt; and send to &lt;SHORT_CODE&gt;</li>
                                     </ul>
                                     <div class="clear">&nbsp;</div>
                                     <div class="clear">&nbsp;</div>
@@ -80,7 +81,7 @@
                                         <label>&nbsp;</label>
                                     </h4>
                                     <div class="info_group"><span style="margin-left:-10px" class="button_left">
-                      <input onclick="location.href='myApplication.html';" name="back" type="button" class="button" value="OK" id="ok">
+                      <input onclick="location.href='MyApplications';" name="back" type="button" class="button" value="OK" id="ok">
                                         </input>
                       </span></div>
                                 </form>

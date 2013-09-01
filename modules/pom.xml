@@ -26,6 +26,8 @@
         <!--<module>report-scheduler</module>-->
         <module>simulator</module>
         <module>simulator-web</module>
+        <module>simulator-web</module>
+        <module>service-executor</module>
     </modules>
 
     <dependencies>

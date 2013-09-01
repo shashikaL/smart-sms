@@ -33,6 +33,9 @@ public class MongoDBConfig {
     @Value("${smart.sms.apps.database.contact.collection}")
     private String contactCollectionName;
 
+    @Value("${smart.sms.apps.database.contact.collection}")
+    private String contactResponseCollectionName;
+
     @Value("${smart.sms.user.database.user.collection}")
     private String userCollectionName;
 
@@ -114,6 +117,13 @@ public class MongoDBConfig {
 
     public void setContactCollectionName(String contactCollectionName) {
         this.contactCollectionName = contactCollectionName;
+    }
+    public String getContactResponseCollectionName() {
+        return contactResponseCollectionName;
+    }
+
+    public void setContactResponseCollectionName(String contactResponseCollectionName) {
+        this.contactResponseCollectionName = contactResponseCollectionName;
     }
 
     public String getUserMgtDatabaseName() {
