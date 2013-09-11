@@ -33,7 +33,7 @@
 
 /*To change the background image for the entire site add the background image <bg.jpg> to the images folder and change the color property in the following <background: #FFFFFF  url("../images/bg.jpg") repeat-x;>*/
 body {
-	background: #e9f3fc url("../images/bg.jpg") repeat-x !important; 
+	background: #F4EEF8 url("../images/bg.jpg") repeat-x !important;
 	margin: 0;
 	padding: 0;
 	font: 13px / 16px "Lucida Grande", Arial, Sans-serif;

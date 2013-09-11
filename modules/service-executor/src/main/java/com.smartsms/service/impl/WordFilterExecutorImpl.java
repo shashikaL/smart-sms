@@ -1,6 +1,6 @@
 package com.smartsms.service.impl;
 
-import com.smartsms.beans.Word;
+//import com.smartsms.beans.Word;
 import com.smartsms.repo.config.MalformedRepository;
 import com.smartsms.repo.impl.AdminRepositoryImpl;
 import com.smartsms.service.WordFilterExecutor;
@@ -20,11 +20,11 @@ import java.util.List;
 public class WordFilterExecutorImpl implements WordFilterExecutor {
 
     @Autowired
-    private AdminRepositoryImpl adminRepository;
+    //private AdminRepositoryImpl adminRepository;
 
     @Override
     public void execute() {
-        System.out.println(" ======================================================================================");
+    /*    System.out.println(" ======================================================================================");
         System.out.println(" ================================ Executing Word Filter Scheduler =====================");
         System.out.println(" ======================================================================================");
         Document doc;
@@ -51,7 +51,7 @@ public class WordFilterExecutorImpl implements WordFilterExecutor {
             System.out.println("===================== Successfully saved ========================================");
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }   */
 
     }
 }

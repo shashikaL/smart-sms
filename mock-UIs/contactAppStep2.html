@@ -453,7 +453,7 @@ var selectedKeyword = '';
       <div id="body">
         <div id="nullRemover"/>
         <div class="sub_heading">
-          <h1>Create a Contact Application</h1>
+          <h1> Contact Application Responses</h1>
         </div>
         <div class="navi_link4"></div>
         <div class="grid_1 alpha">&nbsp;</div>
@@ -462,7 +462,7 @@ var selectedKeyword = '';
             <div class="metabox-holder" id="dashboard-widgets">
               <div class="postbox" id="dashboard_quick_press">
                 <form id="quick-press" name="appdetails" action="appDetails.html" method="post">
-                  <h3 class="hndle"><span>Application Details</span></h3>
+                  <h3 class="hndle"><span>Contact Application Responses</span></h3>
                   <div class="inside">
                     <div class="clear">&nbsp;</div>
                     <h4>
@@ -474,75 +474,45 @@ var selectedKeyword = '';
                       </div>
                       <div class="input_row">
                         <div class="input-text-wrap">
-                          <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Service"/>
+                          <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Contact"/>
                         </div>
                       </div>
                     </div>
-                     <h4>
-                      <label for="short3">Keyword Details</label>
-                    </h4>
-                    <div class="info_group">
-					<div style="display:inline"></div>
-                      <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
-                        <option value="2545">1234 - ABC</option>
-						<option value="2545">7788 - SSS</option>
-                      </select>		
-					   <a style="padding-left:2px" href="serviceCreateKeyword1.html">Create Keyword</a>		  
-                    </div>
-					  <h4>
-                      <label for="short3"></label>
-                    </h4>
-				    <h4>
-                      <label>Application Validity Duration</label>
-                    </h4>
-                    
-                                      <div class="input_row"></div>
-                  
-                    <label style="float:left;margin: 0.3em 0 1em 5em;width:100px;" class="pointer" for="startDate">Start date</label>
-                    <div style="width:200px;margin-left:-165px" class="input_row"></div>
-                    <div style="width:200px;margin-left:-50px" class="input_row">
-                      <div class="input-text-wrap">
-                        <input id="startDate" name="startDate" class="readonly" type="text" value="09/03/2011"/>
-                      </div>
-                    </div>
-                    
-                    	  <div id="expire">
-                    <h4>
-                      <label>&nbsp;</label>
-                    </h4>
-                    <label style="float:left;margin: 0.3em 0 1em 5em;width:100px;" class="pointer" for="endDate">End date</label>
-                    <div style="width:200px;margin-left:-165px" class="input_row"></div>
-                    <div style="width:200px;margin-left:-50px" class="input_row">
-                      <div class="input-text-wrap">
-                        <input id="endDate" name="endDate" style="cursor:pointer" type="text" value="09/04/2011"/>
-                      </div>
-                    </div>
-                    </div>
-                    <h4>
-                      <label>&nbsp;</label>
-                    </h4>
-                    <h4>
-                      <label for="decs">Description</label>
-                    </h4>
-                    <div class="input_row">
-                      <div class="textarea-wrap">
-                        <div style="margin-left:0px;" id="decsErrorDiv" class="error-req"></div>
-                        <textarea id="decs" name="app.description">First Contact Application</textarea>
-                      </div>
-                    </div>
-                    <h4>
-                        <label for="decs2">Response Message</label>
-                      </h4>
-                      <div class="input_row">
-                        <div class="textarea-wrap">
-                          <div style="margin-left:0px;" id="decsErrorDiv2" class="error-req"></div>
-                          <textarea id="app.description" name="app.description2"></textarea>
-                        </div>
-                      </div>
-                    <div class="clear">&nbsp;
-                      
-                      <p>&nbsp;</p>
-                    </div>
+                    <table width="675" border="1">
+                      <tr>
+                        <th width="104" scope="col">Date</th>
+                        <th width="287" scope="col">Response</th>
+                        <th width="262" scope="col">Contact Number</th>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td width="287"><label>
+                          <textarea name="txtarea1" id="txtarea1" cols="45" rows="5"></textarea>
+                        </label></td>
+                        <td><label>
+                          0771234567
+                              <input type="submit" name="reply" id="reply" value="Reply" />
+                        </label></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td width="287"><textarea name="txtarea2" id="txtarea2" cols="45" rows="5"></textarea></td>
+                        <td>0777489670
+                          <input type="submit" name="reply2" id="reply2" value="Reply" /></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td width="287"><textarea name="txtarea3" id="txtarea3" cols="45" rows="5"></textarea></td>
+                        <td>0771726354
+                          <input type="submit" name="reply3" id="reply3" value="Reply" /></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td width="287"><textarea name="txtarea4" id="txtarea4" cols="45" rows="5"></textarea></td>
+                        <td>0771827364
+                          <input type="submit" name="reply4" id="reply4" value="Reply" /></td>
+                      </tr>
+                    </table>
                     <div id="advance" style="display:none;float:left;">
                       <script type="text/javascript" src="/javascripts/advanceSetting/expand.js"></script>
                       <link rel="stylesheet" href="/css/advanceSetting/advanceSetting.css" type="text/css">
@@ -673,10 +643,8 @@ var selectedKeyword = '';
                         </div>
                       </div>
                     </div>
-                    <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span style="padding-right:10px">
-                    <input onclick="location.href='appTypeSelection.html';" name="cancel" type="button" class="button" value="Back"/>
-                      </span><span>
-                      <input onclick="location.href='contactAppConfirm.html';" name="next" type="button" class="button" value="Next" id="next"/>
+                    <div style="padding-bottom:5px;padding-top:15px;margin-left:4.9em" class="info_group"><span>
+                  <input onclick="location.href='contactAppConfirm.html';" name="next" type="button" class="button" value="Next" id="next"/>
                       </span></div>
                   </div>
                 </form>

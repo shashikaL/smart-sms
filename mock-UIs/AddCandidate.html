@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<title>SmartSMS - Freedom to Explore</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name='robots' content='noindex,nofollow'/>
+<link rel="shortcut icon" href="smartSMS/images/fav.ico"/>
+<link rel='stylesheet' href='smartSMS/css/body.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/custom.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/login.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/tables.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/grid.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='smartSMS/css/manage.css' type='text/css' media='all'/>
+<link rel="stylesheet" href="smartSMS/css/facebox/facebox.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/image-stripping.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/ui/custom.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/dialog/jquery.alerts.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="smartSMS/css/ui-hint.css" media="screen" type="text/css"/>
+<script type="text/javascript" src="smartSMS/javascripts/facebox/jquery.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/facebox/facebox.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/application.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/addHTMLControls.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/orca_js.js"></script>
+<script type="text/javascript" src="smartSMS/javascripts/validate.js"></script>
+<script type="text/javascript"> 
+            jQuery(document).ready(function($) {
+                $('a[rel*=facebox]').facebox();
+            });
+        </script>
+<script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/datetime.js"></script>
+<script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/jquery.bgiframe.js"></script>
+<script language="JavaScript" type="text/javascript" src="smartSMS/javascripts/dialog/jquery.alerts.js"></script>
+<!--[if lte IE 7]>
+        <link rel='stylesheet' id='ie-css' href='smartSMS/css/ie.css' type='text/css'
+              media='all'/>
+        <![endif]-->
+</head>
+<body>
+<div id="container" class="container_18">
+  <script type="text/javascript"> 
+    function logoutConfirm(url) {
+        var logOutTxt = 'Do you really want to logout??';
+        jConfirm(logOutTxt, 'Confirmation Dialog', function(r) {
+            if(r == true) {
+                window.location = url;
+            }
+        });
+    }
+</script>
+<script type="text/javascript" src="smartSMS/javascripts/header.js" language="javascript"></script>
+    <script type="text/javascript" src="smartSMS/javascripts/calendar/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="smartSMS/css/calendar/ui.all.css" type="text/css">
+    </link>
+
+    <script type="text/javascript"> 
+	
+	 function show() {	
+	       setTimeout("showPopup()", 1000);
+    }
+	
+    function submitForm() {
+        document.forms[1].submit();
+    }
+ 
+    function agreeStatement() {
+        var checkBoxTick = document.getElementById("checkBoxTick");
+        if (checkBoxTick.checked) {
+            document.getElementById("ok").disabled = false
+        } else {
+            document.getElementById("ok").disabled = true
+        }
+    }
+ 
+</script>
+    <div id="popup-terms" style="display:none;">
+      <div id="body" style="width:auto;height:auto;">
+        <div class="wrap">
+          <div id="dashboard-widgets-wrap">
+            <div id='dashboard-widgets' class='metabox-holder' style="width:550px">
+              <div id="dashboard_quick_press" class="postbox ">
+                <h3 class='hndle'><span>Terms & Conditions</span></h3>
+                <div class="inside" style="margin:20px; max-height:400px;overflow:auto;">
+                  <div id="popupTermsContent"> <br>
+                    <p><font size="2" face="Verdana"><b>Terms of Service</b></font> <br>
+                      <br>
+                    </p>
+                    <p><font size="2" face="Verdana"><b>Basic Terms</b></font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana"> You are responsible for your use of
+                      the Services, for any content you create and post to the Services, and
+                      for any consequences thereof. The Content you create, post, or display
+                      will be able to be viewed by other users in your group. You should only
+                      provide Content that you are comfortable sharing with others under these
+                      Terms.</font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">You may use the Services only if you
+                      can form a binding contract with hSenid Mobile and are not a person
+                      barred from receiving services under the laws
+                      or other applicable jurisdiction. You may use the Services only in compliance
+                      with these Terms and all applicable local, state, national, and international
+                      laws, rules and regulations.</font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">The Services that smartSMS provides
+                      are always evolving and the form and nature of the Services that smartSMS
+                      provides may change from time to time without prior notice to you. </font> <br>
+                    </p>
+                    <br>
+                    <p id="privacy"><font size="2" face="Verdana"><b>Privacy</b></font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">Any information that you provide to
+                      smartSMS is subject to our Privacy
+                      Policy, which governs our
+                      collection and use of your information. These communications are considered
+                      part of the Services and your smartSMS account, which you may not be
+                      able to opt-out from receiving.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana"><b>Passwords</b></font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">You are responsible for safeguarding
+                      the password that you use to access the Services and for any activities
+                      or actions under your password. We encourage you to use strong
+                      passwords (passwords that use a combination of upper and lower case
+                      letters, numbers and symbols) with your account. smartSMS cannot and
+                      will not be liable for any loss or damage arising from your failure
+                      to comply with the above requirements.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana"><b>Content on the Services</b></font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">All Content, whether publicly posted
+                      or privately transmitted, is the sole responsibility of the person who
+                      originated such Content. We may not monitor or control the Content posted
+                      via the Services and, we cannot take responsibility for such Content.
+                      Any use or reliance on any Content or materials posted via the Services
+                      or obtained by you through the Services is at your own risk.</font></p>
+                    <p><font size="2" face="Verdana">We do not endorse, support, represent
+                      or guarantee the completeness, truthfulness, accuracy, or reliability
+                      of any Content or communications posted via the Services or endorse
+                      any opinions expressed via the Services. You understand that by using
+                      the Services, you may be exposed to Content that might be offensive,
+                      harmful, inaccurate or otherwise inappropriate, or in some cases, postings
+                      that have been mislabeled or are otherwise deceptive. Under no circumstances
+                      will smartSMS be liable in any way for any Content, including, but not
+                      limited to, any errors or omissions in any Content, or any loss or damage
+                      of any kind incurred as a result of the use of any Content posted, emailed,
+                      transmitted or otherwise made available via the Services or broadcast
+                      elsewhere.</font></p>
+                    <br>
+                    <p><font size="2" face="Verdana"><b>Your Rights</b></font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">You retain your rights to any Content
+                      you submit, post or display on or through the Services. By submitting,
+                      posting or displaying Content on or through the Services, you grant
+                      us a worldwide, non-exclusive, royalty-free license (with the right
+                      to sublicense) to use, copy, reproduce, process, adapt, modify, publish,
+                      transmit, display and distribute such Content in any and all media or
+                      distribution methods (now known or later developed).</font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">We may modify or adapt your Content
+                      in order to transmit, display or distribute it over computer networks
+                      and in various media and/or make changes to your Content as are necessary
+                      to conform and adapt that Content to any requirements or limitations
+                      of any networks, devices, services or media.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana"><b>smartSMS Rights</b></font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">All right, title, and interest in and
+                      to the Services (excluding Content provided by users) are and will remain
+                      the exclusive property of smartSMS and its licensors. The Services are
+                      protected by copyright, trademark. Nothing in the Terms gives you a
+                      right to use the smartSMS name or any of the smartSMS trademarks, logos,
+                      domain names, and other distinctive brand features. Any feedback, comments,
+                      or suggestions you may provide regarding smartSMS, or the Services is
+                      entirely voluntary and we will be free to use such feedback, comments
+                      or suggestions as we see fit and without any obligation to you.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana"><b>Restrictions on Content and Use
+                      of the Services</b></font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">We reserve the right at all times (but
+                      will not have an obligation) to remove or refuse to distribute any Content
+                      on the Services and to terminate users or reclaim usernames. Please
+                      review the smartSMS Rules (which are part of these Terms) to better understand what is prohibited on the Service.
+                      We also reserve the right to access, read, preserve, and disclose any
+                      information as we reasonably believe is necessary to (i) satisfy any
+                      applicable law, regulation, legal process or governmental request, (ii)
+                      enforce the Terms, including investigation of potential violations hereof,
+                      (iii) detect, prevent, or otherwise address fraud, security or technical
+                      issues, (iv) respond to user support requests, or (v) protect the rights,
+                      property or safety of smartSMS, its users and the public.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana">Except as permitted through the Services
+                      (or these Terms), you have to use the smartSMS API if you want to reproduce, modify, create derivative works, distribute, sell, transfer,
+                      publicly display, publicly perform, transmit, or otherwise use the Content
+                      or Services.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana">You may not do any of the following
+                      while accessing or using the Services: (i) access, tamper with, or use
+                      non-public areas of the Services, smartSMS computer systems, or the technical
+                      delivery systems of smartSMS providers; (ii) probe, scan, or test the
+                      vulnerability of any system or network or breach or circumvent any security
+                      or authentication measures; (iii) access or search or attempt to access
+                      or search the Services by any means (automated or otherwise) other than
+                      through our currently available, published interfaces that are provided
+                      by smartSMS (and only pursuant to those terms and conditions), unless
+                      you have been specifically allowed to do so in a separate agreement
+                      with smartSMS (iv) forge any TCP/IP packet header or any part of the
+                      header information in any email or posting, or in any way use the Services
+                      to send altered, deceptive or false source-identifying information;
+                      or (v) interfere with, or disrupt, (or attempt to do so), the access
+                      of any user, host or network, including, without limitation, sending
+                      a virus, overloading, flooding, spamming, mail-bombing the Services,
+                      or by scripting the creation of Content in such a manner as to interfere
+                      with or create an undue burden on the Services.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana"><b>Copyright Policy</b></font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">smartSMS respects the intellectual property
+                      rights of others and expects users of the Services to do the same. We
+                      will respond to notices of alleged copyright infringement that comply
+                      with applicable law and are properly provided to us. If you believe
+                      that your Content has been copied in a way that constitutes copyright
+                      infringement, please provide us with the following information: (i)
+                      a physical or electronic signature of the copyright owner or a person
+                      authorized to act on their behalf; (ii) identification of the copyrighted
+                      work claimed to have been infringed; (iii) identification of the material
+                      that is claimed to be infringing or to be the subject of infringing
+                      activity and that is to be removed or access to which is to be disabled,
+                      and information reasonably sufficient to permit us to locate the material;
+                      (iv) your contact information, including your address, telephone number,
+                      and an email address; (v) a statement by you that you have a good faith
+                      belief that use of the material in the manner complained of is not authorized
+                      by the copyright owner, its agent, or the law; and (vi) a statement
+                      that the information in the notification is accurate, and, under penalty
+                      of perjury, that you are authorized to act on behalf of the copyright
+                      owner.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana">We reserve the right to remove Content
+                      alleged to be infringing without prior notice and at our sole discretion.
+                      In appropriate circumstances, smartSMS will also terminate a userï¿½s
+                      account if the user is determined to be a repeat infringer. </font></p>
+                    <p><font size="2" face="Verdana"><i> </i></font></p>
+                    <br>
+                    <p><font size="2" face="Verdana"><b>The Services are Available
+                      AS-IS</b></font> <br>
+                    </p>
+                    <p><font size="2" face="Verdana">Your access to and use of the Services
+                      or any Content is at your own risk. You understand and agree that the
+                      Services is provided to you on an AS IS and AS AVAILABLE
+                      basis. Without limiting the foregoing, smartSMS AND ITS PARTNERS DISCLAIM
+                      ANY WARRANTIES, EXPRESS OR IMPLIED, OF MERCHANTABILITY, FITNESS FOR
+                      A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. We make no warranty and disclaim
+                      all responsibility and liability for the completeness, accuracy, availability,
+                      timeliness, security or reliability of the Services or any content thereon.
+                      smartSMS will not be responsible or liable for any harm to your computer
+                      system, loss of data, or other harm that results from your access to
+                      or use of the Services, or any Content. You also agree that smartSMS
+                      has no responsibility or liability for the deletion of, or the failure
+                      to store or to transmit, any Content and other communications maintained
+                      by the Services. We make no warranty that the Services will meet your
+                      requirements or be available on an uninterrupted, secure, or error-free
+                      basis. No advice or information, whether oral or written, obtained from
+                      smartSMS or through the Services, will create any warranty not expressly
+                      made herein.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana"><b>Limitation of Liability</b></font></p>
+                    <p><font size="2" face="Verdana">TO THE MAXIMUM EXTENT PERMITTED BY
+                      APPLICABLE LAW, smartSMS AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS,
+                      EMPLOYEES, AGENTS, PARTNERS AND LICENSORS WILL NOT BE LIABLE FOR ANY
+                      DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES,
+                      INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOOD-WILL,
+                      OR OTHER INTANGIBLE LOSSES, RESULTING FROM (i) YOUR ACCESS TO OR USE
+                      OF OR INABILITY TO ACCESS OR USE THE SERVICES; (ii) ANY CONDUCT OR CONTENT
+                      OF ANY THIRD PARTY ON THE SERVICES, INCLUDING WITHOUT LIMITATION, ANY
+                      DEFAMATORY, OFFENSIVE OR ILLEGAL CONDUCT OF OTHER USERS OR THIRD PARTIES;
+                      (iii) ANY CONTENT OBTAINED FROM THE SERVICES; AND (iv) UNAUTHORIZED
+                      ACCESS, USE OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT, WHETHER
+                      BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE) OR ANY OTHER
+                      LEGAL THEORY, WHETHER OR NOT smartSMS HAS BEEN INFORMED OF THE POSSIBILITY
+                      OF SUCH DAMAGE, AND EVEN IF A REMEDY SET FORTH HEREIN IS FOUND TO HAVE
+                      FAILED OF ITS ESSENTIAL PURPOSE.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana"><b>Exclusions</b></font></p>
+                    <p><font size="2" face="Verdana">Some jurisdictions do not allow the
+                      exclusion of certain warranties or the exclusion or limitation of liability
+                      for consequential or incidental damages, so the limitations above may
+                      not apply to you.</font> <br>
+                    </p>
+                    <br>
+                    <p><font size="2" face="Verdana"><b>Entire Agreement</b></font></p>
+                    <p><font size="2" face="Verdana">These Terms, the smartSMS Rules and
+                      our Privacy Policy are the entire and exclusive agreement between smartSMS
+                      and you regarding the Services (excluding any services for which you
+                      have a separate agreement with smartSMS that is explicitly in addition
+                      or in place of these Terms), and these Terms supersede and replace any
+                      prior agreements between smartSMS and you regarding the Services.</font> <br>
+                      <br>
+                    </p>
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;">
+            <form action="votingConfirm.html" name="agreementForm" method="post">
+              <span>
+              <input onclick="submitForm()" name="ok" style="width:50px;" type="button" class="button" value="I Agree" id="ok"/>
+              </span>
+            </form>
+          </div>
+        </div>
+        <!-- wrap -->
+        <div class="clear"></div>
+      </div>
+    </div>
+    <script type="text/javascript"> 
+    $(document).ready(function(){
+        var errorsubcategory = document.getElementById("errorsubcategory");
+        var pageHasErrors = 'true';
+        if(pageHasErrors != 'true') {
+            setTimeout("showPopup()", 1000);
+        }
+        errorsubcategory.style.display='none';
+        $("#startDate").datepicker({dateFormat: 'dd/mm/yy'});
+        $("#endDate").datepicker({dateFormat: 'dd/mm/yy'});
+    });
+</script>
+    <div id="header2">
+      <p id="tagline"><br/>
+        <br/>
+      </p>
+      <div style="clear:both;">&nbsp;</div>
+      <div id="body">
+        <div class="sub_heading">
+          <h1>Add Candidate Details</h1>
+        </div>
+        <div class="navi_link4"></div>
+        <div style="height:0px;" class="clear">&nbsp;</div>
+        <div class="grid_1 alpha">&nbsp;</div>
+        <div class="grid_16">
+          <div id="dashboard-widgets-wrap">
+            <div class="metabox-holder" id="dashboard-widgets">
+              <div class="postbox " id="dashboard_quick_press">
+                <h3 class="hndle"><span>Voting</span></h3>
+                <div class="inside">
+                  <form id="quick-press" name="votingForm" onSubmit="return validate_form(this)" action="votingConfirm.html" method="post">
+                    <h4 style="margin-top:23px; ">
+                      <label>Voting Options</label>
+                    </h4>
+                    <div style="padding-left:60px;width:375px" id="code" class="dyanmic-data">
+                      <div style="width:140px;float:left;text-align:left;"><label><strong>Candidate Code</strong></label><span class="mandatory"></span></div>
+                      <div style="width:120px;float:left;text-align:left; margin-left:1px"><label><strong>Description</strong><label><span class="mandatory"></span></div>
+                      <div style="padding-left:10px;"><img src="smartSMS/images/16x16.gif"/></div>
+                      <script type="text/javascript"> 
+                                var lastShownExistingElement =1;
+                            </script>
+                      <div style="padding-right:50px" class="error-req-right-al"></div>
+                      <div style="padding-right:50px" class="error-req-right-al" id="errorsubcategory"></div>
+                      <div id="divInput_0" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="input_0" name="selectedValues[0].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                      </div>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      <div id="divText_0" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="text_0" name="selectedValues[0].descriptionEn" type="text" value="" maxlength="10"/>
+                      </div>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div id="divInput_1" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="input_1" name="selectedValues[1].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                      </div>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      <div id="divText_1" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="text_1" name="selectedValues[1].descriptionEn" type="text" value="" maxlength="10"/>
+                      </div>
+                      <img onclick="hideElement(true, 1, false);" style="margin-top:3px;
+                                                      margin-left:10px;
+                                                      float:left;width:16px;
+                                                      height:16px;cursor:pointer
+                                           " title="Delete" src="smartSMS/images/cross.png" id="divDel_1"></img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div id="divInput_2" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="input_2" name="selectedValues[2].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                      </div>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      <div id="divText_2" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="text_2" name="selectedValues[2].descriptionEn" type="text" value="" maxlength="10"/>
+                      </div>
+                      <img onclick="hideElement(true, 2, false);" style="margin-top:3px;
+                                                      margin-left:10px;
+                                                      float:left;width:16px;
+                                                      height:16px;cursor:pointer
+                                           " title="Delete" src="smartSMS/images/cross.png" id="divDel_2"></img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div id="divInput_3" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="input_3" name="selectedValues[3].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                      </div>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      <div id="divText_3" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="text_3" name="selectedValues[3].descriptionEn" type="text" value="" maxlength="10"/>
+                      </div>
+                      <img onclick="hideElement(true, 3, false);" style="margin-top:3px;
+                                                      margin-left:10px;
+                                                      float:left;width:16px;
+                                                      height:16px;cursor:pointer
+                                           " title="Delete" src="smartSMS/images/cross.png" id="divDel_3"></img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div id="divInput_4" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="input_4" name="selectedValues[4].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                      </div>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      <div id="divText_4" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="text_4" name="selectedValues[4].descriptionEn" type="text" value="" maxlength="10"/>
+                      </div>
+                      <img onclick="hideElement(true, 4, false);" style="margin-top:3px;
+                                                      margin-left:10px;
+                                                      float:left;width:16px;
+                                                      height:16px;cursor:pointer
+                                           " title="Delete" src="smartSMS/images/cross.png" id="divDel_4"></img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div id="divInput_5" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="input_5" name="selectedValues[5].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                      </div>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      <div id="divText_5" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
+                        <input id="text_5" name="selectedValues[5].descriptionEn" type="text" value="" maxlength="10"/>
+                      </div>
+                      <img onclick="hideElement(true, 5, false);" style="margin-top:3px;
+                                                      margin-left:10px;
+                                                      float:left;width:16px;
+                                                      height:16px;cursor:pointer
+                                           " title="Delete" src="smartSMS/images/cross.png" id="divDel_5"></img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      </img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      </img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      </img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      </img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      </img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div style="float:left;padding-left:10px">&nbsp;</div>
+                      </img>
+                      <script type="text/javascript"> 
+                                    var selectEle1 = 'input_0';
+                                    var editState = 'false';
+                                    var subCatRequired = 'true';
+                                </script>
+                      <div style="float:right;margin-top:-10px;margin-right:2px">
+                        <script type="text/javascript"> 
+                                    var lastShownElementId = 1;
+                                    hideAllKeywordElements(true, "false");
+                                </script>
+                        <img onclick="showElement(true, false, false)" style="width:16px;cursor:pointer;margin-left:-50px" src="smartSMS/images/plus.png" title="Add" id="plus"/></div>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <h4 style="margin-left:8px">
+                      <label for="onevote1">&nbsp;</label>
+                    </h4>
+                    <div class="info_group">
+                      <label for="onevote1">&nbsp;</label>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <h4>
+                      <label></label>
+                    </h4>
+                    <div style="margin-top:14px;margin-bottom:12px;margin-left:5.7em" class="info_group"><span style="padding-right:10px">
+                      <input onclick="location.href='votingAppStep1.html';" name="back" type="button" class="button" value="Back" id="back"/>
+                      </span><span>
+                      <input name="next" type="button" class="button" value="Next" id="next" onclick="show();"/>
+                      </span></div>
+                    <div class="clear">&nbsp;</div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid_1 omega">&nbsp;</div>
+      </div>
+      <div class="clear">&nbsp;</div>
+    </div>
+  </div>
+<script type="text/javascript" src="smartSMS/javascripts/footer.js" language="javascript"></script>
+</div>
+</body>
+</html>

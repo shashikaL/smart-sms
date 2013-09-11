@@ -41,7 +41,7 @@ public interface ApplicationTypeRepository {
 
     public VotingApplication findVotingApplicationByShortCode(String shortCode);
 
-    public void saveContactResponse(ContactResponse response);
+//    public void saveContactResponse(ContactResponse response);
 
     public ContactApplication findContactApplicationByShortCode(String shortCode);
 
