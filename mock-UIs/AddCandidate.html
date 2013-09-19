@@ -84,18 +84,20 @@
                                         <strong>Description</strong>
                                         <label>
                                 </div>
-                                <div style="padding-left:10px;"><input name="addNewC" type="button" class="button" value="Add New" id="next" onclick="show();"/></div>
+                                <div style="padding-left:10px;"><input name="addNewC" type="button" class="button" value="Add New" id="next" onclick="show();"/>
+
+                                </div>
                                 <script type="text/javascript">
                                     var lastShownExistingElement =1;
                                 </script>
                                 <div style="padding-right:50px" class="error-req-right-al"></div>
                                 <div style="padding-right:50px" class="error-req-right-al" id="errorsubcategory"></div>
                                 <div id="divInput_0" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input id="code" name="code" tabindex="1" type="text" value="" maxlength="10"/>
+                                    <input id="input_0" name="selectedValues[0].keyword" tabindex="1" type="text" value="" maxlength="10"/>
                                 </div>
                                 <div style="float:left;padding-left:10px">&nbsp;</div>
                                 <div id="divText_0" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input id="description" name="description" type="text" value="" maxlength="10"/>
+                                    <input id="text_0" name="selectedValues[0].descriptionEn" type="text" value="" maxlength="10"/>
                                 </div>
                                 <script type="text/javascript">
                                     var selectEle1 = 'input_0';
@@ -231,7 +233,7 @@
                             <div style="margin-top:14px;margin-bottom:12px;margin-left:5.7em" class="info_group"><span style="padding-right:10px">
                   <input onclick="location.href='votingAppStep1.html';" name="back2" type="button" class="button" value="Back" id="back2"/>
                   </span><span>
-                    <input name="next" type="submit" class="button" value="Next" id="next" onclick="location.href='VotingAppConfirm';"/>
+                    <input name="next" type="button" class="button" value="Next" id="next" onclick="location.href='VotingAppSuccess';"/>
                   </span></div>
                             <div class="clear">&nbsp;</div>
                         </form>

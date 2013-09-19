@@ -283,133 +283,212 @@ function addHyperlinks(){
 
 
 <div id="header2">
-    <p id="tagline"><br/>
-        <br/>
-    </p>
-    <div style="clear:both;">&nbsp;</div>
-    <div id="body">
+<p id="tagline"><br/>
+    <br/>
+</p>
+<div style="clear:both;">&nbsp;</div>
+<div id="body">
 
-        <div id="blanket" style="display:none;"></div>
-        <div id="popUpDiv" style="display:none; top: 211px; left: 221px;">
+<div id="blanket" style="display:none;"></div>
+<div id="popUpDiv" style="display:none; top: 211px; left: 221px;">
 
-            <table width="400" border="0">
-                <tr>
-                    <td>email</td>
-                    <td><input type="text" id="email" name="email" value="" onfocus="set_email()" width="120px" onblur="set_email()" /></td>
-                </tr>
-                <tr>
-                    <td>Messege</td>
-                    <td><textarea name="messege" cols="30" rows="6"></textarea></td>
-                </tr>
-                <tr>
-                    <td><input type="button" value="Send" onclick=""  /></td>
-                    <td><input type="button" value="Close" onclick="popup('popUpDiv')"  /></td>
-                </tr>
-            </table>
+    <table width="400" border="0">
+        <tr>
+            <td>email</td>
+            <td><input type="text" id="email" name="email" value="" onfocus="set_email()" width="120px" onblur="set_email()" /></td>
+        </tr>
+        <tr>
+            <td>Messege</td>
+            <td><textarea name="messege" cols="30" rows="6"></textarea></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Send" onclick=""  /></td>
+            <td><input type="button" value="Close" onclick="popup('popUpDiv')"  /></td>
+        </tr>
+    </table>
 
-        </div>
+</div>
 
-        <div class="sub_heading">
-            <h1>Admin Home</h1>
-        </div>
-        <div class="grid_1 alpha">&nbsp;</div>
-        <div class="grid_16">
-            <div id="dashboard-widgets-wrap">
-                <div class="metabox-holder" id="dashboard-widgets">
-                    <form id="quick-press" name="personalDetail" action="resources/settings/personalDataSettings.html" method="post">
+<div class="sub_heading">
+    <h1>Admin Home</h1>
+</div>
+<div class="grid_1 alpha">&nbsp;</div>
+<div class="grid_16">
+    <div id="dashboard-widgets-wrap">
+        <div class="metabox-holder" id="dashboard-widgets">
+            <form id="quick-press" name="personalDetail" action="resources/settings/personalDataSettings.html" method="post">
 
-                        <div class="postbox" id="dashboard_quick_press">
-
-
-                            <div class="inside">
-                                <div class="clear"></div>
+                <div class="postbox" id="dashboard_quick_press">
 
 
-                                </div>
-                            <div class="clear">
-
-                                <div id="TabbedPanels1" class="TabbedPanels">
-                                    <ul class="TabbedPanelsTabGroup">
-                                        <li class="TabbedPanelsTab" tabindex="0">Filter Rejected</li>
-                                        <li class="TabbedPanelsTab" tabindex="0">User Messages</li>
-                                        <li class="TabbedPanelsTab" tabindex="0">Contact Messages</li>
-                                        <li class="TabbedPanelsTab" tabindex="0">Reports</li>
-                                    </ul>
+                    <div class="inside">
+                        <div class="clear"></div>
 
 
-                                    <div class="TabbedPanelsContentGroup">
-                                        <div class="TabbedPanelsContent">
-                                            <table class="report_table" width="600" border="10" cellpadding="10" bordercolor="#6633FF">
-                                            <tr bordercolor="#000000">
-                                                <th scope="col">Application ID</th>
-                                                <th scope="col">Application Name</th>
-                                                <th scope="col">Message</th>
-                                                <th scope="col">Owner</th>
-                                                <th scope="col">Action </th>
+                    </div>
+                    <div class="clear">
+
+                        <div id="TabbedPanels1" class="TabbedPanels">
+                            <ul class="TabbedPanelsTabGroup">
+                                <li class="TabbedPanelsTab" tabindex="0">Filter Rejected</li>
+                                <li class="TabbedPanelsTab" tabindex="0">User Messages</li>
+                                <li class="TabbedPanelsTab" tabindex="0">Contact Messages</li>
+                                <li class="TabbedPanelsTab" tabindex="0">Reports</li>
+                            </ul>
+
+
+                            <div class="TabbedPanelsContentGroup">
+                                <div class="TabbedPanelsContent">
+                                    <table class="report_table" width="600" border="10" cellpadding="10" bordercolor="#6633FF">
+                                        <tr bordercolor="#000000">
+                                            <th scope="col">Application ID</th>
+                                            <th scope="col">Application Name</th>
+                                            <th scope="col">Message</th>
+                                            <th scope="col">Owner</th>
+                                            <th scope="col">Action </th>
+                                        </tr>
+                                        <c:forEach var="filterRow" items="${filterd}">
+                                            <tr>
+                                                <td><p><c:out value="${filterRow.applicationId}"/></p></td>
+                                                <td><p><c:out value="${filterRow.applicationName}"/></p></td>
+                                                <td><p><c:out value="${filterRow.message}"/></p></td>
+                                                <td><input type="text" name="owner_email" id="owner_email" value="<c:out value="${filterRow.applicationUser}"/>" readonly></td>
+                                                <td>
+                                                    <table width="250" border="1">
+                                                        <tr>
+                                                            <td><a href="javascript:appove();" style="color:#0C3; font-size:12px; font-weight:600;"> Approve </a></td>
+                                                            <td><a href="javascript:popup('popUpDiv');" style="color:#F00; font-size:12px; font-weight:600;"> Block </a></td>
+                                                            <td><a href="javascript:popup('popUpDiv');" style="color:#F63; font-size:12px; font-weight:600;"> Suspend User </a></td>
+                                                        </tr>
+                                                    </table>
+
+
+                                                </td>
                                             </tr>
-                                            <c:forEach var="filterRow" items="${filterd}">
-                                                <tr>
-                                                    <td><p><c:out value="${filterRow.applicationId}"/></p></td>
-                                                    <td><p><c:out value="${filterRow.applicationName}"/></p></td>
-                                                    <td><p><c:out value="${filterRow.message}"/></p></td>
-                                                    <td><input type="text" name="owner_email" id="owner_email" value="<c:out value="${filterRow.applicationUser}"/>" readonly></td>
-                                                    <td>
-                                                        <table width="250" border="1">
-                                                            <tr>
-                                                                <td><a href="javascript:appove();" style="color:#0C3; font-size:12px; font-weight:600;"> Approve </a></td>
-                                                                <td><a href="javascript:popup('popUpDiv');" style="color:#F00; font-size:12px; font-weight:600;"> Block </a></td>
-                                                                <td><a href="javascript:popup('popUpDiv');" style="color:#F63; font-size:12px; font-weight:600;"> Suspend User </a></td>
-                                                            </tr>
-                                                        </table>
+                                        </c:forEach>
+
+                                    </table></div>
+                                <div class="TabbedPanelsContent">Content 3</div>
+                                <div class="TabbedPanelsContent">
+                                    <table class="report_table" width="600" border="10" cellpadding="10" bordercolor="#6633FF">
+                                        <tr bordercolor="#000000">
+                                            <th scope="col">Contact Number</th>
+                                            <th scope="col">Keyword</th>
+                                            <th scope="col">Short Code</th>
+                                            <th scope="col">Request Message</th>
+                                        </tr>
+                                        <c:forEach var="contact" items="${contactApps}">
+                                            <tr>
+                                                <td><p><c:out value="${contact.contactNumber}"/></p></td>
+                                                <td><p><c:out value="${contact.keyword}"/></p></td>
+                                                <td><p><c:out value="${contact.shortCode}"/></p></td>
+                                                <td><p><c:out value="${contact.requestMessage}"/></p></td>
+                                                <td>
+                                                    <table width="250" border="1">
+                                                        <tr>
+                                                            <td><a href="#" style="color:#0C3; font-size:12px; font-weight:600;"> Send Reply </a></td>
+                                                        </tr>
+                                                    </table>
 
 
-                                                    </td>
-                                                </tr>
-                                            </c:forEach>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
 
-                                        </table></div>
-                                        <div class="TabbedPanelsContent">Content 3</div>
-                                        <div class="TabbedPanelsContent">
-                                            <table class="report_table" width="600" border="10" cellpadding="10" bordercolor="#6633FF">
-                                                <tr bordercolor="#000000">
-                                                    <th scope="col">Contact Number</th>
-                                                    <th scope="col">Keyword</th>
-                                                    <th scope="col">Short Code</th>
-                                                    <th scope="col">Request Message</th>
-                                                </tr>
-                                                <c:forEach var="contact" items="${contactApps}">
-                                                    <tr>
-                                                        <td><p><c:out value="${contact.contactNumber}"/></p></td>
-                                                        <td><p><c:out value="${contact.keyword}"/></p></td>
-                                                        <td><p><c:out value="${contact.shortCode}"/></p></td>
-                                                        <td><p><c:out value="${contact.requestMessage}"/></p></td>
-                                                        <td>
-                                                            <table width="250" border="1">
-                                                                <tr>
-                                                                    <td><a href="#" style="color:#0C3; font-size:12px; font-weight:600;"> Send Reply </a></td>
-                                                                </tr>
-                                                            </table>
+                                    </table>
 
-
-                                                        </td>
-                                                    </tr>
-                                                </c:forEach>
-
-                                            </table>
-
-                                        </div>
-                                        <div class="TabbedPanelsContent">Content 2</div>
-                                    </div>
                                 </div>
+                                <div class="TabbedPanelsContent">
+                                    <table class="report_table" width="600" border="10" cellpadding="10" bordercolor="#6633FF">
+                                        <tr bordercolor="#000000">
+                                            <td>
+                                                <div id="home_image">
+                                                    <div class="app_image">
 
+
+                                                        <div id="menu_voting">
+                                                            <ul>
+                                                                <li><a href="VotingAppCreate?username=<c:out value="${username}"/>" title="Voting">&nbsp;</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div style="padding-right:5px" class="app_text">
+                                                        <div style="padding-bottom:10px; padding-top:15px" class="bold_text">Voting</div>
+                                                        <div class="normal_text">Voting Reports</div>
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <div id="home_image">
+                                                    <div class="clear">&nbsp;</div>
+                                                    <div class="app_image">
+
+
+                                                        <div id="menu_channel">
+                                                            <ul>
+                                                                <li class="first"><a href="ServiceApp_step1?username=<c:out value="${username}"/>" title="Channels">&nbsp;</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="app_text">
+                                                        <div style="padding-bottom:10px; padding-top:15px" class="bold_text">Services</div>
+                                                        <div class="normal_text">Service Reports</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div id="home_image">
+                                                    <div class="app_image">
+
+
+                                                        <div id="menu_alert">
+                                                            <ul>
+                                                                <li class="first"><a href="AlertAppCreate?username=<c:out value="${username}"/>" title="Alert">&nbsp;</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="app_text">
+                                                        <div style="padding-bottom:10px; padding-top:15px" class="bold_text">Alert</div>
+                                                        <div class="normal_text">Alert Reports</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div id="home_image">
+                                                    <div class="clear">&nbsp;</div>
+                                                    <div class="app_image">
+
+
+                                                        <div id="menu_req">
+                                                            <ul>
+                                                                <li class="first"><a href="ContactAppCreate" title="Request">&nbsp;</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="app_text">
+                                                        <div style="padding-bottom:10px; padding-top:15px" class="bold_text">Contact</div>
+                                                        <div class="normal_text">Contact Reports</div>
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        </form>
+
+                    </div>
                 </div>
-            </div>
-            <div class="grid_1 omega">&nbsp;</div>
+            </form>
         </div>
     </div>
+    <div class="grid_1 omega">&nbsp;</div>
+</div>
+</div>
 </div>
 <script type="text/javascript" src="resources/javascripts/footer.js" language="javascript"></script>
 </div>
@@ -417,5 +496,5 @@ function addHyperlinks(){
     var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
 </script>
 
-        </body>
+</body>
 </html>
