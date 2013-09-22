@@ -1,9 +1,12 @@
 package com.smartsms.controllers;
 
 import com.smartsms.beans.Candidate;
+import com.smartsms.beans.Candidates;
 import com.smartsms.beans.VotingApplication;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.repo.impl.AdminRepositoryImpl;
+import com.smartsms.security.SecurityUtil;
+import com.smartsms.util.KeywordGenerator;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,60 +35,50 @@ public class VotingAppController {
     @Autowired
     private AdminRepositoryImpl adminRepository;
 
+    @Autowired
+    private KeywordGenerator keywordGenerator;
+
     private VotingApplication VotingApplication;
 
     @RequestMapping(value = "/VotingAppCreate", method = RequestMethod.GET)
-    public String redirect(@RequestParam(value = "username", required = false) String username, Model model){
-        if(StringUtils.isEmpty(username)){
-            model.addAttribute("username","user");
-        } else {
-            model.addAttribute("username",username);
-        }
+    public String redirect(Model model){
+       model.addAttribute("keywordList",keywordGenerator.GetUniqueKeywords());
         return "VotingAppCreate";
 
     }
 
     @RequestMapping(value = "/VotingAppCreate", method = RequestMethod.POST)
-    public String submitVotingApplication(VotingApplication application, @RequestParam(value = "username", required = false) String username, Model model) {
+    public String submitVotingApplication(VotingApplication application,  Model model) {
         this.VotingApplication = application;
-        if(StringUtils.isEmpty(username)){
-            model.addAttribute("username","user");
-        } else {
-            model.addAttribute("username",username);
-        }
-        return "AddCandidate";
+
+        return "redirect:/AddCandidate";
 
     }
     @RequestMapping(value = "/AddCandidate", method = RequestMethod.POST)
-    public String AddCandidate(Candidate candidate)
+    public String AddCandidate(Candidates candidates)
     {
-        List<Candidate> candidates = new ArrayList<Candidate>();
-        candidates.add(candidate);
-        this.VotingApplication.setCandidateList(candidates);
+        List<Candidate> candidateList = candidates.getCandidateList();
+
+        //TODO remove
+        candidateList.add(new Candidate("1","user1"));
+        candidateList.add(new Candidate("2","user2"));
+
+        this.VotingApplication.setCandidateList(candidateList);
         return "redirect:/VotingAppConfirm";
 
     }
 
     @RequestMapping(value = "/VotingAppConfirm", method = RequestMethod.GET)
-    public String redirectConfirm(Model model,@RequestParam(value = "username", required = false) String username) {
-        if (StringUtils.isEmpty(username)) {
-            model.addAttribute("username", "user");
-        } else {
-            model.addAttribute("username", username);
-        }
+    public String redirectConfirm(Model model) {
         model.addAttribute("VotingObj",VotingApplication);
         return "VotingAppConfirm";
 
     }
 
     @RequestMapping(value = "/VotingAppConfirm", method = RequestMethod.POST)
-    public String submitVote(VotingApplication application,@RequestParam(value = "username", required = false) String username,Model model) {
-        if (StringUtils.isEmpty(username)) {
-            model.addAttribute("username", "user");
-        } else {
-            model.addAttribute("username", username);
-        }
+    public String submitVote(VotingApplication application,Model model) {
         VotingApplication.setAppId(UUID.randomUUID().toString());
+        VotingApplication.setUserID(SecurityUtil.getUserLoggedInname());
         applicationTypeRepository.saveApplication(VotingApplication);
         return "redirect:/VotingAppConfirm";
 
@@ -109,9 +102,9 @@ public class VotingAppController {
 
     }
 
-    @RequestMapping(value = "/addCandidate", method = RequestMethod.GET)
+    @RequestMapping(value = "/AddCandidate", method = RequestMethod.GET)
     public String addCandidateView(){
-        return "addCandidate";
+        return "AddCandidate";
 
     }
 

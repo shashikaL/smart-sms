@@ -45,6 +45,8 @@ public interface ApplicationTypeRepository {
 
     public ContactApplication findContactApplicationByShortCode(String shortCode);
 
+    public List<Keyword> FindAllKeywords();
+
 
 
 

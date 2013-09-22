@@ -493,8 +493,11 @@ var selectedKeyword = '';
 <div class="info_group">
     <div style="display:inline"></div>
     <select id="short3" name="keywordStr" style="min-width:120px;width:auto; margin-left:-7px;" >
-        <option value="2545">1234</option>
-        <option value="2545">N/A</option>
+        <c:forEach items="${keywordList}" var="key">
+            <option value=""><c:out value="${key.name}"/>-<c:out value="${key.shortCode}"/></option>
+        </c:forEach>
+
+
     </select>
     <a style="padding-left:2px" href="serviceCreateKeyword1.html">Create Keyword</a>
 </div>

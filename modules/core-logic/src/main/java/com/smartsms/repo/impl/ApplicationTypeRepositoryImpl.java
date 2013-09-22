@@ -158,4 +158,11 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     public void saveContactResponse(ContactResponse response) {
            mongoTemplate.save(response,mongoDBConfig.getContactResponseCollectionName());
     }*/
+
+
+    @Override
+    public List<Keyword> FindAllKeywords() {
+        return mongoTemplate.findAll(Keyword.class,mongoDBConfig.getKeywordCollection());
+          //To change body of implemented methods use File | Settings | File Templates.
+    }
 }

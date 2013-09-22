@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Sony
@@ -113,7 +114,7 @@
             <div class="grid_16">
                 <div id="dashboard-widgets-wrap">
                     <div class="metabox-holder" id="dashboard-widgets">
-                        <form id="quick-press" name="appdetails" action="appDetails.html" method="post">
+                        <form id="quick-press" name="appdetails" action="" method="post">
                             <div class="postbox" id="dashboard_quick_press">
                                 <h3 class="hndle"><span>Application Details</span></h3>
                                 <script type="text/javascript" src="resources/javascripts/tablesorter/viewRequest.js"></script>
@@ -125,7 +126,7 @@
                                     <div>
                                         <div style="margin-top:19px;margin-left:8px" class="input_row">
                                             <div class="input-text-wrap">
-                                                <input id="appName" name="app.appName" tabindex="10" disabled="disabled" readonly="readonly" type="text" value="Voting"/>
+                                                <input id="appName" name="app.appName" tabindex="10" disabled="disabled" readonly="readonly" type="text" value="${VotingObj.appName}"/>
                                             </div>
                                         </div>
                                     </div>
@@ -147,7 +148,7 @@
                                         <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-22px;"></div>
                                         <div style="width:130px;" class="input-text-wrap">
                                             <div>
-                                                <input id="startDate" name="startDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="10/03/2011"/>
+                                                <input id="startDate" name="startDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="${VotingObj.startDate}"/>
                                             </div>
                                         </div>
                                     </div>
@@ -160,7 +161,7 @@
                                             <div style="color: #c00e0c;font-weight: bold;font-size: 78%;float:left;margin-left:66px;margin-top:-22px;"></div>
                                             <div style="width:130px;" class="input-text-wrap">
                                                 <div>
-                                                    <input id="endDate" name="endDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="10/04/2011"/>
+                                                    <input id="endDate" name="endDate" tabindex="15" disabled="disabled" readonly="readonly" type="text" value="${VotingObj.endDate}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -171,7 +172,7 @@
                                     </h4>
                                     <div style="margin-left:8px" class="input_row">
                                         <div class="textarea-wrap">
-                                            <textarea id="decs" name="app.description" disabled="disabled" readonly="readonly">First Alert Application</textarea>
+                                            <textarea id="decs" name="app.description" disabled="disabled" readonly="readonly"><c:out value="${VotingObj.appDescription}"/></textarea>
                                         </div>
                                     </div>
                                     <div class="clear"></div>
@@ -186,16 +187,20 @@
                                         var lastShownElementId = 1;
                                         hideAllKeywordOnlyElements();
                                     </script>
-                                    <h4>
-                                        <label for="short3">Voting Options</label>
-                                    </h4>
+
                                     <div style="/* [disabled]margin-top:19px; */ margin-left: 8px" class="input_row">
-                                        <div class="input-text-wrap">
-                                            <input id="appName" name="app.appName" tabindex="10" disabled="disabled" readonly="readonly" type="text" value="C1"/>
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <input id="appName" name="app.appName" tabindex="10" disabled="disabled" readonly="readonly" type="text" value="C2"/>
-                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td>Code</td>
+                                                <td>Description</td>
+                                            </tr>
+                                            <c:forEach items="${VotingObj.candidateList}" var="candidate">
+                                                <tr>
+                                                    <td><c:out value="${candidate.code}"/></td>
+                                                    <td><c:out value="${candidate.description}"/></td>
+                                                </tr>
+                                            </c:forEach>
+                                        </table>
 
                                     </div>
                                     <div class="clear">&nbsp;</div>
@@ -205,12 +210,10 @@
                                     </h4>
                                 </div>
                             </div>
-                        </form>
-                        <form id="app" name="confirmAlert" action="save.html" method="post">
                             <div style="text-align:center; width:100%"><span style="padding-right:10px">
                   <input onclick="location.href='votingAppCreate';" name="back" style="width:50px;" tabindex="5" type="button" class="button" value="Back" id="back"/>
                   </span><span style="padding-right:10px">
-                  <input onclick="location.href='votingAppSuccess';" name="next" style="width:50px;" tabindex="6" type="button" class="button" value="Confirm" id="next"/>
+                  <input name="next" style="width:50px;" tabindex="6" type="submit" class="button" value="Confirm" id="next"/>
                   </span><span>
                   <input onclick="location.href='appTypeSelection.html';" name="cancel" style="width:50px;" tabindex="6" type="button" class="button" value="Cancel" id="cancel"/>
                   </span></div>

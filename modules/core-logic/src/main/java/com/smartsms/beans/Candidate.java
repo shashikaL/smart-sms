@@ -7,6 +7,14 @@ public class Candidate {
     private String description;
     private String count;
 
+    public Candidate() {
+    }
+
+    public Candidate(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
+
     public String getCode() {
         return code;
     }
