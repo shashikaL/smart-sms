@@ -233,8 +233,8 @@
                                 <c:forEach var="app" items="${contactApps}">
                                     <div style="float:left;margin-right:5px;" class="item">
                                         <div class="my_app">
-                                            <div class="sub_image"><img height="75" onclick="window.location='ContactAppView?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Voting Application</u></b><br/> ')" src="resources/images/contact_app.jpg"/></div>
-                                            <div style="float:left;line-height:25px;">
+                                            <div class="sub_image"><img height="75" onclick="window.location='ContactAppView?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Contact Application</u></b><br/> ')" src="resources/images/contact_app.png"/></div>
+                                             <div style="float:left;line-height:25px;">
                                                 <div style="width:80px;">
                                                     <label class="bold_text" for="msisdn">Contact - <c:out value="${app.appName}"/></label>
                                                 </div>

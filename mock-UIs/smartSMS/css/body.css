@@ -160,6 +160,19 @@ div.postbox div.inside {
     margin-left:11px;
 }
 
+#dashboard_quick_press h4_2 {
+    font-family: "arial", sans-serif;
+    float: left;
+    clear: both;
+    font-weight: normal;
+    text-align: left;
+    padding-top: 5px;
+    font-size: 12px;
+    width: 100px;
+/*margin-top:-12px;*/
+    margin-left:11px;
+}
+
 
 #dashboard_quick_press .input-text-wrap,
     #dashboard_quick_press .textarea-wrap {

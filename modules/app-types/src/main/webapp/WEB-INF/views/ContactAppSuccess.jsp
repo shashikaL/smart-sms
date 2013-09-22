@@ -66,11 +66,11 @@
                             <div class="clear">&nbsp;</div>
                             <h1 class="success_msg">Contact Application Creation Successful</h1>
                             <div style="text-align:center;" id="success_link">
-                                <h3><a href="myApplication.html">Use My Applications menu to mange your Applications.</a></h3>
+                                <h3><a href="MyApplications">Use My Applications menu to mange your Applications.</a></h3>
                             </div>
                             <div class="clear">&nbsp;</div>
                             <div style="text-align:center;">
-                                <h3><a href="contactHelp.html">Check how to use your application here...</a></h3>
+                                <h3><a href="ContactHelp">Check how to use your application here...</a></h3>
                             </div>
                         </div>
                     </div>

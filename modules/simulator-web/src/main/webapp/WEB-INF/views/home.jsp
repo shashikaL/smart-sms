@@ -28,7 +28,17 @@
 
 </ul>
 <ul class="individual">
-    <li><a href="headers.html">Single Subscriotion</a></li>
+    <li><a href="headers.html">Single Subscription</a></li>
+
+</ul>
+
+<ul class="individual">
+    <li><a href="headers.html">Bulk UnSubscription</a></li>
+
+</ul>
+
+<ul class="individual">
+    <li><a href="headers.html">Single UnSubscription</a></li>
 
 </ul>
 

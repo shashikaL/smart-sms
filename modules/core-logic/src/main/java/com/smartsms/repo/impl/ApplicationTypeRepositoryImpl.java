@@ -139,4 +139,23 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
         }
         return null;
     }
+
+    @Override
+    public ContactApplication findContactApplicationByShortCode(String shortCode) {
+        List<ContactApplication> all = mongoTemplate.findAll(ContactApplication.class, mongoDBConfig.getContactCollectionName());
+        for (ContactApplication ContactApplication : all){
+            if(ContactApplication.getKeyword() == null){
+                continue;
+            }
+            if(ContactApplication.getKeyword().getShortCode().equals(shortCode)){
+                return ContactApplication;
+            }
+        }
+        return null;
+    }
+
+   /* @Override
+    public void saveContactResponse(ContactResponse response) {
+           mongoTemplate.save(response,mongoDBConfig.getContactResponseCollectionName());
+    }*/
 }

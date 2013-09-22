@@ -32,7 +32,7 @@
     <script type="text/javascript" src="resources/javascripts/orca_js.js"></script>
     <script type="text/javascript" src="resources/javascripts/validate.js"></script>
 
-    <script language="JavaScript" type="text/javascript" src="resources /javascripts/datetime.js"></script>
+    <script language="JavaScript" type="text/javascript" src="resources/javascripts/datetime.js"></script>
     <script language="JavaScript" type="text/javascript" src="resources /javascripts/jquery.bgiframe.js"></script>
     <script language="JavaScript" type="text/javascript" src="resources /javascripts/dialog/jquery.alerts.js"></script>
     <!--[if lte IE 7]>
@@ -178,7 +178,7 @@ var buffer_day_array = {
     1440 : '1', 2880 : '2', 4320 : '3'
 };
 
-$(document).ready(function(){
+$(document).ready(function () {
     loadChargingSettings();
     var editState = 'false';
     if (editState == 'false') {
@@ -186,11 +186,6 @@ $(document).ready(function(){
     }
     $("#endDate").datepicker({dateFormat: 'dd/mm/yy'});
 
-
-    showDispatchTime();
-    if (editState) {
-        showSelectedDispatchTime();
-    }
 
 });
 
@@ -508,7 +503,7 @@ var selectedKeyword = '';
 <div style="width:200px;margin-left:-165px" class="input_row"></div>
 <div style="width:200px;margin-left:-50px" class="input_row">
     <div class="input-text-wrap">
-        <input id="startDate" name="startDate" class="readonly" type="text" />
+        <input id="startDate" name="startDate" class="readonly" type="text"/>
     </div>
 </div>
 
@@ -520,7 +515,7 @@ var selectedKeyword = '';
     <div style="width:200px;margin-left:-165px" class="input_row"></div>
     <div style="width:200px;margin-left:-50px" class="input_row">
         <div class="input-text-wrap">
-            <input id="endDate" name="endDate" style="cursor:pointer" type="text" />
+            <input id="endDate" name="endDate" style="cursor:pointer" type="text"/>
         </div>
     </div>
 </div>

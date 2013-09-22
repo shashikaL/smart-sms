@@ -61,13 +61,32 @@ public class SubscriptionHandlingController {
     }
 
     @RequestMapping(value = "/unsubscribe/{subscriptionNumber}", method = RequestMethod.POST)
-    public String unSubscription(@RequestBody SubscriberMessage message, @PathVariable String subscriberNumber) {
-      /*  Subscribe unsubscribe = new Subscribe();
-        unsubscribe.getSubscriberNumber();
-        unsubscribe.setSubscriberStatus(STATUS.UNSUBSCRIBED);*/
+    public Response unSubscription(@RequestBody SubscriberMessage message, @PathVariable String subscriberNumber) {
+
+        if (message.getApplicationType() != AppType.ALERT) {
+            return createResponse("404", "Only support for ALERT types");
+        }
+        AlertApplication alertApplication = applicationTypeRepository.findAlertApplicationByShortCode(message.getShortCode());
+        if (alertApplication == null) {
+            return createResponse("404", "Invalid Message. Cannot find app for Unsubscribe");
+        }
+
+        String unsubscribermessage = message.getMessage();
+        String[] strings = unsubscribermessage.split(" ");
+        if (strings.length != 2) {
+            return createResponse("404", alertApplication.getInvalidRequestMessage());
+        }
+        if (!strings[0].equals("UNREG")) {
+            return createResponse("404", alertApplication.getInvalidRequestMessage());
+        }
 
 
-        return null;
+        Subscribe unsubscriber = subscriberRepository.findSubscriber(subscriberNumber);
+        unsubscriber.setSubscriberStatus(STATUS.UNSUBSCRIBED);
+        subscriberRepository.saveSubscriber(unsubscriber);
+
+        return createResponse("200", alertApplication.getUnSubscriptionSuccessfulMessage());
+
     }
 
 
@@ -106,6 +125,7 @@ public class SubscriptionHandlingController {
             Subscribe subscribe = new Subscribe();
             subscribe.setSubscriberNumber(number);
             subscribe.setAppId(alertApplication.getAppId());
+            subscribe.setSubscriberStatus(STATUS.SUBSCRIBED);
             subscriberRepository.saveSubscriber(subscribe);
         }
         return createResponse("200", alertApplication.getSubscriptionSuccessfulMessage());

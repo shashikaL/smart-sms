@@ -5,6 +5,7 @@ public class ContactApplication extends AbstractApplicationType {
 
     private String responseMessage;
 
+
     public String getResponseMessage() {
         return responseMessage;
     }

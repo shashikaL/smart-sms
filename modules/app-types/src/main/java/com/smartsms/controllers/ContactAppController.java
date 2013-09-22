@@ -101,18 +101,18 @@ public class ContactAppController {
 
     }
 
-    @RequestMapping(value = "/bulk/contactAppUse", method = RequestMethod.POST)
-    @ResponseBody
-    public Response processBulkMessage(@RequestBody ContactMessageList contactAppMessageList) {
-        for (ContactAppMessage contactAppMessage : contactAppMessageList.getContactAppMessage()) {
-            adminRepository.saveContactMessage(contactAppMessage);
-        }
-        Response response = new Response();
-        response.setStatusCode("200");
-        response.setStatusMessage("Success");
-        return response;
-
-    }
+//    @RequestMapping(value = "/bulk/contactAppUse", method = RequestMethod.POST)
+//    @ResponseBody
+//    public Response processBulkMessage(@RequestBody ContactMessageList contactAppMessageList) {
+//
+//        //find application by short code - findContactApplicationByShortCode(sho)
+//        // create ContactResponse based on returned answer
+//        //save contact response - saveContactResponse()
+//        Response response = new Response();
+//        response.setStatusCode("200");
+//        response.setStatusMessage("Success");
+//        return response;
+//    }
 
 
 }
