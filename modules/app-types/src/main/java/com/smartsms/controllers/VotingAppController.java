@@ -58,11 +58,6 @@ public class VotingAppController {
     public String AddCandidate(Candidates candidates)
     {
         List<Candidate> candidateList = candidates.getCandidateList();
-
-        //TODO remove
-        candidateList.add(new Candidate("1","user1"));
-        candidateList.add(new Candidate("2","user2"));
-
         this.VotingApplication.setCandidateList(candidateList);
         return "redirect:/VotingAppConfirm";
 
@@ -76,11 +71,11 @@ public class VotingAppController {
     }
 
     @RequestMapping(value = "/VotingAppConfirm", method = RequestMethod.POST)
-    public String submitVote(VotingApplication application,Model model) {
+    public String submitVote() {
         VotingApplication.setAppId(UUID.randomUUID().toString());
         VotingApplication.setUserID(SecurityUtil.getUserLoggedInname());
         applicationTypeRepository.saveApplication(VotingApplication);
-        return "redirect:/VotingAppConfirm";
+        return "redirect:/VotingAppSuccess";
 
     }
 

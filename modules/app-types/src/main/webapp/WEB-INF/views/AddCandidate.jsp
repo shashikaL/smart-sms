@@ -79,11 +79,11 @@
                                 <div style="padding-right:50px" class="error-req-right-al"></div>
                                 <div style="padding-right:50px" class="error-req-right-al" id="errorsubcategory"></div>
                                 <div id="divInput_0" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input  name="candidates.candidateList[0].code" tabindex="1" type="text" value="" maxlength="10"/>
+                                    <input  name="candidateList[0].code" tabindex="1" type="text" value="" maxlength="10"/>
                                 </div>
                                 <div style="float:left;padding-left:10px">&nbsp;</div>
                                 <div id="divText_0" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input  name="candidates.candidateList[0].description" type="text" value="" maxlength="10"/>
+                                    <input  name="candidateList[0].description" type="text" value="" maxlength="10"/>
                                 </div>
                                 <script type="text/javascript">
                                     var selectEle1 = 'input_0';
@@ -91,11 +91,11 @@
                                     var subCatRequired = 'true';
                                 </script>
                                 <div id="divInput_1" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input  name="candidates.candidateList[1].code" tabindex="1" type="text" value="" maxlength="10"/>
+                                    <input  name="candidateList[1].code" tabindex="1" type="text" value="" maxlength="10"/>
                                 </div>
                                 <div style="float:left;padding-left:10px">&nbsp;</div>
                                 <div id="divText_1" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input  name="candidates.candidateList[1].description" type="text" value="" maxlength="10"/>
+                                    <input  name="candidateList[1].description" type="text" value="" maxlength="10"/>
                                 </div>
                                 <img onclick="hideElement(true, 1, false);" style="margin-top:3px;
                                                       margin-left:10px;
@@ -108,11 +108,11 @@
                                     var subCatRequired = 'true';
                                 </script>
                                 <div id="divInput_2" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input id="input_2" name="selectedValues[2].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                    <input id="input_2" name="candidateList[2].code" tabindex="1" type="text" value="" maxlength="10"/>
                                 </div>
                                 <div style="float:left;padding-left:10px">&nbsp;</div>
                                 <div id="divText_2" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input id="text_2" name="selectedValues[2].descriptionEn" type="text" value="" maxlength="10"/>
+                                    <input id="text_2" name="candidateList[2].description" type="text" value="" maxlength="10"/>
                                 </div>
                                 <img onclick="hideElement(true, 2, false);" style="margin-top:3px;
                                                       margin-left:10px;
@@ -125,11 +125,11 @@
                                     var subCatRequired = 'true';
                                 </script>
                                 <div id="divInput_3" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input id="input_3" name="selectedValues[3].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                    <input id="input_3" name="candidateList[3].code" tabindex="1" type="text" value="" maxlength="10"/>
                                 </div>
                                 <div style="float:left;padding-left:10px">&nbsp;</div>
                                 <div id="divText_3" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input id="text_3" name="selectedValues[3].descriptionEn" type="text" value="" maxlength="10"/>
+                                    <input id="text_3" name="candidateList[3].description" type="text" value="" maxlength="10"/>
                                 </div>
                                 <img onclick="hideElement(true, 3, false);" style="margin-top:3px;
                                                       margin-left:10px;
@@ -142,11 +142,11 @@
                                     var subCatRequired = 'true';
                                 </script>
                                 <div id="divInput_4" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input id="input_4" name="selectedValues[4].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                    <input id="input_4" name="candidateList[4].code" tabindex="1" type="text" value="" maxlength="10"/>
                                 </div>
                                 <div style="float:left;padding-left:10px">&nbsp;</div>
                                 <div id="divText_4" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input id="text_4" name="selectedValues[4].descriptionEn" type="text" value="" maxlength="10"/>
+                                    <input id="text_4" name="candidateList[4].description" type="text" value="" maxlength="10"/>
                                 </div>
                                 <img onclick="hideElement(true, 4, false);" style="margin-top:3px;
                                                       margin-left:10px;
@@ -159,11 +159,11 @@
                                     var subCatRequired = 'true';
                                 </script>
                                 <div id="divInput_5" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input id="input_5" name="selectedValues[5].keyword" tabindex="1" type="text" value="" maxlength="10"/>
+                                    <input id="input_5" name="candidateList[5].code" tabindex="1" type="text" value="" maxlength="10"/>
                                 </div>
                                 <div style="float:left;padding-left:10px">&nbsp;</div>
                                 <div id="divText_5" style="width:120px;margin-left:0;float:left;" class="input-text-wrap">
-                                    <input id="text_5" name="selectedValues[5].descriptionEn" type="text" value="" maxlength="10"/>
+                                    <input id="text_5" name="candidateList[4].description" type="text" value="" maxlength="10"/>
                                 </div>
                                 <img onclick="hideElement(true, 5, false);" style="margin-top:3px;
                                                       margin-left:10px;
