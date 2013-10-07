@@ -12,7 +12,7 @@ public class ResponseMessageController {
     @GET
     @Path("{message}")
     public void receiveMessage(@PathParam("message") String message){
-        System.out.println("========================================");
+        System.out.println("=========== Service Application Receiver =================");
         System.out.println(message);
     }
 

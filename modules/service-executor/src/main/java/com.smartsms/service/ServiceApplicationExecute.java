@@ -7,7 +7,7 @@ package com.smartsms.service;
  * Time: 12:40 PM
  * To change this template use File | Settings | File Templates.
  */
-public interface Execute {
+public interface ServiceApplicationExecute {
 
     public void execute();
 }

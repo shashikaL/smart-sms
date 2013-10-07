@@ -61,7 +61,7 @@
         </property>
     </bean>
 
-    <bean id="serviceTarget" class="com.smartsms.service.impl.ExecuteImpl">
+    <bean id="serviceTarget" class="com.smartsms.service.impl.ServiceApplicationExecuteImpl">
     </bean>
 
     <bean id="wordFilterExecutor" class="com.smartsms.service.impl.WordFilterExecutorImpl">
