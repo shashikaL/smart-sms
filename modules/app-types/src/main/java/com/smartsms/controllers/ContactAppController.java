@@ -4,6 +4,7 @@ import com.smartsms.beans.*;
 import com.smartsms.beans.util.ScheduledType;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.repo.impl.AdminRepositoryImpl;
+import com.smartsms.security.SecurityUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,31 +23,21 @@ public class ContactAppController {
     private ContactApplication ContactApplication;
 
     @RequestMapping(value = "/ContactAppCreate", method = RequestMethod.GET)
-    public String redirect(@RequestParam(value = "username", required = false) String username, Model model) {
-        if(StringUtils.isEmpty(username)){
-            model.addAttribute("username","user");
-        } else {
-            model.addAttribute("username",username);
-        }
+    public String redirect() {
         return "ContactAppCreate";
 
     }
 
     @RequestMapping(value = "/ContactAppCreate", method = RequestMethod.POST)
-    public String submitContactAppCreate(ContactApplication application,@RequestParam(value = "username", required = false) String username, Model model) {
+    public String submitContactAppCreate(ContactApplication application) {
         this.ContactApplication = application;
-        ContactApplication.setUserID(username);
+        ContactApplication.setUserID(SecurityUtil.getUserLoggedInname());
         applicationTypeRepository.saveApplication(ContactApplication);
         return "ContactAppSuccess";
     }
 
     @RequestMapping(value = "/ContactAppConfirm", method = RequestMethod.GET)
-    public String redirectConfirm(@RequestParam(value = "username", required = false) String username, Model model) {
-        if(StringUtils.isEmpty(username)){
-            model.addAttribute("username","user");
-        } else {
-            model.addAttribute("username",username);
-        }
+    public String redirectConfirm() {
         return "ContactAppConfirm";
 
     }
@@ -58,34 +49,19 @@ public class ContactAppController {
     }
 
     @RequestMapping(value = "/ContactAppSuccess", method = RequestMethod.GET)
-    public String redirectSuccess(@RequestParam(value = "username", required = false) String username, Model model) {
-        if(StringUtils.isEmpty(username)){
-            model.addAttribute("username","user");
-        } else {
-            model.addAttribute("username",username);
-        }
+    public String redirectSuccess() {
         return "ContactAppSuccess";
 
     }
 
     @RequestMapping(value = "/ContactHelp", method = RequestMethod.GET)
-    public String redirectHelp(@RequestParam(value = "username", required = false) String username, Model model) {
-        if(StringUtils.isEmpty(username)){
-            model.addAttribute("username","user");
-        } else {
-            model.addAttribute("username",username);
-        }
+    public String redirectHelp() {
         return "ContactHelp";
 
     }
 
     @RequestMapping(value = "/ContactAppView", method = RequestMethod.GET)
-    public String redirectView(@RequestParam(value = "username", required = false) String username, Model model) {
-        if(StringUtils.isEmpty(username)){
-            model.addAttribute("username","user");
-        } else {
-            model.addAttribute("username",username);
-        }
+    public String redirectView() {
         return "ContactAppView";
 
     }

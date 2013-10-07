@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author rajith
+ * @author shashi
  */
 public class AuthenticationFilter extends GenericFilterBean {
 

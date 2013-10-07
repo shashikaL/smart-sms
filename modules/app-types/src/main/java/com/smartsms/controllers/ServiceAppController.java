@@ -79,4 +79,10 @@ public class ServiceAppController {
         return "MyApplications";
 
     }
+
+    @RequestMapping(value = "/ServiceUse", method = RequestMethod.GET)
+    public String redirectServiceUse() {
+        return "ServiceUse";
+
+    }
 }
