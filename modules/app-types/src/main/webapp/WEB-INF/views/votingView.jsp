@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -85,11 +86,11 @@
                                             <table style="border: solid 1px #A8B2BD;" class="report_table">
                                                 <tr>
                                                     <td><div align="left">Total Votes&nbsp;:</div></td>
-                                                    <td><div style="padding-left:5px" align="left">25</div></td>
+                                                    <td><div style="padding-left:5px" align="left"><c:out value="${totalNumberOfVotes}"/></div></td>
                                                 </tr>
                                                 <tr>
                                                     <td><div align="left">Total Successful Votes&nbsp;:</div></td>
-                                                    <td><div style="padding-left:5px" align="left">25</div></td>
+                                                    <td><div style="padding-left:5px" align="left"><c:out value="${totalNumberOfVotes}"/></div></td>
                                                 </tr>
                                                 <tr>
                                                     <td><div align="left">Total Invalid Votes&nbsp;:</div></td>
@@ -103,20 +104,15 @@
                                                     <th><div align="center">Candidate Code</div></th>
                                                     <th><div align="center">Description</div></th>
                                                     <th><div align="center">Number of votes</div></th>
-                                                    <th><div align="center">Last Voted On</div></th>
                                                 </tr>
-                                                <tr>
-                                                    <td style="padding-left:5px"><div align="center">c1</div></td>
-                                                    <td style="word-wrap: break-word; padding-left:5px"><div align="center">candidate1</div></td>
-                                                    <td style="padding-left:5px"><div align="center">10</div></td>
-                                                    <td style="padding-left:5px"><div align="center">10-03-2013 08:30:45</div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding-left:5px"><div align="center">c2</div></td>
-                                                    <td style="word-wrap: break-word; padding-left:5px"><div align="center">candidate2</div></td>
-                                                    <td style="padding-left:5px"><div align="center">15</div></td>
-                                                    <td style="padding-left:5px"><div align="center">10-03-2013 08:30:42</div></td>
-                                                </tr>
+                                                <c:forEach items="${candidateList}" var="candidate">
+                                                    <tr>
+                                                        <td style="padding-left:5px"><div align="center"><c:out value="${candidate.code}"/></div></td>
+                                                        <td style="word-wrap: break-word; padding-left:5px"><div align="center"><c:out value="${candidate.description}"/></div></td>
+                                                        <td style="padding-left:5px"><div align="center"><c:out value="${candidate.count}"/></div></td>
+                                                    </tr>
+                                                </c:forEach>
+
                                             </table>
                                             <table class="report_table">
                                                 <tr>

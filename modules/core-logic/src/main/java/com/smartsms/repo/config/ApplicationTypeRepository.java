@@ -51,4 +51,8 @@ public interface ApplicationTypeRepository {
 
     public ServiceApplication findServiceApplicationById(String appId);
 
+    public int totalNumberOfVotes(String appId);
+
+    public List<Candidate> totalNumberOfVotesByCandidate(String appId);
+
 }

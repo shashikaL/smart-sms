@@ -21,7 +21,6 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
 
     @Autowired
     private MongoDBConfig mongoDBConfig;
-
     @Autowired
     @Qualifier("appTypeMongoTemplate")
     private MongoTemplate mongoTemplate;
@@ -108,27 +107,22 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
 
     @Override
     public void incrementCandidateCount(String candidateId, String appId) {
-        List<Candidate> modifiedList = new ArrayList<Candidate>();
         VotingApplication application = mongoTemplate.findById(appId, VotingApplication.class, mongoDBConfig.getVotingCollectionName());
         List<Candidate> candidateList = application.getCandidateList();
         if (candidateList == null || candidateList.size() == 0) {
             return;
         }
         for (Candidate candidate : candidateList) {
-            if(candidateId.equals(candidate.getCode())){
-                if(StringUtils.isEmpty(candidate.getCount())){
+            if (candidateId.equals(candidate.getCode())) {
+                if (StringUtils.isEmpty(candidate.getCount())) {
                     candidate.setCount("1");
-                    modifiedList.add(candidate);
                 } else {
                     int newVal = Integer.parseInt(candidate.getCount()) + 1;
                     candidate.setCount(String.valueOf(newVal));
-                    modifiedList.add(candidate);
                 }
 
             }
-            modifiedList.add(candidate);
         }
-        application.setCandidateList(modifiedList);
         saveApplication(application);
 
     }
@@ -136,11 +130,11 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     @Override
     public VotingApplication findVotingApplicationByShortCode(String shortCode) {
         List<VotingApplication> all = mongoTemplate.findAll(VotingApplication.class, mongoDBConfig.getVotingCollectionName());
-        for (VotingApplication votingApplication : all){
-            if(votingApplication.getKeyword() == null){
+        for (VotingApplication votingApplication : all) {
+            if (votingApplication.getKeyword() == null) {
                 continue;
             }
-            if(votingApplication.getKeyword().getShortCode().equals(shortCode)){
+            if (votingApplication.getKeyword().getShortCode().equals(shortCode)) {
                 return votingApplication;
             }
         }
@@ -150,11 +144,11 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     @Override
     public ContactApplication findContactApplicationByShortCode(String shortCode) {
         List<ContactApplication> all = mongoTemplate.findAll(ContactApplication.class, mongoDBConfig.getContactCollectionName());
-        for (ContactApplication ContactApplication : all){
-            if(ContactApplication.getKeyword() == null){
+        for (ContactApplication ContactApplication : all) {
+            if (ContactApplication.getKeyword() == null) {
                 continue;
             }
-            if(ContactApplication.getKeyword().getShortCode().equals(shortCode)){
+            if (ContactApplication.getKeyword().getShortCode().equals(shortCode)) {
                 return ContactApplication;
             }
         }
@@ -166,15 +160,41 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
            mongoTemplate.save(response,mongoDBConfig.getContactResponseCollectionName());
     }*/
 
-
     @Override
     public List<Keyword> FindAllKeywords() {
-        return mongoTemplate.findAll(Keyword.class,mongoDBConfig.getKeywordCollection());
-          //To change body of implemented methods use File | Settings | File Templates.
+        return mongoTemplate.findAll(Keyword.class, mongoDBConfig.getKeywordCollection());
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
     public ServiceApplication findServiceApplicationById(String appId) {
         return mongoTemplate.findById(appId, ServiceApplication.class, mongoDBConfig.getServiceCollectionName());
+    }
+
+    @Override
+    public int totalNumberOfVotes(String appId) {
+        VotingApplication application = mongoTemplate.findById(appId, VotingApplication.class, mongoDBConfig.getVotingCollectionName());
+        int total = 0;
+        for (Candidate candidate : application.getCandidateList()) {
+            if (StringUtils.isEmpty(candidate.getCount())) {
+                continue;
+            }
+            total += Integer.parseInt(candidate.getCount());
+        }
+        return total;
+    }
+
+    @Override
+    public List<Candidate> totalNumberOfVotesByCandidate(String appId) {
+        VotingApplication application = mongoTemplate.findById(appId, VotingApplication.class, mongoDBConfig.getVotingCollectionName());
+        List<Candidate> candidateList = new ArrayList<Candidate>();
+        for (Candidate candidate : application.getCandidateList()) {
+            if (StringUtils.isEmpty(candidate.getCode())) {
+                candidate.setCount("0");
+                continue;
+            }
+            candidateList.add(candidate);
+        }
+        return candidateList;
     }
 }

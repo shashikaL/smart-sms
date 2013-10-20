@@ -90,7 +90,9 @@ public class VotingAppController {
     }
 
     @RequestMapping(value = "/votingView", method = RequestMethod.GET)
-    public String votingView(){
+    public String votingView(@RequestParam String appId,Model model){
+        model.addAttribute("totalNumberOfVotes",applicationTypeRepository.totalNumberOfVotes(appId));
+        model.addAttribute("candidateList", applicationTypeRepository.totalNumberOfVotesByCandidate(appId));
         return "votingView";
 
     }
