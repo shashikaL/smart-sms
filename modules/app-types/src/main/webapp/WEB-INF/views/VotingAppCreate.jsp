@@ -494,7 +494,7 @@ var selectedKeyword = '';
     <div style="display:inline"></div>
     <select id="short3" name="keywordStr" style="min-width:120px;width:auto; margin-left:-7px;" >
         <c:forEach items="${keywordList}" var="key">
-            <option value=""><c:out value="${key.name}"/>-<c:out value="${key.shortCode}"/></option>
+            <option value="${key.name}-${key.shortCode}"><c:out value="${key.name}"/>-<c:out value="${key.shortCode}"/></option>
         </c:forEach>
 
 

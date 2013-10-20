@@ -69,6 +69,25 @@ public class HomeController {
         return "response";
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/submit-vote")
+    public String redirectToVote() {
+        return "submit-vote";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/submit-vote")
+    public String submitToVote(@RequestParam String message, @RequestParam String shortCode) {
+        //message - SSS 1
+        // short code - 7788
+        String[] split = message.split(" ");
+        Vote vote = new Vote();
+        vote.setShotCode(shortCode);
+        vote.setCandidateId(split[1]);
+
+        Response response = restTemplate.postForObject("http://localhost:8080/app-ui/submitVote", vote,Response.class);
+        return "redirect:/response";
+
+    }
+
     private BulkSubscriberMessage createBulkSubscriberMessage(int count, String message, String shortCode) {
         BulkSubscriberMessage bulkSubscriberMessage = new BulkSubscriberMessage();
 

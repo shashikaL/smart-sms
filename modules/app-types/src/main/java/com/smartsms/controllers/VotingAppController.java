@@ -1,19 +1,16 @@
 package com.smartsms.controllers;
 
-import com.smartsms.beans.Candidate;
-import com.smartsms.beans.Candidates;
-import com.smartsms.beans.VotingApplication;
+import com.smartsms.beans.*;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.repo.impl.AdminRepositoryImpl;
 import com.smartsms.security.SecurityUtil;
 import com.smartsms.util.KeywordGenerator;
+import com.smartsms.util.KeywordSeperator;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +45,8 @@ public class VotingAppController {
     }
 
     @RequestMapping(value = "/VotingAppCreate", method = RequestMethod.POST)
-    public String submitVotingApplication(VotingApplication application,  Model model) {
+    public String submitVotingApplication(VotingApplication application,  @ModelAttribute("keywordStr") String s) {
+        application.setKeyword(KeywordSeperator.createKeyword(s));
         this.VotingApplication = application;
 
         return "redirect:/AddCandidate";
@@ -101,6 +99,15 @@ public class VotingAppController {
     public String addCandidateView(){
         return "AddCandidate";
 
+    }
+
+    @RequestMapping(value = "/submitVote", method = RequestMethod.POST)
+    @ResponseBody
+    public Response incrementVoteCount(@RequestBody Vote vote){
+        VotingApplication votingApplicationByShortCode = applicationTypeRepository.findVotingApplicationByShortCode(vote.getShotCode());
+        applicationTypeRepository.incrementCandidateCount(vote.getCandidateId(),votingApplicationByShortCode.getAppId());
+        Response response = new Response();
+        return response;
     }
 
 

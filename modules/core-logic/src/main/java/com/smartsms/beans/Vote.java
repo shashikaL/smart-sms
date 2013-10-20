@@ -1,20 +1,19 @@
 package com.smartsms.beans;
 
 /**
- * @author rajith
+ * @author shashi
  */
 public class Vote {
 
-    private String keyword;
+    private String shotCode;
     private String candidateId;
-    private String message;
 
-    public String getKeyword() {
-        return keyword;
+    public String getShotCode() {
+        return shotCode;
     }
 
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
+    public void setShotCode(String shotCode) {
+        this.shotCode = shotCode;
     }
 
     public String getCandidateId() {
@@ -23,13 +22,5 @@ public class Vote {
 
     public void setCandidateId(String candidateId) {
         this.candidateId = candidateId;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 }

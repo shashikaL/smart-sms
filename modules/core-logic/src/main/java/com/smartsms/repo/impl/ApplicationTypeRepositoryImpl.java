@@ -5,6 +5,7 @@ import com.smartsms.beans.*;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.repo.config.MongoDBConfig;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -114,10 +115,16 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
             return;
         }
         for (Candidate candidate : candidateList) {
-            if(candidate.getCode().equals(candidateId)){
-                int newVal = Integer.parseInt(candidate.getCount()) + 1;
-                candidate.setCount(String.valueOf(newVal));
-                modifiedList.add(candidate);
+            if(candidateId.equals(candidate.getCode())){
+                if(StringUtils.isEmpty(candidate.getCount())){
+                    candidate.setCount("1");
+                    modifiedList.add(candidate);
+                } else {
+                    int newVal = Integer.parseInt(candidate.getCount()) + 1;
+                    candidate.setCount(String.valueOf(newVal));
+                    modifiedList.add(candidate);
+                }
+
             }
             modifiedList.add(candidate);
         }

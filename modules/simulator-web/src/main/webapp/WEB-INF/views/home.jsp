@@ -42,6 +42,11 @@
 
 </ul>
 
+<ul class="individual">
+    <li><a href="submit-vote">Submit Vote</a></li>
+
+</ul>
+
 
 
 
