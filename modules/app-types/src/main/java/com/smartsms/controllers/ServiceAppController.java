@@ -3,10 +3,14 @@ package com.smartsms.controllers;
 import com.smartsms.beans.ServiceApplication;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.security.SecurityUtil;
+import com.smartsms.util.KeywordGenerator;
+import com.smartsms.util.KeywordSeperator;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,17 +30,21 @@ public class ServiceAppController {
 
     @Autowired
     private ApplicationTypeRepository applicationTypeRepository;
+    @Autowired
+    private KeywordGenerator keywordGenerator;
     private ServiceApplication serviceApplication;
 
     @RequestMapping(value = "/ServiceApp_step1", method = RequestMethod.GET)
-    public String redirect() {
+    public String redirect(Model model) {
+        model.addAttribute("keywordList",keywordGenerator.GetUniqueKeywords());
         return "ServiceApp_step1";
 
     }
 
     @RequestMapping(value = "/ServiceApp_step1", method = RequestMethod.POST)
-    public String submitServiceApp_step1(ServiceApplication application) {
+    public String submitServiceApp_step1(ServiceApplication application, @ModelAttribute("keywordStr") String s) {
         application.setUserID(SecurityUtil.getUserLoggedInname());
+        application.setKeyword(KeywordSeperator.createKeyword(s));
         this.serviceApplication = application;
         return "redirect:/ServiceAppConfirm";
 
@@ -50,8 +58,9 @@ public class ServiceAppController {
     }
 
     @RequestMapping(value = "/ServiceAppConfirm", method = RequestMethod.POST)
-    public String submit(ServiceApplication application) {
+    public String submit() {
         serviceApplication.setAppId(UUID.randomUUID().toString());
+        serviceApplication.setUserID(SecurityUtil.getUserLoggedInname());
         applicationTypeRepository.saveApplication(serviceApplication);
         return "redirect:/ServiceAppSuccess";
 
@@ -81,8 +90,20 @@ public class ServiceAppController {
     }
 
     @RequestMapping(value = "/ServiceUse", method = RequestMethod.GET)
-    public String redirectServiceUse() {
+    public String redirectServiceUse(@RequestParam("appId") String appId,Model model) {
+        ServiceApplication serviceApplicationById = applicationTypeRepository.findServiceApplicationById(appId);
+        String keywordString = serviceApplicationById.getKeyword().getName()+"-"+serviceApplicationById.getKeyword().getShortCode();
+        model.addAttribute("keywordString",keywordString);
         return "ServiceUse";
+
+    }
+
+    @RequestMapping(value = "/ServiceUse", method = RequestMethod.POST)
+    public String submitServiceUse(ServiceApplication application){
+        ServiceApplication serviceApplicationById = applicationTypeRepository.findServiceApplicationById(application.getAppId());
+        serviceApplicationById.setServiceMessage(application.getServiceMessage());
+        applicationTypeRepository.saveApplication(serviceApplicationById);
+        return "redirect:/MyApplications";
 
     }
 }

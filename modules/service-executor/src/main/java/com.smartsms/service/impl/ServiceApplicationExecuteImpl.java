@@ -39,7 +39,7 @@ public class ServiceApplicationExecuteImpl implements ServiceApplicationExecute 
                 //TODO this is where service execute
                 //send request to simulator
                 RestTemplate restTemplate = new RestTemplate();
-                restTemplate.getForEntity("http://localhost:9090/rest/api/response/me",String.class);
+                restTemplate.getForEntity("http://localhost:9090/rest/api/response/{message}",String.class,entry.getKey().getServiceMessage());
                 continue;
             }
             logger.info("Application [{}] will save to cache for future execution", entry.getKey().getAppId());
@@ -51,10 +51,11 @@ public class ServiceApplicationExecuteImpl implements ServiceApplicationExecute 
         Map<ServiceApplication, Date> dateMap = new HashMap<ServiceApplication, Date>();
         for (ServiceApplication serviceApplication : serviceApplications) {
             Calendar calendar = Calendar.getInstance();
-            calendar.set(Calendar.HOUR, Integer.parseInt(serviceApplication.getDispatchHour()));
+            calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(serviceApplication.getDispatchHour()));
             calendar.set(Calendar.MINUTE, Integer.parseInt(serviceApplication.getDispatchMinute()));
             calendar.set(Calendar.SECOND,0);
             calendar.set(Calendar.MILLISECOND, 0);
+            calendar.set(Calendar.DAY_OF_MONTH,calendar.get(Calendar.DAY_OF_MONTH));
             dateMap.put(serviceApplication, calendar.getTime());
         }
         return dateMap;

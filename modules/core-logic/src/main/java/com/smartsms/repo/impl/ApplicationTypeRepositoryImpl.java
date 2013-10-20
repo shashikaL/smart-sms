@@ -28,16 +28,16 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     @Override
     public void saveApplication(AbstractApplicationType application) {
         if (application instanceof VotingApplication) {
-            mongoTemplate.insert(application, mongoDBConfig.getVotingCollectionName());
+            mongoTemplate.save(application, mongoDBConfig.getVotingCollectionName());
         }
         if (application instanceof AlertApplication) {
-            mongoTemplate.insert(application, mongoDBConfig.getAlertCollectionName());
+            mongoTemplate.save(application, mongoDBConfig.getAlertCollectionName());
         }
         if (application instanceof ContactApplication) {
-            mongoTemplate.insert(application, mongoDBConfig.getContactCollectionName());
+            mongoTemplate.save(application, mongoDBConfig.getContactCollectionName());
         }
         if (application instanceof ServiceApplication) {
-            mongoTemplate.insert(application, mongoDBConfig.getServiceCollectionName());
+            mongoTemplate.save(application, mongoDBConfig.getServiceCollectionName());
         }
     }
 
@@ -164,5 +164,10 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     public List<Keyword> FindAllKeywords() {
         return mongoTemplate.findAll(Keyword.class,mongoDBConfig.getKeywordCollection());
           //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public ServiceApplication findServiceApplicationById(String appId) {
+        return mongoTemplate.findById(appId, ServiceApplication.class, mongoDBConfig.getServiceCollectionName());
     }
 }

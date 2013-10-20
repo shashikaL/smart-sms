@@ -10,12 +10,14 @@ public interface ApplicationTypeRepository {
 
     /**
      * Save application
+     *
      * @param application
      */
     public void saveApplication(AbstractApplicationType application);
 
     /**
      * Find application by id
+     *
      * @param id
      * @return
      */
@@ -47,8 +49,6 @@ public interface ApplicationTypeRepository {
 
     public List<Keyword> FindAllKeywords();
 
+    public ServiceApplication findServiceApplicationById(String appId);
 
-
-
-
-    }
+}

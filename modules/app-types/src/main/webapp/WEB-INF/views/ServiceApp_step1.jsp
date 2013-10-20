@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
@@ -363,30 +364,30 @@ function parseAppName() {
     }
 }
 
-function parseKeywords() {
-    var addressNods = req.responseXML.documentElement.getElementsByTagName("address");
-    var operatorNods = req.responseXML.documentElement.getElementsByTagName("operator");
-    if (addressNods.length != 0) {
-        //load keywords
-        var keyword = document.getElementById("keyword");
-        while (keyword.options.length != 0) {
-            keyword.remove(0);
-        }
-        for (var i = 0; i < addressNods.length; i++) {
-            var address = getNodeValue(addressNods[i]);
-            var operator = getNodeValue(operatorNods[i]);
-            var option = document.createElement("option");
-            var text = document.createTextNode(address + " - " + operator);
-            option.appendChild(text);
-            option.setAttribute("value", address + "-" + operator);
-            keyword.appendChild(option);
-            //                if(selectedKeyword ==address + "-" + operator) {
-            //                    option.selected=true;
-            //                }
-        }
-    }
-    parseChargeableMsisdn();
-}
+//function parseKeywords() {
+//    var addressNods = req.responseXML.documentElement.getElementsByTagName("address");
+//    var operatorNods = req.responseXML.documentElement.getElementsByTagName("operator");
+//    if (addressNods.length != 0) {
+//        //load keywords
+//        var keyword = document.getElementById("keyword");
+//        while (keyword.options.length != 0) {
+//            keyword.remove(0);
+//        }
+//        for (var i = 0; i < addressNods.length; i++) {
+//            var address = getNodeValue(addressNods[i]);
+//            var operator = getNodeValue(operatorNods[i]);
+//            var option = document.createElement("option");
+//            var text = document.createTextNode(address + " - " + operator);
+//            option.appendChild(text);
+//            option.setAttribute("value", address + "-" + operator);
+//            keyword.appendChild(option);
+//            //                if(selectedKeyword ==address + "-" + operator) {
+//            //                    option.selected=true;
+//            //                }
+//        }
+//    }
+//    parseChargeableMsisdn();
+//}
 
 function parseChargeableMsisdn() {
     var chargeableAddress = req.responseXML.documentElement.getElementsByTagName("chargeable-address");
@@ -494,8 +495,11 @@ var selectedKeyword = '';
 </h4>
 <div class="info_group">
     <div style="display:inline"></div>
-    <select id="keyword.shortCode" name="keyword.shortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
-        <option value="1234">1234</option>
+    <select name="keywordStr" style="min-width:120px;width:auto; margin-left:-7px;" >
+        <c:forEach items="${keywordList}" var="key">
+            <option value="${key.name}-${key.shortCode}"><c:out value="${key.name}"/>-<c:out value="${key.shortCode}"/></option>
+        </c:forEach>
+
 
     </select>
     <a style="padding-left:2px" href="alertCreateKeyword1.html">Create Keyword</a> </div>
