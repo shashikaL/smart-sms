@@ -8,22 +8,27 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author rajith
- */
+
 public class WordFilterExecutorImpl implements WordFilterExecutor {
 
+    private final static Logger logger = LoggerFactory.getLogger(WordFilterExecutorImpl.class);
+
     @Autowired
-    //private AdminRepositoryImpl adminRepository;
+    private AdminRepositoryImpl adminRepository;
 
     @Override
     public void execute() {
+        logger.info("======================================================================================");
+        logger.info("===================== Executing Word Filter Executor ==================================");
+        logger.info("======================================================================================");
     /*    System.out.println(" ======================================================================================");
         System.out.println(" ================================ Executing Word Filter Scheduler =====================");
         System.out.println(" ======================================================================================");

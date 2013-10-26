@@ -260,7 +260,7 @@
             </div>
             <div class="clear">&nbsp;</div>
         <span style="padding-left:10px">
-        <input onclick="location.href='Home?username=<c:out value="${username}"/>'" name="back" type="button" class="button" value="Back" id="back"/>
+        <input onclick="location.href='Home'" name="back" type="button" class="button" value="Back" id="back"/>
         </span></div>
         <div class="grid_1 omega">&nbsp;</div>
         <div class="clear"></div>
