@@ -167,7 +167,7 @@
                             <div class="clear"></div>
                         </div>
             <span>
-            <input onclick="location.href='home.html';" name="back" type="button" class="button" value="Back" id="back"/>
+            <input onclick="location.href='Home';" name="back" type="button" class="button" value="Back" id="back"/>
             </span>
                         <div class="clear">&nbsp;</div>
                     </div>

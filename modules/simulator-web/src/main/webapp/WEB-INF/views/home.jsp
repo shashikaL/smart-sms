@@ -28,17 +28,17 @@
 
 </ul>
 <ul class="individual">
-    <li><a href="headers.html">Single Subscription</a></li>
+    <li><a href="app-type-select">Single Subscription</a></li>
 
 </ul>
 
-<ul class="individual">
-    <li><a href="headers.html">Bulk UnSubscription</a></li>
+<%--<ul class="individual">--%>
+    <%--<li><a href="headers.html">Bulk UnSubscription</a></li>--%>
 
-</ul>
+<%--</ul>--%>
 
 <ul class="individual">
-    <li><a href="headers.html">Single UnSubscription</a></li>
+    <li><a href="app-type-select">Single UnSubscription</a></li>
 
 </ul>
 

@@ -197,7 +197,7 @@
                                 <c:forEach var="app" items="${alertApps}">
                                     <div style="float:left;margin-right:5px;" class="item">
                                         <div class="my_app">
-                                            <div class="sub_image"><img height="75" onclick="window.location='AlertUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Service Application</u></b><br/> ')" src="resources/images/alert_app.jpg"/></div>
+                                            <div class="sub_image"><img height="75" onclick="window.location='AlertUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>'" onMouseout="hidetooltip()" width="75" class="clickImg" onMouseover="showTip('<b><u>Alerrt Application</u></b><br/> ')" src="resources/images/alert_app.jpg"/></div>
                                             <div style="float:left;line-height:25px;">
                                                 <div style="width:80px;">
                                                     <label class="bold_text" for="msisdn">Alert - <c:out value="${app.appName}"/></label>

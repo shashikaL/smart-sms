@@ -27,3 +27,16 @@ OAuth Implementation
 
 Consumer key	GLMQhgDNnOwSogd35LJfJg
 Consumer secret	u1ztc6grmJUcvj04lfQPp3JohVutHSy3J4vZpdJiVQ
+
+Cloud Env
+===================
+tomcat location - /mnt/tomcat/apache-tomcat-7.0.42/bin
+
+stop tomcat server - sudo ./shutdown.sh
+
+remove war file and work director - sudo rm -rf ../webapps/app-ui* ../work/*
+
+To create war file
+------------------
+mvn clean install -DskipTests
+

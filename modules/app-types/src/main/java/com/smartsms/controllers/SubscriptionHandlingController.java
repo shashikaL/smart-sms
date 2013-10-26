@@ -59,6 +59,7 @@ public class SubscriptionHandlingController {
         return createResponse("200", alertApplication.getSubscriptionSuccessfulMessage());
 
     }
+    //---------------------------alert subscription-------------------------------------------------------------------------------------
 
     @RequestMapping(value = "/unsubscribe/{subscriptionNumber}", method = RequestMethod.POST)
     public Response unSubscription(@RequestBody SubscriberMessage message, @PathVariable String subscriberNumber) {
@@ -89,7 +90,7 @@ public class SubscriptionHandlingController {
 
     }
 
-
+//--------------------alert unsubscription-------------------------------------------------------------------------------------------------------
 
     @RequestMapping(value = "/bulk/subscribe", method = RequestMethod.POST)
     @ResponseBody
@@ -142,4 +143,6 @@ public class SubscriptionHandlingController {
         return response;
 
     }
+
+    //-----------------------bulk subscription--------------------------------------------------------------------------------------------------
 }
