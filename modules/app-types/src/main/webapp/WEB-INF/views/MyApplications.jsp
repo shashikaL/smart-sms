@@ -184,8 +184,8 @@
                                                 <div style="width:80px;">
                                                     <label class="bold_text" for="msisdn">Service - <c:out value="${app.appName}"/></label>
                                                 </div>
-                                                <div class="my_app_link"><a href="ServiceUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a> | <a href="alertHelp.html">Help</a>
-                                                    | <a href="#" onclick="show();">Publish</a></div>
+                                                <div class="my_app_link"><a href="ServiceUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a>
+                                                </div>
                                                 <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"><span style="float:left;"></span></span></div>
                                             </div>
                                         </div>
@@ -202,8 +202,8 @@
                                                 <div style="width:80px;">
                                                     <label class="bold_text" for="msisdn">Alert - <c:out value="${app.appName}"/></label>
                                                 </div>
-                                                <div class="my_app_link"><a href="AlertUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a> | <a href="alertHelp.html">Help</a>
-                                                    | <a href="#" onclick="show();">Publish</a></div>
+                                                <div class="my_app_link"><a href="AlertUse?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a>
+                                                </div>
                                                 <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"><span style="float:left;"></span></span></div>
                                             </div>
                                         </div>
@@ -220,8 +220,8 @@
                                                 <div style="width:80px;">
                                                     <label class="bold_text" for="msisdn">Voting - <c:out value="${app.appName}"/></label>
                                                 </div>
-                                                <div class="my_app_link"><a href="votingView?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a> | <a href="alertHelp.html">Help</a>
-                                                    | <a href="#" onclick="show();">Publish</a></div>
+                                                <div class="my_app_link"><a href="votingView?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a>
+                                                </div>
                                                 <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"><span style="float:left;"></span></span></div>
                                             </div>
                                         </div>
@@ -238,8 +238,8 @@
                                                 <div style="width:80px;">
                                                     <label class="bold_text" for="msisdn">Contact - <c:out value="${app.appName}"/></label>
                                                 </div>
-                                                <div class="my_app_link"><a href="ContactAppView?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a> | <a href="alertHelp.html">Help</a>
-                                                    | <a href="#" onclick="show();">Publish</a></div>
+                                                <div class="my_app_link"><a href="ContactAppView?username=<c:out value="${app.userID}"/>&appId=<c:out value="${app.appId}"/>">Use</a> | <a href="alertView.html">View</a> | <a href="alertEdit.html">Edit</a>
+                                                </div>
                                                 <div style="float:left; display:inline-block;">ACTIVE<span style="padding-left:10px;display:inline-block;margin-top:5px;margin-bottom:-2px;" class="my_app_link"><span style="float:left;"></span></span></div>
                                             </div>
                                         </div>
