@@ -1,4 +1,9 @@
-
+Components
+1. app-ui.war
+2. simulator-web.war
+3. Simulator
+4. service-executor
+5. reporting
 
 mvn clean install
 
