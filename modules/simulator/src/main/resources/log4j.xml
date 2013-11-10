@@ -10,7 +10,7 @@
     </appender>
 
     <appender name="trace" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="/home/rajith/my_projects/logs/simulator-trace.log"/>
+        <param name="File" value="logs/simulator-trace.log"/>
         <param name="Threshold" value="debug"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">
@@ -19,7 +19,7 @@
     </appender>
 
     <appender name="error" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="/home/rajith/my_projects/logs/simulator-error.log"/>
+        <param name="File" value="logs/simulator-error.log"/>
         <param name="Threshold" value="error"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">

@@ -14,6 +14,7 @@
  http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
 
     <context:component-scan base-package="com.smartsms"/>
+
     <mvc:annotation-driven/>
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
@@ -38,6 +39,7 @@
 
     <context:property-placeholder location="classpath*:smart-sms.properties,classpath*:application-mongo.properties"/>
 
+    <import resource="classpath*:core-logic-context.xml"/>
     <util:list id="ignoreUrlLst" value-type="java.lang.String">
         <value>/login</value>
     </util:list>

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 
 @Controller
@@ -23,12 +24,14 @@ public class ContactAppController {
     private AdminRepositoryImpl adminRepository;
     @Autowired
     private KeywordGenerator keywordGenerator;
-
     private ContactApplication ContactApplication;
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @RequestMapping(value = "/ContactAppCreate", method = RequestMethod.GET)
     public String redirect(Model model) {
-        model.addAttribute("keywordList",keywordGenerator.GetUniqueKeywords());
+        model.addAttribute("keywordList", keywordGenerator.GetUniqueKeywords());
         return "ContactAppCreate";
 
     }
@@ -67,12 +70,20 @@ public class ContactAppController {
     }
 
     @RequestMapping(value = "/ContactAppView", method = RequestMethod.GET)
-    public String redirectView(@RequestParam String appId,Model model) {
+    public String redirectView(@RequestParam String appId, Model model) {
         ContactApplication application = applicationTypeRepository.findContactApplicationById(appId);
-        model.addAttribute("application",application);
+        model.addAttribute("messages", adminRepository.findContactAppMessages());
+        model.addAttribute("application", application);
         return "ContactAppView";
 
     }
+
+    @RequestMapping(value = "/ContactAppView", method = RequestMethod.POST)
+    public String submitView(@RequestParam String messageArea) {
+        restTemplate.getForObject("http://localhost:9090/rest/api/response/{message}", String.class, messageArea);
+        return "redirect:/MyApplications";
+    }
+
 
     @RequestMapping(value = "/contactAppUse", method = RequestMethod.POST)
     @ResponseBody
@@ -89,7 +100,7 @@ public class ContactAppController {
     @ResponseBody
     public Response processBulkMessage(@RequestBody ContactMessageList contactAppMessageList) {
         ContactApplication application = applicationTypeRepository.findContactApplicationByShortCode(contactAppMessageList.getShortCode());
-        if(application == null){
+        if (application == null) {
             Response response = new Response();
             response.setStatusCode("404");
             response.setStatusMessage("Cannot find requested application");

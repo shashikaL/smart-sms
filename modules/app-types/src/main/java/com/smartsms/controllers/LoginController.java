@@ -72,7 +72,7 @@ public class LoginController {
 
         Twitter twitter = new TwitterTemplate(springSocialConfig.getTwitterAppKey(), springSocialConfig.getTwitterAppSecret(), accessToken.getValue(), accessToken.getSecret());
         TwitterProfile userProfile = twitter.userOperations().getUserProfile();
-        userManagementRepository.saveOrUpdateUser(createUser(SocialNetwork.TWITTER, userProfile.getScreenName(), userProfile.getName(), userProfile.getName()));
+        userManagementRepository.saveOrUpdateUser(createUser(SocialNetwork.TWITTER, userProfile.getScreenName(), userProfile.getName(), userProfile.getName(), null));
         ContextHolder.getContextHolder().setContextHolderName(userProfile.getScreenName());
         return "redirect:/Home";
     }
@@ -84,7 +84,7 @@ public class LoginController {
         }
         Facebook facebook = new FacebookTemplate(accessToken);
         FacebookProfile userProfile = facebook.userOperations().getUserProfile();
-        userManagementRepository.saveOrUpdateUser(createUser(SocialNetwork.FACEBOOK, userProfile.getUsername(), userProfile.getFirstName(), userProfile.getLastName()));
+        userManagementRepository.saveOrUpdateUser(createUser(SocialNetwork.FACEBOOK, userProfile.getUsername(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getEmail()));
         ContextHolder.getContextHolder().setContextHolderName(userProfile.getUsername());
         return "redirect:/Home";
     }
@@ -110,12 +110,13 @@ public class LoginController {
         return params.getRedirectUri() + params.getScope();
     }
 
-    private User createUser(SocialNetwork socialNetwork, String userId, String firstName, String lastName) {
+    private User createUser(SocialNetwork socialNetwork, String userId, String firstName, String lastName, String email) {
         User user = new User();
         user.setUserId(userId);
         user.setFirstName(firstName);
         user.setSocialNetwork(socialNetwork);
         user.setLastName(lastName);
+        user.setEmail(email);
         return user;
     }
 
