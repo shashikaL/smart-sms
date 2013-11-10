@@ -37,6 +37,29 @@ public class HomeController {
         return "bulk-alert-app-subscription";
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/single-app-type-select")
+    public String redirectToSingleSubs() {
+        return "single-app-type-select";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/single-contact-request")
+    public String redirectToSingleContactRequest() {
+        return "single-contact-request";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/single-contact-request")
+    public String submitToSingleContactRequest(@RequestParam String message, @RequestParam String shortCode, @RequestParam String number) {
+        ContactAppMessage contactAppMessage = new ContactAppMessage();
+        contactAppMessage.setContactNumber(number);
+        contactAppMessage.setRequestMessage(message);
+        contactAppMessage.setShortCode(shortCode);
+
+        Response response = restTemplate.postForObject("http://localhost:8080/app-ui/contactAppUse", contactAppMessage, Response.class);
+        responseMessage = response.getStatusMessage();
+        responseCode = response.getStatusCode();
+        return "redirect:/response";
+    }
+
     @RequestMapping(method = RequestMethod.POST, value = "/bulk-alert")
     public String submitBulkAlert(@RequestParam Integer count, @RequestParam String message, @RequestParam String shortCode) {
         BulkSubscriberMessage bulkSubscriberMessage = createBulkSubscriberMessage(count, message, shortCode);
@@ -55,6 +78,7 @@ public class HomeController {
     @RequestMapping(method = RequestMethod.POST, value = "/bulk-contact")
     public String submitBulkContact(@RequestParam Integer count, @RequestParam String message, @RequestParam String shortCode) {
         ContactMessageList contactMessageList = createContactMessageList(count, message, shortCode);
+        contactMessageList.setShortCode(shortCode);
         Response response = restTemplate.postForObject("http://localhost:8080/app-ui/bulk/contactAppUse", contactMessageList, Response.class);
         responseMessage = response.getStatusMessage();
         responseCode = response.getStatusCode();

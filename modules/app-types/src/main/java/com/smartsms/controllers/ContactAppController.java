@@ -5,6 +5,8 @@ import com.smartsms.beans.util.ScheduledType;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.repo.impl.AdminRepositoryImpl;
 import com.smartsms.security.SecurityUtil;
+import com.smartsms.util.KeywordGenerator;
+import com.smartsms.util.KeywordSeperator;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,17 +21,21 @@ public class ContactAppController {
     private ApplicationTypeRepository applicationTypeRepository;
     @Autowired
     private AdminRepositoryImpl adminRepository;
+    @Autowired
+    private KeywordGenerator keywordGenerator;
 
     private ContactApplication ContactApplication;
 
     @RequestMapping(value = "/ContactAppCreate", method = RequestMethod.GET)
-    public String redirect() {
+    public String redirect(Model model) {
+        model.addAttribute("keywordList",keywordGenerator.GetUniqueKeywords());
         return "ContactAppCreate";
 
     }
 
     @RequestMapping(value = "/ContactAppCreate", method = RequestMethod.POST)
-    public String submitContactAppCreate(ContactApplication application) {
+    public String submitContactAppCreate(ContactApplication application, @ModelAttribute("keywordStr") String s) {
+        application.setKeyword(KeywordSeperator.createKeyword(s));
         this.ContactApplication = application;
         ContactApplication.setUserID(SecurityUtil.getUserLoggedInname());
         applicationTypeRepository.saveApplication(ContactApplication);
@@ -61,7 +67,9 @@ public class ContactAppController {
     }
 
     @RequestMapping(value = "/ContactAppView", method = RequestMethod.GET)
-    public String redirectView() {
+    public String redirectView(@RequestParam String appId,Model model) {
+        ContactApplication application = applicationTypeRepository.findContactApplicationById(appId);
+        model.addAttribute("application",application);
         return "ContactAppView";
 
     }
@@ -77,18 +85,22 @@ public class ContactAppController {
 
     }
 
-//    @RequestMapping(value = "/bulk/contactAppUse", method = RequestMethod.POST)
-//    @ResponseBody
-//    public Response processBulkMessage(@RequestBody ContactMessageList contactAppMessageList) {
-//
-//        //find application by short code - findContactApplicationByShortCode(sho)
-//        // create ContactResponse based on returned answer
-//        //save contact response - saveContactResponse()
-//        Response response = new Response();
-//        response.setStatusCode("200");
-//        response.setStatusMessage("Success");
-//        return response;
-//    }
+    @RequestMapping(value = "/bulk/contactAppUse", method = RequestMethod.POST)
+    @ResponseBody
+    public Response processBulkMessage(@RequestBody ContactMessageList contactAppMessageList) {
+        ContactApplication application = applicationTypeRepository.findContactApplicationByShortCode(contactAppMessageList.getShortCode());
+        if(application == null){
+            Response response = new Response();
+            response.setStatusCode("404");
+            response.setStatusMessage("Cannot find requested application");
+            return response;
+        }
+
+        Response response = new Response();
+        response.setStatusCode("200");
+        response.setStatusMessage("Success");
+        return response;
+    }
 
 
 }

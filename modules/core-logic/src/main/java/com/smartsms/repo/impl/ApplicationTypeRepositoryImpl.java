@@ -197,4 +197,9 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
         }
         return candidateList;
     }
+
+    @Override
+    public ContactApplication findContactApplicationById(String appId) {
+        return mongoTemplate.findById(appId, ContactApplication.class, mongoDBConfig.getContactCollectionName());
+    }
 }

@@ -28,33 +28,30 @@ public class VotingAppController {
 
     @Autowired
     private ApplicationTypeRepository applicationTypeRepository;
-
     @Autowired
     private AdminRepositoryImpl adminRepository;
-
     @Autowired
     private KeywordGenerator keywordGenerator;
-
     private VotingApplication VotingApplication;
 
     @RequestMapping(value = "/VotingAppCreate", method = RequestMethod.GET)
-    public String redirect(Model model){
-       model.addAttribute("keywordList",keywordGenerator.GetUniqueKeywords());
+    public String redirect(Model model) {
+        model.addAttribute("keywordList", keywordGenerator.GetUniqueKeywords());
         return "VotingAppCreate";
 
     }
 
     @RequestMapping(value = "/VotingAppCreate", method = RequestMethod.POST)
-    public String submitVotingApplication(VotingApplication application,  @ModelAttribute("keywordStr") String s) {
+    public String submitVotingApplication(VotingApplication application, @ModelAttribute("keywordStr") String s) {
         application.setKeyword(KeywordSeperator.createKeyword(s));
         this.VotingApplication = application;
 
         return "redirect:/AddCandidate";
 
     }
+
     @RequestMapping(value = "/AddCandidate", method = RequestMethod.POST)
-    public String AddCandidate(Candidates candidates)
-    {
+    public String AddCandidate(Candidates candidates) {
         List<Candidate> candidateList = candidates.getCandidateList();
         this.VotingApplication.setCandidateList(candidateList);
         return "redirect:/VotingAppConfirm";
@@ -63,7 +60,7 @@ public class VotingAppController {
 
     @RequestMapping(value = "/VotingAppConfirm", method = RequestMethod.GET)
     public String redirectConfirm(Model model) {
-        model.addAttribute("VotingObj",VotingApplication);
+        model.addAttribute("VotingObj", VotingApplication);
         return "VotingAppConfirm";
 
     }
@@ -78,36 +75,36 @@ public class VotingAppController {
     }
 
     @RequestMapping(value = "/VotingAppSuccess", method = RequestMethod.GET)
-    public String redirectSuccess(){
+    public String redirectSuccess() {
         return "VotingAppSuccess";
 
     }
 
     @RequestMapping(value = "/VotingHelp", method = RequestMethod.GET)
-    public String redirectHelp(){
+    public String redirectHelp() {
         return "VotingHelp";
 
     }
 
     @RequestMapping(value = "/votingView", method = RequestMethod.GET)
-    public String votingView(@RequestParam String appId,Model model){
-        model.addAttribute("totalNumberOfVotes",applicationTypeRepository.totalNumberOfVotes(appId));
+    public String votingView(@RequestParam String appId, Model model) {
+        model.addAttribute("totalNumberOfVotes", applicationTypeRepository.totalNumberOfVotes(appId));
         model.addAttribute("candidateList", applicationTypeRepository.totalNumberOfVotesByCandidate(appId));
         return "votingView";
 
     }
 
     @RequestMapping(value = "/AddCandidate", method = RequestMethod.GET)
-    public String addCandidateView(){
+    public String addCandidateView() {
         return "AddCandidate";
 
     }
 
     @RequestMapping(value = "/submitVote", method = RequestMethod.POST)
     @ResponseBody
-    public Response incrementVoteCount(@RequestBody Vote vote){
+    public Response incrementVoteCount(@RequestBody Vote vote) {
         VotingApplication votingApplicationByShortCode = applicationTypeRepository.findVotingApplicationByShortCode(vote.getShotCode());
-        applicationTypeRepository.incrementCandidateCount(vote.getCandidateId(),votingApplicationByShortCode.getAppId());
+        applicationTypeRepository.incrementCandidateCount(vote.getCandidateId(), votingApplicationByShortCode.getAppId());
         Response response = new Response();
         return response;
     }

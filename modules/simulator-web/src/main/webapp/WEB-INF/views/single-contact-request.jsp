@@ -32,22 +32,22 @@
 
 <div id="header">
     <h1>Contact App Simulator</h1>
-    <a href="app-type-select" id="backButton">Back</a>
+    <a href="single-app-type-select" id="backButton">Back</a>
 </div>
 
 
 <h1>Subscription Information</h1>
 
 <form action="" method="post">
-<ul class="form">
+    <ul class="form">
 
-    <li><input type="text" name="count" value="Number of mobile numbers to generate ? (Starting from 0777000001)" id="count" onclick="clickclear(this, 'Number of mobile numbers to generate ? (Starting from 0777000001)')" onblur="clickrecall(this,'Number of mobile numbers to generate ? (Starting from 0777000001)')"  /></li>
-    <li><input type="text" name="message" value="Enter Request Message" id="message" onclick="clickclear(this, 'Enter Request Message')" onblur="clickrecall(this,'Enter Request Message')" /></li>
-    <li><input type="text" name="shortCode" value="Enter Short Code" id="shortCode" onclick="clickclear(this, 'Enter Short Code')" onblur="clickrecall(this,'Enter Short Code')" /></li>
+        <li><input type="text" name="number" value="Enter a Mobile Number" id="number" onclick="clickclear(this, 'Enter a Mobile Number')" onblur="clickrecall(this,'Enter a Mobile Number')"  /></li>
+        <li><input type="text" name="message" value="Enter Message" id="message" onclick="clickclear(this, 'Enter Message')" onblur="clickrecall(this,'Enter Message')" /></li>
+        <li><input type="text" name="shortCode" value="Enter Short Code" id="shortCode" onclick="clickclear(this, 'Enter Short Code')" onblur="clickrecall(this,'Enter Short Code')" /></li>
 
-</ul>
+    </ul>
 
-<p><input type="submit" class="button white"  value="Subscribe"/>  </p>
+    <p><input type="submit" class="button white"  value="Subscribe"/>  </p>
 
 </form>
 

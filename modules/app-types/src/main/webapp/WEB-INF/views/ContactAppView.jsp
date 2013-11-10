@@ -5,6 +5,7 @@
   Time: 4:29 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
@@ -481,7 +482,7 @@ var selectedKeyword = '';
                             </div>
                             <div class="input_row">
                                 <div class="input-text-wrap">
-                                    <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="Contact"/>
+                                    <input id="appName" name="app.appName" onblur="validateAppName();" type="text" value="<c:out value="${application.appName}"/>" readonly="readonly"/>
                                 </div>
                             </div>
                         </div>

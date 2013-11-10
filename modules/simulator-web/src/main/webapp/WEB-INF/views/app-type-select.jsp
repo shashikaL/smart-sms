@@ -33,10 +33,6 @@
 
 </ul>
 <ul class="individual">
-    <li><a href="headers.html">Voting Application</a></li>
-
-</ul>
-<ul class="individual">
     <li><a href="bulk-contact">Contact Application</a></li>
 
 </ul>

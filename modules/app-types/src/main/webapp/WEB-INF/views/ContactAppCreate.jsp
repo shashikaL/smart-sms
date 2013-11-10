@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
@@ -484,9 +485,12 @@ var selectedKeyword = '';
 </h4>
 <div class="info_group">
     <div style="display:inline"></div>
-    <select id="short3" name="selectedShortCode" style="min-width:120px;width:auto; margin-left:-7px;" onchange="loadKeyword()">
-        <option value="2545">1234</option>
-        <option value="2545">N/A</option>
+    <select id="short3" name="keywordStr" style="min-width:120px;width:auto; margin-left:-7px;" >
+        <c:forEach items="${keywordList}" var="key">
+            <option value="${key.name}-${key.shortCode}"><c:out value="${key.name}"/>-<c:out value="${key.shortCode}"/></option>
+        </c:forEach>
+
+
     </select>
     <a style="padding-left:2px" href="serviceCreateKeyword1.html">Create Keyword</a>
 </div>
