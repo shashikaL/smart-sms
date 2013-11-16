@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author rajith
- */
+
 @Controller
 public class KeywordController {
 

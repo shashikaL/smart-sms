@@ -2,9 +2,7 @@ package com.smartsms.beans;
 
 import java.util.List;
 
-/**
- * @author rajith
- */
+
 public class Word {
 
     private List<String> words;

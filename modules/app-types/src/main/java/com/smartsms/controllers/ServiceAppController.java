@@ -1,6 +1,7 @@
 package com.smartsms.controllers;
 
-import com.smartsms.beans.ServiceApplication;
+import com.smartsms.beans.*;
+import com.smartsms.repo.SubscriberRepository;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.security.SecurityUtil;
 import com.smartsms.util.KeywordGenerator;
@@ -10,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -33,6 +31,8 @@ public class ServiceAppController {
     @Autowired
     private KeywordGenerator keywordGenerator;
     private ServiceApplication serviceApplication;
+    @Autowired
+    private SubscriberRepository subscriberRepository;
 
     @RequestMapping(value = "/ServiceApp_step1", method = RequestMethod.GET)
     public String redirect(Model model) {
@@ -104,6 +104,22 @@ public class ServiceAppController {
         serviceApplicationById.setServiceMessage(application.getServiceMessage());
         applicationTypeRepository.saveApplication(serviceApplicationById);
         return "redirect:/MyApplications";
+
+    }
+
+    @RequestMapping(value = "/ServiceSubscription", method = RequestMethod.POST)
+    @ResponseBody
+    public Response serviceAppSubscription(@RequestBody ServiceAppMessage serviceAppMessage){
+        Subscribe subscribe = new Subscribe();
+        ServiceApplication application = applicationTypeRepository.findServiceApplicationByShortCode(serviceAppMessage.getShortCode());
+        subscribe.setAppId(application.getAppId());
+        subscribe.setSubscriberNumber(serviceAppMessage.getNumber());
+        subscriberRepository.saveSubscriber(subscribe);
+
+        Response response = new Response();
+        response.setStatusCode("200");
+        response.setStatusMessage("Success");
+        return response;
 
     }
 }

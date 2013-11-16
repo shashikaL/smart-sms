@@ -47,6 +47,8 @@ public interface ApplicationTypeRepository {
 
     public ContactApplication findContactApplicationByShortCode(String shortCode);
 
+    public ServiceApplication findServiceApplicationByShortCode(String shortCode);
+
     public List<Keyword> FindAllKeywords();
 
     public ServiceApplication findServiceApplicationById(String appId);

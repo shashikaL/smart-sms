@@ -112,6 +112,24 @@ public class HomeController {
 
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/single-service-request")
+    public String redirectSingleServiceRequest(){
+        return "single-service-request";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/single-service-request")
+    public String submitSingleServiceRequest(@RequestParam String message, @RequestParam String shortCode, @RequestParam String number){
+        ServiceAppMessage serviceAppMessage = new ServiceAppMessage();
+        serviceAppMessage.setNumber(number);
+        serviceAppMessage.setShortCode(shortCode);
+        serviceAppMessage.setMessage(message);
+
+        Response response = restTemplate.postForObject("http://localhost:8080/app-ui/ServiceSubscription", serviceAppMessage, Response.class);
+        responseMessage = response.getStatusMessage();
+        responseCode = response.getStatusCode();
+        return "redirect:/response";
+    }
+
     private BulkSubscriberMessage createBulkSubscriberMessage(int count, String message, String shortCode) {
         BulkSubscriberMessage bulkSubscriberMessage = new BulkSubscriberMessage();
 

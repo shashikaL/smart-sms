@@ -202,4 +202,18 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
     public ContactApplication findContactApplicationById(String appId) {
         return mongoTemplate.findById(appId, ContactApplication.class, mongoDBConfig.getContactCollectionName());
     }
+
+    @Override
+    public ServiceApplication findServiceApplicationByShortCode(String shortCode) {
+        List<ServiceApplication> all = mongoTemplate.findAll(ServiceApplication.class, mongoDBConfig.getServiceCollectionName());
+        for (ServiceApplication serviceApplication : all) {
+            if (serviceApplication.getKeyword() == null) {
+                continue;
+            }
+            if (serviceApplication.getKeyword().getShortCode().equals(shortCode)) {
+                return serviceApplication;
+            }
+        }
+        return null;
+    }
 }

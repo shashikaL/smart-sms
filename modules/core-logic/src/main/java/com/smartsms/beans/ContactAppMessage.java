@@ -1,8 +1,6 @@
 package com.smartsms.beans;
 
-/**
- * @author rajith
- */
+
 public class ContactAppMessage {
 
     private String contactNumber;

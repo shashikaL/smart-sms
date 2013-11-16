@@ -36,5 +36,38 @@
         </resources>
     </build>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.rednoise</groupId>
+            <artifactId>RiTaWN</artifactId>
+            <version>024</version>
+        </dependency>
+        <dependency>
+            <groupId>org.rednoise</groupId>
+            <artifactId>supportWN</artifactId>
+            <version>024</version>
+        </dependency>
+        <dependency>
+            <groupId>org.processing</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>stavish-public-repository</id>
+            <name>Publicly available Maven 2 repository by Todd Stavish</name>
+            <url>http://www.stavi.sh/repository/maven2/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+
+
+
 
 </project>
