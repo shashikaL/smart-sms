@@ -9,5 +9,5 @@ package com.smartsms.service;
  */
 public interface ServiceApplicationExecute {
 
-    public void execute();
+    public void execute() throws Exception;
 }

@@ -9,6 +9,7 @@ import com.smartsms.util.KeywordGenerator;
 import com.smartsms.util.KeywordSeperator;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,9 @@ public class ContactAppController {
     @Autowired
     private KeywordGenerator keywordGenerator;
     private ContactApplication ContactApplication;
+
+    @Value("${simulator.url}")
+    private String simulatorUrl;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -80,7 +84,7 @@ public class ContactAppController {
 
     @RequestMapping(value = "/ContactAppView", method = RequestMethod.POST)
     public String submitView(@RequestParam String messageArea) {
-        restTemplate.getForObject("http://localhost:9090/rest/api/response/{message}", String.class, messageArea);
+        restTemplate.getForObject(simulatorUrl, String.class, messageArea);
         return "redirect:/MyApplications";
     }
 

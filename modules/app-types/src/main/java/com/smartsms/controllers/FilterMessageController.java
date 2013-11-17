@@ -7,6 +7,7 @@ import com.smartsms.beans.Malformed;
 import com.smartsms.beans.Response;
 import com.smartsms.repo.config.MalformedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,9 @@ public class FilterMessageController {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Value("${simulator.url}")
+    private String simulatorUrl;
 
     @RequestMapping(value = "/filter", method = RequestMethod.POST)
     public String redirect(@RequestBody FilterMessage filterMessage) {
@@ -41,7 +45,7 @@ public class FilterMessageController {
         }
 
         try {
-            restTemplate.getForObject("http://localhost:9090/rest/api/response/{message}", String.class, filterMessage.getMessage());
+            restTemplate.getForObject(simulatorUrl, String.class, filterMessage.getMessage());
 
         } catch (Throwable e) {
             System.out.println(e.getMessage());

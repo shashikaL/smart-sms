@@ -13,7 +13,7 @@
     <name>service-executor</name>
 
     <properties>
-        <appassembler.basedir>target/generated-resources/appassembler/jsw/report-scheduler</appassembler.basedir>
+        <appassembler.basedir>target/generated-resources/appassembler/jsw/service-executor</appassembler.basedir>
     </properties>
 
     <dependencies>
@@ -44,7 +44,7 @@
                     </defaultJvmSettings>
                     <daemons>
                         <daemon>
-                            <id>report-scheduler</id>
+                            <id>service-executor</id>
                             <mainClass>com.smartsms.boot.ServiceExecutor</mainClass>
                             <platforms>
                                 <platform>jsw</platform>

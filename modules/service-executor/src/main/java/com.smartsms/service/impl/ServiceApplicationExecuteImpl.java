@@ -6,6 +6,7 @@ import com.smartsms.service.ServiceApplicationExecute;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
@@ -21,11 +22,14 @@ public class ServiceApplicationExecuteImpl implements ServiceApplicationExecute 
 
     private final static Logger logger = LoggerFactory.getLogger(ServiceApplicationExecuteImpl.class);
 
+    @Value("${simulator.url}")
+    private String simulatorUrl;
+
     @Autowired
     private ApplicationTypeRepository applicationTypeRepository;
 
     @Override
-    public void execute() {
+    public void execute() throws Exception {
         logger.info("Service Application Executor starting");
         List<ServiceApplication> applicationList = applicationTypeRepository.findAllServiceApplications();
         logger.info("Found [{}] number of service application", applicationList.size());
@@ -39,7 +43,7 @@ public class ServiceApplicationExecuteImpl implements ServiceApplicationExecute 
                 //TODO this is where service execute
                 //send request to simulator
                 RestTemplate restTemplate = new RestTemplate();
-                restTemplate.getForEntity("http://localhost:9090/rest/api/response/{message}",String.class,entry.getKey().getServiceMessage());
+                restTemplate.getForEntity(simulatorUrl,String.class,entry.getKey().getServiceMessage());
                 continue;
             }
             logger.info("Application [{}] will save to cache for future execution", entry.getKey().getAppId());
