@@ -107,7 +107,12 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
 
     @Override
     public void incrementCandidateCount(String candidateId, String appId) {
+        int total = 0;
         VotingApplication application = mongoTemplate.findById(appId, VotingApplication.class, mongoDBConfig.getVotingCollectionName());
+        String totalCount = application.getTotalCount();
+        if(StringUtils.isNotBlank(totalCount)){
+            total = Integer.parseInt(totalCount);
+        }
         List<Candidate> candidateList = application.getCandidateList();
         if (candidateList == null || candidateList.size() == 0) {
             return;
@@ -120,9 +125,11 @@ public class ApplicationTypeRepositoryImpl implements ApplicationTypeRepository 
                     int newVal = Integer.parseInt(candidate.getCount()) + 1;
                     candidate.setCount(String.valueOf(newVal));
                 }
+                total = total + 1;
 
             }
         }
+        application.setTotalCount(String.valueOf(total));
         saveApplication(application);
 
     }

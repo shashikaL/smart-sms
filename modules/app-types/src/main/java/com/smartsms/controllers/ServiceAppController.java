@@ -61,6 +61,7 @@ public class ServiceAppController {
     public String submit() {
         serviceApplication.setAppId(UUID.randomUUID().toString());
         serviceApplication.setUserID(SecurityUtil.getUserLoggedInname());
+        serviceApplication.setExecutionType(ExecutionType.NOT_SEND);
         applicationTypeRepository.saveApplication(serviceApplication);
         return "redirect:/ServiceAppSuccess";
 

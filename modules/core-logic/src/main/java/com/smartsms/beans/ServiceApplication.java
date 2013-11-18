@@ -13,6 +13,7 @@ public class ServiceApplication extends AbstractApplicationType {
     private String dispatchHour;
     private String dispatchMinute;
     private String serviceMessage;
+    private ExecutionType executionType;
 
     public ScheduledType getScheduledType() {
         return scheduledType;
@@ -76,5 +77,13 @@ public class ServiceApplication extends AbstractApplicationType {
 
     public void setServiceMessage(String serviceMessage) {
         this.serviceMessage = serviceMessage;
+    }
+
+    public ExecutionType getExecutionType() {
+        return executionType;
+    }
+
+    public void setExecutionType(ExecutionType executionType) {
+        this.executionType = executionType;
     }
 }
