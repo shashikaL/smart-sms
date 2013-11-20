@@ -26,5 +26,10 @@ public class HomeController {
         return "MyProfile";
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/Report_type_select")
+    public String redirectReport_type_select(){
+        return "ReportTypeSelect";
+    }
+
 
 }

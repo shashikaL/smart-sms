@@ -225,14 +225,14 @@
                                 <li id="reports">
                                     <div id="menu4">
                                         <ul>
-                                            <li class="last"><a href="#" title="View Reports">
+                                            <li class="last"><a href="Report_type_select" title="View Reports">
                                                 <div class="menu_title">View Reports&nbsp;</div>
                                             </a></li>
                                         </ul>
                                     </div>
                                     <div style="display:none;" id="menu6">
                                         <ul>
-                                            <li class="last"><a href="#" title="View Reports"><span class="middle">Please verify your account to use this feature&nbsp;</span>
+                                            <li class="last"><a href="Report_type_select" title="View Reports"><span class="middle">Please verify your account to use this feature&nbsp;</span>
                                                 <div class="menu_title">View Reports&nbsp;</div>
                                             </a></li>
                                         </ul>

@@ -34,7 +34,7 @@
     <bean id="serviceAppTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
         <property name="jobDetail" ref="serviceAppManager"/>
         <property name="cronExpression" value="${service.scheduler.trigger.cron.expression}"/>
-    </bean>
+</bean>
 
     <bean id="wordAppTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
         <property name="jobDetail" ref="wordAppManager"/>

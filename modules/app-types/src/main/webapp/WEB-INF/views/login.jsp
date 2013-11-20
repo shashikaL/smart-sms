@@ -199,7 +199,7 @@
                                         <a href="<c:out value="${twitterUrl}"/>">
                                             <img src="resources/images/twitter.png"/>&nbsp;</a>
 
-                                        <a href="home.html">
+                                        <a href="Home">
                                             <img src="resources/images/linkedin.png"/>&nbsp;</a>
                                     </p>
 
