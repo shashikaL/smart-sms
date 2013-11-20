@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: shashi
+  Date: 11/20/13
+  Time: 2:43 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -41,7 +48,7 @@
 <form action="" method="post">
     <ul class="form">
 
-        <li><input type="text" name="number" value="Enter a Mobile Number" id="number" onclick="clickclear(this, 'Enter a Mobile Number')" onblur="clickrecall(this,'Enter a Mobile Number')"  /></li>
+        <li><input type="text" name="count" value="Number of mobile numbers to generate ? (Starting from 0777000001)" id="count" onclick="clickclear(this, 'Number of mobile numbers to generate ? (Starting from 0777000001)')" onblur="clickrecall(this,'Number of mobile numbers to generate ? (Starting from 0777000001)')"  /></li>
         <li><input type="text" name="message" value="Enter Message" id="message" onclick="clickclear(this, 'Enter Message')" onblur="clickrecall(this,'Enter Message')" /></li>
         <li><input type="text" name="shortCode" value="Enter Short Code" id="shortCode" onclick="clickclear(this, 'Enter Short Code')" onblur="clickrecall(this,'Enter Short Code')" /></li>
 

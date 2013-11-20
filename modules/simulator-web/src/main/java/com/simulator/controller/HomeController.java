@@ -37,6 +37,11 @@ public class HomeController {
         return "bulk-alert-app-subscription";
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/bulk-service")
+    public String redirectToBulkService() {
+        return "bulk_service_app_subscription";
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "/single-app-type-select")
     public String redirectToSingleSubs() {
         return "single-app-type-select";
@@ -58,6 +63,16 @@ public class HomeController {
         responseMessage = response.getStatusMessage();
         responseCode = response.getStatusCode();
         return "redirect:/response";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/bulk-service")
+    public String submitBulkService(@RequestParam Integer count, @RequestParam String message, @RequestParam String shortCode) {
+        BulkSubscriberMessage bulkSubscriberMessage = createBulkSubscriberMessage(count, message, shortCode);
+        Response response = restTemplate.postForObject("http://localhost:8080/app-ui/bulk/subscribe", bulkSubscriberMessage, Response.class);
+        responseMessage = response.getStatusMessage();
+        responseCode = response.getStatusCode();
+        return "redirect:/response";
+
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/bulk-alert")
@@ -130,6 +145,20 @@ public class HomeController {
         return "redirect:/response";
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/single-alert-app-subscription")
+    public String redirectSingleAlertRequest(){
+        return "bulk-alert-app-subscription";
+    }
+
+   @RequestMapping(method = RequestMethod.POST, value = "/single-alert-app-subscription")
+    public String submitSingleAlert(@RequestParam Integer count, @RequestParam String message, @RequestParam String shortCode) {
+        BulkSubscriberMessage bulkSubscriberMessage = createBulkSubscriberMessage(count, message, shortCode);
+        Response response = restTemplate.postForObject("http://localhost:8080/app-ui/bulk/subscribe", bulkSubscriberMessage, Response.class);
+        responseMessage = response.getStatusMessage();
+        responseCode = response.getStatusCode();
+        return "redirect:/response";
+
+    }
     private BulkSubscriberMessage createBulkSubscriberMessage(int count, String message, String shortCode) {
         BulkSubscriberMessage bulkSubscriberMessage = new BulkSubscriberMessage();
 

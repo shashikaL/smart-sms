@@ -32,7 +32,7 @@
 
 <div id="header">
     <h1>Contact App Simulator</h1>
-    <a href="app-type-select" id="backButton">Back</a>
+    <a href="home" id="backButton">Back</a>
 </div>
 
 

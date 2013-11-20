@@ -21,6 +21,10 @@ public class HomeController {
     public String redirectMyProfile(){
         return "MyProfile";
     }
+    @RequestMapping(method = RequestMethod.GET, value = "/MySettings")
+    public String redirectMySettings(){
+        return "MyProfile";
+    }
 
 
 }

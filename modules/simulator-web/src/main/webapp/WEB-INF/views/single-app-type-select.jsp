@@ -29,7 +29,7 @@
 
 </ul>
 <ul class="individual">
-    <li><a href="bulk-alert">Alert Application</a></li>
+    <li><a href="single-alert-app-subscription">Alert Application</a></li>
 
 </ul>
 <ul class="individual">

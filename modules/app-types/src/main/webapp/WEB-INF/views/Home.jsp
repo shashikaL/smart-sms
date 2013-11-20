@@ -198,7 +198,7 @@
                                 <li id="edit">
                                     <div id="menu2">
                                         <ul>
-                                            <li class="last"><a href="mySettings.html" title="Settings">
+                                            <li class="last"><a href="MySettings" title="Settings">
                                                 <div class="menu_title">Settings&nbsp;</div>
                                             </a></li>
                                         </ul>
@@ -225,7 +225,7 @@
                                 <li id="reports">
                                     <div id="menu4">
                                         <ul>
-                                            <li class="last"><a href="selectReportType.html" title="View Reports">
+                                            <li class="last"><a href="#" title="View Reports">
                                                 <div class="menu_title">View Reports&nbsp;</div>
                                             </a></li>
                                         </ul>

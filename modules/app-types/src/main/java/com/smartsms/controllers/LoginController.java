@@ -120,4 +120,9 @@ public class LoginController {
         return user;
     }
 
+
+    @RequestMapping(value = "/Register", method = RequestMethod.GET)
+    public String redirectRegister(){
+        return "redirect:/Home";
+    }
 }

@@ -20,7 +20,7 @@
 
 <div id="header">
     <h1>Response</h1>
-    <a href="app-type-select" id="backButton">Home</a>
+    <a href="home" id="backButton">Home</a>
 </div>
 
 <h1>Application Response</h1>
