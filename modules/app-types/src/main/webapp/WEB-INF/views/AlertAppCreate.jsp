@@ -519,7 +519,9 @@ var selectedKeyword = '';
                             <select id="keyword.shortCode" name="keyword.shortCode"
                                     style="min-width:120px;width:auto; margin-left:-7px;"
                                     onchange="loadKeyword()">
-                                <option value="1234">1234</option>
+                                <c:forEach items="${keywordList}" var="key">
+                                    <option value="${key.name}-${key.shortCode}"><c:out value="${key.name}"/>-<c:out value="${key.shortCode}"/></option>
+                                </c:forEach>
                             </select>
                             <a style="padding-left:2px" href="alertCreateKeyword1.html">Create Keyword</a></div>
                         <h4>

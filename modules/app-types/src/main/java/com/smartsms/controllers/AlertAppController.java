@@ -5,10 +5,13 @@ import com.smartsms.beans.FilterMessage;
 import com.smartsms.beans.Response;
 import com.smartsms.repo.config.ApplicationTypeRepository;
 import com.smartsms.security.SecurityUtil;
+import com.smartsms.util.KeywordGenerator;
+import com.smartsms.util.KeywordSeperator;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,17 +35,21 @@ public class AlertAppController {
 
     @Autowired
     private ApplicationTypeRepository applicationTypeRepository;
+    @Autowired
+    private KeywordGenerator keywordGenerator;
 
     private AlertApplication alertApplication;
 
     @RequestMapping(value = "/AlertAppCreate", method = RequestMethod.GET)
-    public String redirect() {
+    public String redirect(Model model) {
+        model.addAttribute("keywordList", keywordGenerator.GetUniqueKeywords());
         return "AlertAppCreate";
 
     }
 
     @RequestMapping(value = "/AlertAppCreate", method = RequestMethod.POST)
-    public String submitAlertAppCreate(AlertApplication application) {
+    public String submitAlertAppCreate(AlertApplication application,@ModelAttribute("keywordStr") String s) {
+        application.setKeyword(KeywordSeperator.createKeyword(s));
         this.alertApplication = application;
         return "redirect:/AlertAppConfirm";
 
