@@ -516,7 +516,7 @@ var selectedKeyword = '';
 
                         <div class="info_group">
                             <div style="display:inline"></div>
-                            <select id="keyword.shortCode" name="keyword.shortCode"
+                            <select id="short2" name="keywordStr"
                                     style="min-width:120px;width:auto; margin-left:-7px;"
                                     onchange="loadKeyword()">
                                 <c:forEach items="${keywordList}" var="key">
